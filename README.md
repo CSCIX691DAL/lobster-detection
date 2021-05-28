@@ -7,15 +7,18 @@
 
 #### Dart documentation:
 https://dart.dev/guides
+
 https://dart.dev/get-dart
 
 #### Flutter documentation:
 https://flutterflow.io/
+
 https://flutter.dev/docs/get-started/install
 
 
 #### TensorFlow Lite (TFlite):
 https://www.tensorflow.org/lite/guide
+
 https://pub.dev/packages/tflite
 
 
