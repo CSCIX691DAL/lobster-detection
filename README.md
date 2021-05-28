@@ -1,27 +1,40 @@
-# Lobster Detection
+# Lobster Detection Mobile Application
 
 ## Team Members:
 
 
-# Helpful Links and Resources:
-[Installing Flutter on Mac - Youtube - Nick Manning (seenickcode)](https://www.youtube.com/watch?v=THsihXK1-14)
+### Helpful Links and Resources:
 
-https://www.youtube.com/watch?v=yeXJqZCiwTQ&t=480s
-https://youtube.com/playlist?list=PLxefhmF0pcPmynNry6IksRAx0vNRns7Q1
-https://colab.research.google.com/github/tensorflow/examples/blob/master/lite/codelabs/digit_classifier/ml/step2_train_ml_model.ipynb#scrollTo=C4ASalaLIbu2
-https://www.youtube.com/watch?v=9hVgyeI4g4o
-https://curiousily.com/posts/object-detection-on-custom-dataset-with-yolo-v5-using-pytorch-and-python/
-https://pub.dev/packages/tflite
-https://www.youtube.com/watch?v=NTnZgLsk_DA&t=792s
-https://www.youtube.com/watch?v=pTJJsmejUOQ
-https://developers.googleblog.com/2021/03/announcing-flutter-2.html
-https://dal.brightspace.com/d2l/le/content/175347/viewContent/2335423/View
+#### Dart documentation:
+https://dart.dev/guides
+https://dart.dev/get-dart
+
+#### Flutter documentation:
 https://flutterflow.io/
 https://flutter.dev/docs/get-started/install
-https://www.docsketch.com/online-signature/
+
+
+#### TensorFlow Lite (TFlite):
+https://www.tensorflow.org/lite/guide
+https://pub.dev/packages/tflite
+
+
+#### Material UI:
 https://material.io/components
-https://github.com/openvinotoolkit/cvat
-https://github.com/Tianxiaomo/pytorch-YOLOv4
-https://chrome.google.com/webstore/detail/download-all-images/nnffbdeachhbpfapjklmpnmjcgamcdmm
-https://chrome.google.com/webstore/detail/download-all-images/nnffbdeachhbpfapjklmpnmjcgamcdmm
-https://www.docsketch.com/online-signature/
+
+
+
+#### Videos lessons and tutorials:
+[YouTube - Installing Flutter on Mac - Nick Manning (seenickcode)](https://www.youtube.com/watch?v=THsihXK1-14)
+
+[Youtube - Flutter Course - Full Tutorial for Beginners (Build iOS and Android Apps) - freeCodeCamp.org](https://www.youtube.com/watch?v=pTJJsmejUOQ)
+
+[YouTube - Flutter: Build a Beautiful Pokemon App | Animation | Widgets | JSON API - mtechviral](https://www.youtube.com/watch?v=yeXJqZCiwTQ&t=480s)
+
+[Youtube - Flutter iOS & Android Object Detection with TensorFlow Lite Deep Learning & Machine Learning Course - Coding Cafe](https://youtube.com/playlist?list=PLxefhmF0pcPmynNry6IksRAx0vNRns7Q1)
+
+[Youtube - How to Train YOLOv4 on a Custom Dataset (PyTorch) - Roboflow](https://www.youtube.com/watch?v=9hVgyeI4g4o)
+
+
+#### Other documentation and resources:
+[Curiousily- Object detection on a custom dataset](https://curiousily.com/posts/object-detection-on-custom-dataset-with-yolo-v5-using-pytorch-and-python/)
