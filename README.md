@@ -1,28 +1,39 @@
-# Lobster Detection Mobile Application
+# Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University 
 
 ## Team Members:
+- Kanak Prajapati
+- Kayleen Sung
+- Liam Cormack
+- Liam Osler
+- Pulkit Garg
+- Shawn Shahin Azar
 
 
-### Helpful Links and Resources:
+## Project Requirements
 
-#### Dart documentation:
+## Application Process-Flow diagram:
+
+
+## Helpful Links and Resources:
+
+### Dart documentation:
 https://dart.dev/guides
 
 https://dart.dev/get-dart
 
-#### Flutter documentation:
+### Flutter documentation:
 https://flutterflow.io/
 
 https://flutter.dev/docs/get-started/install
 
 
-#### TensorFlow Lite (TFlite):
+### TensorFlow Lite (TFlite):
 https://www.tensorflow.org/lite/guide
 
 https://pub.dev/packages/tflite
 
 
-#### Material UI:
+### Material UI:
 https://material.io/components
 
 
