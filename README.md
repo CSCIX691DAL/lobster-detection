@@ -13,14 +13,6 @@
 
 ## Application Process-Flow diagram:
 
-```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
-```
-
 
 ## Helpful Links and Resources:
 
