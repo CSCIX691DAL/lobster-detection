@@ -1,6 +1,6 @@
 # Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University 
 
-## Team Members:
+### Team Members:
 - Kanak Prajapati
 - Kayleen Sung
 - Liam Cormack
@@ -9,9 +9,19 @@
 - Shawn Shahin Azar
 
 
-## Project Requirements:
+### Project Requirements:
+Detection of whether there is a lobster in the camera view with a generally accessible and aesthetically pleasing app.
 
-## Application Process-Flow diagram:
+### Proposed Solution:
+- Collect a proper dataset of lobster photos.
+- Label Images in CVAT or Roboflow Annotate.
+- Export annotated data set to Darknet YOLOv4.
+- Run dataset through roboflow training module.
+- Export our trained images and bounding boxes in the YOLO Darknet format, using Roboflow.
+- Convert YOLOv4 to TFlite’s weighted system.
+- Write code to sort data from the API.
+- Convert Darknet Model to TensorFlow Lite.
+- Deploy on Device.
 
 
 ## Helpful Links and Resources:
