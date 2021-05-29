@@ -55,7 +55,7 @@ https://github.com/pjreddie/darknet
 
 
 
-#### Videos lessons and tutorials:
+### Video lessons and tutorials:
 [YouTube - Installing Flutter on Mac - Nick Manning (seenickcode)](https://www.youtube.com/watch?v=THsihXK1-14)
 
 [YouTube - Flutter Course - Full Tutorial for Beginners (Build iOS and Android Apps) - freeCodeCamp.org](https://www.youtube.com/watch?v=pTJJsmejUOQ)
@@ -67,5 +67,5 @@ https://github.com/pjreddie/darknet
 [YouTube - How to Train YOLOv4 on a Custom Dataset (PyTorch) - Roboflow](https://www.youtube.com/watch?v=9hVgyeI4g4o)
 
 
-#### Other documentation and resources:
+### Other documentation and resources:
 [Curiousily- Object detection on a custom dataset](https://curiousily.com/posts/object-detection-on-custom-dataset-with-yolo-v5-using-pytorch-and-python/)
