@@ -9,7 +9,7 @@
 - Shawn Shahin Azar
 
 
-## Project Requirements
+## Project Requirements:
 
 ## Application Process-Flow diagram:
 
@@ -26,16 +26,13 @@ https://flutterflow.io/
 
 https://flutter.dev/docs/get-started/install
 
-
 ### TensorFlow Lite (TFlite):
 https://www.tensorflow.org/lite/guide
 
 https://pub.dev/packages/tflite
 
-
 ### Material UI:
 https://material.io/components
-
 
 
 #### Videos lessons and tutorials:
