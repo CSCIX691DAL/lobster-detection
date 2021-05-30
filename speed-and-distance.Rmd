@@ -1,6 +1,6 @@
 ---
-title: "LobsterDetection"
-output: github_document
+title: "speed-and-distance"
+output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}
