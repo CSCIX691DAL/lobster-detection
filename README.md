@@ -53,6 +53,12 @@ https://material.io/components
 ### YOLOv4:
 https://github.com/pjreddie/darknet
 
+### Kaggle image sets:
+https://www.kaggle.com/kmader/food41
+
+https://www.kaggle.com/sonvoutas/large-lobster-image-dataset
+
+
 
 
 ### Video lessons and tutorials:
