@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'MyHomePage.dart';
+import 'HomePage/MyHomePage.dart';
 
 void main() {
   runApp(MyApp());
