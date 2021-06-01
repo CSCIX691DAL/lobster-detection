@@ -1,5 +1,5 @@
 ---
-title: "Lobster Image Classification with TensorFlow and R"
+title: "lobster-pictures"
 output: rmarkdown::github_document
 ---
 
@@ -103,6 +103,8 @@ library(tidyr)
 library(ggplot2)
 ```
 
+### Preprocess the data
+
 ```{r}
 image_1 <- as.data.frame(train_images[1, , ])
 colnames(image_1) <- seq_len(ncol(image_1))
@@ -137,6 +139,8 @@ for (i in 1:25) {
 }
 ```
 
+### Build the model
+
 ```{r}
 model <- keras_model_sequential()
 model %>%
@@ -145,8 +149,83 @@ model %>%
   layer_dense(units = 10, activation = 'softmax')
 ```
 
+### Compile the model
+
+```{r}
+model %>% compile(
+  optimizer = 'adam', 
+  loss = 'sparse_categorical_crossentropy',
+  metrics = c('accuracy')
+)
+```
 
 
+### Train the model
+
+```{r}
+model %>% fit(train_images, train_labels, epochs = 5, verbose = 2)
+```
+```{r}
+score <- model %>% evaluate(test_images, test_labels, verbose = 0)
+
+cat('Test loss:', score[c("loss")], "\n")
+```
+
+```{r}
+cat('Test accuracy:', score[c("acc")], "\n")
+```
+
+```{r}
+predictions <- model %>% predict(test_images)
+```
+
+```{r}
+predictions[1, ]
+```
+
+```{r}
+par(mfcol=c(5,5))
+par(mar=c(0, 0, 1.5, 0), xaxs='i', yaxs='i')
+for (i in 1:25) { 
+  img <- test_images[i, , ]
+  img <- t(apply(img, 2, rev)) 
+  # subtract 1 as labels go from 0 to 9
+  predicted_label <- which.max(predictions[i, ]) - 1
+  true_label <- test_labels[i]
+  if (predicted_label == true_label) {
+    color <- '#008800' 
+  } else {
+    color <- '#bb0000'
+  }
+  image(1:28, 1:28, img, col = gray((0:255)/255), xaxt = 'n', yaxt = 'n',
+        main = paste0(class_names[predicted_label + 1], " (",
+                      class_names[true_label + 1], ")"),
+        col.main = color)
+}
+```
+
+```{r}
+# Grab an image from the test dataset
+# take care to keep the batch dimension, as this is expected by the model
+img <- test_images[1, , , drop = FALSE]
+dim(img)
+```
+
+
+```{r}
+predictions <- model %>% predict(img)
+predictions
+```
+
+```{r}
+# subtract 1 as labels are 0-based
+prediction <- predictions[1, ] - 1
+which.max(prediction)
+```
+```{r}
+class_pred <- model %>% predict_classes(img)
+class_pred
+```
 
 
 
