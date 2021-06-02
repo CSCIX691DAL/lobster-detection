@@ -14,12 +14,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "camera",
-      "rootUri": "file:///Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17",
-      "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
       "name": "characters",
       "rootUri": "file:///Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.1.0",
       "packageUri": "lib/",
@@ -254,7 +248,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-05-31T16:05:41.962963Z",
+  "generated": "2021-06-02T15:51:54.538219Z",
   "generator": "pub",
   "generatorVersion": "2.12.3"
 }
