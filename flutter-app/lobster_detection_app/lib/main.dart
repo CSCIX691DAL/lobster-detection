@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
+}
+
+
+class CameraScreen extends StatefulWidget {
+  @override
+  _CameraScreenState createState() => _CameraScreenState();
+}
+
+class _CameraScreenState extends State<CameraScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -102,11 +118,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
