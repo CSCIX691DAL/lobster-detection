@@ -7,7 +7,6 @@
 - Kayleen Sung
 - Liam Cormack
 - Liam Osler
-- Pulkit Garg
 - Shawn Shahin Azar
 
 
