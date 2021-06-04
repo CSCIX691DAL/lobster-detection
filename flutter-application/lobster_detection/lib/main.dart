@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset('assets/lobster.png', height: 200.0),
+              Image.asset('assets/icons/256.png', height: 200.0),
 
               SizedBox(height: 50.0),
 
