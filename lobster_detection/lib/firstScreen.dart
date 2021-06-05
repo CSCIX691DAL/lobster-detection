@@ -5,11 +5,61 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('First Screen'),
+          title: Text('Intro Page'),
         ),
-        body: Center(
-          child: Text('First Screen', style: TextStyle(fontSize: 18.0)),
-        )
-    );
+        body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Text('Welcome to \nLobster Detection',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 35.0
+                  )),
+              Image.asset('assets/intro_pg_lobster.png',height:300.0),
+
+              Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida facilisis facilisis. '
+                  'Sed feugiat erat ut est rutrum mattis.'
+                  'In ultriciesligula sed nisi tempus, nec dignissim diam blandit. ',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 20.0
+              ))
+            ]
+          )
+        );
   }
 }
+
+class MyStatelessWidget extends StatelessWidget {
+  const MyStatelessWidget({Key key}) : super(key:key);
+
+  @override
+
+  Widget build(BuildContext context) {
+    ElevatedButton(
+      onPressed: () {
+        // Button response
+      },
+      child: Text('Got it'),
+    );
+  }
+  /*
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: () {
+        // take me to a new page
+      },
+      child: const Text('Got It'),
+    );
+  }
+   */
+
+}
+
+
+
+
+
+
