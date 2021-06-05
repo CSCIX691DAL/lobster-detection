@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lobster_detection/firstScreen.dart';
-import 'home_page.dart';
+//import 'home_page.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -19,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 5),
+      Duration(seconds: 1),
           () {
         Navigator.push(
           context,
