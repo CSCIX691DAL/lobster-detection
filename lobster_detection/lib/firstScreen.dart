@@ -25,7 +25,14 @@ class FirstScreen extends StatelessWidget {
                   style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 20.0
-              ))
+              )),
+              ElevatedButton(
+                style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                ),
+                onPressed: () { },
+                child: Text('Close'),
+              )
             ]
           )
         );
