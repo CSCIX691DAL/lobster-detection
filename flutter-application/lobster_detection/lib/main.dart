@@ -4,6 +4,9 @@ import 'home_page.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
+import 'package:lobster_detection/screens/camera.dart';
+
+
 void main() {
   runApp(MaterialApp(
     home: MyApp(),
