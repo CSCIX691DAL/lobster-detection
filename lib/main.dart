@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:lobster_detection/HomePage/firstScreen.dart';
+import 'dart:async';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'HomePage/MyHomePage.dart';
 
@@ -26,9 +28,49 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MyApp1(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
+
+class MyApp1 extends StatefulWidget {
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp1> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      Duration(seconds: 5),
+          () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FirstScreen(),
+          ),
+        );
+      },
+    );
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Image.asset('assets/lobster.png', height: 200.0),
+
+              SizedBox(height: 50.0),
+
+              SpinKitThreeBounce(color: Colors.red),
+            ]
+        )
+    );
+  }
+}
