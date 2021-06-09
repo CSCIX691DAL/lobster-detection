@@ -1,5 +1,9 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lobster_detection/HomePage/Camera/CameraScreen.dart';
+
+List<CameraDescription> cameras;  // camera.dart file
 
 class MyHomePage extends StatefulWidget{
   MyHomePage({Key key}) : super(key: key);
@@ -46,8 +50,28 @@ class _HomePageWidgetState extends State<MyHomePage> {
         ],
         centerTitle: true,
         elevation: 4,
-      ),
+      ),  //Appbar
+    );  // Scaffold
+  } // Widget
+} // Class
+
+
+Future<Null> main () async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Try and Catch block to open camera
+  try{
+    cameras = await availableCameras();
+  } catch (e) {
+    print('Error Message: $e.message \n Error Code: $e.code');
+  }
+  runApp(new openCamera());
+}
+
+class openCamera extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: CameraScreen(cameras),
     );
   }
 }
-
