@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/example/lobster_detection/BuildConfig.java
+ com.example.lobster_detection.BuildConfig
