@@ -1,490 +1,302 @@
-define(['dart_sdk', 'packages/flutter/src/physics/tolerance.dart', 'packages/flutter/src/physics/friction_simulation.dart', 'packages/flutter/src/physics/spring_simulation.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/physics/simulation.dart'], (function load__packages__flutter__src__widgets__scroll_simulation_dart(dart_sdk, packages__flutter__src__physics__tolerance$46dart, packages__flutter__src__physics__friction_simulation$46dart, packages__flutter__src__physics__spring_simulation$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__physics__simulation$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/edge_insets.dart'], (function load__packages__flutter__src__rendering__table_border_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__edge_insets$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const math = dart_sdk.math;
+  const ui = dart_sdk.ui;
   const _internal = dart_sdk._internal;
-  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const tolerance = packages__flutter__src__physics__tolerance$46dart.src__physics__tolerance;
-  const friction_simulation = packages__flutter__src__physics__friction_simulation$46dart.src__physics__friction_simulation;
-  const spring_simulation = packages__flutter__src__physics__spring_simulation$46dart.src__physics__spring_simulation;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  const simulation = packages__flutter__src__physics__simulation$46dart.src__physics__simulation;
-  var scroll_simulation = Object.create(dart.library);
-  var $isFinite = dartx.isFinite;
-  var $abs = dartx.abs;
-  var $round = dartx.round;
-  var $sign = dartx.sign;
-  var $clamp = dartx.clamp;
-  var $_get = dartx._get;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  var table_border = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  var $first = dartx.first;
+  var $last = dartx.last;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $runtimeType = dartx.runtimeType;
   dart._checkModuleNullSafetyMode(false);
-  var T = {
-    JSArrayOfdouble: () => (T.JSArrayOfdouble = dart.constFn(_interceptors.JSArray$(core.double)))()
-  };
   const CT = Object.create({
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.none",
+        index: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
     get C0() {
       return C[0] = dart.const({
-        __proto__: tolerance.Tolerance.prototype,
-        [Tolerance_velocity]: 0.001,
-        [Tolerance_time]: 0.001,
-        [Tolerance_distance]: 0.001
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[1] || CT.C1,
+        [BorderSide_width]: 0,
+        [BorderSide_color]: C[2] || CT.C2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.solid",
+        index: 1
       });
     }
   }, false);
-  var C = [void 0];
+  var C = Array(4).fill(void 0);
   var I = [
-    "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/scroll_simulation.dart",
-    "package:flutter/src/widgets/scroll_simulation.dart"
+    "file:///C:/dev/flutter/packages/flutter/lib/src/rendering/table_border.dart",
+    "package:flutter/src/rendering/table_border.dart"
   ];
-  var leadingExtent$ = dart.privateName(scroll_simulation, "BouncingScrollSimulation.leadingExtent");
-  var trailingExtent$ = dart.privateName(scroll_simulation, "BouncingScrollSimulation.trailingExtent");
-  var spring$ = dart.privateName(scroll_simulation, "BouncingScrollSimulation.spring");
-  var Tolerance_velocity = dart.privateName(tolerance, "Tolerance.velocity");
-  var Tolerance_time = dart.privateName(tolerance, "Tolerance.time");
-  var Tolerance_distance = dart.privateName(tolerance, "Tolerance.distance");
-  var __BouncingScrollSimulation__frictionSimulation = dart.privateName(scroll_simulation, "_#BouncingScrollSimulation#_frictionSimulation");
-  var __BouncingScrollSimulation__frictionSimulation_isSet = dart.privateName(scroll_simulation, "_#BouncingScrollSimulation#_frictionSimulation#isSet");
-  var __BouncingScrollSimulation__springSimulation = dart.privateName(scroll_simulation, "_#BouncingScrollSimulation#_springSimulation");
-  var __BouncingScrollSimulation__springSimulation_isSet = dart.privateName(scroll_simulation, "_#BouncingScrollSimulation#_springSimulation#isSet");
-  var __BouncingScrollSimulation__springTime = dart.privateName(scroll_simulation, "_#BouncingScrollSimulation#_springTime");
-  var __BouncingScrollSimulation__springTime_isSet = dart.privateName(scroll_simulation, "_#BouncingScrollSimulation#_springTime#isSet");
-  var _timeOffset = dart.privateName(scroll_simulation, "_timeOffset");
-  var _springSimulation = dart.privateName(scroll_simulation, "_springSimulation");
-  var _underscrollSimulation = dart.privateName(scroll_simulation, "_underscrollSimulation");
-  var _springTime = dart.privateName(scroll_simulation, "_springTime");
-  var _overscrollSimulation = dart.privateName(scroll_simulation, "_overscrollSimulation");
-  var _frictionSimulation = dart.privateName(scroll_simulation, "_frictionSimulation");
-  var _simulation = dart.privateName(scroll_simulation, "_simulation");
-  scroll_simulation.BouncingScrollSimulation = class BouncingScrollSimulation extends simulation.Simulation {
-    get leadingExtent() {
-      return this[leadingExtent$];
+  var top$ = dart.privateName(table_border, "TableBorder.top");
+  var right$ = dart.privateName(table_border, "TableBorder.right");
+  var bottom$ = dart.privateName(table_border, "TableBorder.bottom");
+  var left$ = dart.privateName(table_border, "TableBorder.left");
+  var horizontalInside$ = dart.privateName(table_border, "TableBorder.horizontalInside");
+  var verticalInside$ = dart.privateName(table_border, "TableBorder.verticalInside");
+  var _name = dart.privateName(borders, "_name");
+  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
+  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  table_border.TableBorder = class TableBorder extends core.Object {
+    get top() {
+      return this[top$];
     }
-    set leadingExtent(value) {
-      super.leadingExtent = value;
+    set top(value) {
+      super.top = value;
     }
-    get trailingExtent() {
-      return this[trailingExtent$];
+    get right() {
+      return this[right$];
     }
-    set trailingExtent(value) {
-      super.trailingExtent = value;
+    set right(value) {
+      super.right = value;
     }
-    get spring() {
-      return this[spring$];
+    get bottom() {
+      return this[bottom$];
     }
-    set spring(value) {
-      super.spring = value;
+    set bottom(value) {
+      super.bottom = value;
     }
-    get [_frictionSimulation]() {
-      let t0;
-      return dart.test(this[__BouncingScrollSimulation__frictionSimulation_isSet]) ? (t0 = this[__BouncingScrollSimulation__frictionSimulation], t0) : dart.throw(new _internal.LateError.fieldNI("_frictionSimulation"));
+    get left() {
+      return this[left$];
     }
-    set [_frictionSimulation](t0) {
-      if (t0 == null) dart.nullFailed(I[0], 92, 27, "null");
-      this[__BouncingScrollSimulation__frictionSimulation_isSet] = true;
-      this[__BouncingScrollSimulation__frictionSimulation] = t0;
+    set left(value) {
+      super.left = value;
     }
-    get [_springSimulation]() {
-      let t1;
-      return dart.test(this[__BouncingScrollSimulation__springSimulation_isSet]) ? (t1 = this[__BouncingScrollSimulation__springSimulation], t1) : dart.throw(new _internal.LateError.fieldNI("_springSimulation"));
+    get horizontalInside() {
+      return this[horizontalInside$];
     }
-    set [_springSimulation](t1) {
-      if (t1 == null) dart.nullFailed(I[0], 93, 19, "null");
-      this[__BouncingScrollSimulation__springSimulation_isSet] = true;
-      this[__BouncingScrollSimulation__springSimulation] = t1;
+    set horizontalInside(value) {
+      super.horizontalInside = value;
     }
-    get [_springTime]() {
-      let t2;
-      return dart.test(this[__BouncingScrollSimulation__springTime_isSet]) ? (t2 = this[__BouncingScrollSimulation__springTime], t2) : dart.throw(new _internal.LateError.fieldNI("_springTime"));
+    get verticalInside() {
+      return this[verticalInside$];
     }
-    set [_springTime](t2) {
-      if (t2 == null) dart.nullFailed(I[0], 94, 15, "null");
-      this[__BouncingScrollSimulation__springTime_isSet] = true;
-      this[__BouncingScrollSimulation__springTime] = t2;
+    set verticalInside(value) {
+      super.verticalInside = value;
     }
-    [_underscrollSimulation](x, dx) {
-      if (x == null) dart.nullFailed(I[0], 97, 44, "x");
-      if (dx == null) dart.nullFailed(I[0], 97, 54, "dx");
-      return new spring_simulation.ScrollSpringSimulation.new(this.spring, x, this.leadingExtent, dx);
+    static all(opts) {
+      let color = opts && 'color' in opts ? opts.color : C[2] || CT.C2;
+      if (color == null) dart.nullFailed(I[0], 32, 11, "color");
+      let width = opts && 'width' in opts ? opts.width : 1;
+      if (width == null) dart.nullFailed(I[0], 33, 12, "width");
+      let style = opts && 'style' in opts ? opts.style : C[3] || CT.C3;
+      if (style == null) dart.nullFailed(I[0], 34, 17, "style");
+      let side = new borders.BorderSide.new({color: color, width: width, style: style});
+      return new table_border.TableBorder.new({top: side, right: side, bottom: side, left: side, horizontalInside: side, verticalInside: side});
     }
-    [_overscrollSimulation](x, dx) {
-      if (x == null) dart.nullFailed(I[0], 101, 43, "x");
-      if (dx == null) dart.nullFailed(I[0], 101, 53, "dx");
-      return new spring_simulation.ScrollSpringSimulation.new(this.spring, x, this.trailingExtent, dx);
+    static symmetric(opts) {
+      let inside = opts && 'inside' in opts ? opts.inside : C[0] || CT.C0;
+      if (inside == null) dart.nullFailed(I[0], 43, 16, "inside");
+      let outside = opts && 'outside' in opts ? opts.outside : C[0] || CT.C0;
+      if (outside == null) dart.nullFailed(I[0], 44, 16, "outside");
+      return new table_border.TableBorder.new({top: outside, right: outside, bottom: outside, left: outside, horizontalInside: inside, verticalInside: inside});
     }
-    [_simulation](time) {
-      let t3;
-      if (time == null) dart.nullFailed(I[0], 105, 33, "time");
-      let simulation = null;
-      if (dart.notNull(time) > dart.notNull(this[_springTime])) {
-        this[_timeOffset] = this[_springTime][$isFinite] ? this[_springTime] : 0.0;
-        simulation = this[_springSimulation];
-      } else {
-        this[_timeOffset] = 0.0;
-        simulation = this[_frictionSimulation];
+    get dimensions() {
+      return new edge_insets.EdgeInsets.fromLTRB(this.left.width, this.top.width, this.right.width, this.bottom.width);
+    }
+    get isUniform() {
+      if (!(this.top != null)) dart.assertFailed(null, I[0], 85, 12, "top != null");
+      if (!(this.right != null)) dart.assertFailed(null, I[0], 86, 12, "right != null");
+      if (!(this.bottom != null)) dart.assertFailed(null, I[0], 87, 12, "bottom != null");
+      if (!(this.left != null)) dart.assertFailed(null, I[0], 88, 12, "left != null");
+      if (!(this.horizontalInside != null)) dart.assertFailed(null, I[0], 89, 12, "horizontalInside != null");
+      if (!(this.verticalInside != null)) dart.assertFailed(null, I[0], 90, 12, "verticalInside != null");
+      let topColor = this.top.color;
+      if (!dart.equals(this.right.color, topColor) || !dart.equals(this.bottom.color, topColor) || !dart.equals(this.left.color, topColor) || !dart.equals(this.horizontalInside.color, topColor) || !dart.equals(this.verticalInside.color, topColor)) return false;
+      let topWidth = this.top.width;
+      if (this.right.width != topWidth || this.bottom.width != topWidth || this.left.width != topWidth || this.horizontalInside.width != topWidth || this.verticalInside.width != topWidth) return false;
+      let topStyle = this.top.style;
+      if (this.right.style != topStyle || this.bottom.style != topStyle || this.left.style != topStyle || this.horizontalInside.style != topStyle || this.verticalInside.style != topStyle) return false;
+      return true;
+    }
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 134, 28, "t");
+      return new table_border.TableBorder.new({top: this.top.scale(t), right: this.right.scale(t), bottom: this.bottom.scale(t), left: this.left.scale(t), horizontalInside: this.horizontalInside.scale(t), verticalInside: this.verticalInside.scale(t)});
+    }
+    static lerp(a, b, t) {
+      if (t == null) dart.nullFailed(I[0], 151, 67, "t");
+      if (!(t != null)) dart.assertFailed(null, I[0], 152, 12, "t != null");
+      if (a == null && b == null) return null;
+      if (a == null) return dart.nullCheck(b).scale(t);
+      if (b == null) return a.scale(1.0 - dart.notNull(t));
+      return new table_border.TableBorder.new({top: borders.BorderSide.lerp(a.top, b.top, t), right: borders.BorderSide.lerp(a.right, b.right, t), bottom: borders.BorderSide.lerp(a.bottom, b.bottom, t), left: borders.BorderSide.lerp(a.left, b.left, t), horizontalInside: borders.BorderSide.lerp(a.horizontalInside, b.horizontalInside, t), verticalInside: borders.BorderSide.lerp(a.verticalInside, b.verticalInside, t)});
+    }
+    paint(canvas, rect, opts) {
+      let t0, t0$;
+      if (canvas == null) dart.nullFailed(I[0], 196, 12, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 197, 10, "rect");
+      let rows = opts && 'rows' in opts ? opts.rows : null;
+      if (rows == null) dart.nullFailed(I[0], 198, 31, "rows");
+      let columns = opts && 'columns' in opts ? opts.columns : null;
+      if (columns == null) dart.nullFailed(I[0], 199, 31, "columns");
+      if (!(this.top != null)) dart.assertFailed(null, I[0], 202, 12, "top != null");
+      if (!(this.right != null)) dart.assertFailed(null, I[0], 203, 12, "right != null");
+      if (!(this.bottom != null)) dart.assertFailed(null, I[0], 204, 12, "bottom != null");
+      if (!(this.left != null)) dart.assertFailed(null, I[0], 205, 12, "left != null");
+      if (!(this.horizontalInside != null)) dart.assertFailed(null, I[0], 206, 12, "horizontalInside != null");
+      if (!(this.verticalInside != null)) dart.assertFailed(null, I[0], 207, 12, "verticalInside != null");
+      if (!(canvas != null)) dart.assertFailed(null, I[0], 210, 12, "canvas != null");
+      if (!(rect != null)) dart.assertFailed(null, I[0], 211, 12, "rect != null");
+      if (!(rows != null)) dart.assertFailed(null, I[0], 212, 12, "rows != null");
+      if (!(dart.test(rows[$isEmpty]) || dart.notNull(rows[$first]) >= 0.0 && dart.notNull(rows[$last]) <= dart.notNull(rect.height))) dart.assertFailed(null, I[0], 213, 12, "rows.isEmpty || (rows.first >= 0.0 && rows.last <= rect.height)");
+      if (!(columns != null)) dart.assertFailed(null, I[0], 214, 12, "columns != null");
+      if (!(dart.test(columns[$isEmpty]) || dart.notNull(columns[$first]) >= 0.0 && dart.notNull(columns[$last]) <= dart.notNull(rect.width))) dart.assertFailed(null, I[0], 215, 12, "columns.isEmpty || (columns.first >= 0.0 && columns.last <= rect.width)");
+      if (dart.test(columns[$isNotEmpty]) || dart.test(rows[$isNotEmpty])) {
+        let paint = ui.Paint.new();
+        let path = ui.Path.new();
+        if (dart.test(columns[$isNotEmpty])) {
+          switch (this.verticalInside.style) {
+            case C[3] || CT.C3:
+            {
+              t0 = paint;
+              (() => {
+                t0.color = this.verticalInside.color;
+                t0.strokeWidth = this.verticalInside.width;
+                t0.style = ui.PaintingStyle.stroke;
+                return t0;
+              })();
+              path.reset();
+              for (let x of columns) {
+                path.moveTo(dart.notNull(rect.left) + dart.notNull(x), rect.top);
+                path.lineTo(dart.notNull(rect.left) + dart.notNull(x), rect.bottom);
+              }
+              canvas.drawPath(path, paint);
+              break;
+            }
+            case C[1] || CT.C1:
+            {
+              break;
+            }
+            default:
+            {
+              dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+            }
+          }
+        }
+        if (dart.test(rows[$isNotEmpty])) {
+          switch (this.horizontalInside.style) {
+            case C[3] || CT.C3:
+            {
+              t0$ = paint;
+              (() => {
+                t0$.color = this.horizontalInside.color;
+                t0$.strokeWidth = this.horizontalInside.width;
+                t0$.style = ui.PaintingStyle.stroke;
+                return t0$;
+              })();
+              path.reset();
+              for (let y of rows) {
+                path.moveTo(rect.left, dart.notNull(rect.top) + dart.notNull(y));
+                path.lineTo(rect.right, dart.notNull(rect.top) + dart.notNull(y));
+              }
+              canvas.drawPath(path, paint);
+              break;
+            }
+            case C[1] || CT.C1:
+            {
+              break;
+            }
+            default:
+            {
+              dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+            }
+          }
+        }
       }
-      t3 = simulation;
-      return (() => {
-        t3.tolerance = this.tolerance;
-        return t3;
-      })();
+      borders.paintBorder(canvas, rect, {top: this.top, right: this.right, bottom: this.bottom, left: this.left});
     }
-    x(time) {
-      if (time == null) dart.nullFailed(I[0], 118, 19, "time");
-      return this[_simulation](time).x(dart.notNull(time) - dart.notNull(this[_timeOffset]));
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return table_border.TableBorder.is(other) && dart.equals(other.top, this.top) && dart.equals(other.right, this.right) && dart.equals(other.bottom, this.bottom) && dart.equals(other.left, this.left) && dart.equals(other.horizontalInside, this.horizontalInside) && dart.equals(other.verticalInside, this.verticalInside);
     }
-    dx(time) {
-      if (time == null) dart.nullFailed(I[0], 121, 20, "time");
-      return this[_simulation](time).dx(dart.notNull(time) - dart.notNull(this[_timeOffset]));
-    }
-    isDone(time) {
-      if (time == null) dart.nullFailed(I[0], 124, 22, "time");
-      return this[_simulation](time).isDone(dart.notNull(time) - dart.notNull(this[_timeOffset]));
+    get hashCode() {
+      return ui.hashValues(this.top, this.right, this.bottom, this.left, this.horizontalInside, this.verticalInside);
     }
     toString() {
-      return dart.str(object.objectRuntimeType(this, "BouncingScrollSimulation")) + "(leadingExtent: " + dart.str(this.leadingExtent) + ", trailingExtent: " + dart.str(this.trailingExtent) + ")";
+      return "TableBorder(" + dart.str(this.top) + ", " + dart.str(this.right) + ", " + dart.str(this.bottom) + ", " + dart.str(this.left) + ", " + dart.str(this.horizontalInside) + ", " + dart.str(this.verticalInside) + ")";
     }
   };
-  (scroll_simulation.BouncingScrollSimulation.new = function(opts) {
-    let position = opts && 'position' in opts ? opts.position : null;
-    if (position == null) dart.nullFailed(I[0], 32, 21, "position");
-    let velocity = opts && 'velocity' in opts ? opts.velocity : null;
-    if (velocity == null) dart.nullFailed(I[0], 33, 21, "velocity");
-    let leadingExtent = opts && 'leadingExtent' in opts ? opts.leadingExtent : null;
-    if (leadingExtent == null) dart.nullFailed(I[0], 34, 19, "leadingExtent");
-    let trailingExtent = opts && 'trailingExtent' in opts ? opts.trailingExtent : null;
-    if (trailingExtent == null) dart.nullFailed(I[0], 35, 19, "trailingExtent");
-    let spring = opts && 'spring' in opts ? opts.spring : null;
-    if (spring == null) dart.nullFailed(I[0], 36, 19, "spring");
-    let tolerance = opts && 'tolerance' in opts ? opts.tolerance : C[0] || CT.C0;
-    if (tolerance == null) dart.nullFailed(I[0], 37, 15, "tolerance");
-    this[__BouncingScrollSimulation__frictionSimulation] = null;
-    this[__BouncingScrollSimulation__frictionSimulation_isSet] = false;
-    this[__BouncingScrollSimulation__springSimulation] = null;
-    this[__BouncingScrollSimulation__springSimulation_isSet] = false;
-    this[__BouncingScrollSimulation__springTime] = null;
-    this[__BouncingScrollSimulation__springTime_isSet] = false;
-    this[_timeOffset] = 0.0;
-    this[leadingExtent$] = leadingExtent;
-    this[trailingExtent$] = trailingExtent;
-    this[spring$] = spring;
-    if (!(position != null)) dart.assertFailed(null, I[0], 38, 15, "position != null");
-    if (!(velocity != null)) dart.assertFailed(null, I[0], 39, 15, "velocity != null");
-    if (!(leadingExtent != null)) dart.assertFailed(null, I[0], 40, 15, "leadingExtent != null");
-    if (!(trailingExtent != null)) dart.assertFailed(null, I[0], 41, 15, "trailingExtent != null");
-    if (!(dart.notNull(leadingExtent) <= dart.notNull(trailingExtent))) dart.assertFailed(null, I[0], 42, 15, "leadingExtent <= trailingExtent");
-    if (!(spring != null)) dart.assertFailed(null, I[0], 43, 15, "spring != null");
-    scroll_simulation.BouncingScrollSimulation.__proto__.new.call(this, {tolerance: tolerance});
-    if (dart.notNull(position) < dart.notNull(this.leadingExtent)) {
-      this[_springSimulation] = this[_underscrollSimulation](position, velocity);
-      this[_springTime] = -1 / 0;
-    } else if (dart.notNull(position) > dart.notNull(this.trailingExtent)) {
-      this[_springSimulation] = this[_overscrollSimulation](position, velocity);
-      this[_springTime] = -1 / 0;
-    } else {
-      this[_frictionSimulation] = new friction_simulation.FrictionSimulation.new(0.135, position, velocity);
-      let finalX = this[_frictionSimulation].finalX;
-      if (dart.notNull(velocity) > 0.0 && dart.notNull(finalX) > dart.notNull(this.trailingExtent)) {
-        this[_springTime] = this[_frictionSimulation].timeAtX(this.trailingExtent);
-        this[_springSimulation] = this[_overscrollSimulation](this.trailingExtent, math.min(core.double, this[_frictionSimulation].dx(this[_springTime]), 5000));
-        if (!this[_springTime][$isFinite]) dart.assertFailed(null, I[0], 62, 16, "_springTime.isFinite");
-      } else if (dart.notNull(velocity) < 0.0 && dart.notNull(finalX) < dart.notNull(this.leadingExtent)) {
-        this[_springTime] = this[_frictionSimulation].timeAtX(this.leadingExtent);
-        this[_springSimulation] = this[_underscrollSimulation](this.leadingExtent, math.min(core.double, this[_frictionSimulation].dx(this[_springTime]), 5000));
-        if (!this[_springTime][$isFinite]) dart.assertFailed(null, I[0], 69, 16, "_springTime.isFinite");
-      } else {
-        this[_springTime] = 1 / 0;
-      }
-    }
-    if (!(this[_springTime] != null)) dart.assertFailed(null, I[0], 74, 12, "_springTime != null");
-  }).prototype = scroll_simulation.BouncingScrollSimulation.prototype;
-  dart.addTypeTests(scroll_simulation.BouncingScrollSimulation);
-  dart.addTypeCaches(scroll_simulation.BouncingScrollSimulation);
-  dart.setMethodSignature(scroll_simulation.BouncingScrollSimulation, () => ({
-    __proto__: dart.getMethods(scroll_simulation.BouncingScrollSimulation.__proto__),
-    [_underscrollSimulation]: dart.fnType(simulation.Simulation, [core.double, core.double]),
-    [_overscrollSimulation]: dart.fnType(simulation.Simulation, [core.double, core.double]),
-    [_simulation]: dart.fnType(simulation.Simulation, [core.double]),
-    x: dart.fnType(core.double, [core.double]),
-    dx: dart.fnType(core.double, [core.double]),
-    isDone: dart.fnType(core.bool, [core.double])
+  (table_border.TableBorder.new = function(opts) {
+    let top = opts && 'top' in opts ? opts.top : C[0] || CT.C0;
+    if (top == null) dart.nullFailed(I[0], 20, 10, "top");
+    let right = opts && 'right' in opts ? opts.right : C[0] || CT.C0;
+    if (right == null) dart.nullFailed(I[0], 21, 10, "right");
+    let bottom = opts && 'bottom' in opts ? opts.bottom : C[0] || CT.C0;
+    if (bottom == null) dart.nullFailed(I[0], 22, 10, "bottom");
+    let left = opts && 'left' in opts ? opts.left : C[0] || CT.C0;
+    if (left == null) dart.nullFailed(I[0], 23, 10, "left");
+    let horizontalInside = opts && 'horizontalInside' in opts ? opts.horizontalInside : C[0] || CT.C0;
+    if (horizontalInside == null) dart.nullFailed(I[0], 24, 10, "horizontalInside");
+    let verticalInside = opts && 'verticalInside' in opts ? opts.verticalInside : C[0] || CT.C0;
+    if (verticalInside == null) dart.nullFailed(I[0], 25, 10, "verticalInside");
+    this[top$] = top;
+    this[right$] = right;
+    this[bottom$] = bottom;
+    this[left$] = left;
+    this[horizontalInside$] = horizontalInside;
+    this[verticalInside$] = verticalInside;
+    ;
+  }).prototype = table_border.TableBorder.prototype;
+  dart.addTypeTests(table_border.TableBorder);
+  dart.addTypeCaches(table_border.TableBorder);
+  dart.setMethodSignature(table_border.TableBorder, () => ({
+    __proto__: dart.getMethods(table_border.TableBorder.__proto__),
+    scale: dart.fnType(table_border.TableBorder, [core.double]),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {}, {columns: core.Iterable$(core.double), rows: core.Iterable$(core.double)})
   }));
-  dart.setGetterSignature(scroll_simulation.BouncingScrollSimulation, () => ({
-    __proto__: dart.getGetters(scroll_simulation.BouncingScrollSimulation.__proto__),
-    [_frictionSimulation]: friction_simulation.FrictionSimulation,
-    [_springSimulation]: simulation.Simulation,
-    [_springTime]: core.double
+  dart.setGetterSignature(table_border.TableBorder, () => ({
+    __proto__: dart.getGetters(table_border.TableBorder.__proto__),
+    dimensions: edge_insets.EdgeInsets,
+    isUniform: core.bool
   }));
-  dart.setSetterSignature(scroll_simulation.BouncingScrollSimulation, () => ({
-    __proto__: dart.getSetters(scroll_simulation.BouncingScrollSimulation.__proto__),
-    [_frictionSimulation]: friction_simulation.FrictionSimulation,
-    [_springSimulation]: simulation.Simulation,
-    [_springTime]: core.double
+  dart.setLibraryUri(table_border.TableBorder, I[1]);
+  dart.setFieldSignature(table_border.TableBorder, () => ({
+    __proto__: dart.getFields(table_border.TableBorder.__proto__),
+    top: dart.finalFieldType(borders.BorderSide),
+    right: dart.finalFieldType(borders.BorderSide),
+    bottom: dart.finalFieldType(borders.BorderSide),
+    left: dart.finalFieldType(borders.BorderSide),
+    horizontalInside: dart.finalFieldType(borders.BorderSide),
+    verticalInside: dart.finalFieldType(borders.BorderSide)
   }));
-  dart.setLibraryUri(scroll_simulation.BouncingScrollSimulation, I[1]);
-  dart.setFieldSignature(scroll_simulation.BouncingScrollSimulation, () => ({
-    __proto__: dart.getFields(scroll_simulation.BouncingScrollSimulation.__proto__),
-    leadingExtent: dart.finalFieldType(core.double),
-    trailingExtent: dart.finalFieldType(core.double),
-    spring: dart.finalFieldType(spring_simulation.SpringDescription),
-    [__BouncingScrollSimulation__frictionSimulation]: dart.fieldType(dart.nullable(friction_simulation.FrictionSimulation)),
-    [__BouncingScrollSimulation__frictionSimulation_isSet]: dart.fieldType(core.bool),
-    [__BouncingScrollSimulation__springSimulation]: dart.fieldType(dart.nullable(simulation.Simulation)),
-    [__BouncingScrollSimulation__springSimulation_isSet]: dart.fieldType(core.bool),
-    [__BouncingScrollSimulation__springTime]: dart.fieldType(dart.nullable(core.double)),
-    [__BouncingScrollSimulation__springTime_isSet]: dart.fieldType(core.bool),
-    [_timeOffset]: dart.fieldType(core.double)
-  }));
-  dart.defineExtensionMethods(scroll_simulation.BouncingScrollSimulation, ['toString']);
-  dart.defineLazy(scroll_simulation.BouncingScrollSimulation, {
-    /*scroll_simulation.BouncingScrollSimulation.maxSpringTransferVelocity*/get maxSpringTransferVelocity() {
-      return 5000;
-    }
-  }, false);
-  var position$ = dart.privateName(scroll_simulation, "ClampingScrollSimulation.position");
-  var velocity$ = dart.privateName(scroll_simulation, "ClampingScrollSimulation.velocity");
-  var friction$ = dart.privateName(scroll_simulation, "ClampingScrollSimulation.friction");
-  var __ClampingScrollSimulation__duration = dart.privateName(scroll_simulation, "_#ClampingScrollSimulation#_duration");
-  var __ClampingScrollSimulation__duration_isSet = dart.privateName(scroll_simulation, "_#ClampingScrollSimulation#_duration#isSet");
-  var __ClampingScrollSimulation__distance = dart.privateName(scroll_simulation, "_#ClampingScrollSimulation#_distance");
-  var __ClampingScrollSimulation__distance_isSet = dart.privateName(scroll_simulation, "_#ClampingScrollSimulation#_distance#isSet");
-  var _duration = dart.privateName(scroll_simulation, "_duration");
-  var _splineFlingDuration = dart.privateName(scroll_simulation, "_splineFlingDuration");
-  var _distance = dart.privateName(scroll_simulation, "_distance");
-  var _splineFlingDistance = dart.privateName(scroll_simulation, "_splineFlingDistance");
-  var _splineDeceleration = dart.privateName(scroll_simulation, "_splineDeceleration");
-  scroll_simulation.ClampingScrollSimulation = class ClampingScrollSimulation extends simulation.Simulation {
-    get position() {
-      return this[position$];
-    }
-    set position(value) {
-      super.position = value;
-    }
-    get velocity() {
-      return this[velocity$];
-    }
-    set velocity(value) {
-      super.velocity = value;
-    }
-    get friction() {
-      return this[friction$];
-    }
-    set friction(value) {
-      super.friction = value;
-    }
-    get [_duration]() {
-      let t3;
-      return dart.test(this[__ClampingScrollSimulation__duration_isSet]) ? (t3 = this[__ClampingScrollSimulation__duration], t3) : dart.throw(new _internal.LateError.fieldNI("_duration"));
-    }
-    set [_duration](t3) {
-      if (t3 == null) dart.nullFailed(I[0], 169, 12, "null");
-      this[__ClampingScrollSimulation__duration_isSet] = true;
-      this[__ClampingScrollSimulation__duration] = t3;
-    }
-    get [_distance]() {
-      let t4;
-      return dart.test(this[__ClampingScrollSimulation__distance_isSet]) ? (t4 = this[__ClampingScrollSimulation__distance], t4) : dart.throw(new _internal.LateError.fieldNI("_distance"));
-    }
-    set [_distance](t4) {
-      if (t4 == null) dart.nullFailed(I[0], 170, 15, "null");
-      this[__ClampingScrollSimulation__distance_isSet] = true;
-      this[__ClampingScrollSimulation__distance] = t4;
-    }
-    static _decelerationForFriction(friction) {
-      if (friction == null) dart.nullFailed(I[0], 176, 49, "friction");
-      return 9.80665 * 39.37 * dart.notNull(friction) * 1.0 * 160.0;
-    }
-    [_splineDeceleration](velocity) {
-      if (velocity == null) dart.nullFailed(I[0], 185, 37, "velocity");
-      return math.log(0.35 * velocity[$abs]() / (dart.notNull(this.friction) * dart.notNull(scroll_simulation.ClampingScrollSimulation._decelerationForFriction(0.84))));
-    }
-    [_splineFlingDuration](velocity) {
-      if (velocity == null) dart.nullFailed(I[0], 190, 35, "velocity");
-      let deceleration = this[_splineDeceleration](velocity);
-      return (1000 * math.exp(dart.notNull(deceleration) / (dart.notNull(scroll_simulation.ClampingScrollSimulation._kDecelerationRate) - 1.0)))[$round]();
-    }
-    [_splineFlingDistance](velocity) {
-      if (velocity == null) dart.nullFailed(I[0], 196, 38, "velocity");
-      let l = this[_splineDeceleration](velocity);
-      let decelMinusOne = dart.notNull(scroll_simulation.ClampingScrollSimulation._kDecelerationRate) - 1.0;
-      return dart.notNull(this.friction) * dart.notNull(scroll_simulation.ClampingScrollSimulation._decelerationForFriction(0.84)) * math.exp(dart.notNull(scroll_simulation.ClampingScrollSimulation._kDecelerationRate) / decelMinusOne * dart.notNull(l));
-    }
-    x(time) {
-      if (time == null) dart.nullFailed(I[0], 205, 19, "time");
-      if (time === 0) {
-        return this.position;
-      }
-      let sample = new scroll_simulation._NBSample.new(time, this[_duration]);
-      return dart.notNull(this.position) + dart.notNull(sample.distanceCoef) * dart.notNull(this[_distance]) * this.velocity[$sign];
-    }
-    dx(time) {
-      if (time == null) dart.nullFailed(I[0], 214, 20, "time");
-      if (time === 0) {
-        return this.velocity;
-      }
-      let sample = new scroll_simulation._NBSample.new(time, this[_duration]);
-      return dart.notNull(sample.velocityCoef) * dart.notNull(this[_distance]) / dart.notNull(this[_duration]) * this.velocity[$sign] * 1000.0;
-    }
-    isDone(time) {
-      if (time == null) dart.nullFailed(I[0], 223, 22, "time");
-      return dart.notNull(time) * 1000.0 >= dart.notNull(this[_duration]);
-    }
-  };
-  (scroll_simulation.ClampingScrollSimulation.new = function(opts) {
-    let position = opts && 'position' in opts ? opts.position : null;
-    if (position == null) dart.nullFailed(I[0], 148, 19, "position");
-    let velocity = opts && 'velocity' in opts ? opts.velocity : null;
-    if (velocity == null) dart.nullFailed(I[0], 149, 19, "velocity");
-    let friction = opts && 'friction' in opts ? opts.friction : 0.015;
-    if (friction == null) dart.nullFailed(I[0], 150, 10, "friction");
-    let tolerance = opts && 'tolerance' in opts ? opts.tolerance : C[0] || CT.C0;
-    if (tolerance == null) dart.nullFailed(I[0], 151, 15, "tolerance");
-    this[__ClampingScrollSimulation__duration] = null;
-    this[__ClampingScrollSimulation__duration_isSet] = false;
-    this[__ClampingScrollSimulation__distance] = null;
-    this[__ClampingScrollSimulation__distance_isSet] = false;
-    this[position$] = position;
-    this[velocity$] = velocity;
-    this[friction$] = friction;
-    scroll_simulation.ClampingScrollSimulation.__proto__.new.call(this, {tolerance: tolerance});
-    this[_duration] = this[_splineFlingDuration](this.velocity);
-    this[_distance] = this[_splineFlingDistance](this.velocity);
-  }).prototype = scroll_simulation.ClampingScrollSimulation.prototype;
-  dart.addTypeTests(scroll_simulation.ClampingScrollSimulation);
-  dart.addTypeCaches(scroll_simulation.ClampingScrollSimulation);
-  dart.setMethodSignature(scroll_simulation.ClampingScrollSimulation, () => ({
-    __proto__: dart.getMethods(scroll_simulation.ClampingScrollSimulation.__proto__),
-    [_splineDeceleration]: dart.fnType(core.double, [core.double]),
-    [_splineFlingDuration]: dart.fnType(core.int, [core.double]),
-    [_splineFlingDistance]: dart.fnType(core.double, [core.double]),
-    x: dart.fnType(core.double, [core.double]),
-    dx: dart.fnType(core.double, [core.double]),
-    isDone: dart.fnType(core.bool, [core.double])
-  }));
-  dart.setGetterSignature(scroll_simulation.ClampingScrollSimulation, () => ({
-    __proto__: dart.getGetters(scroll_simulation.ClampingScrollSimulation.__proto__),
-    [_duration]: core.int,
-    [_distance]: core.double
-  }));
-  dart.setSetterSignature(scroll_simulation.ClampingScrollSimulation, () => ({
-    __proto__: dart.getSetters(scroll_simulation.ClampingScrollSimulation.__proto__),
-    [_duration]: core.int,
-    [_distance]: core.double
-  }));
-  dart.setLibraryUri(scroll_simulation.ClampingScrollSimulation, I[1]);
-  dart.setFieldSignature(scroll_simulation.ClampingScrollSimulation, () => ({
-    __proto__: dart.getFields(scroll_simulation.ClampingScrollSimulation.__proto__),
-    position: dart.finalFieldType(core.double),
-    velocity: dart.finalFieldType(core.double),
-    friction: dart.finalFieldType(core.double),
-    [__ClampingScrollSimulation__duration]: dart.fieldType(dart.nullable(core.int)),
-    [__ClampingScrollSimulation__duration_isSet]: dart.fieldType(core.bool),
-    [__ClampingScrollSimulation__distance]: dart.fieldType(dart.nullable(core.double)),
-    [__ClampingScrollSimulation__distance_isSet]: dart.fieldType(core.bool)
-  }));
-  dart.defineLazy(scroll_simulation.ClampingScrollSimulation, {
-    /*scroll_simulation.ClampingScrollSimulation._kDecelerationRate*/get _kDecelerationRate() {
-      return math.log(0.78) / math.log(0.9);
-    }
-  }, false);
-  var ___NBSample__velocityCoef = dart.privateName(scroll_simulation, "_#_NBSample#_velocityCoef");
-  var ___NBSample__velocityCoef_isSet = dart.privateName(scroll_simulation, "_#_NBSample#_velocityCoef#isSet");
-  var ___NBSample__distanceCoef = dart.privateName(scroll_simulation, "_#_NBSample#_distanceCoef");
-  var ___NBSample__distanceCoef_isSet = dart.privateName(scroll_simulation, "_#_NBSample#_distanceCoef#isSet");
-  var _distanceCoef = dart.privateName(scroll_simulation, "_distanceCoef");
-  var _velocityCoef = dart.privateName(scroll_simulation, "_velocityCoef");
-  scroll_simulation._NBSample = class _NBSample extends core.Object {
-    get [_velocityCoef]() {
-      let t5;
-      return dart.test(this[___NBSample__velocityCoef_isSet]) ? (t5 = this[___NBSample__velocityCoef], t5) : dart.throw(new _internal.LateError.fieldNI("_velocityCoef"));
-    }
-    set [_velocityCoef](t5) {
-      if (t5 == null) dart.nullFailed(I[0], 245, 15, "null");
-      this[___NBSample__velocityCoef_isSet] = true;
-      this[___NBSample__velocityCoef] = t5;
-    }
-    get velocityCoef() {
-      return this[_velocityCoef];
-    }
-    get [_distanceCoef]() {
-      let t6;
-      return dart.test(this[___NBSample__distanceCoef_isSet]) ? (t6 = this[___NBSample__distanceCoef], t6) : dart.throw(new _internal.LateError.fieldNI("_distanceCoef"));
-    }
-    set [_distanceCoef](t6) {
-      if (t6 == null) dart.nullFailed(I[0], 248, 15, "null");
-      this[___NBSample__distanceCoef_isSet] = true;
-      this[___NBSample__distanceCoef] = t6;
-    }
-    get distanceCoef() {
-      return this[_distanceCoef];
-    }
-  };
-  (scroll_simulation._NBSample.new = function(time, duration) {
-    if (time == null) dart.nullFailed(I[0], 229, 20, "time");
-    if (duration == null) dart.nullFailed(I[0], 229, 30, "duration");
-    this[___NBSample__velocityCoef] = null;
-    this[___NBSample__velocityCoef_isSet] = false;
-    this[___NBSample__distanceCoef] = null;
-    this[___NBSample__distanceCoef_isSet] = false;
-    let t = dart.notNull(time) * 1000.0 / dart.notNull(duration);
-    let index = (100 * t)[$clamp](0, 100)[$round]();
-    this[_distanceCoef] = 1.0;
-    this[_velocityCoef] = 0.0;
-    if (index < 100) {
-      let tInf = index / 100;
-      let tSup = (index + 1) / 100;
-      let dInf = scroll_simulation._NBSample._splinePosition[$_get](index);
-      let dSup = scroll_simulation._NBSample._splinePosition[$_get](index + 1);
-      this[_velocityCoef] = (dart.notNull(dSup) - dart.notNull(dInf)) / (tSup - tInf);
-      this[_distanceCoef] = dart.notNull(dInf) + (t - tInf) * dart.notNull(this[_velocityCoef]);
-    }
-  }).prototype = scroll_simulation._NBSample.prototype;
-  dart.addTypeTests(scroll_simulation._NBSample);
-  dart.addTypeCaches(scroll_simulation._NBSample);
-  dart.setGetterSignature(scroll_simulation._NBSample, () => ({
-    __proto__: dart.getGetters(scroll_simulation._NBSample.__proto__),
-    [_velocityCoef]: core.double,
-    velocityCoef: core.double,
-    [_distanceCoef]: core.double,
-    distanceCoef: core.double
-  }));
-  dart.setSetterSignature(scroll_simulation._NBSample, () => ({
-    __proto__: dart.getSetters(scroll_simulation._NBSample.__proto__),
-    [_velocityCoef]: core.double,
-    [_distanceCoef]: core.double
-  }));
-  dart.setLibraryUri(scroll_simulation._NBSample, I[1]);
-  dart.setFieldSignature(scroll_simulation._NBSample, () => ({
-    __proto__: dart.getFields(scroll_simulation._NBSample.__proto__),
-    [___NBSample__velocityCoef]: dart.fieldType(dart.nullable(core.double)),
-    [___NBSample__velocityCoef_isSet]: dart.fieldType(core.bool),
-    [___NBSample__distanceCoef]: dart.fieldType(dart.nullable(core.double)),
-    [___NBSample__distanceCoef_isSet]: dart.fieldType(core.bool)
-  }));
-  dart.defineLazy(scroll_simulation._NBSample, {
-    /*scroll_simulation._NBSample._nbSamples*/get _nbSamples() {
-      return 100;
-    },
-    /*scroll_simulation._NBSample._splinePosition*/get _splinePosition() {
-      return T.JSArrayOfdouble().of([0.000022888183591973643, 0.028561000304762274, 0.05705195792956655, 0.08538917797618413, 0.11349556286812107, 0.14129881694635613, 0.16877157254923383, 0.19581093511175632, 0.22239649722992452, 0.24843841866631658, 0.2740024733220569, 0.298967680744136, 0.32333234658228116, 0.34709556909569184, 0.3702249257894571, 0.39272483400399893, 0.41456988647721615, 0.43582889025419114, 0.4564192786416, 0.476410299013587, 0.4957560715637827, 0.5145493169954743, 0.5327205670880077, 0.5502846891191615, 0.5673274324802855, 0.583810881323224, 0.5997478744397482, 0.615194045299478, 0.6301165005270208, 0.6445484042257972, 0.6585198219185201, 0.6720397744233084, 0.6850997688076114, 0.6977281404741683, 0.7099506591298411, 0.7217749311525871, 0.7331784038850426, 0.7442308394229518, 0.7549087205105974, 0.7652471277371271, 0.7752251637549381, 0.7848768260203478, 0.7942056937103814, 0.8032299679689082, 0.8119428702388629, 0.8203713516576219, 0.8285187880808974, 0.8363794492831295, 0.8439768562813565, 0.851322799855549, 0.8584111051351724, 0.8652534074722162, 0.8718525580962131, 0.8782333271742155, 0.8843892099362031, 0.8903155590440985, 0.8960465359221951, 0.9015574505919048, 0.9068736766459904, 0.9119951682409297, 0.9169321898723632, 0.9216747065581234, 0.9262420604674766, 0.9306331858366086, 0.9348476990715433, 0.9389007110754832, 0.9427903495057521, 0.9465220679845756, 0.9500943036519721, 0.9535176728088761, 0.9567898524767604, 0.959924306623116, 0.9629127700159108, 0.9657622101750765, 0.9684818726275105, 0.9710676079044347, 0.9735231939498, 0.9758514437576309, 0.9780599066560445, 0.9801485715370128, 0.9821149805689633, 0.9839677526782791, 0.9857085499421516, 0.9873347811966005, 0.9888547171706613, 0.9902689443512227, 0.9915771042095881, 0.9927840651641069, 0.9938913963715834, 0.9948987305580712, 0.9958114963810524, 0.9966274782266875, 0.997352148697352, 0.9979848677523623, 0.9985285021374979, 0.9989844084453229, 0.9993537595844986, 0.999638729860106, 0.9998403888004533, 0.9999602810470701, 1.0]);
-    }
-  }, false);
-  dart.defineLazy(scroll_simulation, {
-    /*scroll_simulation._inflexion*/get _inflexion() {
-      return 0.35;
-    }
-  }, false);
-  dart.trackLibraries("packages/flutter/src/widgets/scroll_simulation.dart", {
-    "package:flutter/src/widgets/scroll_simulation.dart": scroll_simulation
+  dart.defineExtensionMethods(table_border.TableBorder, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(table_border.TableBorder, ['hashCode']);
+  dart.trackLibraries("packages/flutter/src/rendering/table_border.dart", {
+    "package:flutter/src/rendering/table_border.dart": table_border
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["scroll_simulation.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/widgets/scroll_simulation.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["table_border.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/rendering/table_border.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__scroll_simulation: scroll_simulation
+    src__rendering__table_border: table_border
   };
 }));
 
-//# sourceMappingURL=scroll_simulation.dart.lib.js.map
+//# sourceMappingURL=table_border.dart.lib.js.map

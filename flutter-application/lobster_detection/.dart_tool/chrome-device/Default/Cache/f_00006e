@@ -1,286 +1,246 @@
-define(['dart_sdk'], (function load__packages__flutter__src__gestures__lsq_solver_dart(dart_sdk) {
+define(['dart_sdk', 'packages/flutter/src/gestures/events.dart'], (function load__packages__flutter__src__gestures__resampler_dart(dart_sdk, packages__flutter__src__gestures__events$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _native_typed_data = dart_sdk._native_typed_data;
-  const math = dart_sdk.math;
-  const _internal = dart_sdk._internal;
+  const collection = dart_sdk.collection;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  var lsq_solver = Object.create(dart.library);
-  var $_get = dartx._get;
-  var $_set = dartx._set;
-  var $length = dartx.length;
+  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
+  var resampler = Object.create(dart.library);
+  var $toDouble = dartx.toDouble;
+  var $iterator = dartx.iterator;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $first = dartx.first;
   dart._checkModuleNullSafetyMode(false);
+  var T = {
+    ListQueueOfPointerEvent: () => (T.ListQueueOfPointerEvent = dart.constFn(collection.ListQueue$(events.PointerEvent)))()
+  };
   const CT = Object.create({
     _: () => (C, CT)
   });
   var I = [
-    "file:///C:/dev/flutter/packages/flutter/lib/src/gestures/lsq_solver.dart",
-    "package:flutter/src/gestures/lsq_solver.dart"
+    "file:///C:/dev/flutter/packages/flutter/lib/src/gestures/resampler.dart",
+    "package:flutter/src/gestures/resampler.dart"
   ];
-  var _offset = dart.privateName(lsq_solver, "_offset");
-  var _length = dart.privateName(lsq_solver, "_length");
-  var _elements = dart.privateName(lsq_solver, "_elements");
-  lsq_solver._Vector = class _Vector extends core.Object {
-    _get(i) {
-      if (i == null) dart.nullFailed(I[0], 29, 26, "i");
-      return this[_elements][$_get](dart.notNull(i) + dart.notNull(this[_offset]));
+  var _queuedEvents = dart.privateName(resampler, "_queuedEvents");
+  var _last = dart.privateName(resampler, "_last");
+  var _next = dart.privateName(resampler, "_next");
+  var _position = dart.privateName(resampler, "_position");
+  var _isTracked = dart.privateName(resampler, "_isTracked");
+  var _isDown = dart.privateName(resampler, "_isDown");
+  var _pointerIdentifier = dart.privateName(resampler, "_pointerIdentifier");
+  var _toHoverEvent = dart.privateName(resampler, "_toHoverEvent");
+  var _toMoveEvent = dart.privateName(resampler, "_toMoveEvent");
+  var _toMoveOrHoverEvent = dart.privateName(resampler, "_toMoveOrHoverEvent");
+  var _positionAt = dart.privateName(resampler, "_positionAt");
+  var _processPointerEvents = dart.privateName(resampler, "_processPointerEvents");
+  var _dequeueAndSampleNonHoverOrMovePointerEventsUntil = dart.privateName(resampler, "_dequeueAndSampleNonHoverOrMovePointerEventsUntil");
+  var _samplePointerPosition = dart.privateName(resampler, "_samplePointerPosition");
+  resampler.PointerEventResampler = class PointerEventResampler extends core.Object {
+    [_toHoverEvent](event, position, delta, timeStamp) {
+      if (event == null) dart.nullFailed(I[0], 47, 18, "event");
+      if (position == null) dart.nullFailed(I[0], 48, 12, "position");
+      if (delta == null) dart.nullFailed(I[0], 49, 12, "delta");
+      if (timeStamp == null) dart.nullFailed(I[0], 50, 14, "timeStamp");
+      return new events.PointerHoverEvent.new({timeStamp: timeStamp, kind: event.kind, device: event.device, position: position, delta: delta, buttons: event.buttons, obscured: event.obscured, pressureMin: event.pressureMin, pressureMax: event.pressureMax, distance: event.distance, distanceMax: event.distanceMax, size: event.size, radiusMajor: event.radiusMajor, radiusMinor: event.radiusMinor, radiusMin: event.radiusMin, radiusMax: event.radiusMax, orientation: event.orientation, tilt: event.tilt, synthesized: event.synthesized, embedderId: event.embedderId});
     }
-    _set(i, value$) {
-      let value = value$;
-      if (i == null) dart.nullFailed(I[0], 30, 25, "i");
-      if (value == null) dart.nullFailed(I[0], 30, 35, "value");
-      this[_elements][$_set](dart.notNull(i) + dart.notNull(this[_offset]), value);
-      return value$;
+    [_toMoveEvent](event, position, delta, pointerIdentifier, timeStamp) {
+      if (event == null) dart.nullFailed(I[0], 77, 18, "event");
+      if (position == null) dart.nullFailed(I[0], 78, 12, "position");
+      if (delta == null) dart.nullFailed(I[0], 79, 12, "delta");
+      if (pointerIdentifier == null) dart.nullFailed(I[0], 80, 9, "pointerIdentifier");
+      if (timeStamp == null) dart.nullFailed(I[0], 81, 14, "timeStamp");
+      return new events.PointerMoveEvent.new({timeStamp: timeStamp, pointer: pointerIdentifier, kind: event.kind, device: event.device, position: position, delta: delta, buttons: event.buttons, obscured: event.obscured, pressure: event.pressure, pressureMin: event.pressureMin, pressureMax: event.pressureMax, distanceMax: event.distanceMax, size: event.size, radiusMajor: event.radiusMajor, radiusMinor: event.radiusMinor, radiusMin: event.radiusMin, radiusMax: event.radiusMax, orientation: event.orientation, tilt: event.tilt, platformData: event.platformData, synthesized: event.synthesized, embedderId: event.embedderId});
     }
-    ['*'](a) {
-      if (a == null) dart.nullFailed(I[0], 34, 29, "a");
-      let result = 0.0;
-      for (let i = 0; i < dart.notNull(this[_length]); i = i + 1)
-        result = result + dart.notNull(this._get(i)) * dart.notNull(a._get(i));
-      return result;
+    [_toMoveOrHoverEvent](event, position, delta, pointerIdentifier, timeStamp, isDown) {
+      if (event == null) dart.nullFailed(I[0], 110, 18, "event");
+      if (position == null) dart.nullFailed(I[0], 111, 12, "position");
+      if (delta == null) dart.nullFailed(I[0], 112, 12, "delta");
+      if (pointerIdentifier == null) dart.nullFailed(I[0], 113, 9, "pointerIdentifier");
+      if (timeStamp == null) dart.nullFailed(I[0], 114, 14, "timeStamp");
+      if (isDown == null) dart.nullFailed(I[0], 115, 10, "isDown");
+      return dart.test(isDown) ? this[_toMoveEvent](event, position, delta, pointerIdentifier, timeStamp) : this[_toHoverEvent](event, position, delta, timeStamp);
     }
-    norm() {
-      return math.sqrt(this['*'](this));
+    [_positionAt](sampleTime) {
+      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8, t0$9;
+      if (sampleTime == null) dart.nullFailed(I[0], 121, 31, "sampleTime");
+      let x = (t0$ = (t0 = this[_next], t0 == null ? null : t0.position.dx), t0$ == null ? 0.0 : t0$);
+      let y = (t0$1 = (t0$0 = this[_next], t0$0 == null ? null : t0$0.position.dy), t0$1 == null ? 0.0 : t0$1);
+      let nextTimeStamp = (t0$3 = (t0$2 = this[_next], t0$2 == null ? null : t0$2.timeStamp), t0$3 == null ? core.Duration.zero : t0$3);
+      let lastTimeStamp = (t0$5 = (t0$4 = this[_last], t0$4 == null ? null : t0$4.timeStamp), t0$5 == null ? core.Duration.zero : t0$5);
+      if (dart.test(nextTimeStamp['>'](sampleTime)) && dart.test(nextTimeStamp['>'](lastTimeStamp))) {
+        let interval = nextTimeStamp['-'](lastTimeStamp).inMicroseconds[$toDouble]();
+        let scalar = sampleTime['-'](lastTimeStamp).inMicroseconds[$toDouble]() / interval;
+        let lastX = (t0$7 = (t0$6 = this[_last], t0$6 == null ? null : t0$6.position.dx), t0$7 == null ? 0.0 : t0$7);
+        let lastY = (t0$9 = (t0$8 = this[_last], t0$8 == null ? null : t0$8.position.dy), t0$9 == null ? 0.0 : t0$9);
+        x = dart.notNull(lastX) + (dart.notNull(x) - dart.notNull(lastX)) * scalar;
+        y = dart.notNull(lastY) + (dart.notNull(y) - dart.notNull(lastY)) * scalar;
+      }
+      return new ui.Offset.new(x, y);
+    }
+    [_processPointerEvents](sampleTime) {
+      let t0, t0$;
+      if (sampleTime == null) dart.nullFailed(I[0], 142, 39, "sampleTime");
+      let it = this[_queuedEvents][$iterator];
+      while (dart.test(it.moveNext())) {
+        let event = it.current;
+        if (dart.test(event.timeStamp['<='](sampleTime)) || this[_last] == null) {
+          this[_last] = event;
+          this[_next] = event;
+          continue;
+        }
+        let nextTimeStamp = (t0$ = (t0 = this[_next], t0 == null ? null : t0.timeStamp), t0$ == null ? core.Duration.zero : t0$);
+        if (dart.test(nextTimeStamp['<'](sampleTime))) {
+          this[_next] = event;
+          break;
+        }
+      }
+    }
+    [_dequeueAndSampleNonHoverOrMovePointerEventsUntil](sampleTime, nextSampleTime, callback) {
+      if (sampleTime == null) dart.nullFailed(I[0], 166, 16, "sampleTime");
+      if (nextSampleTime == null) dart.nullFailed(I[0], 167, 16, "nextSampleTime");
+      if (callback == null) dart.nullFailed(I[0], 168, 27, "callback");
+      let endTime = sampleTime;
+      let it = this[_queuedEvents][$iterator];
+      while (dart.test(it.moveNext())) {
+        let event = it.current;
+        if (dart.test(event.timeStamp['>'](sampleTime))) {
+          if (dart.test(event.timeStamp['>='](nextSampleTime))) {
+            break;
+          }
+          if (events.PointerUpEvent.is(event) || events.PointerRemovedEvent.is(event)) {
+            endTime = event.timeStamp;
+            continue;
+          }
+          if (!events.PointerMoveEvent.is(event) && !events.PointerHoverEvent.is(event)) {
+            break;
+          }
+        }
+      }
+      while (dart.test(this[_queuedEvents][$isNotEmpty])) {
+        let event = this[_queuedEvents][$first];
+        if (dart.test(event.timeStamp['>'](endTime))) {
+          break;
+        }
+        let wasTracked = this[_isTracked];
+        let wasDown = this[_isDown];
+        this[_isTracked] = !events.PointerRemovedEvent.is(event);
+        this[_isDown] = event.down;
+        let position = this[_positionAt](sampleTime);
+        if (dart.test(this[_isTracked]) && !dart.test(wasTracked)) {
+          this[_position] = position;
+        }
+        let pointerIdentifier = event.pointer;
+        if (!(!dart.test(wasDown) || this[_pointerIdentifier] == pointerIdentifier)) dart.assertFailed(null, I[0], 226, 14, "!wasDown || _pointerIdentifier == pointerIdentifier");
+        this[_pointerIdentifier] = pointerIdentifier;
+        if (!events.PointerMoveEvent.is(event) && !events.PointerHoverEvent.is(event)) {
+          if (!dart.equals(position, this[_position])) {
+            let delta = position['-'](this[_position]);
+            callback(this[_toMoveOrHoverEvent](event, position, delta, this[_pointerIdentifier], sampleTime, wasDown));
+            this[_position] = position;
+          }
+          callback(event.copyWith({position: position, delta: ui.Offset.zero, pointer: pointerIdentifier, timeStamp: sampleTime}));
+        }
+        this[_queuedEvents].removeFirst();
+      }
+    }
+    [_samplePointerPosition](sampleTime, callback) {
+      if (sampleTime == null) dart.nullFailed(I[0], 254, 16, "sampleTime");
+      if (callback == null) dart.nullFailed(I[0], 255, 27, "callback");
+      let position = this[_positionAt](sampleTime);
+      let next = this[_next];
+      if (!dart.equals(position, this[_position]) && next != null) {
+        let delta = position['-'](this[_position]);
+        callback(this[_toMoveOrHoverEvent](next, position, delta, this[_pointerIdentifier], sampleTime, this[_isDown]));
+        this[_position] = position;
+      }
+    }
+    addEvent(event) {
+      if (event == null) dart.nullFailed(I[0], 270, 30, "event");
+      this[_queuedEvents].add(event);
+    }
+    sample(sampleTime, nextSampleTime, callback) {
+      if (sampleTime == null) dart.nullFailed(I[0], 286, 14, "sampleTime");
+      if (nextSampleTime == null) dart.nullFailed(I[0], 287, 14, "nextSampleTime");
+      if (callback == null) dart.nullFailed(I[0], 288, 25, "callback");
+      this[_processPointerEvents](sampleTime);
+      this[_dequeueAndSampleNonHoverOrMovePointerEventsUntil](sampleTime, nextSampleTime, callback);
+      if (dart.test(this[_isTracked])) {
+        this[_samplePointerPosition](sampleTime, callback);
+      }
+    }
+    stop(callback) {
+      if (callback == null) dart.nullFailed(I[0], 305, 33, "callback");
+      while (dart.test(this[_queuedEvents][$isNotEmpty])) {
+        callback(this[_queuedEvents].removeFirst());
+      }
+      this[_pointerIdentifier] = 0;
+      this[_isDown] = false;
+      this[_isTracked] = false;
+      this[_position] = ui.Offset.zero;
+      this[_next] = null;
+      this[_last] = null;
+    }
+    get hasPendingEvents() {
+      return this[_queuedEvents][$isNotEmpty];
+    }
+    get isTracked() {
+      return this[_isTracked];
+    }
+    get isDown() {
+      return this[_isDown];
     }
   };
-  (lsq_solver._Vector.new = function(size) {
-    if (size == null) dart.nullFailed(I[0], 13, 15, "size");
-    this[_offset] = 0;
-    this[_length] = size;
-    this[_elements] = _native_typed_data.NativeFloat64List.new(size);
+  (resampler.PointerEventResampler.new = function() {
+    this[_queuedEvents] = new (T.ListQueueOfPointerEvent()).new();
+    this[_last] = null;
+    this[_next] = null;
+    this[_position] = ui.Offset.zero;
+    this[_isTracked] = false;
+    this[_isDown] = false;
+    this[_pointerIdentifier] = 0;
     ;
-  }).prototype = lsq_solver._Vector.prototype;
-  (lsq_solver._Vector.fromVOL = function(values, offset, length) {
-    if (values == null) dart.nullFailed(I[0], 18, 32, "values");
-    if (offset == null) dart.nullFailed(I[0], 18, 44, "offset");
-    if (length == null) dart.nullFailed(I[0], 18, 56, "length");
-    this[_offset] = offset;
-    this[_length] = length;
-    this[_elements] = values;
-    ;
-  }).prototype = lsq_solver._Vector.prototype;
-  dart.addTypeTests(lsq_solver._Vector);
-  dart.addTypeCaches(lsq_solver._Vector);
-  dart.setMethodSignature(lsq_solver._Vector, () => ({
-    __proto__: dart.getMethods(lsq_solver._Vector.__proto__),
-    _get: dart.fnType(core.double, [core.int]),
-    _set: dart.fnType(dart.void, [core.int, core.double]),
-    '*': dart.fnType(core.double, [lsq_solver._Vector]),
-    norm: dart.fnType(core.double, [])
+  }).prototype = resampler.PointerEventResampler.prototype;
+  dart.addTypeTests(resampler.PointerEventResampler);
+  dart.addTypeCaches(resampler.PointerEventResampler);
+  dart.setMethodSignature(resampler.PointerEventResampler, () => ({
+    __proto__: dart.getMethods(resampler.PointerEventResampler.__proto__),
+    [_toHoverEvent]: dart.fnType(events.PointerEvent, [events.PointerEvent, ui.Offset, ui.Offset, core.Duration]),
+    [_toMoveEvent]: dart.fnType(events.PointerEvent, [events.PointerEvent, ui.Offset, ui.Offset, core.int, core.Duration]),
+    [_toMoveOrHoverEvent]: dart.fnType(events.PointerEvent, [events.PointerEvent, ui.Offset, ui.Offset, core.int, core.Duration, core.bool]),
+    [_positionAt]: dart.fnType(ui.Offset, [core.Duration]),
+    [_processPointerEvents]: dart.fnType(dart.void, [core.Duration]),
+    [_dequeueAndSampleNonHoverOrMovePointerEventsUntil]: dart.fnType(dart.void, [core.Duration, core.Duration, dart.fnType(dart.void, [events.PointerEvent])]),
+    [_samplePointerPosition]: dart.fnType(dart.void, [core.Duration, dart.fnType(dart.void, [events.PointerEvent])]),
+    addEvent: dart.fnType(dart.void, [events.PointerEvent]),
+    sample: dart.fnType(dart.void, [core.Duration, core.Duration, dart.fnType(dart.void, [events.PointerEvent])]),
+    stop: dart.fnType(dart.void, [dart.fnType(dart.void, [events.PointerEvent])])
   }));
-  dart.setLibraryUri(lsq_solver._Vector, I[1]);
-  dart.setFieldSignature(lsq_solver._Vector, () => ({
-    __proto__: dart.getFields(lsq_solver._Vector.__proto__),
-    [_offset]: dart.finalFieldType(core.int),
-    [_length]: dart.finalFieldType(core.int),
-    [_elements]: dart.finalFieldType(core.List$(core.double))
+  dart.setGetterSignature(resampler.PointerEventResampler, () => ({
+    __proto__: dart.getGetters(resampler.PointerEventResampler.__proto__),
+    hasPendingEvents: core.bool,
+    isTracked: core.bool,
+    isDown: core.bool
   }));
-  var _columns = dart.privateName(lsq_solver, "_columns");
-  lsq_solver._Matrix = class _Matrix extends core.Object {
-    get(row, col) {
-      if (row == null) dart.nullFailed(I[0], 53, 18, "row");
-      if (col == null) dart.nullFailed(I[0], 53, 27, "col");
-      return this[_elements][$_get](dart.notNull(row) * dart.notNull(this[_columns]) + dart.notNull(col));
-    }
-    set(row, col, value) {
-      if (row == null) dart.nullFailed(I[0], 54, 16, "row");
-      if (col == null) dart.nullFailed(I[0], 54, 25, "col");
-      if (value == null) dart.nullFailed(I[0], 54, 37, "value");
-      this[_elements][$_set](dart.notNull(row) * dart.notNull(this[_columns]) + dart.notNull(col), value);
-    }
-    getRow(row) {
-      if (row == null) dart.nullFailed(I[0], 58, 22, "row");
-      return new lsq_solver._Vector.fromVOL(this[_elements], dart.notNull(row) * dart.notNull(this[_columns]), this[_columns]);
-    }
-  };
-  (lsq_solver._Matrix.new = function(rows, cols) {
-    if (rows == null) dart.nullFailed(I[0], 46, 15, "rows");
-    if (cols == null) dart.nullFailed(I[0], 46, 25, "cols");
-    this[_columns] = cols;
-    this[_elements] = _native_typed_data.NativeFloat64List.new(dart.notNull(rows) * dart.notNull(cols));
-    ;
-  }).prototype = lsq_solver._Matrix.prototype;
-  dart.addTypeTests(lsq_solver._Matrix);
-  dart.addTypeCaches(lsq_solver._Matrix);
-  dart.setMethodSignature(lsq_solver._Matrix, () => ({
-    __proto__: dart.getMethods(lsq_solver._Matrix.__proto__),
-    get: dart.fnType(core.double, [core.int, core.int]),
-    set: dart.fnType(dart.void, [core.int, core.int, core.double]),
-    getRow: dart.fnType(lsq_solver._Vector, [core.int])
+  dart.setLibraryUri(resampler.PointerEventResampler, I[1]);
+  dart.setFieldSignature(resampler.PointerEventResampler, () => ({
+    __proto__: dart.getFields(resampler.PointerEventResampler.__proto__),
+    [_queuedEvents]: dart.finalFieldType(collection.Queue$(events.PointerEvent)),
+    [_last]: dart.fieldType(dart.nullable(events.PointerEvent)),
+    [_next]: dart.fieldType(dart.nullable(events.PointerEvent)),
+    [_position]: dart.fieldType(ui.Offset),
+    [_isTracked]: dart.fieldType(core.bool),
+    [_isDown]: dart.fieldType(core.bool),
+    [_pointerIdentifier]: dart.fieldType(core.int)
   }));
-  dart.setLibraryUri(lsq_solver._Matrix, I[1]);
-  dart.setFieldSignature(lsq_solver._Matrix, () => ({
-    __proto__: dart.getFields(lsq_solver._Matrix.__proto__),
-    [_columns]: dart.finalFieldType(core.int),
-    [_elements]: dart.finalFieldType(core.List$(core.double))
-  }));
-  var coefficients = dart.privateName(lsq_solver, "PolynomialFit.coefficients");
-  var __PolynomialFit_confidence = dart.privateName(lsq_solver, "_#PolynomialFit#confidence");
-  var __PolynomialFit_confidence_isSet = dart.privateName(lsq_solver, "_#PolynomialFit#confidence#isSet");
-  lsq_solver.PolynomialFit = class PolynomialFit extends core.Object {
-    get coefficients() {
-      return this[coefficients];
-    }
-    set coefficients(value) {
-      super.coefficients = value;
-    }
-    get confidence() {
-      let t0;
-      return dart.test(this[__PolynomialFit_confidence_isSet]) ? (t0 = this[__PolynomialFit_confidence], t0) : dart.throw(new _internal.LateError.fieldNI("confidence"));
-    }
-    set confidence(t0) {
-      if (t0 == null) dart.nullFailed(I[0], 78, 15, "null");
-      this[__PolynomialFit_confidence_isSet] = true;
-      this[__PolynomialFit_confidence] = t0;
-    }
-  };
-  (lsq_solver.PolynomialFit.new = function(degree) {
-    if (degree == null) dart.nullFailed(I[0], 70, 21, "degree");
-    this[__PolynomialFit_confidence] = null;
-    this[__PolynomialFit_confidence_isSet] = false;
-    this[coefficients] = _native_typed_data.NativeFloat64List.new(dart.notNull(degree) + 1);
-    ;
-  }).prototype = lsq_solver.PolynomialFit.prototype;
-  dart.addTypeTests(lsq_solver.PolynomialFit);
-  dart.addTypeCaches(lsq_solver.PolynomialFit);
-  dart.setGetterSignature(lsq_solver.PolynomialFit, () => ({
-    __proto__: dart.getGetters(lsq_solver.PolynomialFit.__proto__),
-    confidence: core.double
-  }));
-  dart.setSetterSignature(lsq_solver.PolynomialFit, () => ({
-    __proto__: dart.getSetters(lsq_solver.PolynomialFit.__proto__),
-    confidence: core.double
-  }));
-  dart.setLibraryUri(lsq_solver.PolynomialFit, I[1]);
-  dart.setFieldSignature(lsq_solver.PolynomialFit, () => ({
-    __proto__: dart.getFields(lsq_solver.PolynomialFit.__proto__),
-    coefficients: dart.finalFieldType(core.List$(core.double)),
-    [__PolynomialFit_confidence]: dart.fieldType(dart.nullable(core.double)),
-    [__PolynomialFit_confidence_isSet]: dart.fieldType(core.bool)
-  }));
-  var x$ = dart.privateName(lsq_solver, "LeastSquaresSolver.x");
-  var y$ = dart.privateName(lsq_solver, "LeastSquaresSolver.y");
-  var w$ = dart.privateName(lsq_solver, "LeastSquaresSolver.w");
-  lsq_solver.LeastSquaresSolver = class LeastSquaresSolver extends core.Object {
-    get x() {
-      return this[x$];
-    }
-    set x(value) {
-      super.x = value;
-    }
-    get y() {
-      return this[y$];
-    }
-    set y(value) {
-      super.y = value;
-    }
-    get w() {
-      return this[w$];
-    }
-    set w(value) {
-      super.w = value;
-    }
-    solve(degree) {
-      let t2, t1, t2$, t1$;
-      if (degree == null) dart.nullFailed(I[0], 102, 28, "degree");
-      if (dart.notNull(degree) > dart.notNull(this.x[$length])) return null;
-      let result = new lsq_solver.PolynomialFit.new(degree);
-      let m = this.x[$length];
-      let n = dart.notNull(degree) + 1;
-      let a = new lsq_solver._Matrix.new(n, m);
-      for (let h = 0; h < dart.notNull(m); h = h + 1) {
-        a.set(0, h, this.w[$_get](h));
-        for (let i = 1; i < n; i = i + 1)
-          a.set(i, h, dart.notNull(a.get(i - 1, h)) * dart.notNull(this.x[$_get](h)));
-      }
-      let q = new lsq_solver._Matrix.new(n, m);
-      let r = new lsq_solver._Matrix.new(n, n);
-      for (let j = 0; j < n; j = j + 1) {
-        for (let h = 0; h < dart.notNull(m); h = h + 1)
-          q.set(j, h, a.get(j, h));
-        for (let i = 0; i < j; i = i + 1) {
-          let dot = q.getRow(j)['*'](q.getRow(i));
-          for (let h = 0; h < dart.notNull(m); h = h + 1)
-            q.set(j, h, dart.notNull(q.get(j, h)) - dart.notNull(dot) * dart.notNull(q.get(i, h)));
-        }
-        let norm = q.getRow(j).norm();
-        if (dart.notNull(norm) < 1e-10) {
-          return null;
-        }
-        let inverseNorm = 1.0 / dart.notNull(norm);
-        for (let h = 0; h < dart.notNull(m); h = h + 1)
-          q.set(j, h, dart.notNull(q.get(j, h)) * inverseNorm);
-        for (let i = 0; i < n; i = i + 1)
-          r.set(j, i, i < j ? 0.0 : q.getRow(j)['*'](a.getRow(i)));
-      }
-      let wy = new lsq_solver._Vector.new(m);
-      for (let h = 0; h < dart.notNull(m); h = h + 1)
-        wy._set(h, dart.notNull(this.y[$_get](h)) * dart.notNull(this.w[$_get](h)));
-      for (let i = n - 1; i >= 0; i = i - 1) {
-        result.coefficients[$_set](i, q.getRow(i)['*'](wy));
-        for (let j = n - 1; j > i; j = j - 1) {
-          t1 = result.coefficients;
-          t2 = i;
-          t1[$_set](t2, dart.notNull(t1[$_get](t2)) - dart.notNull(r.get(i, j)) * dart.notNull(result.coefficients[$_get](j)));
-        }
-        t1$ = result.coefficients;
-        t2$ = i;
-        t1$[$_set](t2$, dart.notNull(t1$[$_get](t2$)) / dart.notNull(r.get(i, i)));
-      }
-      let yMean = 0.0;
-      for (let h = 0; h < dart.notNull(m); h = h + 1)
-        yMean = yMean + dart.notNull(this.y[$_get](h));
-      yMean = yMean / dart.notNull(m);
-      let sumSquaredError = 0.0;
-      let sumSquaredTotal = 0.0;
-      for (let h = 0; h < dart.notNull(m); h = h + 1) {
-        let term = 1.0;
-        let err = dart.notNull(this.y[$_get](h)) - dart.notNull(result.coefficients[$_get](0));
-        for (let i = 1; i < n; i = i + 1) {
-          term = term * dart.notNull(this.x[$_get](h));
-          err = err - term * dart.notNull(result.coefficients[$_get](i));
-        }
-        sumSquaredError = sumSquaredError + dart.notNull(this.w[$_get](h)) * dart.notNull(this.w[$_get](h)) * err * err;
-        let v = dart.notNull(this.y[$_get](h)) - yMean;
-        sumSquaredTotal = sumSquaredTotal + dart.notNull(this.w[$_get](h)) * dart.notNull(this.w[$_get](h)) * v * v;
-      }
-      result.confidence = sumSquaredTotal <= 1e-10 ? 1.0 : 1.0 - sumSquaredError / sumSquaredTotal;
-      return result;
-    }
-  };
-  (lsq_solver.LeastSquaresSolver.new = function(x, y, w) {
-    if (x == null) dart.nullFailed(I[0], 86, 27, "x");
-    if (y == null) dart.nullFailed(I[0], 86, 35, "y");
-    if (w == null) dart.nullFailed(I[0], 86, 43, "w");
-    this[x$] = x;
-    this[y$] = y;
-    this[w$] = w;
-    if (!(x[$length] == y[$length])) dart.assertFailed(null, I[0], 87, 14, "x.length == y.length");
-    if (!(y[$length] == w[$length])) dart.assertFailed(null, I[0], 88, 14, "y.length == w.length");
-    ;
-  }).prototype = lsq_solver.LeastSquaresSolver.prototype;
-  dart.addTypeTests(lsq_solver.LeastSquaresSolver);
-  dart.addTypeCaches(lsq_solver.LeastSquaresSolver);
-  dart.setMethodSignature(lsq_solver.LeastSquaresSolver, () => ({
-    __proto__: dart.getMethods(lsq_solver.LeastSquaresSolver.__proto__),
-    solve: dart.fnType(dart.nullable(lsq_solver.PolynomialFit), [core.int])
-  }));
-  dart.setLibraryUri(lsq_solver.LeastSquaresSolver, I[1]);
-  dart.setFieldSignature(lsq_solver.LeastSquaresSolver, () => ({
-    __proto__: dart.getFields(lsq_solver.LeastSquaresSolver.__proto__),
-    x: dart.finalFieldType(core.List$(core.double)),
-    y: dart.finalFieldType(core.List$(core.double)),
-    w: dart.finalFieldType(core.List$(core.double))
-  }));
-  dart.trackLibraries("packages/flutter/src/gestures/lsq_solver.dart", {
-    "package:flutter/src/gestures/lsq_solver.dart": lsq_solver
+  dart.trackLibraries("packages/flutter/src/gestures/resampler.dart", {
+    "package:flutter/src/gestures/resampler.dart": resampler
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["lsq_solver.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/lsq_solver.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["resampler.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/resampler.dart.lib.js"}');
   // Exports:
   return {
-    src__gestures__lsq_solver: lsq_solver
+    src__gestures__resampler: resampler
   };
 }));
 
-//# sourceMappingURL=lsq_solver.dart.lib.js.map
+//# sourceMappingURL=resampler.dart.lib.js.map

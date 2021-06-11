@@ -1,42 +1,35 @@
-define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__rendering__sliver_multi_box_adaptor_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__foundation__debug$46dart) {
+define(['dart_sdk', 'packages/flutter/src/gestures/velocity_tracker.dart', 'packages/flutter/src/gestures/recognizer.dart', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/gestures/arena.dart', 'packages/vector_math/vector_math_64.dart'], (function load__packages__flutter__src__gestures__scale_dart(dart_sdk, packages__flutter__src__gestures__velocity_tracker$46dart, packages__flutter__src__gestures__recognizer$46dart, packages__flutter__src__gestures__events$46dart, packages__flutter__src__gestures__arena$46dart, packages__vector_math__vector_math_64$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _js_helper = dart_sdk._js_helper;
-  const _interceptors = dart_sdk._interceptors;
-  const _internal = dart_sdk._internal;
   const ui = dart_sdk.ui;
+  const _js_helper = dart_sdk._js_helper;
+  const _internal = dart_sdk._internal;
+  const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const sliver = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  var sliver_multi_box_adaptor = Object.create(dart.library);
-  var $isEmpty = dartx.isEmpty;
-  var $containsValue = dartx.containsValue;
-  var $_get = dartx._get;
-  var $remove = dartx.remove;
-  var $containsKey = dartx.containsKey;
-  var $add = dartx.add;
+  const velocity_tracker = packages__flutter__src__gestures__velocity_tracker$46dart.src__gestures__velocity_tracker;
+  const recognizer = packages__flutter__src__gestures__recognizer$46dart.src__gestures__recognizer;
+  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
+  const arena = packages__flutter__src__gestures__arena$46dart.src__gestures__arena;
+  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
+  var scale = Object.create(dart.library);
   var $_set = dartx._set;
-  var $values = dartx.values;
-  var $forEach = dartx.forEach;
-  var $clear = dartx.clear;
-  var $where = dartx.where;
-  var $toList = dartx.toList;
-  var $isNotEmpty = dartx.isNotEmpty;
+  var $_get = dartx._get;
+  var $add = dartx.add;
+  var $remove = dartx.remove;
+  var $length = dartx.length;
   var $keys = dartx.keys;
-  var $sort = dartx.sort;
+  var $toDouble = dartx.toDouble;
+  var $abs = dartx.abs;
+  var $clear = dartx.clear;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    IdentityMapOfint$RenderBox: () => (T.IdentityMapOfint$RenderBox = dart.constFn(_js_helper.IdentityMap$(core.int, box.RenderBox)))(),
-    JSArrayOfRenderBox: () => (T.JSArrayOfRenderBox = dart.constFn(_interceptors.JSArray$(box.RenderBox)))(),
-    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    RenderBoxN: () => (T.RenderBoxN = dart.constFn(dart.nullable(box.RenderBox)))(),
-    SliverConstraintsTovoid: () => (T.SliverConstraintsTovoid = dart.constFn(dart.fnType(dart.void, [sliver.SliverConstraints])))(),
-    RenderBoxTobool: () => (T.RenderBoxTobool = dart.constFn(dart.fnType(core.bool, [box.RenderBox])))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))()
+    _ScaleStateL: () => (T._ScaleStateL = dart.constFn(dart.legacy(scale._ScaleState)))(),
+    IdentityMapOfint$VelocityTracker: () => (T.IdentityMapOfint$VelocityTracker = dart.constFn(_js_helper.IdentityMap$(core.int, velocity_tracker.VelocityTracker)))(),
+    IdentityMapOfint$Offset: () => (T.IdentityMapOfint$Offset = dart.constFn(_js_helper.IdentityMap$(core.int, ui.Offset)))(),
+    JSArrayOfint: () => (T.JSArrayOfint = dart.constFn(_interceptors.JSArray$(core.int)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -44,686 +37,800 @@ define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutt
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.horizontal",
+        __proto__: scale._ScaleState.prototype,
+        [_name$]: "_ScaleState.ready",
         index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.vertical",
+        __proto__: scale._ScaleState.prototype,
+        [_name$]: "_ScaleState.possible",
         index: 1
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: -1,
-        [OffsetBase__dx]: 0
+        __proto__: scale._ScaleState.prototype,
+        [_name$]: "_ScaleState.accepted",
+        index: 2
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: 1
+        __proto__: scale._ScaleState.prototype,
+        [_name$]: "_ScaleState.started",
+        index: 3
       });
     },
     get C4() {
-      return C[4] = dart.const({
-        __proto__: basic_types.AxisDirection.prototype,
-        [_name]: "AxisDirection.up",
-        index: 0
-      });
+      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], T._ScaleStateL());
     },
     get C5() {
       return C[5] = dart.const({
         __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 1,
+        [OffsetBase__dy]: 0,
         [OffsetBase__dx]: 0
       });
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: basic_types.AxisDirection.prototype,
-        [_name]: "AxisDirection.right",
-        index: 1
+        __proto__: velocity_tracker.Velocity.prototype,
+        [Velocity_pixelsPerSecond]: C[5] || CT.C5
       });
     },
     get C7() {
       return C[7] = dart.const({
-        __proto__: basic_types.AxisDirection.prototype,
-        [_name]: "AxisDirection.down",
-        index: 2
-      });
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: ui.Offset.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: -1
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: basic_types.AxisDirection.prototype,
-        [_name]: "AxisDirection.left",
-        index: 3
+        __proto__: recognizer.DragStartBehavior.prototype,
+        [_name]: "DragStartBehavior.down",
+        index: 0
       });
     }
   }, false);
-  var C = Array(10).fill(void 0);
+  var C = Array(8).fill(void 0);
   var I = [
-    "package:flutter/src/rendering/sliver_multi_box_adaptor.dart",
-    "file:///C:/dev/flutter/packages/flutter/lib/src/rendering/sliver_multi_box_adaptor.dart"
+    "file:///C:/dev/flutter/packages/flutter/lib/src/gestures/scale.dart",
+    "package:flutter/src/gestures/scale.dart"
   ];
-  sliver_multi_box_adaptor.RenderSliverBoxChildManager = class RenderSliverBoxChildManager extends core.Object {
-    didStartLayout() {
-    }
-    didFinishLayout() {
-    }
-    debugAssertChildListLocked() {
-      return true;
-    }
-  };
-  (sliver_multi_box_adaptor.RenderSliverBoxChildManager.new = function() {
-    ;
-  }).prototype = sliver_multi_box_adaptor.RenderSliverBoxChildManager.prototype;
-  dart.addTypeTests(sliver_multi_box_adaptor.RenderSliverBoxChildManager);
-  dart.addTypeCaches(sliver_multi_box_adaptor.RenderSliverBoxChildManager);
-  dart.setMethodSignature(sliver_multi_box_adaptor.RenderSliverBoxChildManager, () => ({
-    __proto__: dart.getMethods(sliver_multi_box_adaptor.RenderSliverBoxChildManager.__proto__),
-    didStartLayout: dart.fnType(dart.void, []),
-    didFinishLayout: dart.fnType(dart.void, []),
-    debugAssertChildListLocked: dart.fnType(core.bool, [])
-  }));
-  dart.setLibraryUri(sliver_multi_box_adaptor.RenderSliverBoxChildManager, I[0]);
-  var keepAlive = dart.privateName(sliver_multi_box_adaptor, "KeepAliveParentDataMixin.keepAlive");
-  sliver_multi_box_adaptor.KeepAliveParentDataMixin = class KeepAliveParentDataMixin extends core.Object {};
-  sliver_multi_box_adaptor.KeepAliveParentDataMixin[dart.mixinOn] = Object => class KeepAliveParentDataMixin extends Object {
-    get keepAlive() {
-      return this[keepAlive];
-    }
-    set keepAlive(value) {
-      this[keepAlive] = value;
-    }
-  };
-  (sliver_multi_box_adaptor.KeepAliveParentDataMixin[dart.mixinNew] = function() {
-    this[keepAlive] = false;
-  }).prototype = sliver_multi_box_adaptor.KeepAliveParentDataMixin.prototype;
-  dart.addTypeTests(sliver_multi_box_adaptor.KeepAliveParentDataMixin);
-  dart.addTypeCaches(sliver_multi_box_adaptor.KeepAliveParentDataMixin);
-  sliver_multi_box_adaptor.KeepAliveParentDataMixin[dart.implements] = () => [object.ParentData, core.Object];
-  dart.setLibraryUri(sliver_multi_box_adaptor.KeepAliveParentDataMixin, I[0]);
-  dart.setFieldSignature(sliver_multi_box_adaptor.KeepAliveParentDataMixin, () => ({
-    __proto__: dart.getFields(sliver_multi_box_adaptor.KeepAliveParentDataMixin.__proto__),
-    keepAlive: dart.fieldType(core.bool)
-  }));
-  sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin = class RenderSliverWithKeepAliveMixin extends core.Object {};
-  sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin[dart.mixinOn] = Object => class RenderSliverWithKeepAliveMixin extends Object {
-    setupParentData(child) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[1], 138, 37, "child");
-      if (!sliver_multi_box_adaptor.KeepAliveParentDataMixin.is(child.parentData)) dart.assertFailed(null, I[1], 139, 12, "child.parentData is KeepAliveParentDataMixin");
-    }
-  };
-  (sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin[dart.mixinNew] = function() {
-  }).prototype = sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin.prototype;
-  dart.addTypeTests(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin);
-  dart.addTypeCaches(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin);
-  sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin[dart.implements] = () => [sliver.RenderSliver, core.Object];
-  dart.setMethodSignature(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin, () => ({
-    __proto__: dart.getMethods(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin.__proto__),
-    setupParentData: dart.fnType(dart.void, [dart.nullable(core.Object)])
-  }));
-  dart.setLibraryUri(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin, I[0]);
-  var index = dart.privateName(sliver_multi_box_adaptor, "SliverMultiBoxAdaptorParentData.index");
-  var _keptAlive = dart.privateName(sliver_multi_box_adaptor, "_keptAlive");
-  const SliverLogicalParentData_ContainerParentDataMixin$36 = class SliverLogicalParentData_ContainerParentDataMixin extends sliver.SliverLogicalParentData {};
-  (SliverLogicalParentData_ContainerParentDataMixin$36.new = function() {
-    object.ContainerParentDataMixin$(box.RenderBox)[dart.mixinNew].call(this);
-    SliverLogicalParentData_ContainerParentDataMixin$36.__proto__.new.call(this);
-  }).prototype = SliverLogicalParentData_ContainerParentDataMixin$36.prototype;
-  dart.applyMixin(SliverLogicalParentData_ContainerParentDataMixin$36, object.ContainerParentDataMixin$(box.RenderBox));
-  const SliverLogicalParentData_KeepAliveParentDataMixin$36 = class SliverLogicalParentData_KeepAliveParentDataMixin extends SliverLogicalParentData_ContainerParentDataMixin$36 {};
-  (SliverLogicalParentData_KeepAliveParentDataMixin$36.new = function() {
-    sliver_multi_box_adaptor.KeepAliveParentDataMixin[dart.mixinNew].call(this);
-    SliverLogicalParentData_KeepAliveParentDataMixin$36.__proto__.new.call(this);
-  }).prototype = SliverLogicalParentData_KeepAliveParentDataMixin$36.prototype;
-  dart.applyMixin(SliverLogicalParentData_KeepAliveParentDataMixin$36, sliver_multi_box_adaptor.KeepAliveParentDataMixin);
-  sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData = class SliverMultiBoxAdaptorParentData extends SliverLogicalParentData_KeepAliveParentDataMixin$36 {
-    get index() {
-      return this[index];
-    }
-    set index(value) {
-      this[index] = value;
-    }
-    get keptAlive() {
-      return this[_keptAlive];
-    }
+  var _name$ = dart.privateName(scale, "_name");
+  scale._ScaleState = class _ScaleState extends core.Object {
     toString() {
-      return "index=" + dart.str(this.index) + "; " + (this.keepAlive === true ? "keepAlive; " : "") + dart.str(super.toString());
+      return this[_name$];
     }
   };
-  (sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.new = function() {
-    this[index] = null;
-    this[_keptAlive] = false;
-    sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.__proto__.new.call(this);
+  (scale._ScaleState.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 16, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 16, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
     ;
-  }).prototype = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.prototype;
-  dart.addTypeTests(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData);
-  dart.addTypeCaches(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData);
-  dart.setGetterSignature(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData, () => ({
-    __proto__: dart.getGetters(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.__proto__),
-    keptAlive: core.bool
+  }).prototype = scale._ScaleState.prototype;
+  dart.addTypeTests(scale._ScaleState);
+  dart.addTypeCaches(scale._ScaleState);
+  dart.setLibraryUri(scale._ScaleState, I[1]);
+  dart.setFieldSignature(scale._ScaleState, () => ({
+    __proto__: dart.getFields(scale._ScaleState.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
   }));
-  dart.setLibraryUri(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData, I[0]);
-  dart.setFieldSignature(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData, () => ({
-    __proto__: dart.getFields(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.__proto__),
-    index: dart.fieldType(dart.nullable(core.int)),
-    [_keptAlive]: dart.fieldType(core.bool)
-  }));
-  dart.defineExtensionMethods(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData, ['toString']);
-  var _keepAliveBucket = dart.privateName(sliver_multi_box_adaptor, "_keepAliveBucket");
-  var __RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives = dart.privateName(sliver_multi_box_adaptor, "_#RenderSliverMultiBoxAdaptor#_debugDanglingKeepAlives");
-  var __RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives_isSet = dart.privateName(sliver_multi_box_adaptor, "_#RenderSliverMultiBoxAdaptor#_debugDanglingKeepAlives#isSet");
-  var _debugChildIntegrityEnabled = dart.privateName(sliver_multi_box_adaptor, "_debugChildIntegrityEnabled");
-  var _childManager = dart.privateName(sliver_multi_box_adaptor, "_childManager");
-  var _debugDanglingKeepAlives = dart.privateName(sliver_multi_box_adaptor, "_debugDanglingKeepAlives");
-  var _debugVerifyChildOrder = dart.privateName(sliver_multi_box_adaptor, "_debugVerifyChildOrder");
-  var _debugAssertChildListLocked = dart.privateName(sliver_multi_box_adaptor, "_debugAssertChildListLocked");
-  var _createOrObtainChild = dart.privateName(sliver_multi_box_adaptor, "_createOrObtainChild");
-  var _destroyOrCacheChild = dart.privateName(sliver_multi_box_adaptor, "_destroyOrCacheChild");
-  var _name = dart.privateName(basic_types, "_name");
+  dart.defineExtensionMethods(scale._ScaleState, ['toString']);
+  scale._ScaleState.ready = C[0] || CT.C0;
+  scale._ScaleState.possible = C[1] || CT.C1;
+  scale._ScaleState.accepted = C[2] || CT.C2;
+  scale._ScaleState.started = C[3] || CT.C3;
+  scale._ScaleState.values = C[4] || CT.C4;
+  var focalPoint$ = dart.privateName(scale, "ScaleStartDetails.focalPoint");
+  var localFocalPoint$ = dart.privateName(scale, "ScaleStartDetails.localFocalPoint");
+  var pointerCount$ = dart.privateName(scale, "ScaleStartDetails.pointerCount");
   var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
   var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
-  const RenderSliver_ContainerRenderObjectMixin$36 = class RenderSliver_ContainerRenderObjectMixin extends sliver.RenderSliver {};
-  (RenderSliver_ContainerRenderObjectMixin$36.new = function() {
-    object.ContainerRenderObjectMixin$(box.RenderBox, sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData)[dart.mixinNew].call(this);
-    RenderSliver_ContainerRenderObjectMixin$36.__proto__.new.call(this);
-  }).prototype = RenderSliver_ContainerRenderObjectMixin$36.prototype;
-  dart.applyMixin(RenderSliver_ContainerRenderObjectMixin$36, object.ContainerRenderObjectMixin$(box.RenderBox, sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData));
-  const RenderSliver_RenderSliverHelpers$36 = class RenderSliver_RenderSliverHelpers extends RenderSliver_ContainerRenderObjectMixin$36 {};
-  (RenderSliver_RenderSliverHelpers$36.new = function() {
-    RenderSliver_RenderSliverHelpers$36.__proto__.new.call(this);
-  }).prototype = RenderSliver_RenderSliverHelpers$36.prototype;
-  dart.applyMixin(RenderSliver_RenderSliverHelpers$36, sliver.RenderSliverHelpers);
-  const RenderSliver_RenderSliverWithKeepAliveMixin$36 = class RenderSliver_RenderSliverWithKeepAliveMixin extends RenderSliver_RenderSliverHelpers$36 {};
-  (RenderSliver_RenderSliverWithKeepAliveMixin$36.new = function() {
-    RenderSliver_RenderSliverWithKeepAliveMixin$36.__proto__.new.call(this);
-  }).prototype = RenderSliver_RenderSliverWithKeepAliveMixin$36.prototype;
-  dart.applyMixin(RenderSliver_RenderSliverWithKeepAliveMixin$36, sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin);
-  sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor = class RenderSliverMultiBoxAdaptor extends RenderSliver_RenderSliverWithKeepAliveMixin$36 {
-    setupParentData(child) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[1], 199, 37, "child");
-      if (!sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.is(child.parentData)) child.parentData = new sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.new();
+  scale.ScaleStartDetails = class ScaleStartDetails extends core.Object {
+    get focalPoint() {
+      return this[focalPoint$];
     }
-    get childManager() {
-      return this[_childManager];
+    set focalPoint(value) {
+      super.focalPoint = value;
     }
-    get [_debugDanglingKeepAlives]() {
-      let t0;
-      return dart.test(this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives_isSet]) ? (t0 = this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives], t0) : dart.throw(new _internal.LateError.fieldNI("_debugDanglingKeepAlives"));
+    get localFocalPoint() {
+      return this[localFocalPoint$];
     }
-    set [_debugDanglingKeepAlives](t0) {
-      if (t0 == null) dart.nullFailed(I[1], 217, 24, "null");
-      this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives_isSet] = true;
-      this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives] = t0;
+    set localFocalPoint(value) {
+      super.localFocalPoint = value;
     }
-    get debugChildIntegrityEnabled() {
-      return this[_debugChildIntegrityEnabled];
+    get pointerCount() {
+      return this[pointerCount$];
     }
-    set debugChildIntegrityEnabled(enabled) {
-      if (enabled == null) dart.nullFailed(I[1], 229, 39, "enabled");
-      if (!(enabled != null)) dart.assertFailed(null, I[1], 230, 12, "enabled != null");
-      if (!dart.test(dart.fn(() => {
-        this[_debugChildIntegrityEnabled] = enabled;
-        return dart.test(this[_debugVerifyChildOrder]()) && (!dart.test(this[_debugChildIntegrityEnabled]) || dart.test(this[_debugDanglingKeepAlives][$isEmpty]));
-      }, T.VoidTobool())())) dart.assertFailed(null, I[1], 231, 12, "() {\r\n      _debugChildIntegrityEnabled = enabled;\r\n      return _debugVerifyChildOrder() &&\r\n        (!_debugChildIntegrityEnabled || _debugDanglingKeepAlives.isEmpty);\r\n    }()");
+    set pointerCount(value) {
+      super.pointerCount = value;
     }
-    adoptChild(child) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[1], 239, 32, "child");
-      super.adoptChild(child);
-      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-      if (!dart.test(childParentData[_keptAlive])) this.childManager.didAdoptChild(box.RenderBox.as(child));
-    }
-    [_debugAssertChildListLocked]() {
-      return this.childManager.debugAssertChildListLocked();
-    }
-    [_debugVerifyChildOrder]() {
-      if (dart.test(this[_debugChildIntegrityEnabled])) {
-        let child = this.firstChild;
-        let index = null;
-        while (child != null) {
-          index = this.indexOf(child);
-          child = this.childAfter(child);
-          if (!(child == null || dart.notNull(this.indexOf(child)) > dart.notNull(index))) dart.assertFailed(null, I[1], 258, 16, "child == null || indexOf(child) > index");
-        }
-      }
-      return true;
-    }
-    insert(child, opts) {
-      box.RenderBox.as(child);
-      if (child == null) dart.nullFailed(I[1], 265, 25, "child");
-      let after = opts && 'after' in opts ? opts.after : null;
-      T.RenderBoxN().as(after);
-      if (!!dart.test(this[_keepAliveBucket][$containsValue](child))) dart.assertFailed(null, I[1], 266, 12, "!_keepAliveBucket.containsValue(child)");
-      super.insert(child, {after: after});
-      if (!(this.firstChild != null)) dart.assertFailed(null, I[1], 268, 12, "firstChild != null");
-      if (!dart.test(this[_debugVerifyChildOrder]())) dart.assertFailed(null, I[1], 269, 12, "_debugVerifyChildOrder()");
-    }
-    move(child, opts) {
-      box.RenderBox.as(child);
-      if (child == null) dart.nullFailed(I[1], 273, 23, "child");
-      let after = opts && 'after' in opts ? opts.after : null;
-      T.RenderBoxN().as(after);
-      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-      if (!dart.test(childParentData.keptAlive)) {
-        super.move(child, {after: after});
-        this.childManager.didAdoptChild(child);
-        this.markNeedsLayout();
-      } else {
-        if (dart.equals(this[_keepAliveBucket][$_get](childParentData.index), child)) {
-          this[_keepAliveBucket][$remove](childParentData.index);
-        }
-        if (!dart.test(dart.fn(() => {
-          this[_debugDanglingKeepAlives][$remove](child);
-          return true;
-        }, T.VoidTobool())())) dart.assertFailed(null, I[1], 296, 14, "() {\r\n        _debugDanglingKeepAlives.remove(child);\r\n        return true;\r\n      }()");
-        this.childManager.didAdoptChild(child);
-        if (!dart.test(dart.fn(() => {
-          if (dart.test(this[_keepAliveBucket][$containsKey](childParentData.index))) this[_debugDanglingKeepAlives][$add](dart.nullCheck(this[_keepAliveBucket][$_get](childParentData.index)));
-          return true;
-        }, T.VoidTobool())())) dart.assertFailed(null, I[1], 305, 14, "() {\r\n        if (_keepAliveBucket.containsKey(childParentData.index))\r\n          _debugDanglingKeepAlives.add(_keepAliveBucket[childParentData.index]!);\r\n        return true;\r\n      }()");
-        this[_keepAliveBucket][$_set](dart.nullCheck(childParentData.index), child);
-      }
-    }
-    remove(child) {
-      box.RenderBox.as(child);
-      if (child == null) dart.nullFailed(I[1], 315, 25, "child");
-      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-      if (!dart.test(childParentData[_keptAlive])) {
-        super.remove(child);
-        return;
-      }
-      if (!dart.equals(this[_keepAliveBucket][$_get](childParentData.index), child)) dart.assertFailed(null, I[1], 321, 12, "_keepAliveBucket[childParentData.index] == child");
-      if (!dart.test(dart.fn(() => {
-        this[_debugDanglingKeepAlives][$remove](child);
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[1], 322, 12, "() {\r\n      _debugDanglingKeepAlives.remove(child);\r\n      return true;\r\n    }()");
-      this[_keepAliveBucket][$remove](childParentData.index);
-      this.dropChild(child);
-    }
-    removeAll() {
-      super.removeAll();
-      this[_keepAliveBucket][$values][$forEach](dart.bind(this, 'dropChild'));
-      this[_keepAliveBucket][$clear]();
-    }
-    [_createOrObtainChild](index, opts) {
-      if (index == null) dart.nullFailed(I[1], 337, 33, "index");
-      let after = opts && 'after' in opts ? opts.after : null;
-      this.invokeLayoutCallback(sliver.SliverConstraints, dart.fn(constraints => {
-        if (constraints == null) dart.nullFailed(I[1], 338, 64, "constraints");
-        if (!dart.equals(constraints, this.constraints)) dart.assertFailed(null, I[1], 339, 14, "constraints == this.constraints");
-        if (dart.test(this[_keepAliveBucket][$containsKey](index))) {
-          let child = dart.nullCheck(this[_keepAliveBucket][$remove](index));
-          let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-          if (!dart.test(childParentData[_keptAlive])) dart.assertFailed(null, I[1], 343, 16, "childParentData._keptAlive");
-          this.dropChild(child);
-          child.parentData = childParentData;
-          this.insert(child, {after: after});
-          childParentData[_keptAlive] = false;
-        } else {
-          this[_childManager].createChild(index, {after: after});
-        }
-      }, T.SliverConstraintsTovoid()));
-    }
-    [_destroyOrCacheChild](child) {
-      if (child == null) dart.nullFailed(I[1], 354, 39, "child");
-      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-      if (dart.test(childParentData.keepAlive)) {
-        if (!!dart.test(childParentData[_keptAlive])) dart.assertFailed(null, I[1], 357, 14, "!childParentData._keptAlive");
-        this.remove(child);
-        this[_keepAliveBucket][$_set](dart.nullCheck(childParentData.index), child);
-        child.parentData = childParentData;
-        super.adoptChild(child);
-        childParentData[_keptAlive] = true;
-      } else {
-        if (!dart.equals(child.parent, this)) dart.assertFailed(null, I[1], 364, 14, "child.parent == this");
-        this[_childManager].removeChild(child);
-        if (!(child.parent == null)) dart.assertFailed(null, I[1], 366, 14, "child.parent == null");
-      }
-    }
-    attach(owner) {
-      object.PipelineOwner.as(owner);
-      if (owner == null) dart.nullFailed(I[1], 371, 29, "owner");
-      super.attach(owner);
-      for (let child of this[_keepAliveBucket][$values])
-        child.attach(owner);
-    }
-    detach() {
-      super.detach();
-      for (let child of this[_keepAliveBucket][$values])
-        child.detach();
-    }
-    redepthChildren() {
-      super.redepthChildren();
-      this[_keepAliveBucket][$values][$forEach](dart.bind(this, 'redepthChild'));
-    }
-    visitChildren(visitor) {
-      if (visitor == null) dart.nullFailed(I[1], 391, 42, "visitor");
-      super.visitChildren(visitor);
-      this[_keepAliveBucket][$values][$forEach](visitor);
-    }
-    visitChildrenForSemantics(visitor) {
-      if (visitor == null) dart.nullFailed(I[1], 397, 54, "visitor");
-      super.visitChildren(visitor);
-    }
-    addInitialChild(opts) {
-      let index = opts && 'index' in opts ? opts.index : 0;
-      if (index == null) dart.nullFailed(I[1], 419, 30, "index");
-      let layoutOffset = opts && 'layoutOffset' in opts ? opts.layoutOffset : 0;
-      if (layoutOffset == null) dart.nullFailed(I[1], 419, 48, "layoutOffset");
-      if (!dart.test(this[_debugAssertChildListLocked]())) dart.assertFailed(null, I[1], 420, 12, "_debugAssertChildListLocked()");
-      if (!(this.firstChild == null)) dart.assertFailed(null, I[1], 421, 12, "firstChild == null");
-      this[_createOrObtainChild](index, {after: null});
-      if (this.firstChild != null) {
-        if (!dart.equals(this.firstChild, this.lastChild)) dart.assertFailed(null, I[1], 424, 14, "firstChild == lastChild");
-        if (!(this.indexOf(dart.nullCheck(this.firstChild)) == index)) dart.assertFailed(null, I[1], 425, 14, "indexOf(firstChild!) == index");
-        let firstChildParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(dart.nullCheck(this.firstChild).parentData));
-        firstChildParentData.layoutOffset = layoutOffset;
-        return true;
-      }
-      this.childManager.setDidUnderflow(true);
-      return false;
-    }
-    insertAndLayoutLeadingChild(childConstraints, opts) {
-      if (childConstraints == null) dart.nullFailed(I[1], 449, 20, "childConstraints");
-      let parentUsesSize = opts && 'parentUsesSize' in opts ? opts.parentUsesSize : false;
-      if (parentUsesSize == null) dart.nullFailed(I[1], 450, 10, "parentUsesSize");
-      if (!dart.test(this[_debugAssertChildListLocked]())) dart.assertFailed(null, I[1], 452, 12, "_debugAssertChildListLocked()");
-      let index = dart.notNull(this.indexOf(dart.nullCheck(this.firstChild))) - 1;
-      this[_createOrObtainChild](index, {after: null});
-      if (this.indexOf(dart.nullCheck(this.firstChild)) === index) {
-        dart.nullCheck(this.firstChild).layout(childConstraints, {parentUsesSize: parentUsesSize});
-        return this.firstChild;
-      }
-      this.childManager.setDidUnderflow(true);
-      return null;
-    }
-    insertAndLayoutChild(childConstraints, opts) {
-      if (childConstraints == null) dart.nullFailed(I[1], 477, 20, "childConstraints");
-      let after = opts && 'after' in opts ? opts.after : null;
-      let parentUsesSize = opts && 'parentUsesSize' in opts ? opts.parentUsesSize : false;
-      if (parentUsesSize == null) dart.nullFailed(I[1], 479, 10, "parentUsesSize");
-      if (!dart.test(this[_debugAssertChildListLocked]())) dart.assertFailed(null, I[1], 481, 12, "_debugAssertChildListLocked()");
-      if (!(after != null)) dart.assertFailed(null, I[1], 482, 12, "after != null");
-      let index = dart.notNull(this.indexOf(dart.nullCheck(after))) + 1;
-      this[_createOrObtainChild](index, {after: after});
-      let child = this.childAfter(after);
-      if (child != null && this.indexOf(child) === index) {
-        child.layout(childConstraints, {parentUsesSize: parentUsesSize});
-        return child;
-      }
-      this.childManager.setDidUnderflow(true);
-      return null;
-    }
-    collectGarbage(leadingGarbage, trailingGarbage) {
-      if (leadingGarbage == null) dart.nullFailed(I[1], 504, 27, "leadingGarbage");
-      if (trailingGarbage == null) dart.nullFailed(I[1], 504, 47, "trailingGarbage");
-      if (!dart.test(this[_debugAssertChildListLocked]())) dart.assertFailed(null, I[1], 505, 12, "_debugAssertChildListLocked()");
-      if (!(dart.notNull(this.childCount) >= dart.notNull(leadingGarbage) + dart.notNull(trailingGarbage))) dart.assertFailed(null, I[1], 506, 12, "childCount >= leadingGarbage + trailingGarbage");
-      this.invokeLayoutCallback(sliver.SliverConstraints, dart.fn(constraints => {
-        if (constraints == null) dart.nullFailed(I[1], 507, 64, "constraints");
-        while (dart.notNull(leadingGarbage) > 0) {
-          this[_destroyOrCacheChild](dart.nullCheck(this.firstChild));
-          leadingGarbage = dart.notNull(leadingGarbage) - 1;
-        }
-        while (dart.notNull(trailingGarbage) > 0) {
-          this[_destroyOrCacheChild](dart.nullCheck(this.lastChild));
-          trailingGarbage = dart.notNull(trailingGarbage) - 1;
-        }
-        this[_keepAliveBucket][$values][$where](dart.fn(child => {
-          if (child == null) dart.nullFailed(I[1], 519, 48, "child");
-          let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-          return !dart.test(childParentData.keepAlive);
-        }, T.RenderBoxTobool()))[$toList]()[$forEach](dart.bind(this[_childManager], 'removeChild'));
-        if (!dart.test(this[_keepAliveBucket][$values][$where](dart.fn(child => {
-          if (child == null) dart.nullFailed(I[1], 523, 55, "child");
-          let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-          return !dart.test(childParentData.keepAlive);
-        }, T.RenderBoxTobool()))[$isEmpty])) dart.assertFailed(null, I[1], 523, 14, "_keepAliveBucket.values.where((RenderBox child) {\r\n        final SliverMultiBoxAdaptorParentData childParentData = child.parentData! as SliverMultiBoxAdaptorParentData;\r\n        return !childParentData.keepAlive;\r\n      }).isEmpty");
-      }, T.SliverConstraintsTovoid()));
-    }
-    indexOf(child) {
-      if (child == null) dart.nullFailed(I[1], 532, 25, "child");
-      if (!(child != null)) dart.assertFailed(null, I[1], 533, 12, "child != null");
-      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-      if (!(childParentData.index != null)) dart.assertFailed(null, I[1], 535, 12, "childParentData.index != null");
-      return dart.nullCheck(childParentData.index);
-    }
-    paintExtentOf(child) {
-      if (child == null) dart.nullFailed(I[1], 542, 34, "child");
-      if (!(child != null)) dart.assertFailed(null, I[1], 543, 12, "child != null");
-      if (!dart.test(child.hasSize)) dart.assertFailed(null, I[1], 544, 12, "child.hasSize");
-      switch (this.constraints.axis) {
-        case C[0] || CT.C0:
-        {
-          return child.size.width;
-        }
-        case C[1] || CT.C1:
-        {
-          return child.size.height;
-        }
-        default:
-        {
-          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-        }
-      }
-    }
-    hitTestChildren(result, opts) {
-      if (result == null) dart.nullFailed(I[1], 554, 44, "result");
-      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
-      if (mainAxisPosition == null) dart.nullFailed(I[1], 554, 70, "mainAxisPosition");
-      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
-      if (crossAxisPosition == null) dart.nullFailed(I[1], 554, 104, "crossAxisPosition");
-      let child = this.lastChild;
-      let boxResult = new box.BoxHitTestResult.wrap(result);
-      while (child != null) {
-        if (dart.test(this.hitTestBoxChild(boxResult, child, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition}))) return true;
-        child = this.childBefore(child);
-      }
-      return false;
-    }
-    childMainAxisPosition(child) {
-      box.RenderBox.as(child);
-      if (child == null) dart.nullFailed(I[1], 566, 42, "child");
-      return dart.nullCheck(this.childScrollOffset(child)) - dart.notNull(this.constraints.scrollOffset);
-    }
-    childScrollOffset(child) {
-      object.RenderObject.as(child);
-      if (child == null) dart.nullFailed(I[1], 571, 42, "child");
-      if (!(child != null)) dart.assertFailed(null, I[1], 572, 12, "child != null");
-      if (!dart.equals(child.parent, this)) dart.assertFailed(null, I[1], 573, 12, "child.parent == this");
-      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-      return childParentData.layoutOffset;
-    }
-    applyPaintTransform(child, transform) {
-      box.RenderBox.as(child);
-      if (child == null) dart.nullFailed(I[1], 579, 38, "child");
-      if (transform == null) dart.nullFailed(I[1], 579, 53, "transform");
-      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
-      if (childParentData.index == null) {
-        transform.setZero();
-      } else if (dart.test(this[_keepAliveBucket][$containsKey](childParentData.index))) {
-        transform.setZero();
-      } else {
-        this.applyPaintTransformForBoxChild(child, transform);
-      }
-    }
-    paint(context, offset) {
-      if (context == null) dart.nullFailed(I[1], 598, 30, "context");
-      if (offset == null) dart.nullFailed(I[1], 598, 46, "offset");
-      if (this.firstChild == null) return;
-      let mainAxisUnit = null;
-      let crossAxisUnit = null;
-      let originOffset = null;
-      let addExtent = null;
-      switch (sliver.applyGrowthDirectionToAxisDirection(this.constraints.axisDirection, this.constraints.growthDirection)) {
-        case C[4] || CT.C4:
-        {
-          mainAxisUnit = C[2] || CT.C2;
-          crossAxisUnit = C[3] || CT.C3;
-          originOffset = offset['+'](new ui.Offset.new(0.0, dart.nullCheck(this.geometry).paintExtent));
-          addExtent = true;
-          break;
-        }
-        case C[6] || CT.C6:
-        {
-          mainAxisUnit = C[3] || CT.C3;
-          crossAxisUnit = C[5] || CT.C5;
-          originOffset = offset;
-          addExtent = false;
-          break;
-        }
-        case C[7] || CT.C7:
-        {
-          mainAxisUnit = C[5] || CT.C5;
-          crossAxisUnit = C[3] || CT.C3;
-          originOffset = offset;
-          addExtent = false;
-          break;
-        }
-        case C[9] || CT.C9:
-        {
-          mainAxisUnit = C[8] || CT.C8;
-          crossAxisUnit = C[5] || CT.C5;
-          originOffset = offset['+'](new ui.Offset.new(dart.nullCheck(this.geometry).paintExtent, 0.0));
-          addExtent = true;
-          break;
-        }
-        default:
-        {
-          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-        }
-      }
-      if (!(mainAxisUnit != null)) dart.assertFailed(null, I[1], 631, 12, "mainAxisUnit != null");
-      if (!(addExtent != null)) dart.assertFailed(null, I[1], 632, 12, "addExtent != null");
-      let child = this.firstChild;
-      while (child != null) {
-        let mainAxisDelta = this.childMainAxisPosition(child);
-        let crossAxisDelta = this.childCrossAxisPosition(child);
-        let childOffset = new ui.Offset.new(dart.notNull(originOffset.dx) + dart.notNull(mainAxisUnit.dx) * dart.notNull(mainAxisDelta) + dart.notNull(crossAxisUnit.dx) * dart.notNull(crossAxisDelta), dart.notNull(originOffset.dy) + dart.notNull(mainAxisUnit.dy) * dart.notNull(mainAxisDelta) + dart.notNull(crossAxisUnit.dy) * dart.notNull(crossAxisDelta));
-        if (dart.test(addExtent)) childOffset = childOffset['+'](mainAxisUnit['*'](this.paintExtentOf(child)));
-        if (dart.notNull(mainAxisDelta) < dart.notNull(this.constraints.remainingPaintExtent) && dart.notNull(mainAxisDelta) + dart.notNull(this.paintExtentOf(child)) > 0) context.paintChild(child, childOffset);
-        child = this.childAfter(child);
-      }
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[1], 654, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(diagnostics.DiagnosticsNode.message(this.firstChild != null ? "currently live children: " + dart.str(this.indexOf(dart.nullCheck(this.firstChild))) + " to " + dart.str(this.indexOf(dart.nullCheck(this.lastChild))) : "no children current live"));
-    }
-    debugAssertChildListIsNonEmptyAndContiguous() {
-      if (!dart.test(dart.fn(() => {
-        if (!(this.firstChild != null)) dart.assertFailed(null, I[1], 665, 14, "firstChild != null");
-        let index = this.indexOf(dart.nullCheck(this.firstChild));
-        let child = this.childAfter(dart.nullCheck(this.firstChild));
-        while (child != null) {
-          index = dart.notNull(index) + 1;
-          if (!(this.indexOf(child) == index)) dart.assertFailed(null, I[1], 670, 16, "indexOf(child) == index");
-          child = this.childAfter(child);
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[1], 664, 12, "() {\r\n      assert(firstChild != null);\r\n      int index = indexOf(firstChild!);\r\n      RenderBox? child = childAfter(firstChild!);\r\n      while (child != null) {\r\n        index += 1;\r\n        assert(indexOf(child) == index);\r\n        child = childAfter(child);\r\n      }\r\n      return true;\r\n    }()");
-      return true;
-    }
-    debugDescribeChildren() {
-      let t1;
-      let children = T.JSArrayOfDiagnosticsNode().of([]);
-      if (this.firstChild != null) {
-        let child = this.firstChild;
-        while (true) {
-          let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(dart.nullCheck(child).parentData));
-          children[$add](child.toDiagnosticsNode({name: "child with index " + dart.str(childParentData.index)}));
-          if (dart.equals(child, this.lastChild)) break;
-          child = childParentData.nextSibling;
-        }
-      }
-      if (dart.test(this[_keepAliveBucket][$isNotEmpty])) {
-        let indices = (t1 = this[_keepAliveBucket][$keys][$toList](), (() => {
-          t1[$sort]();
-          return t1;
-        })());
-        for (let index of indices) {
-          children[$add](dart.nullCheck(this[_keepAliveBucket][$_get](index)).toDiagnosticsNode({name: "child with index " + dart.str(index) + " (kept alive but not laid out)", style: diagnostics.DiagnosticsTreeStyle.offstage}));
-        }
-      }
-      return children;
+    toString() {
+      return "ScaleStartDetails(focalPoint: " + dart.str(this.focalPoint) + ", localFocalPoint: " + dart.str(this.localFocalPoint) + ", pointersCount: " + dart.str(this.pointerCount) + ")";
     }
   };
-  (sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.new = function(opts) {
-    let childManager = opts && 'childManager' in opts ? opts.childManager : null;
-    if (childManager == null) dart.nullFailed(I[1], 189, 42, "childManager");
-    this[_keepAliveBucket] = new (T.IdentityMapOfint$RenderBox()).new();
-    this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives] = null;
-    this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives_isSet] = false;
-    this[_debugChildIntegrityEnabled] = true;
-    if (!(childManager != null)) dart.assertFailed(null, I[1], 190, 15, "childManager != null");
-    this[_childManager] = childManager;
-    sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__.new.call(this);
-    if (!dart.test(dart.fn(() => {
-      this[_debugDanglingKeepAlives] = T.JSArrayOfRenderBox().of([]);
+  (scale.ScaleStartDetails.new = function(opts) {
+    let t0;
+    let focalPoint = opts && 'focalPoint' in opts ? opts.focalPoint : C[5] || CT.C5;
+    if (focalPoint == null) dart.nullFailed(I[0], 39, 28, "focalPoint");
+    let localFocalPoint = opts && 'localFocalPoint' in opts ? opts.localFocalPoint : null;
+    let pointerCount = opts && 'pointerCount' in opts ? opts.pointerCount : 0;
+    if (pointerCount == null) dart.nullFailed(I[0], 39, 84, "pointerCount");
+    this[focalPoint$] = focalPoint;
+    this[pointerCount$] = pointerCount;
+    if (!(focalPoint != null)) dart.assertFailed(null, I[0], 40, 14, "focalPoint != null");
+    this[localFocalPoint$] = (t0 = localFocalPoint, t0 == null ? focalPoint : t0);
+    ;
+  }).prototype = scale.ScaleStartDetails.prototype;
+  dart.addTypeTests(scale.ScaleStartDetails);
+  dart.addTypeCaches(scale.ScaleStartDetails);
+  dart.setLibraryUri(scale.ScaleStartDetails, I[1]);
+  dart.setFieldSignature(scale.ScaleStartDetails, () => ({
+    __proto__: dart.getFields(scale.ScaleStartDetails.__proto__),
+    focalPoint: dart.finalFieldType(ui.Offset),
+    localFocalPoint: dart.finalFieldType(ui.Offset),
+    pointerCount: dart.finalFieldType(core.int)
+  }));
+  dart.defineExtensionMethods(scale.ScaleStartDetails, ['toString']);
+  var focalPoint$0 = dart.privateName(scale, "ScaleUpdateDetails.focalPoint");
+  var localFocalPoint$0 = dart.privateName(scale, "ScaleUpdateDetails.localFocalPoint");
+  var scale$ = dart.privateName(scale, "ScaleUpdateDetails.scale");
+  var horizontalScale$ = dart.privateName(scale, "ScaleUpdateDetails.horizontalScale");
+  var verticalScale$ = dart.privateName(scale, "ScaleUpdateDetails.verticalScale");
+  var rotation$ = dart.privateName(scale, "ScaleUpdateDetails.rotation");
+  var pointerCount$0 = dart.privateName(scale, "ScaleUpdateDetails.pointerCount");
+  scale.ScaleUpdateDetails = class ScaleUpdateDetails extends core.Object {
+    get focalPoint() {
+      return this[focalPoint$0];
+    }
+    set focalPoint(value) {
+      super.focalPoint = value;
+    }
+    get localFocalPoint() {
+      return this[localFocalPoint$0];
+    }
+    set localFocalPoint(value) {
+      super.localFocalPoint = value;
+    }
+    get scale() {
+      return this[scale$];
+    }
+    set scale(value) {
+      super.scale = value;
+    }
+    get horizontalScale() {
+      return this[horizontalScale$];
+    }
+    set horizontalScale(value) {
+      super.horizontalScale = value;
+    }
+    get verticalScale() {
+      return this[verticalScale$];
+    }
+    set verticalScale(value) {
+      super.verticalScale = value;
+    }
+    get rotation() {
+      return this[rotation$];
+    }
+    set rotation(value) {
+      super.rotation = value;
+    }
+    get pointerCount() {
+      return this[pointerCount$0];
+    }
+    set pointerCount(value) {
+      super.pointerCount = value;
+    }
+    toString() {
+      return "ScaleUpdateDetails(" + "focalPoint: " + dart.str(this.focalPoint) + "," + " localFocalPoint: " + dart.str(this.localFocalPoint) + "," + " scale: " + dart.str(this.scale) + "," + " horizontalScale: " + dart.str(this.horizontalScale) + "," + " verticalScale: " + dart.str(this.verticalScale) + "," + " rotation: " + dart.str(this.rotation) + "," + " pointerCount: " + dart.str(this.pointerCount) + ")";
+    }
+  };
+  (scale.ScaleUpdateDetails.new = function(opts) {
+    let t0;
+    let focalPoint = opts && 'focalPoint' in opts ? opts.focalPoint : C[5] || CT.C5;
+    if (focalPoint == null) dart.nullFailed(I[0], 81, 10, "focalPoint");
+    let localFocalPoint = opts && 'localFocalPoint' in opts ? opts.localFocalPoint : null;
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    if (scale == null) dart.nullFailed(I[0], 83, 10, "scale");
+    let horizontalScale = opts && 'horizontalScale' in opts ? opts.horizontalScale : 1;
+    if (horizontalScale == null) dart.nullFailed(I[0], 84, 10, "horizontalScale");
+    let verticalScale = opts && 'verticalScale' in opts ? opts.verticalScale : 1;
+    if (verticalScale == null) dart.nullFailed(I[0], 85, 10, "verticalScale");
+    let rotation = opts && 'rotation' in opts ? opts.rotation : 0;
+    if (rotation == null) dart.nullFailed(I[0], 86, 10, "rotation");
+    let pointerCount = opts && 'pointerCount' in opts ? opts.pointerCount : 0;
+    if (pointerCount == null) dart.nullFailed(I[0], 87, 10, "pointerCount");
+    this[focalPoint$0] = focalPoint;
+    this[scale$] = scale;
+    this[horizontalScale$] = horizontalScale;
+    this[verticalScale$] = verticalScale;
+    this[rotation$] = rotation;
+    this[pointerCount$0] = pointerCount;
+    if (!(focalPoint != null)) dart.assertFailed(null, I[0], 88, 15, "focalPoint != null");
+    if (!(scale != null && dart.notNull(scale) >= 0.0)) dart.assertFailed(null, I[0], 89, 15, "scale != null && scale >= 0.0");
+    if (!(horizontalScale != null && dart.notNull(horizontalScale) >= 0.0)) dart.assertFailed(null, I[0], 90, 15, "horizontalScale != null && horizontalScale >= 0.0");
+    if (!(verticalScale != null && dart.notNull(verticalScale) >= 0.0)) dart.assertFailed(null, I[0], 91, 15, "verticalScale != null && verticalScale >= 0.0");
+    if (!(rotation != null)) dart.assertFailed(null, I[0], 92, 15, "rotation != null");
+    this[localFocalPoint$0] = (t0 = localFocalPoint, t0 == null ? focalPoint : t0);
+    ;
+  }).prototype = scale.ScaleUpdateDetails.prototype;
+  dart.addTypeTests(scale.ScaleUpdateDetails);
+  dart.addTypeCaches(scale.ScaleUpdateDetails);
+  dart.setLibraryUri(scale.ScaleUpdateDetails, I[1]);
+  dart.setFieldSignature(scale.ScaleUpdateDetails, () => ({
+    __proto__: dart.getFields(scale.ScaleUpdateDetails.__proto__),
+    focalPoint: dart.finalFieldType(ui.Offset),
+    localFocalPoint: dart.finalFieldType(ui.Offset),
+    scale: dart.finalFieldType(core.double),
+    horizontalScale: dart.finalFieldType(core.double),
+    verticalScale: dart.finalFieldType(core.double),
+    rotation: dart.finalFieldType(core.double),
+    pointerCount: dart.finalFieldType(core.int)
+  }));
+  dart.defineExtensionMethods(scale.ScaleUpdateDetails, ['toString']);
+  var velocity$ = dart.privateName(scale, "ScaleEndDetails.velocity");
+  var pointerCount$1 = dart.privateName(scale, "ScaleEndDetails.pointerCount");
+  var Velocity_pixelsPerSecond = dart.privateName(velocity_tracker, "Velocity.pixelsPerSecond");
+  scale.ScaleEndDetails = class ScaleEndDetails extends core.Object {
+    get velocity() {
+      return this[velocity$];
+    }
+    set velocity(value) {
+      super.velocity = value;
+    }
+    get pointerCount() {
+      return this[pointerCount$1];
+    }
+    set pointerCount(value) {
+      super.pointerCount = value;
+    }
+    toString() {
+      return "ScaleEndDetails(velocity: " + dart.str(this.velocity) + ", pointerCount: " + dart.str(this.pointerCount) + ")";
+    }
+  };
+  (scale.ScaleEndDetails.new = function(opts) {
+    let velocity = opts && 'velocity' in opts ? opts.velocity : C[6] || CT.C6;
+    if (velocity == null) dart.nullFailed(I[0], 177, 26, "velocity");
+    let pointerCount = opts && 'pointerCount' in opts ? opts.pointerCount : 0;
+    if (pointerCount == null) dart.nullFailed(I[0], 177, 57, "pointerCount");
+    this[velocity$] = velocity;
+    this[pointerCount$1] = pointerCount;
+    if (!(velocity != null)) dart.assertFailed(null, I[0], 178, 14, "velocity != null");
+    ;
+  }).prototype = scale.ScaleEndDetails.prototype;
+  dart.addTypeTests(scale.ScaleEndDetails);
+  dart.addTypeCaches(scale.ScaleEndDetails);
+  dart.setLibraryUri(scale.ScaleEndDetails, I[1]);
+  dart.setFieldSignature(scale.ScaleEndDetails, () => ({
+    __proto__: dart.getFields(scale.ScaleEndDetails.__proto__),
+    velocity: dart.finalFieldType(velocity_tracker.Velocity),
+    pointerCount: dart.finalFieldType(core.int)
+  }));
+  dart.defineExtensionMethods(scale.ScaleEndDetails, ['toString']);
+  scale._LineBetweenPointers = class _LineBetweenPointers extends core.Object {};
+  (scale._LineBetweenPointers.new = function(opts) {
+    let pointerStartLocation = opts && 'pointerStartLocation' in opts ? opts.pointerStartLocation : C[5] || CT.C5;
+    if (pointerStartLocation == null) dart.nullFailed(I[0], 221, 10, "pointerStartLocation");
+    let pointerStartId = opts && 'pointerStartId' in opts ? opts.pointerStartId : 0;
+    if (pointerStartId == null) dart.nullFailed(I[0], 222, 10, "pointerStartId");
+    let pointerEndLocation = opts && 'pointerEndLocation' in opts ? opts.pointerEndLocation : C[5] || CT.C5;
+    if (pointerEndLocation == null) dart.nullFailed(I[0], 223, 10, "pointerEndLocation");
+    let pointerEndId = opts && 'pointerEndId' in opts ? opts.pointerEndId : 1;
+    if (pointerEndId == null) dart.nullFailed(I[0], 224, 10, "pointerEndId");
+    this.pointerStartLocation = pointerStartLocation;
+    this.pointerStartId = pointerStartId;
+    this.pointerEndLocation = pointerEndLocation;
+    this.pointerEndId = pointerEndId;
+    if (!(pointerStartLocation != null && pointerEndLocation != null)) dart.assertFailed(null, I[0], 225, 15, "pointerStartLocation != null && pointerEndLocation != null");
+    if (!(pointerStartId != null && pointerEndId != null)) dart.assertFailed(null, I[0], 226, 15, "pointerStartId != null && pointerEndId != null");
+    if (!(pointerStartId != pointerEndId)) dart.assertFailed(null, I[0], 227, 15, "pointerStartId != pointerEndId");
+    ;
+  }).prototype = scale._LineBetweenPointers.prototype;
+  dart.addTypeTests(scale._LineBetweenPointers);
+  dart.addTypeCaches(scale._LineBetweenPointers);
+  dart.setLibraryUri(scale._LineBetweenPointers, I[1]);
+  dart.setFieldSignature(scale._LineBetweenPointers, () => ({
+    __proto__: dart.getFields(scale._LineBetweenPointers.__proto__),
+    pointerStartLocation: dart.finalFieldType(ui.Offset),
+    pointerStartId: dart.finalFieldType(core.int),
+    pointerEndLocation: dart.finalFieldType(ui.Offset),
+    pointerEndId: dart.finalFieldType(core.int)
+  }));
+  var dragStartBehavior$ = dart.privateName(scale, "ScaleGestureRecognizer.dragStartBehavior");
+  var onStart = dart.privateName(scale, "ScaleGestureRecognizer.onStart");
+  var onUpdate = dart.privateName(scale, "ScaleGestureRecognizer.onUpdate");
+  var onEnd = dart.privateName(scale, "ScaleGestureRecognizer.onEnd");
+  var _name = dart.privateName(recognizer, "_name");
+  var _state = dart.privateName(scale, "_state");
+  var _lastTransform = dart.privateName(scale, "_lastTransform");
+  var __ScaleGestureRecognizer__initialFocalPoint = dart.privateName(scale, "_#ScaleGestureRecognizer#_initialFocalPoint");
+  var __ScaleGestureRecognizer__initialFocalPoint_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_initialFocalPoint#isSet");
+  var __ScaleGestureRecognizer__currentFocalPoint = dart.privateName(scale, "_#ScaleGestureRecognizer#_currentFocalPoint");
+  var __ScaleGestureRecognizer__currentFocalPoint_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_currentFocalPoint#isSet");
+  var __ScaleGestureRecognizer__initialSpan = dart.privateName(scale, "_#ScaleGestureRecognizer#_initialSpan");
+  var __ScaleGestureRecognizer__initialSpan_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_initialSpan#isSet");
+  var __ScaleGestureRecognizer__currentSpan = dart.privateName(scale, "_#ScaleGestureRecognizer#_currentSpan");
+  var __ScaleGestureRecognizer__currentSpan_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_currentSpan#isSet");
+  var __ScaleGestureRecognizer__initialHorizontalSpan = dart.privateName(scale, "_#ScaleGestureRecognizer#_initialHorizontalSpan");
+  var __ScaleGestureRecognizer__initialHorizontalSpan_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_initialHorizontalSpan#isSet");
+  var __ScaleGestureRecognizer__currentHorizontalSpan = dart.privateName(scale, "_#ScaleGestureRecognizer#_currentHorizontalSpan");
+  var __ScaleGestureRecognizer__currentHorizontalSpan_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_currentHorizontalSpan#isSet");
+  var __ScaleGestureRecognizer__initialVerticalSpan = dart.privateName(scale, "_#ScaleGestureRecognizer#_initialVerticalSpan");
+  var __ScaleGestureRecognizer__initialVerticalSpan_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_initialVerticalSpan#isSet");
+  var __ScaleGestureRecognizer__currentVerticalSpan = dart.privateName(scale, "_#ScaleGestureRecognizer#_currentVerticalSpan");
+  var __ScaleGestureRecognizer__currentVerticalSpan_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_currentVerticalSpan#isSet");
+  var _initialLine = dart.privateName(scale, "_initialLine");
+  var _currentLine = dart.privateName(scale, "_currentLine");
+  var __ScaleGestureRecognizer__pointerLocations = dart.privateName(scale, "_#ScaleGestureRecognizer#_pointerLocations");
+  var __ScaleGestureRecognizer__pointerLocations_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_pointerLocations#isSet");
+  var __ScaleGestureRecognizer__pointerQueue = dart.privateName(scale, "_#ScaleGestureRecognizer#_pointerQueue");
+  var __ScaleGestureRecognizer__pointerQueue_isSet = dart.privateName(scale, "_#ScaleGestureRecognizer#_pointerQueue#isSet");
+  var _velocityTrackers = dart.privateName(scale, "_velocityTrackers");
+  var _initialFocalPoint = dart.privateName(scale, "_initialFocalPoint");
+  var _currentFocalPoint = dart.privateName(scale, "_currentFocalPoint");
+  var _initialSpan = dart.privateName(scale, "_initialSpan");
+  var _currentSpan = dart.privateName(scale, "_currentSpan");
+  var _initialHorizontalSpan = dart.privateName(scale, "_initialHorizontalSpan");
+  var _currentHorizontalSpan = dart.privateName(scale, "_currentHorizontalSpan");
+  var _initialVerticalSpan = dart.privateName(scale, "_initialVerticalSpan");
+  var _currentVerticalSpan = dart.privateName(scale, "_currentVerticalSpan");
+  var _pointerLocations = dart.privateName(scale, "_pointerLocations");
+  var _pointerQueue = dart.privateName(scale, "_pointerQueue");
+  var _scaleFactor = dart.privateName(scale, "_scaleFactor");
+  var _horizontalScaleFactor = dart.privateName(scale, "_horizontalScaleFactor");
+  var _verticalScaleFactor = dart.privateName(scale, "_verticalScaleFactor");
+  var _computeRotationFactor = dart.privateName(scale, "_computeRotationFactor");
+  var _updateLines = dart.privateName(scale, "_updateLines");
+  var _update = dart.privateName(scale, "_update");
+  var _reconfigure = dart.privateName(scale, "_reconfigure");
+  var _advanceStateMachine = dart.privateName(scale, "_advanceStateMachine");
+  var _dispatchOnStartCallbackIfNeeded = dart.privateName(scale, "_dispatchOnStartCallbackIfNeeded");
+  scale.ScaleGestureRecognizer = class ScaleGestureRecognizer extends recognizer.OneSequenceGestureRecognizer {
+    get dragStartBehavior() {
+      return this[dragStartBehavior$];
+    }
+    set dragStartBehavior(value) {
+      this[dragStartBehavior$] = value;
+    }
+    get onStart() {
+      return this[onStart];
+    }
+    set onStart(value) {
+      this[onStart] = value;
+    }
+    get onUpdate() {
+      return this[onUpdate];
+    }
+    set onUpdate(value) {
+      this[onUpdate] = value;
+    }
+    get onEnd() {
+      return this[onEnd];
+    }
+    set onEnd(value) {
+      this[onEnd] = value;
+    }
+    get [_initialFocalPoint]() {
+      let t0;
+      return dart.test(this[__ScaleGestureRecognizer__initialFocalPoint_isSet]) ? (t0 = this[__ScaleGestureRecognizer__initialFocalPoint], t0) : dart.throw(new _internal.LateError.fieldNI("_initialFocalPoint"));
+    }
+    set [_initialFocalPoint](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 303, 15, "null");
+      this[__ScaleGestureRecognizer__initialFocalPoint_isSet] = true;
+      this[__ScaleGestureRecognizer__initialFocalPoint] = t0;
+    }
+    get [_currentFocalPoint]() {
+      let t1;
+      return dart.test(this[__ScaleGestureRecognizer__currentFocalPoint_isSet]) ? (t1 = this[__ScaleGestureRecognizer__currentFocalPoint], t1) : dart.throw(new _internal.LateError.fieldNI("_currentFocalPoint"));
+    }
+    set [_currentFocalPoint](t1) {
+      if (t1 == null) dart.nullFailed(I[0], 304, 15, "null");
+      this[__ScaleGestureRecognizer__currentFocalPoint_isSet] = true;
+      this[__ScaleGestureRecognizer__currentFocalPoint] = t1;
+    }
+    get [_initialSpan]() {
+      let t2;
+      return dart.test(this[__ScaleGestureRecognizer__initialSpan_isSet]) ? (t2 = this[__ScaleGestureRecognizer__initialSpan], t2) : dart.throw(new _internal.LateError.fieldNI("_initialSpan"));
+    }
+    set [_initialSpan](t2) {
+      if (t2 == null) dart.nullFailed(I[0], 305, 15, "null");
+      this[__ScaleGestureRecognizer__initialSpan_isSet] = true;
+      this[__ScaleGestureRecognizer__initialSpan] = t2;
+    }
+    get [_currentSpan]() {
+      let t3;
+      return dart.test(this[__ScaleGestureRecognizer__currentSpan_isSet]) ? (t3 = this[__ScaleGestureRecognizer__currentSpan], t3) : dart.throw(new _internal.LateError.fieldNI("_currentSpan"));
+    }
+    set [_currentSpan](t3) {
+      if (t3 == null) dart.nullFailed(I[0], 306, 15, "null");
+      this[__ScaleGestureRecognizer__currentSpan_isSet] = true;
+      this[__ScaleGestureRecognizer__currentSpan] = t3;
+    }
+    get [_initialHorizontalSpan]() {
+      let t4;
+      return dart.test(this[__ScaleGestureRecognizer__initialHorizontalSpan_isSet]) ? (t4 = this[__ScaleGestureRecognizer__initialHorizontalSpan], t4) : dart.throw(new _internal.LateError.fieldNI("_initialHorizontalSpan"));
+    }
+    set [_initialHorizontalSpan](t4) {
+      if (t4 == null) dart.nullFailed(I[0], 307, 15, "null");
+      this[__ScaleGestureRecognizer__initialHorizontalSpan_isSet] = true;
+      this[__ScaleGestureRecognizer__initialHorizontalSpan] = t4;
+    }
+    set [_currentHorizontalSpan](t5) {
+      if (t5 == null) dart.nullFailed(I[0], 308, 15, "null");
+      this[__ScaleGestureRecognizer__currentHorizontalSpan_isSet] = true;
+      this[__ScaleGestureRecognizer__currentHorizontalSpan] = t5;
+    }
+    get [_currentHorizontalSpan]() {
+      let t6;
+      return dart.test(this[__ScaleGestureRecognizer__currentHorizontalSpan_isSet]) ? (t6 = this[__ScaleGestureRecognizer__currentHorizontalSpan], t6) : dart.throw(new _internal.LateError.fieldNI("_currentHorizontalSpan"));
+    }
+    get [_initialVerticalSpan]() {
+      let t6;
+      return dart.test(this[__ScaleGestureRecognizer__initialVerticalSpan_isSet]) ? (t6 = this[__ScaleGestureRecognizer__initialVerticalSpan], t6) : dart.throw(new _internal.LateError.fieldNI("_initialVerticalSpan"));
+    }
+    set [_initialVerticalSpan](t6) {
+      if (t6 == null) dart.nullFailed(I[0], 309, 15, "null");
+      this[__ScaleGestureRecognizer__initialVerticalSpan_isSet] = true;
+      this[__ScaleGestureRecognizer__initialVerticalSpan] = t6;
+    }
+    get [_currentVerticalSpan]() {
+      let t7;
+      return dart.test(this[__ScaleGestureRecognizer__currentVerticalSpan_isSet]) ? (t7 = this[__ScaleGestureRecognizer__currentVerticalSpan], t7) : dart.throw(new _internal.LateError.fieldNI("_currentVerticalSpan"));
+    }
+    set [_currentVerticalSpan](t7) {
+      if (t7 == null) dart.nullFailed(I[0], 310, 15, "null");
+      this[__ScaleGestureRecognizer__currentVerticalSpan_isSet] = true;
+      this[__ScaleGestureRecognizer__currentVerticalSpan] = t7;
+    }
+    get [_pointerLocations]() {
+      let t8;
+      return dart.test(this[__ScaleGestureRecognizer__pointerLocations_isSet]) ? (t8 = this[__ScaleGestureRecognizer__pointerLocations], t8) : dart.throw(new _internal.LateError.fieldNI("_pointerLocations"));
+    }
+    set [_pointerLocations](t8) {
+      if (t8 == null) dart.nullFailed(I[0], 313, 25, "null");
+      this[__ScaleGestureRecognizer__pointerLocations_isSet] = true;
+      this[__ScaleGestureRecognizer__pointerLocations] = t8;
+    }
+    get [_pointerQueue]() {
+      let t9;
+      return dart.test(this[__ScaleGestureRecognizer__pointerQueue_isSet]) ? (t9 = this[__ScaleGestureRecognizer__pointerQueue], t9) : dart.throw(new _internal.LateError.fieldNI("_pointerQueue"));
+    }
+    set [_pointerQueue](t9) {
+      if (t9 == null) dart.nullFailed(I[0], 314, 18, "null");
+      this[__ScaleGestureRecognizer__pointerQueue_isSet] = true;
+      this[__ScaleGestureRecognizer__pointerQueue] = t9;
+    }
+    get [_scaleFactor]() {
+      return dart.notNull(this[_initialSpan]) > 0.0 ? dart.notNull(this[_currentSpan]) / dart.notNull(this[_initialSpan]) : 1.0;
+    }
+    get [_horizontalScaleFactor]() {
+      return dart.notNull(this[_initialHorizontalSpan]) > 0.0 ? dart.notNull(this[_currentHorizontalSpan]) / dart.notNull(this[_initialHorizontalSpan]) : 1.0;
+    }
+    get [_verticalScaleFactor]() {
+      return dart.notNull(this[_initialVerticalSpan]) > 0.0 ? dart.notNull(this[_currentVerticalSpan]) / dart.notNull(this[_initialVerticalSpan]) : 1.0;
+    }
+    [_computeRotationFactor]() {
+      if (this[_initialLine] == null || this[_currentLine] == null) {
+        return 0.0;
+      }
+      let fx = dart.nullCheck(this[_initialLine]).pointerStartLocation.dx;
+      let fy = dart.nullCheck(this[_initialLine]).pointerStartLocation.dy;
+      let sx = dart.nullCheck(this[_initialLine]).pointerEndLocation.dx;
+      let sy = dart.nullCheck(this[_initialLine]).pointerEndLocation.dy;
+      let nfx = dart.nullCheck(this[_currentLine]).pointerStartLocation.dx;
+      let nfy = dart.nullCheck(this[_currentLine]).pointerStartLocation.dy;
+      let nsx = dart.nullCheck(this[_currentLine]).pointerEndLocation.dx;
+      let nsy = dart.nullCheck(this[_currentLine]).pointerEndLocation.dy;
+      let angle1 = math.atan2(dart.notNull(fy) - dart.notNull(sy), dart.notNull(fx) - dart.notNull(sx));
+      let angle2 = math.atan2(dart.notNull(nfy) - dart.notNull(nsy), dart.notNull(nfx) - dart.notNull(nsx));
+      return angle2 - angle1;
+    }
+    addAllowedPointer(event) {
+      if (event == null) dart.nullFailed(I[0], 344, 39, "event");
+      this.startTrackingPointer(event.pointer, event.transform);
+      this[_velocityTrackers][$_set](event.pointer, new velocity_tracker.VelocityTracker.withKind(event.kind));
+      if (this[_state] == scale._ScaleState.ready) {
+        this[_state] = scale._ScaleState.possible;
+        this[_initialSpan] = 0.0;
+        this[_currentSpan] = 0.0;
+        this[_initialHorizontalSpan] = 0.0;
+        this[_currentHorizontalSpan] = 0.0;
+        this[_initialVerticalSpan] = 0.0;
+        this[_currentVerticalSpan] = 0.0;
+        this[_pointerLocations] = new (T.IdentityMapOfint$Offset()).new();
+        this[_pointerQueue] = T.JSArrayOfint().of([]);
+      }
+    }
+    handleEvent(event) {
+      if (event == null) dart.nullFailed(I[0], 361, 33, "event");
+      if (!(this[_state] != scale._ScaleState.ready)) dart.assertFailed(null, I[0], 362, 12, "_state != _ScaleState.ready");
+      let didChangeConfiguration = false;
+      let shouldStartIfAccepted = false;
+      if (events.PointerMoveEvent.is(event)) {
+        let tracker = dart.nullCheck(this[_velocityTrackers][$_get](event.pointer));
+        if (!dart.test(event.synthesized)) tracker.addPosition(event.timeStamp, event.position);
+        this[_pointerLocations][$_set](event.pointer, event.position);
+        shouldStartIfAccepted = true;
+        this[_lastTransform] = event.transform;
+      } else if (events.PointerDownEvent.is(event)) {
+        this[_pointerLocations][$_set](event.pointer, event.position);
+        this[_pointerQueue][$add](event.pointer);
+        didChangeConfiguration = true;
+        shouldStartIfAccepted = true;
+        this[_lastTransform] = event.transform;
+      } else if (events.PointerUpEvent.is(event) || events.PointerCancelEvent.is(event)) {
+        this[_pointerLocations][$remove](event.pointer);
+        this[_pointerQueue][$remove](event.pointer);
+        didChangeConfiguration = true;
+        this[_lastTransform] = event.transform;
+      }
+      this[_updateLines]();
+      this[_update]();
+      if (!didChangeConfiguration || dart.test(this[_reconfigure](event.pointer))) this[_advanceStateMachine](shouldStartIfAccepted, event.kind);
+      this.stopTrackingIfPointerNoLongerDown(event);
+    }
+    [_update]() {
+      let count = this[_pointerLocations][$keys][$length];
+      let focalPoint = ui.Offset.zero;
+      for (let pointer of this[_pointerLocations][$keys])
+        focalPoint = focalPoint['+'](dart.nullCheck(this[_pointerLocations][$_get](pointer)));
+      this[_currentFocalPoint] = dart.notNull(count) > 0 ? focalPoint['/'](count[$toDouble]()) : ui.Offset.zero;
+      let totalDeviation = 0.0;
+      let totalHorizontalDeviation = 0.0;
+      let totalVerticalDeviation = 0.0;
+      for (let pointer of this[_pointerLocations][$keys]) {
+        totalDeviation = totalDeviation + dart.notNull(this[_currentFocalPoint]['-'](dart.nullCheck(this[_pointerLocations][$_get](pointer))).distance);
+        totalHorizontalDeviation = totalHorizontalDeviation + (dart.notNull(this[_currentFocalPoint].dx) - dart.notNull(dart.nullCheck(this[_pointerLocations][$_get](pointer)).dx))[$abs]();
+        totalVerticalDeviation = totalVerticalDeviation + (dart.notNull(this[_currentFocalPoint].dy) - dart.notNull(dart.nullCheck(this[_pointerLocations][$_get](pointer)).dy))[$abs]();
+      }
+      this[_currentSpan] = dart.notNull(count) > 0 ? totalDeviation / dart.notNull(count) : 0.0;
+      this[_currentHorizontalSpan] = dart.notNull(count) > 0 ? totalHorizontalDeviation / dart.notNull(count) : 0.0;
+      this[_currentVerticalSpan] = dart.notNull(count) > 0 ? totalVerticalDeviation / dart.notNull(count) : 0.0;
+    }
+    [_updateLines]() {
+      let count = this[_pointerLocations][$keys][$length];
+      if (!(dart.notNull(this[_pointerQueue][$length]) >= dart.notNull(count))) dart.assertFailed(null, I[0], 422, 12, "_pointerQueue.length >= count");
+      if (dart.notNull(count) < 2) {
+        this[_initialLine] = this[_currentLine];
+      } else if (this[_initialLine] != null && dart.nullCheck(this[_initialLine]).pointerStartId == this[_pointerQueue][$_get](0) && dart.nullCheck(this[_initialLine]).pointerEndId == this[_pointerQueue][$_get](1)) {
+        this[_currentLine] = new scale._LineBetweenPointers.new({pointerStartId: this[_pointerQueue][$_get](0), pointerStartLocation: dart.nullCheck(this[_pointerLocations][$_get](this[_pointerQueue][$_get](0))), pointerEndId: this[_pointerQueue][$_get](1), pointerEndLocation: dart.nullCheck(this[_pointerLocations][$_get](this[_pointerQueue][$_get](1)))});
+      } else {
+        this[_initialLine] = new scale._LineBetweenPointers.new({pointerStartId: this[_pointerQueue][$_get](0), pointerStartLocation: dart.nullCheck(this[_pointerLocations][$_get](this[_pointerQueue][$_get](0))), pointerEndId: this[_pointerQueue][$_get](1), pointerEndLocation: dart.nullCheck(this[_pointerLocations][$_get](this[_pointerQueue][$_get](1)))});
+        this[_currentLine] = null;
+      }
+    }
+    [_reconfigure](pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 448, 25, "pointer");
+      this[_initialFocalPoint] = this[_currentFocalPoint];
+      this[_initialSpan] = this[_currentSpan];
+      this[_initialLine] = this[_currentLine];
+      this[_initialHorizontalSpan] = this[_currentHorizontalSpan];
+      this[_initialVerticalSpan] = this[_currentVerticalSpan];
+      if (this[_state] == scale._ScaleState.started) {
+        if (this.onEnd != null) {
+          let tracker = dart.nullCheck(this[_velocityTrackers][$_get](pointer));
+          let velocity = tracker.getVelocity();
+          if (dart.test(scale._isFlingGesture(velocity))) {
+            let pixelsPerSecond = velocity.pixelsPerSecond;
+            if (dart.notNull(pixelsPerSecond.distanceSquared) > 8000 * 8000) velocity = new velocity_tracker.Velocity.new({pixelsPerSecond: pixelsPerSecond['/'](pixelsPerSecond.distance)['*'](8000)});
+            this.invokeCallback(dart.void, "onEnd", dart.fn(() => dart.nullCheck(this.onEnd)(new scale.ScaleEndDetails.new({velocity: velocity, pointerCount: this[_pointerQueue][$length]})), T.VoidTovoid()));
+          } else {
+            this.invokeCallback(dart.void, "onEnd", dart.fn(() => dart.nullCheck(this.onEnd)(new scale.ScaleEndDetails.new({velocity: velocity_tracker.Velocity.zero, pointerCount: this[_pointerQueue][$length]})), T.VoidTovoid()));
+          }
+        }
+        this[_state] = scale._ScaleState.accepted;
+        return false;
+      }
       return true;
-    }, T.VoidTobool())())) dart.assertFailed(null, I[1], 192, 12, "() {\r\n      _debugDanglingKeepAlives = <RenderBox>[];\r\n      return true;\r\n    }()");
-  }).prototype = sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.prototype;
-  dart.addTypeTests(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor);
-  dart.addTypeCaches(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor);
-  dart.setMethodSignature(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, () => ({
-    __proto__: dart.getMethods(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__),
-    [_debugAssertChildListLocked]: dart.fnType(core.bool, []),
-    [_debugVerifyChildOrder]: dart.fnType(core.bool, []),
-    [_createOrObtainChild]: dart.fnType(dart.void, [core.int], {}, {after: dart.nullable(box.RenderBox)}),
-    [_destroyOrCacheChild]: dart.fnType(dart.void, [box.RenderBox]),
-    addInitialChild: dart.fnType(core.bool, [], {index: core.int, layoutOffset: core.double}, {}),
-    insertAndLayoutLeadingChild: dart.fnType(dart.nullable(box.RenderBox), [box.BoxConstraints], {parentUsesSize: core.bool}, {}),
-    insertAndLayoutChild: dart.fnType(dart.nullable(box.RenderBox), [box.BoxConstraints], {parentUsesSize: core.bool}, {after: dart.nullable(box.RenderBox)}),
-    collectGarbage: dart.fnType(dart.void, [core.int, core.int]),
-    indexOf: dart.fnType(core.int, [box.RenderBox]),
-    paintExtentOf: dart.fnType(core.double, [box.RenderBox]),
-    debugAssertChildListIsNonEmptyAndContiguous: dart.fnType(core.bool, [])
+    }
+    [_advanceStateMachine](shouldStartIfAccepted, pointerDeviceKind) {
+      if (shouldStartIfAccepted == null) dart.nullFailed(I[0], 474, 34, "shouldStartIfAccepted");
+      if (pointerDeviceKind == null) dart.nullFailed(I[0], 474, 75, "pointerDeviceKind");
+      if (this[_state] == scale._ScaleState.ready) this[_state] = scale._ScaleState.possible;
+      if (this[_state] == scale._ScaleState.possible) {
+        let spanDelta = (dart.notNull(this[_currentSpan]) - dart.notNull(this[_initialSpan]))[$abs]();
+        let focalPointDelta = this[_currentFocalPoint]['-'](this[_initialFocalPoint]).distance;
+        if (spanDelta > dart.notNull(events.computeScaleSlop(pointerDeviceKind)) || dart.notNull(focalPointDelta) > dart.notNull(events.computePanSlop(pointerDeviceKind))) this.resolve(arena.GestureDisposition.accepted);
+      } else if (dart.notNull(this[_state].index) >= dart.notNull(scale._ScaleState.accepted.index)) {
+        this.resolve(arena.GestureDisposition.accepted);
+      }
+      if (this[_state] == scale._ScaleState.accepted && dart.test(shouldStartIfAccepted)) {
+        this[_state] = scale._ScaleState.started;
+        this[_dispatchOnStartCallbackIfNeeded]();
+      }
+      if (this[_state] == scale._ScaleState.started && this.onUpdate != null) this.invokeCallback(dart.void, "onUpdate", dart.fn(() => {
+        dart.nullCheck(this.onUpdate)(new scale.ScaleUpdateDetails.new({scale: this[_scaleFactor], horizontalScale: this[_horizontalScaleFactor], verticalScale: this[_verticalScaleFactor], focalPoint: this[_currentFocalPoint], localFocalPoint: events.PointerEvent.transformPosition(this[_lastTransform], this[_currentFocalPoint]), rotation: this[_computeRotationFactor](), pointerCount: this[_pointerQueue][$length]}));
+      }, T.VoidTovoid()));
+    }
+    [_dispatchOnStartCallbackIfNeeded]() {
+      if (!(this[_state] == scale._ScaleState.started)) dart.assertFailed(null, I[0], 507, 12, "_state == _ScaleState.started");
+      if (this.onStart != null) this.invokeCallback(dart.void, "onStart", dart.fn(() => {
+        dart.nullCheck(this.onStart)(new scale.ScaleStartDetails.new({focalPoint: this[_currentFocalPoint], localFocalPoint: events.PointerEvent.transformPosition(this[_lastTransform], this[_currentFocalPoint]), pointerCount: this[_pointerQueue][$length]}));
+      }, T.VoidTovoid()));
+    }
+    acceptGesture(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 519, 26, "pointer");
+      if (this[_state] == scale._ScaleState.possible) {
+        this[_state] = scale._ScaleState.started;
+        this[_dispatchOnStartCallbackIfNeeded]();
+        if (this.dragStartBehavior == recognizer.DragStartBehavior.start) {
+          this[_initialFocalPoint] = this[_currentFocalPoint];
+          this[_initialSpan] = this[_currentSpan];
+          this[_initialLine] = this[_currentLine];
+          this[_initialHorizontalSpan] = this[_currentHorizontalSpan];
+          this[_initialVerticalSpan] = this[_currentVerticalSpan];
+        }
+      }
+    }
+    rejectGesture(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 534, 26, "pointer");
+      this.stopTrackingPointer(pointer);
+    }
+    didStopTrackingLastPointer(pointer) {
+      if (pointer == null) dart.nullFailed(I[0], 539, 39, "pointer");
+      switch (this[_state]) {
+        case C[1] || CT.C1:
+        {
+          this.resolve(arena.GestureDisposition.rejected);
+          break;
+        }
+        case C[0] || CT.C0:
+        {
+          if (!false) dart.assertFailed(null, I[0], 545, 16, "false");
+          break;
+        }
+        case C[2] || CT.C2:
+        {
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          if (!false) dart.assertFailed(null, I[0], 550, 16, "false");
+          break;
+        }
+        default:
+        {
+          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+        }
+      }
+      this[_state] = scale._ScaleState.ready;
+    }
+    dispose() {
+      this[_velocityTrackers][$clear]();
+      super.dispose();
+    }
+    get debugDescription() {
+      return "scale";
+    }
+  };
+  (scale.ScaleGestureRecognizer.new = function(opts) {
+    let debugOwner = opts && 'debugOwner' in opts ? opts.debugOwner : null;
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    let dragStartBehavior = opts && 'dragStartBehavior' in opts ? opts.dragStartBehavior : C[7] || CT.C7;
+    if (dragStartBehavior == null) dart.nullFailed(I[0], 254, 10, "dragStartBehavior");
+    this[onStart] = null;
+    this[onUpdate] = null;
+    this[onEnd] = null;
+    this[_state] = scale._ScaleState.ready;
+    this[_lastTransform] = null;
+    this[__ScaleGestureRecognizer__initialFocalPoint] = null;
+    this[__ScaleGestureRecognizer__initialFocalPoint_isSet] = false;
+    this[__ScaleGestureRecognizer__currentFocalPoint] = null;
+    this[__ScaleGestureRecognizer__currentFocalPoint_isSet] = false;
+    this[__ScaleGestureRecognizer__initialSpan] = null;
+    this[__ScaleGestureRecognizer__initialSpan_isSet] = false;
+    this[__ScaleGestureRecognizer__currentSpan] = null;
+    this[__ScaleGestureRecognizer__currentSpan_isSet] = false;
+    this[__ScaleGestureRecognizer__initialHorizontalSpan] = null;
+    this[__ScaleGestureRecognizer__initialHorizontalSpan_isSet] = false;
+    this[__ScaleGestureRecognizer__currentHorizontalSpan] = null;
+    this[__ScaleGestureRecognizer__currentHorizontalSpan_isSet] = false;
+    this[__ScaleGestureRecognizer__initialVerticalSpan] = null;
+    this[__ScaleGestureRecognizer__initialVerticalSpan_isSet] = false;
+    this[__ScaleGestureRecognizer__currentVerticalSpan] = null;
+    this[__ScaleGestureRecognizer__currentVerticalSpan_isSet] = false;
+    this[_initialLine] = null;
+    this[_currentLine] = null;
+    this[__ScaleGestureRecognizer__pointerLocations] = null;
+    this[__ScaleGestureRecognizer__pointerLocations_isSet] = false;
+    this[__ScaleGestureRecognizer__pointerQueue] = null;
+    this[__ScaleGestureRecognizer__pointerQueue_isSet] = false;
+    this[_velocityTrackers] = new (T.IdentityMapOfint$VelocityTracker()).new();
+    this[dragStartBehavior$] = dragStartBehavior;
+    if (!(dragStartBehavior != null)) dart.assertFailed(null, I[0], 255, 15, "dragStartBehavior != null");
+    scale.ScaleGestureRecognizer.__proto__.new.call(this, {debugOwner: debugOwner, kind: kind});
+    ;
+  }).prototype = scale.ScaleGestureRecognizer.prototype;
+  dart.addTypeTests(scale.ScaleGestureRecognizer);
+  dart.addTypeCaches(scale.ScaleGestureRecognizer);
+  dart.setMethodSignature(scale.ScaleGestureRecognizer, () => ({
+    __proto__: dart.getMethods(scale.ScaleGestureRecognizer.__proto__),
+    [_computeRotationFactor]: dart.fnType(core.double, []),
+    addAllowedPointer: dart.fnType(dart.void, [events.PointerEvent]),
+    handleEvent: dart.fnType(dart.void, [events.PointerEvent]),
+    [_update]: dart.fnType(dart.void, []),
+    [_updateLines]: dart.fnType(dart.void, []),
+    [_reconfigure]: dart.fnType(core.bool, [core.int]),
+    [_advanceStateMachine]: dart.fnType(dart.void, [core.bool, ui.PointerDeviceKind]),
+    [_dispatchOnStartCallbackIfNeeded]: dart.fnType(dart.void, []),
+    didStopTrackingLastPointer: dart.fnType(dart.void, [core.int])
   }));
-  dart.setGetterSignature(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, () => ({
-    __proto__: dart.getGetters(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__),
-    childManager: sliver_multi_box_adaptor.RenderSliverBoxChildManager,
-    [_debugDanglingKeepAlives]: core.List$(box.RenderBox),
-    debugChildIntegrityEnabled: core.bool
+  dart.setGetterSignature(scale.ScaleGestureRecognizer, () => ({
+    __proto__: dart.getGetters(scale.ScaleGestureRecognizer.__proto__),
+    [_initialFocalPoint]: ui.Offset,
+    [_currentFocalPoint]: ui.Offset,
+    [_initialSpan]: core.double,
+    [_currentSpan]: core.double,
+    [_initialHorizontalSpan]: core.double,
+    [_currentHorizontalSpan]: core.double,
+    [_initialVerticalSpan]: core.double,
+    [_currentVerticalSpan]: core.double,
+    [_pointerLocations]: core.Map$(core.int, ui.Offset),
+    [_pointerQueue]: core.List$(core.int),
+    [_scaleFactor]: core.double,
+    [_horizontalScaleFactor]: core.double,
+    [_verticalScaleFactor]: core.double,
+    debugDescription: core.String
   }));
-  dart.setSetterSignature(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, () => ({
-    __proto__: dart.getSetters(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__),
-    [_debugDanglingKeepAlives]: core.List$(box.RenderBox),
-    debugChildIntegrityEnabled: core.bool
+  dart.setSetterSignature(scale.ScaleGestureRecognizer, () => ({
+    __proto__: dart.getSetters(scale.ScaleGestureRecognizer.__proto__),
+    [_initialFocalPoint]: ui.Offset,
+    [_currentFocalPoint]: ui.Offset,
+    [_initialSpan]: core.double,
+    [_currentSpan]: core.double,
+    [_initialHorizontalSpan]: core.double,
+    [_currentHorizontalSpan]: core.double,
+    [_initialVerticalSpan]: core.double,
+    [_currentVerticalSpan]: core.double,
+    [_pointerLocations]: core.Map$(core.int, ui.Offset),
+    [_pointerQueue]: core.List$(core.int)
   }));
-  dart.setLibraryUri(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, I[0]);
-  dart.setFieldSignature(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, () => ({
-    __proto__: dart.getFields(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__),
-    [_childManager]: dart.finalFieldType(sliver_multi_box_adaptor.RenderSliverBoxChildManager),
-    [_keepAliveBucket]: dart.finalFieldType(core.Map$(core.int, box.RenderBox)),
-    [__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives]: dart.fieldType(dart.nullable(core.List$(box.RenderBox))),
-    [__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives_isSet]: dart.fieldType(core.bool),
-    [_debugChildIntegrityEnabled]: dart.fieldType(core.bool)
+  dart.setLibraryUri(scale.ScaleGestureRecognizer, I[1]);
+  dart.setFieldSignature(scale.ScaleGestureRecognizer, () => ({
+    __proto__: dart.getFields(scale.ScaleGestureRecognizer.__proto__),
+    dragStartBehavior: dart.fieldType(recognizer.DragStartBehavior),
+    onStart: dart.fieldType(dart.nullable(dart.fnType(dart.void, [scale.ScaleStartDetails]))),
+    onUpdate: dart.fieldType(dart.nullable(dart.fnType(dart.void, [scale.ScaleUpdateDetails]))),
+    onEnd: dart.fieldType(dart.nullable(dart.fnType(dart.void, [scale.ScaleEndDetails]))),
+    [_state]: dart.fieldType(scale._ScaleState),
+    [_lastTransform]: dart.fieldType(dart.nullable(vector_math_64.Matrix4)),
+    [__ScaleGestureRecognizer__initialFocalPoint]: dart.fieldType(dart.nullable(ui.Offset)),
+    [__ScaleGestureRecognizer__initialFocalPoint_isSet]: dart.fieldType(core.bool),
+    [__ScaleGestureRecognizer__currentFocalPoint]: dart.fieldType(dart.nullable(ui.Offset)),
+    [__ScaleGestureRecognizer__currentFocalPoint_isSet]: dart.fieldType(core.bool),
+    [__ScaleGestureRecognizer__initialSpan]: dart.fieldType(dart.nullable(core.double)),
+    [__ScaleGestureRecognizer__initialSpan_isSet]: dart.fieldType(core.bool),
+    [__ScaleGestureRecognizer__currentSpan]: dart.fieldType(dart.nullable(core.double)),
+    [__ScaleGestureRecognizer__currentSpan_isSet]: dart.fieldType(core.bool),
+    [__ScaleGestureRecognizer__initialHorizontalSpan]: dart.fieldType(dart.nullable(core.double)),
+    [__ScaleGestureRecognizer__initialHorizontalSpan_isSet]: dart.fieldType(core.bool),
+    [__ScaleGestureRecognizer__currentHorizontalSpan]: dart.fieldType(dart.nullable(core.double)),
+    [__ScaleGestureRecognizer__currentHorizontalSpan_isSet]: dart.fieldType(core.bool),
+    [__ScaleGestureRecognizer__initialVerticalSpan]: dart.fieldType(dart.nullable(core.double)),
+    [__ScaleGestureRecognizer__initialVerticalSpan_isSet]: dart.fieldType(core.bool),
+    [__ScaleGestureRecognizer__currentVerticalSpan]: dart.fieldType(dart.nullable(core.double)),
+    [__ScaleGestureRecognizer__currentVerticalSpan_isSet]: dart.fieldType(core.bool),
+    [_initialLine]: dart.fieldType(dart.nullable(scale._LineBetweenPointers)),
+    [_currentLine]: dart.fieldType(dart.nullable(scale._LineBetweenPointers)),
+    [__ScaleGestureRecognizer__pointerLocations]: dart.fieldType(dart.nullable(core.Map$(core.int, ui.Offset))),
+    [__ScaleGestureRecognizer__pointerLocations_isSet]: dart.fieldType(core.bool),
+    [__ScaleGestureRecognizer__pointerQueue]: dart.fieldType(dart.nullable(core.List$(core.int))),
+    [__ScaleGestureRecognizer__pointerQueue_isSet]: dart.fieldType(core.bool),
+    [_velocityTrackers]: dart.finalFieldType(core.Map$(core.int, velocity_tracker.VelocityTracker))
   }));
-  dart.trackLibraries("packages/flutter/src/rendering/sliver_multi_box_adaptor.dart", {
-    "package:flutter/src/rendering/sliver_multi_box_adaptor.dart": sliver_multi_box_adaptor
+  scale._isFlingGesture = function _isFlingGesture(velocity) {
+    if (velocity == null) dart.nullFailed(I[0], 204, 31, "velocity");
+    if (!(velocity != null)) dart.assertFailed(null, I[0], 205, 10, "velocity != null");
+    let speedSquared = velocity.pixelsPerSecond.distanceSquared;
+    return dart.notNull(speedSquared) > 50 * 50;
+  };
+  dart.trackLibraries("packages/flutter/src/gestures/scale.dart", {
+    "package:flutter/src/gestures/scale.dart": scale
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["sliver_multi_box_adaptor.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/rendering/sliver_multi_box_adaptor.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["scale.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/gestures/scale.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__sliver_multi_box_adaptor: sliver_multi_box_adaptor
+    src__gestures__scale: scale
   };
 }));
 
-//# sourceMappingURL=sliver_multi_box_adaptor.dart.lib.js.map
+//# sourceMappingURL=scale.dart.lib.js.map

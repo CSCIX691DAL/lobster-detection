@@ -1,26 +1,20 @@
-define(['dart_sdk', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__services__mouse_cursor_dart(dart_sdk, packages__flutter__src__gestures__events$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__services__system_channels$46dart, packages__flutter__src__foundation__object$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__widgets__safe_area_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _js_helper = dart_sdk._js_helper;
-  const async = dart_sdk.async;
+  const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const system_channels = packages__flutter__src__services__system_channels$46dart.src__services__system_channels;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  var mouse_cursor = Object.create(dart.library);
-  var $_get = dartx._get;
-  var $remove = dartx.remove;
-  var $_set = dartx._set;
-  var $runtimeType = dartx.runtimeType;
-  var $hashCode = dartx.hashCode;
+  var safe_area = Object.create(dart.library);
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    IdentityMapOfint$MouseCursorSession: () => (T.IdentityMapOfint$MouseCursorSession = dart.constFn(_js_helper.IdentityMap$(core.int, mouse_cursor.MouseCursorSession)))(),
-    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
-    DiagnosticsPropertyOfString: () => (T.DiagnosticsPropertyOfString = dart.constFn(diagnostics.DiagnosticsProperty$(core.String)))()
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -28,652 +22,465 @@ define(['dart_sdk', 'packages/flutter/src/gestures/events.dart', 'packages/flutt
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: diagnostics.DiagnosticLevel.prototype,
-        [_name]: "DiagnosticLevel.info",
-        index: 3
-      });
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: mouse_cursor._DeferringMouseCursor.prototype
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: mouse_cursor._NoopMouseCursor.prototype
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "none"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "context",
+        [_Location_column]: 9,
+        [_Location_line]: 112,
+        [_Location_file]: null
       });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "basic"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeLeft",
+        [_Location_column]: 9,
+        [_Location_line]: 113,
+        [_Location_file]: null
       });
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "click"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeTop",
+        [_Location_column]: 9,
+        [_Location_line]: 114,
+        [_Location_file]: null
       });
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "forbidden"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeRight",
+        [_Location_column]: 9,
+        [_Location_line]: 115,
+        [_Location_file]: null
       });
     },
     get C7() {
       return C[7] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "wait"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeBottom",
+        [_Location_column]: 9,
+        [_Location_line]: 116,
+        [_Location_file]: null
       });
     },
     get C8() {
       return C[8] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "progress"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 117,
+        [_Location_file]: null
       });
     },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "contextMenu"
-      });
+    get C2() {
+      return C[2] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], T._LocationL());
     },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "help"
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[2] || CT.C2,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 111,
+        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C11() {
       return C[11] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "text"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 105,
+        [_Location_file]: null
       });
     },
     get C12() {
       return C[12] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "verticalText"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 111,
+        [_Location_file]: null
       });
     },
-    get C13() {
-      return C[13] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "cell"
-      });
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], T._LocationL());
     },
-    get C14() {
-      return C[14] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "precise"
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 104,
+        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C15() {
       return C[15] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "move"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "context",
+        [_Location_column]: 9,
+        [_Location_line]: 206,
+        [_Location_file]: null
       });
     },
     get C16() {
       return C[16] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "grab"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeLeft",
+        [_Location_column]: 9,
+        [_Location_line]: 207,
+        [_Location_file]: null
       });
     },
     get C17() {
       return C[17] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "grabbing"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeTop",
+        [_Location_column]: 9,
+        [_Location_line]: 208,
+        [_Location_file]: null
       });
     },
     get C18() {
       return C[18] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "noDrop"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeRight",
+        [_Location_column]: 9,
+        [_Location_line]: 209,
+        [_Location_file]: null
       });
     },
     get C19() {
       return C[19] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "alias"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "removeBottom",
+        [_Location_column]: 9,
+        [_Location_line]: 210,
+        [_Location_file]: null
       });
     },
     get C20() {
       return C[20] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "copy"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 211,
+        [_Location_file]: null
       });
     },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "disappearing"
-      });
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], T._LocationL());
     },
-    get C22() {
-      return C[22] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "allScroll"
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 205,
+        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     },
     get C23() {
       return C[23] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeLeftRight"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 199,
+        [_Location_file]: null
       });
     },
     get C24() {
       return C[24] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeUpDown"
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "sliver",
+        [_Location_column]: 7,
+        [_Location_line]: 205,
+        [_Location_file]: null
       });
     },
-    get C25() {
-      return C[25] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeUpLeftDownRight"
-      });
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], T._LocationL());
     },
-    get C26() {
-      return C[26] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeUpRightDownLeft"
-      });
-    },
-    get C27() {
-      return C[27] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeUp"
-      });
-    },
-    get C28() {
-      return C[28] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeDown"
-      });
-    },
-    get C29() {
-      return C[29] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeLeft"
-      });
-    },
-    get C30() {
-      return C[30] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeRight"
-      });
-    },
-    get C31() {
-      return C[31] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeUpLeft"
-      });
-    },
-    get C32() {
-      return C[32] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeUpRight"
-      });
-    },
-    get C33() {
-      return C[33] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeDownLeft"
-      });
-    },
-    get C34() {
-      return C[34] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeDownRight"
-      });
-    },
-    get C35() {
-      return C[35] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeColumn"
-      });
-    },
-    get C36() {
-      return C[36] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "resizeRow"
-      });
-    },
-    get C37() {
-      return C[37] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "zoomIn"
-      });
-    },
-    get C38() {
-      return C[38] = dart.const({
-        __proto__: mouse_cursor.SystemMouseCursor.prototype,
-        [kind$]: "zoomOut"
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 198,
+        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
       });
     }
   }, false);
-  var C = Array(39).fill(void 0);
+  var C = Array(25).fill(void 0);
   var I = [
-    "file:///C:/dev/flutter/packages/flutter/lib/src/services/mouse_cursor.dart",
-    "package:flutter/src/services/mouse_cursor.dart"
+    "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/safe_area.dart",
+    "package:flutter/src/widgets/safe_area.dart"
   ];
-  var fallbackMouseCursor$ = dart.privateName(mouse_cursor, "MouseCursorManager.fallbackMouseCursor");
-  var _lastSession = dart.privateName(mouse_cursor, "_lastSession");
-  mouse_cursor.MouseCursorManager = class MouseCursorManager extends core.Object {
-    get fallbackMouseCursor() {
-      return this[fallbackMouseCursor$];
+  var left$ = dart.privateName(safe_area, "SafeArea.left");
+  var top$ = dart.privateName(safe_area, "SafeArea.top");
+  var right$ = dart.privateName(safe_area, "SafeArea.right");
+  var bottom$ = dart.privateName(safe_area, "SafeArea.bottom");
+  var minimum$ = dart.privateName(safe_area, "SafeArea.minimum");
+  var maintainBottomViewPadding$ = dart.privateName(safe_area, "SafeArea.maintainBottomViewPadding");
+  var child$ = dart.privateName(safe_area, "SafeArea.child");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  safe_area.SafeArea = class SafeArea extends framework.StatelessWidget {
+    get left() {
+      return this[left$];
     }
-    set fallbackMouseCursor(value) {
-      super.fallbackMouseCursor = value;
+    set left(value) {
+      super.left = value;
     }
-    debugDeviceActiveCursor(device) {
-      if (device == null) dart.nullFailed(I[0], 36, 44, "device");
-      let result = null;
-      if (!dart.test(dart.fn(() => {
-        let t0;
-        result = (t0 = this[_lastSession][$_get](device), t0 == null ? null : t0.cursor);
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 38, 12, "() {\r\n      result = _lastSession[device]?.cursor;\r\n      return true;\r\n    }()");
-      return result;
+    get top() {
+      return this[top$];
     }
-    handleDeviceCursorUpdate(device, triggeringEvent, cursorCandidates) {
-      let t0, t0$, t0$0;
-      if (device == null) dart.nullFailed(I[0], 56, 9, "device");
-      if (cursorCandidates == null) dart.nullFailed(I[0], 58, 27, "cursorCandidates");
-      if (events.PointerRemovedEvent.is(triggeringEvent)) {
-        this[_lastSession][$remove](device);
-        return;
-      }
-      let lastSession = this[_lastSession][$_get](device);
-      let nextCursor = (t0 = mouse_cursor._DeferringMouseCursor.firstNonDeferred(cursorCandidates), t0 == null ? this.fallbackMouseCursor : t0);
-      if (!!mouse_cursor._DeferringMouseCursor.is(nextCursor)) dart.assertFailed(null, I[0], 68, 12, "nextCursor is! _DeferringMouseCursor");
-      if (dart.equals((t0$ = lastSession, t0$ == null ? null : t0$.cursor), nextCursor)) return;
-      let nextSession = nextCursor.createSession(device);
-      this[_lastSession][$_set](device, nextSession);
-      t0$0 = lastSession;
-      t0$0 == null ? null : t0$0.dispose();
-      nextSession.activate();
+    set top(value) {
+      super.top = value;
     }
-  };
-  (mouse_cursor.MouseCursorManager.new = function(fallbackMouseCursor) {
-    if (fallbackMouseCursor == null) dart.nullFailed(I[0], 19, 27, "fallbackMouseCursor");
-    this[_lastSession] = new (T.IdentityMapOfint$MouseCursorSession()).new();
-    this[fallbackMouseCursor$] = fallbackMouseCursor;
-    if (!!dart.equals(fallbackMouseCursor, mouse_cursor.MouseCursor.defer)) dart.assertFailed(null, I[0], 20, 14, "fallbackMouseCursor != MouseCursor.defer");
-    ;
-  }).prototype = mouse_cursor.MouseCursorManager.prototype;
-  dart.addTypeTests(mouse_cursor.MouseCursorManager);
-  dart.addTypeCaches(mouse_cursor.MouseCursorManager);
-  dart.setMethodSignature(mouse_cursor.MouseCursorManager, () => ({
-    __proto__: dart.getMethods(mouse_cursor.MouseCursorManager.__proto__),
-    debugDeviceActiveCursor: dart.fnType(dart.nullable(mouse_cursor.MouseCursor), [core.int]),
-    handleDeviceCursorUpdate: dart.fnType(dart.void, [core.int, dart.nullable(events.PointerEvent), core.Iterable$(mouse_cursor.MouseCursor)])
-  }));
-  dart.setLibraryUri(mouse_cursor.MouseCursorManager, I[1]);
-  dart.setFieldSignature(mouse_cursor.MouseCursorManager, () => ({
-    __proto__: dart.getFields(mouse_cursor.MouseCursorManager.__proto__),
-    fallbackMouseCursor: dart.finalFieldType(mouse_cursor.MouseCursor),
-    [_lastSession]: dart.finalFieldType(core.Map$(core.int, mouse_cursor.MouseCursorSession))
-  }));
-  var cursor$ = dart.privateName(mouse_cursor, "MouseCursorSession.cursor");
-  var device$ = dart.privateName(mouse_cursor, "MouseCursorSession.device");
-  mouse_cursor.MouseCursorSession = class MouseCursorSession extends core.Object {
-    get cursor() {
-      return this[cursor$];
+    get right() {
+      return this[right$];
     }
-    set cursor(value) {
-      super.cursor = value;
+    set right(value) {
+      super.right = value;
     }
-    get device() {
-      return this[device$];
+    get bottom() {
+      return this[bottom$];
     }
-    set device(value) {
-      super.device = value;
+    set bottom(value) {
+      super.bottom = value;
     }
-  };
-  (mouse_cursor.MouseCursorSession.new = function(cursor, device) {
-    if (cursor == null) dart.nullFailed(I[0], 103, 27, "cursor");
-    if (device == null) dart.nullFailed(I[0], 103, 40, "device");
-    this[cursor$] = cursor;
-    this[device$] = device;
-    if (!(cursor != null)) dart.assertFailed(null, I[0], 104, 14, "cursor != null");
-    if (!(device != null)) dart.assertFailed(null, I[0], 105, 14, "device != null");
-    ;
-  }).prototype = mouse_cursor.MouseCursorSession.prototype;
-  dart.addTypeTests(mouse_cursor.MouseCursorSession);
-  dart.addTypeCaches(mouse_cursor.MouseCursorSession);
-  dart.setLibraryUri(mouse_cursor.MouseCursorSession, I[1]);
-  dart.setFieldSignature(mouse_cursor.MouseCursorSession, () => ({
-    __proto__: dart.getFields(mouse_cursor.MouseCursorSession.__proto__),
-    cursor: dart.finalFieldType(mouse_cursor.MouseCursor),
-    device: dart.finalFieldType(core.int)
-  }));
-  var _name = dart.privateName(diagnostics, "_name");
-  const Object_Diagnosticable$36 = class Object_Diagnosticable extends core.Object {};
-  (Object_Diagnosticable$36.new = function() {
-  }).prototype = Object_Diagnosticable$36.prototype;
-  dart.applyMixin(Object_Diagnosticable$36, diagnostics.Diagnosticable);
-  mouse_cursor.MouseCursor = class MouseCursor extends Object_Diagnosticable$36 {
-    toString(opts) {
-      let minLevel = opts && 'minLevel' in opts ? opts.minLevel : C[0] || CT.C0;
-      if (minLevel == null) dart.nullFailed(I[0], 228, 36, "minLevel");
-      let debugDescription = this.debugDescription;
-      if (dart.notNull(minLevel.index) >= dart.notNull(diagnostics.DiagnosticLevel.info.index) && debugDescription != null) return debugDescription;
-      return super.toString({minLevel: minLevel});
+    get minimum() {
+      return this[minimum$];
     }
-  };
-  (mouse_cursor.MouseCursor.new = function() {
-    ;
-  }).prototype = mouse_cursor.MouseCursor.prototype;
-  dart.addTypeTests(mouse_cursor.MouseCursor);
-  dart.addTypeCaches(mouse_cursor.MouseCursor);
-  dart.setLibraryUri(mouse_cursor.MouseCursor, I[1]);
-  dart.defineExtensionMethods(mouse_cursor.MouseCursor, ['toString']);
-  dart.defineLazy(mouse_cursor.MouseCursor, {
-    /*mouse_cursor.MouseCursor.defer*/get defer() {
-      return C[1] || CT.C1;
-    },
-    /*mouse_cursor.MouseCursor.uncontrolled*/get uncontrolled() {
-      return C[2] || CT.C2;
+    set minimum(value) {
+      super.minimum = value;
     }
-  }, false);
-  mouse_cursor._DeferringMouseCursor = class _DeferringMouseCursor extends mouse_cursor.MouseCursor {
-    createSession(device) {
-      if (device == null) dart.nullFailed(I[0], 265, 40, "device");
-      if (!false) dart.assertFailed("_DeferringMouseCursor can not create a session", I[0], 266, 12, "false");
-      dart.throw(new core.UnimplementedError.new());
+    get maintainBottomViewPadding() {
+      return this[maintainBottomViewPadding$];
     }
-    get debugDescription() {
-      return "defer";
+    set maintainBottomViewPadding(value) {
+      super.maintainBottomViewPadding = value;
     }
-    static firstNonDeferred(cursors) {
-      if (cursors == null) dart.nullFailed(I[0], 274, 62, "cursors");
-      for (let cursor of cursors) {
-        if (!(cursor != null)) dart.assertFailed(null, I[0], 276, 14, "cursor != null");
-        if (!dart.equals(cursor, mouse_cursor.MouseCursor.defer)) return cursor;
-      }
-      return null;
+    get child() {
+      return this[child$];
     }
-  };
-  (mouse_cursor._DeferringMouseCursor.__ = function() {
-    mouse_cursor._DeferringMouseCursor.__proto__.new.call(this);
-    ;
-  }).prototype = mouse_cursor._DeferringMouseCursor.prototype;
-  dart.addTypeTests(mouse_cursor._DeferringMouseCursor);
-  dart.addTypeCaches(mouse_cursor._DeferringMouseCursor);
-  dart.setMethodSignature(mouse_cursor._DeferringMouseCursor, () => ({
-    __proto__: dart.getMethods(mouse_cursor._DeferringMouseCursor.__proto__),
-    createSession: dart.fnType(mouse_cursor.MouseCursorSession, [core.int])
-  }));
-  dart.setGetterSignature(mouse_cursor._DeferringMouseCursor, () => ({
-    __proto__: dart.getGetters(mouse_cursor._DeferringMouseCursor.__proto__),
-    debugDescription: core.String
-  }));
-  dart.setLibraryUri(mouse_cursor._DeferringMouseCursor, I[1]);
-  mouse_cursor._NoopMouseCursorSession = class _NoopMouseCursorSession extends mouse_cursor.MouseCursorSession {
-    activate() {
-      return async.async(dart.void, function* activate() {
-      });
+    set child(value) {
+      super.child = value;
     }
-    dispose() {
-    }
-  };
-  (mouse_cursor._NoopMouseCursorSession.new = function(cursor, device) {
-    if (cursor == null) dart.nullFailed(I[0], 285, 44, "cursor");
-    if (device == null) dart.nullFailed(I[0], 285, 56, "device");
-    mouse_cursor._NoopMouseCursorSession.__proto__.new.call(this, cursor, device);
-    ;
-  }).prototype = mouse_cursor._NoopMouseCursorSession.prototype;
-  dart.addTypeTests(mouse_cursor._NoopMouseCursorSession);
-  dart.addTypeCaches(mouse_cursor._NoopMouseCursorSession);
-  dart.setMethodSignature(mouse_cursor._NoopMouseCursorSession, () => ({
-    __proto__: dart.getMethods(mouse_cursor._NoopMouseCursorSession.__proto__),
-    activate: dart.fnType(async.Future$(dart.void), []),
-    dispose: dart.fnType(dart.void, [])
-  }));
-  dart.setLibraryUri(mouse_cursor._NoopMouseCursorSession, I[1]);
-  mouse_cursor._NoopMouseCursor = class _NoopMouseCursor extends mouse_cursor.MouseCursor {
-    createSession(device) {
-      if (device == null) dart.nullFailed(I[0], 311, 45, "device");
-      return new mouse_cursor._NoopMouseCursorSession.new(this, device);
-    }
-    get debugDescription() {
-      return "uncontrolled";
-    }
-  };
-  (mouse_cursor._NoopMouseCursor.__ = function() {
-    mouse_cursor._NoopMouseCursor.__proto__.new.call(this);
-    ;
-  }).prototype = mouse_cursor._NoopMouseCursor.prototype;
-  dart.addTypeTests(mouse_cursor._NoopMouseCursor);
-  dart.addTypeCaches(mouse_cursor._NoopMouseCursor);
-  dart.setMethodSignature(mouse_cursor._NoopMouseCursor, () => ({
-    __proto__: dart.getMethods(mouse_cursor._NoopMouseCursor.__proto__),
-    createSession: dart.fnType(mouse_cursor._NoopMouseCursorSession, [core.int])
-  }));
-  dart.setGetterSignature(mouse_cursor._NoopMouseCursor, () => ({
-    __proto__: dart.getGetters(mouse_cursor._NoopMouseCursor.__proto__),
-    debugDescription: core.String
-  }));
-  dart.setLibraryUri(mouse_cursor._NoopMouseCursor, I[1]);
-  mouse_cursor._SystemMouseCursorSession = class _SystemMouseCursorSession extends mouse_cursor.MouseCursorSession {
-    get cursor() {
-      return mouse_cursor.SystemMouseCursor.as(super.cursor);
-    }
-    activate() {
-      return system_channels.SystemChannels.mouseCursor.invokeMethod(dart.void, "activateSystemCursor", new (T.IdentityMapOfString$dynamic()).from(["device", this.device, "kind", this.cursor.kind]));
-    }
-    dispose() {
-    }
-  };
-  (mouse_cursor._SystemMouseCursorSession.new = function(cursor, device) {
-    if (cursor == null) dart.nullFailed(I[0], 318, 47, "cursor");
-    if (device == null) dart.nullFailed(I[0], 318, 59, "device");
-    mouse_cursor._SystemMouseCursorSession.__proto__.new.call(this, cursor, device);
-    ;
-  }).prototype = mouse_cursor._SystemMouseCursorSession.prototype;
-  dart.addTypeTests(mouse_cursor._SystemMouseCursorSession);
-  dart.addTypeCaches(mouse_cursor._SystemMouseCursorSession);
-  dart.setMethodSignature(mouse_cursor._SystemMouseCursorSession, () => ({
-    __proto__: dart.getMethods(mouse_cursor._SystemMouseCursorSession.__proto__),
-    activate: dart.fnType(async.Future$(dart.void), []),
-    dispose: dart.fnType(dart.void, [])
-  }));
-  dart.setGetterSignature(mouse_cursor._SystemMouseCursorSession, () => ({
-    __proto__: dart.getGetters(mouse_cursor._SystemMouseCursorSession.__proto__),
-    cursor: mouse_cursor.SystemMouseCursor
-  }));
-  dart.setLibraryUri(mouse_cursor._SystemMouseCursorSession, I[1]);
-  var kind$ = dart.privateName(mouse_cursor, "SystemMouseCursor.kind");
-  mouse_cursor.SystemMouseCursor = class SystemMouseCursor extends mouse_cursor.MouseCursor {
-    get kind() {
-      return this[kind$];
-    }
-    set kind(value) {
-      super.kind = value;
-    }
-    get debugDescription() {
-      return dart.str(object.objectRuntimeType(this, "SystemMouseCursor")) + "(" + dart.str(this.kind) + ")";
-    }
-    createSession(device) {
-      if (device == null) dart.nullFailed(I[0], 384, 47, "device");
-      return new mouse_cursor._SystemMouseCursorSession.new(this, device);
-    }
-    _equals(other) {
-      if (other == null) return false;
-      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
-      return mouse_cursor.SystemMouseCursor.is(other) && other.kind == this.kind;
-    }
-    get hashCode() {
-      return dart.hashCode(this.kind);
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 96, 29, "context");
+      if (!dart.test(debug.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 97, 12, "debugCheckHasMediaQuery(context)");
+      let data = media_query.MediaQuery.of(context);
+      let padding = data.padding;
+      if (data.padding.bottom === 0.0 && data.viewInsets.bottom !== 0.0 && dart.test(this.maintainBottomViewPadding)) padding = padding.copyWith({bottom: data.viewPadding.bottom});
+      return new basic.Padding.new({padding: new edge_insets.EdgeInsets.only({left: math.max(core.double, dart.test(this.left) ? padding.left : 0.0, this.minimum.left), top: math.max(core.double, dart.test(this.top) ? padding.top : 0.0, this.minimum.top), right: math.max(core.double, dart.test(this.right) ? padding.right : 0.0, this.minimum.right), bottom: math.max(core.double, dart.test(this.bottom) ? padding.bottom : 0.0, this.minimum.bottom)}), child: media_query.MediaQuery.removePadding({context: context, removeLeft: this.left, removeTop: this.top, removeRight: this.right, removeBottom: this.bottom, child: this.child, $creationLocationd_0dea112b090073317d4: C[1] || CT.C1}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9});
     }
     debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 398, 56, "properties");
+      if (properties == null) dart.nullFailed(I[0], 123, 56, "properties");
       super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfString()).new("kind", this.kind, {level: diagnostics.DiagnosticLevel.debug}));
+      properties.add(new diagnostics.FlagProperty.new("left", {value: this.left, ifTrue: "avoid left padding"}));
+      properties.add(new diagnostics.FlagProperty.new("top", {value: this.top, ifTrue: "avoid top padding"}));
+      properties.add(new diagnostics.FlagProperty.new("right", {value: this.right, ifTrue: "avoid right padding"}));
+      properties.add(new diagnostics.FlagProperty.new("bottom", {value: this.bottom, ifTrue: "avoid bottom padding"}));
     }
   };
-  (mouse_cursor.SystemMouseCursor.__ = function(opts) {
-    let kind = opts && 'kind' in opts ? opts.kind : null;
-    if (kind == null) dart.nullFailed(I[0], 371, 19, "kind");
-    this[kind$] = kind;
-    if (!(kind != null)) dart.assertFailed(null, I[0], 372, 15, "kind != null");
-    mouse_cursor.SystemMouseCursor.__proto__.new.call(this);
+  (safe_area.SafeArea.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let left = opts && 'left' in opts ? opts.left : true;
+    if (left == null) dart.nullFailed(I[0], 43, 10, "left");
+    let top = opts && 'top' in opts ? opts.top : true;
+    if (top == null) dart.nullFailed(I[0], 44, 10, "top");
+    let right = opts && 'right' in opts ? opts.right : true;
+    if (right == null) dart.nullFailed(I[0], 45, 10, "right");
+    let bottom = opts && 'bottom' in opts ? opts.bottom : true;
+    if (bottom == null) dart.nullFailed(I[0], 46, 10, "bottom");
+    let minimum = opts && 'minimum' in opts ? opts.minimum : C[0] || CT.C0;
+    if (minimum == null) dart.nullFailed(I[0], 47, 10, "minimum");
+    let maintainBottomViewPadding = opts && 'maintainBottomViewPadding' in opts ? opts.maintainBottomViewPadding : false;
+    if (maintainBottomViewPadding == null) dart.nullFailed(I[0], 48, 10, "maintainBottomViewPadding");
+    let child = opts && 'child' in opts ? opts.child : null;
+    if (child == null) dart.nullFailed(I[0], 49, 19, "child");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[left$] = left;
+    this[top$] = top;
+    this[right$] = right;
+    this[bottom$] = bottom;
+    this[minimum$] = minimum;
+    this[maintainBottomViewPadding$] = maintainBottomViewPadding;
+    this[child$] = child;
+    if (!(left != null)) dart.assertFailed(null, I[0], 50, 15, "left != null");
+    if (!(top != null)) dart.assertFailed(null, I[0], 51, 15, "top != null");
+    if (!(right != null)) dart.assertFailed(null, I[0], 52, 15, "right != null");
+    if (!(bottom != null)) dart.assertFailed(null, I[0], 53, 15, "bottom != null");
+    safe_area.SafeArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = mouse_cursor.SystemMouseCursor.prototype;
-  dart.addTypeTests(mouse_cursor.SystemMouseCursor);
-  dart.addTypeCaches(mouse_cursor.SystemMouseCursor);
-  dart.setMethodSignature(mouse_cursor.SystemMouseCursor, () => ({
-    __proto__: dart.getMethods(mouse_cursor.SystemMouseCursor.__proto__),
-    createSession: dart.fnType(mouse_cursor._SystemMouseCursorSession, [core.int])
+  }).prototype = safe_area.SafeArea.prototype;
+  dart.addTypeTests(safe_area.SafeArea);
+  dart.addTypeCaches(safe_area.SafeArea);
+  dart.setMethodSignature(safe_area.SafeArea, () => ({
+    __proto__: dart.getMethods(safe_area.SafeArea.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setGetterSignature(mouse_cursor.SystemMouseCursor, () => ({
-    __proto__: dart.getGetters(mouse_cursor.SystemMouseCursor.__proto__),
-    debugDescription: core.String
+  dart.setLibraryUri(safe_area.SafeArea, I[1]);
+  dart.setFieldSignature(safe_area.SafeArea, () => ({
+    __proto__: dart.getFields(safe_area.SafeArea.__proto__),
+    left: dart.finalFieldType(core.bool),
+    top: dart.finalFieldType(core.bool),
+    right: dart.finalFieldType(core.bool),
+    bottom: dart.finalFieldType(core.bool),
+    minimum: dart.finalFieldType(edge_insets.EdgeInsets),
+    maintainBottomViewPadding: dart.finalFieldType(core.bool),
+    child: dart.finalFieldType(framework.Widget)
   }));
-  dart.setLibraryUri(mouse_cursor.SystemMouseCursor, I[1]);
-  dart.setFieldSignature(mouse_cursor.SystemMouseCursor, () => ({
-    __proto__: dart.getFields(mouse_cursor.SystemMouseCursor.__proto__),
-    kind: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(mouse_cursor.SystemMouseCursor, ['_equals']);
-  dart.defineExtensionAccessors(mouse_cursor.SystemMouseCursor, ['hashCode']);
-  mouse_cursor.SystemMouseCursors = class SystemMouseCursors extends core.Object {
-    static __() {
-      return dart.throw(new core.Error.new());
+  var left$0 = dart.privateName(safe_area, "SliverSafeArea.left");
+  var top$0 = dart.privateName(safe_area, "SliverSafeArea.top");
+  var right$0 = dart.privateName(safe_area, "SliverSafeArea.right");
+  var bottom$0 = dart.privateName(safe_area, "SliverSafeArea.bottom");
+  var minimum$0 = dart.privateName(safe_area, "SliverSafeArea.minimum");
+  var sliver$ = dart.privateName(safe_area, "SliverSafeArea.sliver");
+  safe_area.SliverSafeArea = class SliverSafeArea extends framework.StatelessWidget {
+    get left() {
+      return this[left$0];
+    }
+    set left(value) {
+      super.left = value;
+    }
+    get top() {
+      return this[top$0];
+    }
+    set top(value) {
+      super.top = value;
+    }
+    get right() {
+      return this[right$0];
+    }
+    set right(value) {
+      super.right = value;
+    }
+    get bottom() {
+      return this[bottom$0];
+    }
+    set bottom(value) {
+      super.bottom = value;
+    }
+    get minimum() {
+      return this[minimum$0];
+    }
+    set minimum(value) {
+      super.minimum = value;
+    }
+    get sliver() {
+      return this[sliver$];
+    }
+    set sliver(value) {
+      super.sliver = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 195, 29, "context");
+      if (!dart.test(debug.debugCheckHasMediaQuery(context))) dart.assertFailed(null, I[0], 196, 12, "debugCheckHasMediaQuery(context)");
+      let padding = media_query.MediaQuery.of(context).padding;
+      return new basic.SliverPadding.new({padding: new edge_insets.EdgeInsets.only({left: math.max(core.double, dart.test(this.left) ? padding.left : 0.0, this.minimum.left), top: math.max(core.double, dart.test(this.top) ? padding.top : 0.0, this.minimum.top), right: math.max(core.double, dart.test(this.right) ? padding.right : 0.0, this.minimum.right), bottom: math.max(core.double, dart.test(this.bottom) ? padding.bottom : 0.0, this.minimum.bottom)}), sliver: media_query.MediaQuery.removePadding({context: context, removeLeft: this.left, removeTop: this.top, removeRight: this.right, removeBottom: this.bottom, child: this.sliver, $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21});
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 217, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.FlagProperty.new("left", {value: this.left, ifTrue: "avoid left padding"}));
+      properties.add(new diagnostics.FlagProperty.new("top", {value: this.top, ifTrue: "avoid top padding"}));
+      properties.add(new diagnostics.FlagProperty.new("right", {value: this.right, ifTrue: "avoid right padding"}));
+      properties.add(new diagnostics.FlagProperty.new("bottom", {value: this.bottom, ifTrue: "avoid bottom padding"}));
     }
   };
-  (mouse_cursor.SystemMouseCursors[dart.mixinNew] = function() {
-  }).prototype = mouse_cursor.SystemMouseCursors.prototype;
-  dart.addTypeTests(mouse_cursor.SystemMouseCursors);
-  dart.addTypeCaches(mouse_cursor.SystemMouseCursors);
-  dart.setLibraryUri(mouse_cursor.SystemMouseCursors, I[1]);
-  dart.defineLazy(mouse_cursor.SystemMouseCursors, {
-    /*mouse_cursor.SystemMouseCursors.none*/get none() {
-      return C[3] || CT.C3;
-    },
-    /*mouse_cursor.SystemMouseCursors.basic*/get basic() {
-      return C[4] || CT.C4;
-    },
-    /*mouse_cursor.SystemMouseCursors.click*/get click() {
-      return C[5] || CT.C5;
-    },
-    /*mouse_cursor.SystemMouseCursors.forbidden*/get forbidden() {
-      return C[6] || CT.C6;
-    },
-    /*mouse_cursor.SystemMouseCursors.wait*/get wait() {
-      return C[7] || CT.C7;
-    },
-    /*mouse_cursor.SystemMouseCursors.progress*/get progress() {
-      return C[8] || CT.C8;
-    },
-    /*mouse_cursor.SystemMouseCursors.contextMenu*/get contextMenu() {
-      return C[9] || CT.C9;
-    },
-    /*mouse_cursor.SystemMouseCursors.help*/get help() {
-      return C[10] || CT.C10;
-    },
-    /*mouse_cursor.SystemMouseCursors.text*/get text() {
-      return C[11] || CT.C11;
-    },
-    /*mouse_cursor.SystemMouseCursors.verticalText*/get verticalText() {
-      return C[12] || CT.C12;
-    },
-    /*mouse_cursor.SystemMouseCursors.cell*/get cell() {
-      return C[13] || CT.C13;
-    },
-    /*mouse_cursor.SystemMouseCursors.precise*/get precise() {
-      return C[14] || CT.C14;
-    },
-    /*mouse_cursor.SystemMouseCursors.move*/get move() {
-      return C[15] || CT.C15;
-    },
-    /*mouse_cursor.SystemMouseCursors.grab*/get grab() {
-      return C[16] || CT.C16;
-    },
-    /*mouse_cursor.SystemMouseCursors.grabbing*/get grabbing() {
-      return C[17] || CT.C17;
-    },
-    /*mouse_cursor.SystemMouseCursors.noDrop*/get noDrop() {
-      return C[18] || CT.C18;
-    },
-    /*mouse_cursor.SystemMouseCursors.alias*/get alias() {
-      return C[19] || CT.C19;
-    },
-    /*mouse_cursor.SystemMouseCursors.copy*/get copy() {
-      return C[20] || CT.C20;
-    },
-    /*mouse_cursor.SystemMouseCursors.disappearing*/get disappearing() {
-      return C[21] || CT.C21;
-    },
-    /*mouse_cursor.SystemMouseCursors.allScroll*/get allScroll() {
-      return C[22] || CT.C22;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeLeftRight*/get resizeLeftRight() {
-      return C[23] || CT.C23;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeUpDown*/get resizeUpDown() {
-      return C[24] || CT.C24;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeUpLeftDownRight*/get resizeUpLeftDownRight() {
-      return C[25] || CT.C25;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeUpRightDownLeft*/get resizeUpRightDownLeft() {
-      return C[26] || CT.C26;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeUp*/get resizeUp() {
-      return C[27] || CT.C27;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeDown*/get resizeDown() {
-      return C[28] || CT.C28;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeLeft*/get resizeLeft() {
-      return C[29] || CT.C29;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeRight*/get resizeRight() {
-      return C[30] || CT.C30;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeUpLeft*/get resizeUpLeft() {
-      return C[31] || CT.C31;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeUpRight*/get resizeUpRight() {
-      return C[32] || CT.C32;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeDownLeft*/get resizeDownLeft() {
-      return C[33] || CT.C33;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeDownRight*/get resizeDownRight() {
-      return C[34] || CT.C34;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeColumn*/get resizeColumn() {
-      return C[35] || CT.C35;
-    },
-    /*mouse_cursor.SystemMouseCursors.resizeRow*/get resizeRow() {
-      return C[36] || CT.C36;
-    },
-    /*mouse_cursor.SystemMouseCursors.zoomIn*/get zoomIn() {
-      return C[37] || CT.C37;
-    },
-    /*mouse_cursor.SystemMouseCursors.zoomOut*/get zoomOut() {
-      return C[38] || CT.C38;
-    }
-  }, false);
-  dart.trackLibraries("packages/flutter/src/services/mouse_cursor.dart", {
-    "package:flutter/src/services/mouse_cursor.dart": mouse_cursor
+  (safe_area.SliverSafeArea.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let left = opts && 'left' in opts ? opts.left : true;
+    if (left == null) dart.nullFailed(I[0], 158, 10, "left");
+    let top = opts && 'top' in opts ? opts.top : true;
+    if (top == null) dart.nullFailed(I[0], 159, 10, "top");
+    let right = opts && 'right' in opts ? opts.right : true;
+    if (right == null) dart.nullFailed(I[0], 160, 10, "right");
+    let bottom = opts && 'bottom' in opts ? opts.bottom : true;
+    if (bottom == null) dart.nullFailed(I[0], 161, 10, "bottom");
+    let minimum = opts && 'minimum' in opts ? opts.minimum : C[0] || CT.C0;
+    if (minimum == null) dart.nullFailed(I[0], 162, 10, "minimum");
+    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
+    if (sliver == null) dart.nullFailed(I[0], 163, 19, "sliver");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[left$0] = left;
+    this[top$0] = top;
+    this[right$0] = right;
+    this[bottom$0] = bottom;
+    this[minimum$0] = minimum;
+    this[sliver$] = sliver;
+    if (!(left != null)) dart.assertFailed(null, I[0], 164, 15, "left != null");
+    if (!(top != null)) dart.assertFailed(null, I[0], 165, 15, "top != null");
+    if (!(right != null)) dart.assertFailed(null, I[0], 166, 15, "right != null");
+    if (!(bottom != null)) dart.assertFailed(null, I[0], 167, 15, "bottom != null");
+    safe_area.SliverSafeArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = safe_area.SliverSafeArea.prototype;
+  dart.addTypeTests(safe_area.SliverSafeArea);
+  dart.addTypeCaches(safe_area.SliverSafeArea);
+  dart.setMethodSignature(safe_area.SliverSafeArea, () => ({
+    __proto__: dart.getMethods(safe_area.SliverSafeArea.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(safe_area.SliverSafeArea, I[1]);
+  dart.setFieldSignature(safe_area.SliverSafeArea, () => ({
+    __proto__: dart.getFields(safe_area.SliverSafeArea.__proto__),
+    left: dart.finalFieldType(core.bool),
+    top: dart.finalFieldType(core.bool),
+    right: dart.finalFieldType(core.bool),
+    bottom: dart.finalFieldType(core.bool),
+    minimum: dart.finalFieldType(edge_insets.EdgeInsets),
+    sliver: dart.finalFieldType(framework.Widget)
+  }));
+  dart.trackLibraries("packages/flutter/src/widgets/safe_area.dart", {
+    "package:flutter/src/widgets/safe_area.dart": safe_area
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["mouse_cursor.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/services/mouse_cursor.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["safe_area.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwDa;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAaN;;;;;;IAQE;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACjB,iBAAkB,0BAAG,OAAO;AACtC,oBAAU,AAAK,IAAD;AAEzB,UAAI,AAAK,AAAQ,AAAO,IAAhB,oBAAmB,OAAO,AAAK,AAAW,IAAZ,uBAAsB,iBAAO,iCACjE,AAA2D,UAAjD,AAAQ,OAAD,mBAAkB,AAAK,AAAY,IAAb;AAEzC,YAAO,iCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,+BAExC,+CACP,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAvFO;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IANT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,sDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;IAqHT;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAMJ;;;;;;;UAGa;AACxB,qBAAO,8BAAwB,OAAO;AACrB,oBAAqB,AAAY,0BAAT,OAAO;AAChD,YAAO,uCACe,uCACZ,gCAAS,aAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,gCAAS,YAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,gCAAS,cAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,gCAAS,eAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,gCAEvC,+CACR,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;;UAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAlEO;QACA;;QACA;;QACA;;QACA;;QACA;;QACS;;;IALT;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,4DAAW,GAAG;;EAAC","file":"../../../../../../../packages/flutter/src/widgets/safe_area.dart.lib.js"}');
   // Exports:
   return {
-    src__services__mouse_cursor: mouse_cursor
+    src__widgets__safe_area: safe_area
   };
 }));
 
-//# sourceMappingURL=mouse_cursor.dart.lib.js.map
+//# sourceMappingURL=safe_area.dart.lib.js.map

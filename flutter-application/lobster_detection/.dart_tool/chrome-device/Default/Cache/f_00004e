@@ -1,336 +1,545 @@
-define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/foundation/change_notifier.dart'], (function load__packages__flutter__src__rendering__custom_layout_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__foundation__change_notifier$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/border_radius.dart'], (function load__packages__flutter__src__material__input_border_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__border_radius$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _interceptors = dart_sdk._interceptors;
-  const collection = dart_sdk.collection;
-  const _js_helper = dart_sdk._js_helper;
   const ui = dart_sdk.ui;
+  const math = dart_sdk.math;
+  const _internal = dart_sdk._internal;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const object$ = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
-  var custom_layout = Object.create(dart.library);
-  var $_get = dartx._get;
-  var $_set = dartx._set;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $length = dartx.length;
-  var $map = dartx.map;
-  var $toList = dartx.toList;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  var input_border = Object.create(dart.library);
   var $runtimeType = dartx.runtimeType;
-  var $isFinite = dartx.isFinite;
+  var $clamp = dartx.clamp;
   dart._checkModuleNullSafetyMode(false);
-  var T = {
-    DiagnosticsPropertyOfAssertionError: () => (T.DiagnosticsPropertyOfAssertionError = dart.constFn(diagnostics.DiagnosticsProperty$(core.AssertionError)))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
-    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    DiagnosticsPropertyOfRenderBox: () => (T.DiagnosticsPropertyOfRenderBox = dart.constFn(diagnostics.DiagnosticsProperty$(box.RenderBox)))(),
-    LinkedHashSetOfRenderBox: () => (T.LinkedHashSetOfRenderBox = dart.constFn(collection.LinkedHashSet$(box.RenderBox)))(),
-    LinkedMapOfObject$RenderBox: () => (T.LinkedMapOfObject$RenderBox = dart.constFn(_js_helper.LinkedMap$(core.Object, box.RenderBox)))()
-  };
   const CT = Object.create({
     _: () => (C, CT)
   });
+  dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.none",
+        index: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[1] || CT.C1,
+        [BorderSide_width]: 0,
+        [BorderSide_color]: C[2] || CT.C2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: input_border._NoInputBorder.prototype,
+        [borderSide$]: C[0] || CT.C0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.solid",
+        index: 1
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[5] || CT.C5,
+        [BorderSide_width]: 1,
+        [BorderSide_color]: C[2] || CT.C2
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 0,
+        [Radius_x]: 0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 4,
+        [Radius_x]: 4
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[7] || CT.C7,
+        [BorderRadius_bottomLeft]: C[7] || CT.C7,
+        [BorderRadius_topRight]: C[8] || CT.C8,
+        [BorderRadius_topLeft]: C[8] || CT.C8
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[8] || CT.C8,
+        [BorderRadius_bottomLeft]: C[8] || CT.C8,
+        [BorderRadius_topRight]: C[8] || CT.C8,
+        [BorderRadius_topLeft]: C[8] || CT.C8
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name$]: "TextDirection.rtl",
+        index: 0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name$]: "TextDirection.ltr",
+        index: 1
+      });
+    }
+  }, false);
+  var C = Array(12).fill(void 0);
   var I = [
-    "package:flutter/src/rendering/custom_layout.dart",
-    "file:///C:/dev/flutter/packages/flutter/lib/src/rendering/custom_layout.dart"
+    "file:///C:/dev/flutter/packages/flutter/lib/src/material/input_border.dart",
+    "package:flutter/src/material/input_border.dart"
   ];
-  var id = dart.privateName(custom_layout, "MultiChildLayoutParentData.id");
-  custom_layout.MultiChildLayoutParentData = class MultiChildLayoutParentData extends box.ContainerBoxParentData$(box.RenderBox) {
-    get id() {
-      return this[id];
+  var borderSide$ = dart.privateName(input_border, "InputBorder.borderSide");
+  var _name = dart.privateName(borders, "_name");
+  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
+  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  input_border.InputBorder = class InputBorder extends borders.ShapeBorder {
+    get borderSide() {
+      return this[borderSide$];
     }
-    set id(value) {
-      this[id] = value;
-    }
-    toString() {
-      return dart.str(super.toString()) + "; id=" + dart.str(this.id);
+    set borderSide(value) {
+      super.borderSide = value;
     }
   };
-  (custom_layout.MultiChildLayoutParentData.new = function() {
-    this[id] = null;
-    custom_layout.MultiChildLayoutParentData.__proto__.new.call(this);
+  (input_border.InputBorder.new = function(opts) {
+    let borderSide = opts && 'borderSide' in opts ? opts.borderSide : C[0] || CT.C0;
+    if (borderSide == null) dart.nullFailed(I[0], 38, 10, "borderSide");
+    this[borderSide$] = borderSide;
+    if (!(borderSide != null)) dart.assertFailed(null, I[0], 39, 15, "borderSide != null");
+    input_border.InputBorder.__proto__.new.call(this);
     ;
-  }).prototype = custom_layout.MultiChildLayoutParentData.prototype;
-  dart.addTypeTests(custom_layout.MultiChildLayoutParentData);
-  dart.addTypeCaches(custom_layout.MultiChildLayoutParentData);
-  dart.setLibraryUri(custom_layout.MultiChildLayoutParentData, I[0]);
-  dart.setFieldSignature(custom_layout.MultiChildLayoutParentData, () => ({
-    __proto__: dart.getFields(custom_layout.MultiChildLayoutParentData.__proto__),
-    id: dart.fieldType(dart.nullable(core.Object))
+  }).prototype = input_border.InputBorder.prototype;
+  dart.addTypeTests(input_border.InputBorder);
+  dart.addTypeCaches(input_border.InputBorder);
+  dart.setLibraryUri(input_border.InputBorder, I[1]);
+  dart.setFieldSignature(input_border.InputBorder, () => ({
+    __proto__: dart.getFields(input_border.InputBorder.__proto__),
+    borderSide: dart.finalFieldType(borders.BorderSide)
   }));
-  dart.defineExtensionMethods(custom_layout.MultiChildLayoutParentData, ['toString']);
-  var _idToChild = dart.privateName(custom_layout, "_idToChild");
-  var _debugChildrenNeedingLayout = dart.privateName(custom_layout, "_debugChildrenNeedingLayout");
-  var _relayout = dart.privateName(custom_layout, "_relayout");
-  var _debugDescribeChild = dart.privateName(custom_layout, "_debugDescribeChild");
-  var _callPerformLayout = dart.privateName(custom_layout, "_callPerformLayout");
-  custom_layout.MultiChildLayoutDelegate = class MultiChildLayoutDelegate extends core.Object {
-    hasChild(childId) {
-      if (childId == null) dart.nullFailed(I[1], 133, 24, "childId");
-      return dart.nullCheck(this[_idToChild])[$_get](childId) != null;
+  dart.defineLazy(input_border.InputBorder, {
+    /*input_border.InputBorder.none*/get none() {
+      return C[3] || CT.C3;
     }
-    layoutChild(childId, constraints) {
-      if (childId == null) dart.nullFailed(I[1], 141, 27, "childId");
-      if (constraints == null) dart.nullFailed(I[1], 141, 51, "constraints");
-      let child = dart.nullCheck(this[_idToChild])[$_get](childId);
-      if (!dart.test(dart.fn(() => {
-        if (child == null) {
-          dart.throw(assertions.FlutterError.new("The " + dart.str(this) + " custom multichild layout delegate tried to lay out a non-existent child.\n" + "There is no child with the id \"" + dart.str(childId) + "\"."));
-        }
-        if (!dart.test(dart.nullCheck(this[_debugChildrenNeedingLayout]).remove(child))) {
-          dart.throw(assertions.FlutterError.new("The " + dart.str(this) + " custom multichild layout delegate tried to lay out the child with id \"" + dart.str(childId) + "\" more than once.\n" + "Each child must be laid out exactly once."));
-        }
-        try {
-          if (!dart.test(constraints.debugAssertIsValid({isAppliedConstraint: true}))) dart.assertFailed(null, I[1], 157, 16, "constraints.debugAssertIsValid(isAppliedConstraint: true)");
-        } catch (e) {
-          let exception = dart.getThrown(e);
-          if (core.AssertionError.is(exception)) {
-            dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The " + dart.str(this) + " custom multichild layout delegate provided invalid box constraints for the child with id \"" + dart.str(childId) + "\"."), new (T.DiagnosticsPropertyOfAssertionError()).new("Exception", exception, {showName: false}), new assertions.ErrorDescription.new("The minimum width and height must be greater than or equal to zero.\n" + "The maximum width must be greater than or equal to the minimum width.\n" + "The maximum height must be greater than or equal to the minimum height.")])));
-          } else
-            throw e;
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[1], 143, 12, "() {\r\n      if (child == null) {\r\n        throw FlutterError(\r\n          'The $this custom multichild layout delegate tried to lay out a non-existent child.\\n'\r\n          'There is no child with the id \"$childId\".',\r\n        );\r\n      }\r\n      if (!_debugChildrenNeedingLayout!.remove(child)) {\r\n        throw FlutterError(\r\n          'The $this custom multichild layout delegate tried to lay out the child with id \"$childId\" more than once.\\n'\r\n          'Each child must be laid out exactly once.',\r\n        );\r\n      }\r\n      try {\r\n        assert(constraints.debugAssertIsValid(isAppliedConstraint: true));\r\n      } on AssertionError catch (exception) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('The $this custom multichild layout delegate provided invalid box constraints for the child with id \"$childId\".'),\r\n          DiagnosticsProperty<AssertionError>('Exception', exception, showName: false),\r\n          ErrorDescription(\r\n            'The minimum width and height must be greater than or equal to zero.\\n'\r\n            'The maximum width must be greater than or equal to the minimum width.\\n'\r\n            'The maximum height must be greater than or equal to the minimum height.',\r\n          ),\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
-      dart.nullCheck(child).layout(constraints, {parentUsesSize: true});
-      return child.size;
+  }, false);
+  input_border._NoInputBorder = class _NoInputBorder extends input_border.InputBorder {
+    copyWith(opts) {
+      let borderSide = opts && 'borderSide' in opts ? opts.borderSide : null;
+      return C[3] || CT.C3;
     }
-    positionChild(childId, offset) {
-      if (childId == null) dart.nullFailed(I[1], 181, 29, "childId");
-      if (offset == null) dart.nullFailed(I[1], 181, 45, "offset");
-      let child = dart.nullCheck(this[_idToChild])[$_get](childId);
-      if (!dart.test(dart.fn(() => {
-        if (child == null) {
-          dart.throw(assertions.FlutterError.new("The " + dart.str(this) + " custom multichild layout delegate tried to position out a non-existent child:\n" + "There is no child with the id \"" + dart.str(childId) + "\"."));
-        }
-        if (offset == null) {
-          dart.throw(assertions.FlutterError.new("The " + dart.str(this) + " custom multichild layout delegate provided a null position for the child with id \"" + dart.str(childId) + "\"."));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[1], 183, 12, "() {\r\n      if (child == null) {\r\n        throw FlutterError(\r\n          'The $this custom multichild layout delegate tried to position out a non-existent child:\\n'\r\n          'There is no child with the id \"$childId\".',\r\n        );\r\n      }\r\n      if (offset == null) {\r\n        throw FlutterError(\r\n          'The $this custom multichild layout delegate provided a null position for the child with id \"$childId\".',\r\n        );\r\n      }\r\n      return true;\r\n    }()");
-      let childParentData = custom_layout.MultiChildLayoutParentData.as(dart.nullCheck(dart.nullCheck(child).parentData));
-      childParentData.offset = offset;
+    get isOutline() {
+      return false;
     }
-    [_debugDescribeChild](child) {
-      if (child == null) dart.nullFailed(I[1], 201, 49, "child");
-      let childParentData = custom_layout.MultiChildLayoutParentData.as(dart.nullCheck(child.parentData));
-      return new (T.DiagnosticsPropertyOfRenderBox()).new(dart.str(childParentData.id), child);
+    get dimensions() {
+      return edge_insets.EdgeInsets.zero;
     }
-    [_callPerformLayout](size, firstChild) {
-      if (size == null) dart.nullFailed(I[1], 206, 32, "size");
-      let previousIdToChild = this[_idToChild];
-      let debugPreviousChildrenNeedingLayout = null;
-      if (!dart.test(dart.fn(() => {
-        debugPreviousChildrenNeedingLayout = this[_debugChildrenNeedingLayout];
-        this[_debugChildrenNeedingLayout] = T.LinkedHashSetOfRenderBox().new();
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[1], 213, 12, "() {\r\n      debugPreviousChildrenNeedingLayout = _debugChildrenNeedingLayout;\r\n      _debugChildrenNeedingLayout = <RenderBox>{};\r\n      return true;\r\n    }()");
-      try {
-        this[_idToChild] = new (T.LinkedMapOfObject$RenderBox()).new();
-        let child = firstChild;
-        while (child != null) {
-          let childParentData = custom_layout.MultiChildLayoutParentData.as(dart.nullCheck(child.parentData));
-          if (!dart.test(dart.fn(() => {
-            if (childParentData.id == null) {
-              dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("Every child of a RenderCustomMultiChildLayoutBox must have an ID in its parent data."), dart.nullCheck(child).describeForError("The following child has no ID")])));
-            }
-            return true;
-          }, T.VoidTobool())())) dart.assertFailed(null, I[1], 224, 16, "() {\r\n          if (childParentData.id == null) {\r\n            throw FlutterError.fromParts(<DiagnosticsNode>[\r\n              ErrorSummary('Every child of a RenderCustomMultiChildLayoutBox must have an ID in its parent data.'),\r\n              child!.describeForError('The following child has no ID'),\r\n            ]);\r\n          }\r\n          return true;\r\n        }()");
-          dart.nullCheck(this[_idToChild])[$_set](dart.nullCheck(childParentData.id), child);
-          if (!dart.test(dart.fn(() => {
-            dart.nullCheck(this[_debugChildrenNeedingLayout]).add(dart.nullCheck(child));
-            return true;
-          }, T.VoidTobool())())) dart.assertFailed(null, I[1], 234, 16, "() {\r\n          _debugChildrenNeedingLayout!.add(child!);\r\n          return true;\r\n        }()");
-          child = childParentData.nextSibling;
-        }
-        this.performLayout(size);
-        if (!dart.test(dart.fn(() => {
-          if (dart.test(dart.nullCheck(this[_debugChildrenNeedingLayout])[$isNotEmpty])) {
-            dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("Each child must be laid out exactly once."), new diagnostics.DiagnosticsBlock.new({name: "The " + dart.str(this) + " custom multichild layout delegate forgot " + "to lay out the following " + (dart.notNull(dart.nullCheck(this[_debugChildrenNeedingLayout])[$length]) > 1 ? "children" : "child"), properties: dart.nullCheck(this[_debugChildrenNeedingLayout])[$map](diagnostics.DiagnosticsNode, dart.bind(this, _debugDescribeChild))[$toList](), style: diagnostics.DiagnosticsTreeStyle.whitespace})])));
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 98, 31, "t");
+      return C[3] || CT.C3;
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 101, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRect(rect);
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 106, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRect(rect);
+        return t0;
+      })();
+    }
+    paint(canvas, rect, opts) {
+      if (canvas == null) dart.nullFailed(I[0], 112, 12, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 113, 10, "rect");
+      let gapStart = opts && 'gapStart' in opts ? opts.gapStart : null;
+      let gapExtent = opts && 'gapExtent' in opts ? opts.gapExtent : 0;
+      if (gapExtent == null) dart.nullFailed(I[0], 115, 12, "gapExtent");
+      let gapPercentage = opts && 'gapPercentage' in opts ? opts.gapPercentage : 0;
+      if (gapPercentage == null) dart.nullFailed(I[0], 116, 12, "gapPercentage");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    }
+  };
+  (input_border._NoInputBorder.new = function() {
+    input_border._NoInputBorder.__proto__.new.call(this, {borderSide: borders.BorderSide.none});
+    ;
+  }).prototype = input_border._NoInputBorder.prototype;
+  dart.addTypeTests(input_border._NoInputBorder);
+  dart.addTypeCaches(input_border._NoInputBorder);
+  dart.setMethodSignature(input_border._NoInputBorder, () => ({
+    __proto__: dart.getMethods(input_border._NoInputBorder.__proto__),
+    copyWith: dart.fnType(input_border._NoInputBorder, [], {borderSide: dart.nullable(borders.BorderSide)}, {}),
+    scale: dart.fnType(input_border._NoInputBorder, [core.double]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {gapExtent: core.double, gapPercentage: core.double, gapStart: dart.nullable(core.double), textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(input_border._NoInputBorder, () => ({
+    __proto__: dart.getGetters(input_border._NoInputBorder.__proto__),
+    isOutline: core.bool,
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(input_border._NoInputBorder, I[1]);
+  var borderRadius$ = dart.privateName(input_border, "UnderlineInputBorder.borderRadius");
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var BorderRadius_bottomRight = dart.privateName(border_radius, "BorderRadius.bottomRight");
+  var BorderRadius_bottomLeft = dart.privateName(border_radius, "BorderRadius.bottomLeft");
+  var BorderRadius_topRight = dart.privateName(border_radius, "BorderRadius.topRight");
+  var BorderRadius_topLeft = dart.privateName(border_radius, "BorderRadius.topLeft");
+  input_border.UnderlineInputBorder = class UnderlineInputBorder extends input_border.InputBorder {
+    get borderRadius() {
+      return this[borderRadius$];
+    }
+    set borderRadius(value) {
+      super.borderRadius = value;
+    }
+    get isOutline() {
+      return false;
+    }
+    copyWith(opts) {
+      let t0, t0$;
+      let borderSide = opts && 'borderSide' in opts ? opts.borderSide : null;
+      let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : null;
+      return new input_border.UnderlineInputBorder.new({borderSide: (t0 = borderSide, t0 == null ? this.borderSide : t0), borderRadius: (t0$ = borderRadius, t0$ == null ? this.borderRadius : t0$)});
+    }
+    get dimensions() {
+      return new edge_insets.EdgeInsets.only({bottom: this.borderSide.width});
+    }
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 182, 37, "t");
+      return new input_border.UnderlineInputBorder.new({borderSide: this.borderSide.scale(t)});
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 187, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRect(new ui.Rect.fromLTWH(rect.left, rect.top, rect.width, math.max(core.double, 0.0, dart.notNull(rect.height) - dart.notNull(this.borderSide.width))));
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 193, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this.borderRadius.resolve(textDirection).toRRect(rect));
+        return t0;
+      })();
+    }
+    lerpFrom(a, t) {
+      if (t == null) dart.nullFailed(I[0], 198, 48, "t");
+      if (input_border.UnderlineInputBorder.is(a)) {
+        return new input_border.UnderlineInputBorder.new({borderSide: borders.BorderSide.lerp(a.borderSide, this.borderSide, t), borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(a.borderRadius, this.borderRadius, t))});
+      }
+      return super.lerpFrom(a, t);
+    }
+    lerpTo(b, t) {
+      if (t == null) dart.nullFailed(I[0], 209, 46, "t");
+      if (input_border.UnderlineInputBorder.is(b)) {
+        return new input_border.UnderlineInputBorder.new({borderSide: borders.BorderSide.lerp(this.borderSide, b.borderSide, t), borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(this.borderRadius, b.borderRadius, t))});
+      }
+      return super.lerpTo(b, t);
+    }
+    paint(canvas, rect, opts) {
+      if (canvas == null) dart.nullFailed(I[0], 225, 12, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 226, 10, "rect");
+      let gapStart = opts && 'gapStart' in opts ? opts.gapStart : null;
+      let gapExtent = opts && 'gapExtent' in opts ? opts.gapExtent : 0;
+      if (gapExtent == null) dart.nullFailed(I[0], 228, 12, "gapExtent");
+      let gapPercentage = opts && 'gapPercentage' in opts ? opts.gapPercentage : 0;
+      if (gapPercentage == null) dart.nullFailed(I[0], 229, 12, "gapPercentage");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      if (!dart.equals(this.borderRadius.bottomLeft, ui.Radius.zero) || !dart.equals(this.borderRadius.bottomRight, ui.Radius.zero)) canvas.clipPath(this.getOuterPath(rect, {textDirection: textDirection}));
+      canvas.drawLine(rect.bottomLeft, rect.bottomRight, this.borderSide.toPaint());
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return input_border.InputBorder.is(other) && dart.equals(other.borderSide, this.borderSide);
+    }
+    get hashCode() {
+      return dart.hashCode(this.borderSide);
+    }
+  };
+  (input_border.UnderlineInputBorder.new = function(opts) {
+    let borderSide = opts && 'borderSide' in opts ? opts.borderSide : C[4] || CT.C4;
+    if (borderSide == null) dart.nullFailed(I[0], 146, 16, "borderSide");
+    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[6] || CT.C6;
+    if (borderRadius == null) dart.nullFailed(I[0], 147, 10, "borderRadius");
+    this[borderRadius$] = borderRadius;
+    if (!(borderRadius != null)) dart.assertFailed(null, I[0], 151, 15, "borderRadius != null");
+    input_border.UnderlineInputBorder.__proto__.new.call(this, {borderSide: borderSide});
+    ;
+  }).prototype = input_border.UnderlineInputBorder.prototype;
+  dart.addTypeTests(input_border.UnderlineInputBorder);
+  dart.addTypeCaches(input_border.UnderlineInputBorder);
+  dart.setMethodSignature(input_border.UnderlineInputBorder, () => ({
+    __proto__: dart.getMethods(input_border.UnderlineInputBorder.__proto__),
+    copyWith: dart.fnType(input_border.UnderlineInputBorder, [], {borderRadius: dart.nullable(border_radius.BorderRadius), borderSide: dart.nullable(borders.BorderSide)}, {}),
+    scale: dart.fnType(input_border.UnderlineInputBorder, [core.double]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {gapExtent: core.double, gapPercentage: core.double, gapStart: dart.nullable(core.double), textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(input_border.UnderlineInputBorder, () => ({
+    __proto__: dart.getGetters(input_border.UnderlineInputBorder.__proto__),
+    isOutline: core.bool,
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(input_border.UnderlineInputBorder, I[1]);
+  dart.setFieldSignature(input_border.UnderlineInputBorder, () => ({
+    __proto__: dart.getFields(input_border.UnderlineInputBorder.__proto__),
+    borderRadius: dart.finalFieldType(border_radius.BorderRadius)
+  }));
+  dart.defineExtensionMethods(input_border.UnderlineInputBorder, ['_equals']);
+  dart.defineExtensionAccessors(input_border.UnderlineInputBorder, ['hashCode']);
+  var gapPadding$ = dart.privateName(input_border, "OutlineInputBorder.gapPadding");
+  var borderRadius$0 = dart.privateName(input_border, "OutlineInputBorder.borderRadius");
+  var _gapBorderPath = dart.privateName(input_border, "_gapBorderPath");
+  var _name$ = dart.privateName(ui, "_name");
+  input_border.OutlineInputBorder = class OutlineInputBorder extends input_border.InputBorder {
+    get gapPadding() {
+      return this[gapPadding$];
+    }
+    set gapPadding(value) {
+      super.gapPadding = value;
+    }
+    get borderRadius() {
+      return this[borderRadius$0];
+    }
+    set borderRadius(value) {
+      super.borderRadius = value;
+    }
+    static _cornersAreCircular(borderRadius) {
+      if (borderRadius == null) dart.nullFailed(I[0], 300, 48, "borderRadius");
+      return borderRadius.topLeft.x == borderRadius.topLeft.y && borderRadius.bottomLeft.x == borderRadius.bottomLeft.y && borderRadius.topRight.x == borderRadius.topRight.y && borderRadius.bottomRight.x == borderRadius.bottomRight.y;
+    }
+    get isOutline() {
+      return true;
+    }
+    copyWith(opts) {
+      let t0, t0$, t0$0;
+      let borderSide = opts && 'borderSide' in opts ? opts.borderSide : null;
+      let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : null;
+      let gapPadding = opts && 'gapPadding' in opts ? opts.gapPadding : null;
+      return new input_border.OutlineInputBorder.new({borderSide: (t0 = borderSide, t0 == null ? this.borderSide : t0), borderRadius: (t0$ = borderRadius, t0$ == null ? this.borderRadius : t0$), gapPadding: (t0$0 = gapPadding, t0$0 == null ? this.gapPadding : t0$0)});
+    }
+    get dimensions() {
+      return new edge_insets.EdgeInsets.all(this.borderSide.width);
+    }
+    scale(t) {
+      if (t == null) dart.nullFailed(I[0], 341, 35, "t");
+      return new input_border.OutlineInputBorder.new({borderSide: this.borderSide.scale(t), borderRadius: this.borderRadius['*'](t), gapPadding: dart.notNull(this.gapPadding) * dart.notNull(t)});
+    }
+    lerpFrom(a, t) {
+      if (t == null) dart.nullFailed(I[0], 350, 48, "t");
+      if (input_border.OutlineInputBorder.is(a)) {
+        let outline = a;
+        return new input_border.OutlineInputBorder.new({borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(outline.borderRadius, this.borderRadius, t)), borderSide: borders.BorderSide.lerp(outline.borderSide, this.borderSide, t), gapPadding: outline.gapPadding});
+      }
+      return super.lerpFrom(a, t);
+    }
+    lerpTo(b, t) {
+      if (t == null) dart.nullFailed(I[0], 363, 46, "t");
+      if (input_border.OutlineInputBorder.is(b)) {
+        let outline = b;
+        return new input_border.OutlineInputBorder.new({borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(this.borderRadius, outline.borderRadius, t)), borderSide: borders.BorderSide.lerp(this.borderSide, outline.borderSide, t), gapPadding: outline.gapPadding});
+      }
+      return super.lerpTo(b, t);
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 376, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this.borderRadius.resolve(textDirection).toRRect(rect).deflate(this.borderSide.width));
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      if (rect == null) dart.nullFailed(I[0], 382, 26, "rect");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this.borderRadius.resolve(textDirection).toRRect(rect));
+        return t0;
+      })();
+    }
+    [_gapBorderPath](canvas, center, start, extent) {
+      let t0, t0$, t0$0;
+      if (canvas == null) dart.nullFailed(I[0], 387, 30, "canvas");
+      if (center == null) dart.nullFailed(I[0], 387, 44, "center");
+      if (start == null) dart.nullFailed(I[0], 387, 59, "start");
+      if (extent == null) dart.nullFailed(I[0], 387, 73, "extent");
+      let scaledRRect = center.scaleRadii();
+      let tlCorner = new ui.Rect.fromLTWH(scaledRRect.left, scaledRRect.top, dart.notNull(scaledRRect.tlRadiusX) * 2.0, dart.notNull(scaledRRect.tlRadiusY) * 2.0);
+      let trCorner = new ui.Rect.fromLTWH(dart.notNull(scaledRRect.right) - dart.notNull(scaledRRect.trRadiusX) * 2.0, scaledRRect.top, dart.notNull(scaledRRect.trRadiusX) * 2.0, dart.notNull(scaledRRect.trRadiusY) * 2.0);
+      let brCorner = new ui.Rect.fromLTWH(dart.notNull(scaledRRect.right) - dart.notNull(scaledRRect.brRadiusX) * 2.0, dart.notNull(scaledRRect.bottom) - dart.notNull(scaledRRect.brRadiusY) * 2.0, dart.notNull(scaledRRect.brRadiusX) * 2.0, dart.notNull(scaledRRect.brRadiusY) * 2.0);
+      let blCorner = new ui.Rect.fromLTWH(scaledRRect.left, dart.notNull(scaledRRect.bottom) - dart.notNull(scaledRRect.blRadiusY) * 2.0, dart.notNull(scaledRRect.blRadiusX) * 2.0, dart.notNull(scaledRRect.blRadiusX) * 2.0);
+      let tlCornerArcSweep = dart.notNull(start) < dart.notNull(scaledRRect.tlRadiusX) ? math.asin((dart.notNull(start) / dart.notNull(scaledRRect.tlRadiusX))[$clamp](-1.0, 1.0)) : 3.141592653589793 / 2.0;
+      let path = (t0 = ui.Path.new(), (() => {
+        t0.addArc(tlCorner, 3.141592653589793, tlCornerArcSweep);
+        t0.moveTo(dart.notNull(scaledRRect.left) + dart.notNull(scaledRRect.tlRadiusX), scaledRRect.top);
+        return t0;
+      })());
+      if (dart.notNull(start) > dart.notNull(scaledRRect.tlRadiusX)) path.lineTo(dart.notNull(scaledRRect.left) + dart.notNull(start), scaledRRect.top);
+      if (dart.notNull(start) + dart.notNull(extent) < dart.notNull(scaledRRect.width) - dart.notNull(scaledRRect.trRadiusX)) {
+        t0$ = path;
+        (() => {
+          t0$.relativeMoveTo(extent, 0.0);
+          t0$.lineTo(dart.notNull(scaledRRect.right) - dart.notNull(scaledRRect.trRadiusX), scaledRRect.top);
+          t0$.addArc(trCorner, 4.71238898038469, 1.5707963267948966);
+          return t0$;
+        })();
+      } else if (dart.notNull(start) + dart.notNull(extent) < dart.notNull(scaledRRect.width)) {
+        let dx = dart.notNull(scaledRRect.width) - (dart.notNull(start) + dart.notNull(extent));
+        let sweep = math.acos(dx / dart.notNull(scaledRRect.trRadiusX));
+        path.addArc(trCorner, 4.71238898038469 + sweep, 1.5707963267948966 - sweep);
+      }
+      t0$0 = path;
+      return (() => {
+        t0$0.moveTo(scaledRRect.right, dart.notNull(scaledRRect.top) + dart.notNull(scaledRRect.trRadiusY));
+        t0$0.lineTo(scaledRRect.right, dart.notNull(scaledRRect.bottom) - dart.notNull(scaledRRect.brRadiusY));
+        t0$0.addArc(brCorner, 0.0, 1.5707963267948966);
+        t0$0.lineTo(dart.notNull(scaledRRect.left) + dart.notNull(scaledRRect.blRadiusX), scaledRRect.bottom);
+        t0$0.addArc(blCorner, 3.141592653589793 / 2.0, 1.5707963267948966);
+        t0$0.lineTo(scaledRRect.left, dart.notNull(scaledRRect.top) + dart.notNull(scaledRRect.tlRadiusY));
+        return t0$0;
+      })();
+    }
+    paint(canvas, rect, opts) {
+      if (canvas == null) dart.nullFailed(I[0], 462, 12, "canvas");
+      if (rect == null) dart.nullFailed(I[0], 463, 10, "rect");
+      let gapStart = opts && 'gapStart' in opts ? opts.gapStart : null;
+      let gapExtent = opts && 'gapExtent' in opts ? opts.gapExtent : 0;
+      if (gapExtent == null) dart.nullFailed(I[0], 465, 12, "gapExtent");
+      let gapPercentage = opts && 'gapPercentage' in opts ? opts.gapPercentage : 0;
+      if (gapPercentage == null) dart.nullFailed(I[0], 466, 12, "gapPercentage");
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      if (!(gapExtent != null)) dart.assertFailed(null, I[0], 469, 12, "gapExtent != null");
+      if (!(dart.notNull(gapPercentage) >= 0.0 && dart.notNull(gapPercentage) <= 1.0)) dart.assertFailed(null, I[0], 470, 12, "gapPercentage >= 0.0 && gapPercentage <= 1.0");
+      if (!dart.test(input_border.OutlineInputBorder._cornersAreCircular(this.borderRadius))) dart.assertFailed(null, I[0], 471, 12, "_cornersAreCircular(borderRadius)");
+      let paint = this.borderSide.toPaint();
+      let outer = this.borderRadius.toRRect(rect);
+      let center = outer.deflate(dart.notNull(this.borderSide.width) / 2.0);
+      if (gapStart == null || dart.notNull(gapExtent) <= 0.0 || gapPercentage === 0.0) {
+        canvas.drawRRect(center, paint);
+      } else {
+        let extent = dart.nullCheck(ui.lerpDouble(0.0, dart.notNull(gapExtent) + dart.notNull(this.gapPadding) * 2.0, gapPercentage));
+        switch (dart.nullCheck(textDirection)) {
+          case C[10] || CT.C10:
+          {
+            let path = this[_gapBorderPath](canvas, center, math.max(core.double, 0.0, dart.notNull(gapStart) + dart.notNull(this.gapPadding) - extent), extent);
+            canvas.drawPath(path, paint);
+            break;
           }
-          return true;
-        }, T.VoidTobool())())) dart.assertFailed(null, I[1], 241, 14, "() {\r\n        if (_debugChildrenNeedingLayout!.isNotEmpty) {\r\n          throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('Each child must be laid out exactly once.'),\r\n            DiagnosticsBlock(\r\n              name:\r\n                'The $this custom multichild layout delegate forgot '\r\n                'to lay out the following '\r\n                '${_debugChildrenNeedingLayout!.length > 1 ? 'children' : 'child'}',\r\n              properties: _debugChildrenNeedingLayout!.map<DiagnosticsNode>(_debugDescribeChild).toList(),\r\n              style: DiagnosticsTreeStyle.whitespace,\r\n            ),\r\n          ]);\r\n        }\r\n        return true;\r\n      }()");
-      } finally {
-        this[_idToChild] = previousIdToChild;
-        if (!dart.test(dart.fn(() => {
-          this[_debugChildrenNeedingLayout] = debugPreviousChildrenNeedingLayout;
-          return true;
-        }, T.VoidTobool())())) dart.assertFailed(null, I[1], 259, 14, "() {\r\n        _debugChildrenNeedingLayout = debugPreviousChildrenNeedingLayout;\r\n        return true;\r\n      }()");
+          case C[11] || CT.C11:
+          {
+            let path = this[_gapBorderPath](canvas, center, math.max(core.double, 0.0, dart.notNull(gapStart) - dart.notNull(this.gapPadding)), extent);
+            canvas.drawPath(path, paint);
+            break;
+          }
+          default:
+          {
+            dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
+          }
+        }
       }
     }
-    getSize(constraints) {
-      if (constraints == null) dart.nullFailed(I[1], 275, 31, "constraints");
-      return constraints.biggest;
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return input_border.OutlineInputBorder.is(other) && dart.equals(other.borderSide, this.borderSide) && dart.equals(other.borderRadius, this.borderRadius) && other.gapPadding == this.gapPadding;
     }
-    toString() {
-      return object$.objectRuntimeType(this, "MultiChildLayoutDelegate");
+    get hashCode() {
+      return ui.hashValues(this.borderSide, this.borderRadius, this.gapPadding);
     }
   };
-  (custom_layout.MultiChildLayoutDelegate.new = function(opts) {
-    let relayout = opts && 'relayout' in opts ? opts.relayout : null;
-    this[_idToChild] = null;
-    this[_debugChildrenNeedingLayout] = null;
-    this[_relayout] = relayout;
+  (input_border.OutlineInputBorder.new = function(opts) {
+    let borderSide = opts && 'borderSide' in opts ? opts.borderSide : C[4] || CT.C4;
+    if (borderSide == null) dart.nullFailed(I[0], 287, 16, "borderSide");
+    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[9] || CT.C9;
+    if (borderRadius == null) dart.nullFailed(I[0], 288, 10, "borderRadius");
+    let gapPadding = opts && 'gapPadding' in opts ? opts.gapPadding : 4;
+    if (gapPadding == null) dart.nullFailed(I[0], 289, 10, "gapPadding");
+    this[borderRadius$0] = borderRadius;
+    this[gapPadding$] = gapPadding;
+    if (!(borderRadius != null)) dart.assertFailed(null, I[0], 290, 15, "borderRadius != null");
+    if (!(gapPadding != null && dart.notNull(gapPadding) >= 0.0)) dart.assertFailed(null, I[0], 291, 15, "gapPadding != null && gapPadding >= 0.0");
+    input_border.OutlineInputBorder.__proto__.new.call(this, {borderSide: borderSide});
     ;
-  }).prototype = custom_layout.MultiChildLayoutDelegate.prototype;
-  dart.addTypeTests(custom_layout.MultiChildLayoutDelegate);
-  dart.addTypeCaches(custom_layout.MultiChildLayoutDelegate);
-  dart.setMethodSignature(custom_layout.MultiChildLayoutDelegate, () => ({
-    __proto__: dart.getMethods(custom_layout.MultiChildLayoutDelegate.__proto__),
-    hasChild: dart.fnType(core.bool, [core.Object]),
-    layoutChild: dart.fnType(ui.Size, [core.Object, box.BoxConstraints]),
-    positionChild: dart.fnType(dart.void, [core.Object, ui.Offset]),
-    [_debugDescribeChild]: dart.fnType(diagnostics.DiagnosticsNode, [box.RenderBox]),
-    [_callPerformLayout]: dart.fnType(dart.void, [ui.Size, dart.nullable(box.RenderBox)]),
-    getSize: dart.fnType(ui.Size, [box.BoxConstraints])
+  }).prototype = input_border.OutlineInputBorder.prototype;
+  dart.addTypeTests(input_border.OutlineInputBorder);
+  dart.addTypeCaches(input_border.OutlineInputBorder);
+  dart.setMethodSignature(input_border.OutlineInputBorder, () => ({
+    __proto__: dart.getMethods(input_border.OutlineInputBorder.__proto__),
+    copyWith: dart.fnType(input_border.OutlineInputBorder, [], {borderRadius: dart.nullable(border_radius.BorderRadius), borderSide: dart.nullable(borders.BorderSide), gapPadding: dart.nullable(core.double)}, {}),
+    scale: dart.fnType(input_border.OutlineInputBorder, [core.double]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    [_gapBorderPath]: dart.fnType(ui.Path, [ui.Canvas, ui.RRect, core.double, core.double]),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {gapExtent: core.double, gapPercentage: core.double, gapStart: dart.nullable(core.double), textDirection: dart.nullable(ui.TextDirection)}, {})
   }));
-  dart.setLibraryUri(custom_layout.MultiChildLayoutDelegate, I[0]);
-  dart.setFieldSignature(custom_layout.MultiChildLayoutDelegate, () => ({
-    __proto__: dart.getFields(custom_layout.MultiChildLayoutDelegate.__proto__),
-    [_relayout]: dart.finalFieldType(dart.nullable(change_notifier.Listenable)),
-    [_idToChild]: dart.fieldType(dart.nullable(core.Map$(core.Object, box.RenderBox))),
-    [_debugChildrenNeedingLayout]: dart.fieldType(dart.nullable(core.Set$(box.RenderBox)))
+  dart.setGetterSignature(input_border.OutlineInputBorder, () => ({
+    __proto__: dart.getGetters(input_border.OutlineInputBorder.__proto__),
+    isOutline: core.bool,
+    dimensions: edge_insets.EdgeInsetsGeometry
   }));
-  dart.defineExtensionMethods(custom_layout.MultiChildLayoutDelegate, ['toString']);
-  var _delegate = dart.privateName(custom_layout, "_delegate");
-  var _getSize = dart.privateName(custom_layout, "_getSize");
-  const RenderBox_ContainerRenderObjectMixin$36 = class RenderBox_ContainerRenderObjectMixin extends box.RenderBox {};
-  (RenderBox_ContainerRenderObjectMixin$36.new = function() {
-    object.ContainerRenderObjectMixin$(box.RenderBox, custom_layout.MultiChildLayoutParentData)[dart.mixinNew].call(this);
-    RenderBox_ContainerRenderObjectMixin$36.__proto__.new.call(this);
-  }).prototype = RenderBox_ContainerRenderObjectMixin$36.prototype;
-  dart.applyMixin(RenderBox_ContainerRenderObjectMixin$36, object.ContainerRenderObjectMixin$(box.RenderBox, custom_layout.MultiChildLayoutParentData));
-  const RenderBox_RenderBoxContainerDefaultsMixin$36 = class RenderBox_RenderBoxContainerDefaultsMixin extends RenderBox_ContainerRenderObjectMixin$36 {};
-  (RenderBox_RenderBoxContainerDefaultsMixin$36.new = function() {
-    RenderBox_RenderBoxContainerDefaultsMixin$36.__proto__.new.call(this);
-  }).prototype = RenderBox_RenderBoxContainerDefaultsMixin$36.prototype;
-  dart.applyMixin(RenderBox_RenderBoxContainerDefaultsMixin$36, box.RenderBoxContainerDefaultsMixin$(box.RenderBox, custom_layout.MultiChildLayoutParentData));
-  custom_layout.RenderCustomMultiChildLayoutBox = class RenderCustomMultiChildLayoutBox extends RenderBox_RenderBoxContainerDefaultsMixin$36 {
-    setupParentData(child) {
-      box.RenderBox.as(child);
-      if (child == null) dart.nullFailed(I[1], 321, 34, "child");
-      if (!custom_layout.MultiChildLayoutParentData.is(child.parentData)) child.parentData = new custom_layout.MultiChildLayoutParentData.new();
-    }
-    get delegate() {
-      return this[_delegate];
-    }
-    set delegate(newDelegate) {
-      let t1, t1$;
-      if (newDelegate == null) dart.nullFailed(I[1], 329, 41, "newDelegate");
-      if (!(newDelegate != null)) dart.assertFailed(null, I[1], 330, 12, "newDelegate != null");
-      if (dart.equals(this[_delegate], newDelegate)) return;
-      let oldDelegate = this[_delegate];
-      if (!dart.equals(dart.runtimeType(newDelegate), dart.runtimeType(oldDelegate)) || dart.test(newDelegate.shouldRelayout(oldDelegate))) this.markNeedsLayout();
-      this[_delegate] = newDelegate;
-      if (dart.test(this.attached)) {
-        t1 = oldDelegate[_relayout];
-        t1 == null ? null : t1.removeListener(dart.bind(this, 'markNeedsLayout'));
-        t1$ = newDelegate[_relayout];
-        t1$ == null ? null : t1$.addListener(dart.bind(this, 'markNeedsLayout'));
-      }
-    }
-    attach(owner) {
-      let t1;
-      object.PipelineOwner.as(owner);
-      if (owner == null) dart.nullFailed(I[1], 344, 29, "owner");
-      super.attach(owner);
-      t1 = this[_delegate][_relayout];
-      t1 == null ? null : t1.addListener(dart.bind(this, 'markNeedsLayout'));
-    }
-    detach() {
-      let t1;
-      t1 = this[_delegate][_relayout];
-      t1 == null ? null : t1.removeListener(dart.bind(this, 'markNeedsLayout'));
-      super.detach();
-    }
-    [_getSize](constraints) {
-      if (constraints == null) dart.nullFailed(I[1], 355, 32, "constraints");
-      if (!dart.test(constraints.debugAssertIsValid())) dart.assertFailed(null, I[1], 356, 12, "constraints.debugAssertIsValid()");
-      return constraints.constrain(this[_delegate].getSize(constraints));
-    }
-    computeMinIntrinsicWidth(height) {
-      if (height == null) dart.nullFailed(I[1], 365, 42, "height");
-      let width = this[_getSize](new box.BoxConstraints.tightForFinite({height: height})).width;
-      if (width[$isFinite]) return width;
-      return 0.0;
-    }
-    computeMaxIntrinsicWidth(height) {
-      if (height == null) dart.nullFailed(I[1], 373, 42, "height");
-      let width = this[_getSize](new box.BoxConstraints.tightForFinite({height: height})).width;
-      if (width[$isFinite]) return width;
-      return 0.0;
-    }
-    computeMinIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[1], 381, 43, "width");
-      let height = this[_getSize](new box.BoxConstraints.tightForFinite({width: width})).height;
-      if (height[$isFinite]) return height;
-      return 0.0;
-    }
-    computeMaxIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[1], 389, 43, "width");
-      let height = this[_getSize](new box.BoxConstraints.tightForFinite({width: width})).height;
-      if (height[$isFinite]) return height;
-      return 0.0;
-    }
-    computeDryLayout(constraints) {
-      if (constraints == null) dart.nullFailed(I[1], 397, 40, "constraints");
-      return this[_getSize](constraints);
-    }
-    performLayout() {
-      this.size = this[_getSize](this.constraints);
-      this.delegate[_callPerformLayout](this.size, this.firstChild);
-    }
-    paint(context, offset) {
-      if (context == null) dart.nullFailed(I[1], 408, 30, "context");
-      if (offset == null) dart.nullFailed(I[1], 408, 46, "offset");
-      this.defaultPaint(context, offset);
-    }
-    hitTestChildren(result, opts) {
-      if (result == null) dart.nullFailed(I[1], 413, 41, "result");
-      let position = opts && 'position' in opts ? opts.position : null;
-      if (position == null) dart.nullFailed(I[1], 413, 67, "position");
-      return this.defaultHitTestChildren(result, {position: position});
-    }
-  };
-  (custom_layout.RenderCustomMultiChildLayoutBox.new = function(opts) {
-    let children = opts && 'children' in opts ? opts.children : null;
-    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
-    if (delegate == null) dart.nullFailed(I[1], 314, 39, "delegate");
-    if (!(delegate != null)) dart.assertFailed(null, I[1], 315, 15, "delegate != null");
-    this[_delegate] = delegate;
-    custom_layout.RenderCustomMultiChildLayoutBox.__proto__.new.call(this);
-    this.addAll(children);
-  }).prototype = custom_layout.RenderCustomMultiChildLayoutBox.prototype;
-  dart.addTypeTests(custom_layout.RenderCustomMultiChildLayoutBox);
-  dart.addTypeCaches(custom_layout.RenderCustomMultiChildLayoutBox);
-  dart.setMethodSignature(custom_layout.RenderCustomMultiChildLayoutBox, () => ({
-    __proto__: dart.getMethods(custom_layout.RenderCustomMultiChildLayoutBox.__proto__),
-    [_getSize]: dart.fnType(ui.Size, [box.BoxConstraints])
+  dart.setLibraryUri(input_border.OutlineInputBorder, I[1]);
+  dart.setFieldSignature(input_border.OutlineInputBorder, () => ({
+    __proto__: dart.getFields(input_border.OutlineInputBorder.__proto__),
+    gapPadding: dart.finalFieldType(core.double),
+    borderRadius: dart.finalFieldType(border_radius.BorderRadius)
   }));
-  dart.setGetterSignature(custom_layout.RenderCustomMultiChildLayoutBox, () => ({
-    __proto__: dart.getGetters(custom_layout.RenderCustomMultiChildLayoutBox.__proto__),
-    delegate: custom_layout.MultiChildLayoutDelegate
-  }));
-  dart.setSetterSignature(custom_layout.RenderCustomMultiChildLayoutBox, () => ({
-    __proto__: dart.getSetters(custom_layout.RenderCustomMultiChildLayoutBox.__proto__),
-    delegate: custom_layout.MultiChildLayoutDelegate
-  }));
-  dart.setLibraryUri(custom_layout.RenderCustomMultiChildLayoutBox, I[0]);
-  dart.setFieldSignature(custom_layout.RenderCustomMultiChildLayoutBox, () => ({
-    __proto__: dart.getFields(custom_layout.RenderCustomMultiChildLayoutBox.__proto__),
-    [_delegate]: dart.fieldType(custom_layout.MultiChildLayoutDelegate)
-  }));
-  dart.trackLibraries("packages/flutter/src/rendering/custom_layout.dart", {
-    "package:flutter/src/rendering/custom_layout.dart": custom_layout
+  dart.defineExtensionMethods(input_border.OutlineInputBorder, ['_equals']);
+  dart.defineExtensionAccessors(input_border.OutlineInputBorder, ['hashCode']);
+  dart.trackLibraries("packages/flutter/src/material/input_border.dart", {
+    "package:flutter/src/material/input_border.dart": input_border
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["custom_layout.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAcU;;;;;;;AAGa,YAA6B,UAApB,oBAAW,mBAAM;IAAG;;;IAH1C;;;EAIV;;;;;;;;;;;;;;;;UAkHuB;AAAY,YAAU,AAAC,AAAU,gBAArB,yBAAY,OAAO;IAAS;gBAQrC,SAAwB;UAAxB;UAAwB;AAC7B,kBAAkB,AAAC,eAAX,yBAAY,OAAO;AAC5C,qBAAO,AA2BN;AA1BC,YAAI,AAAM,KAAD;AAIN,UAHD,WAAM,4BAAY,AAChB,kBAAM,QAAI,gFACV,8CAAiC,OAAO;;AAG5C,uBAAgC,AAAE,eAA7B,0CAAoC,KAAK;AAI3C,UAHD,WAAM,4BAAY,AAChB,kBAAM,QAAI,sFAAwE,OAAO,6BACzF;;AAGJ;AACE,yBAAO,AAAY,WAAD,0CAAyC;;cAClC;AAAzB;AASE,YARF,WAAmB,sCAA2B,iCAC5C,gCAAa,AAAgH,kBAA1G,QAAI,0GAA4F,OAAO,YAC1H,kDAAoC,aAAa,SAAS,aAAY,SACtE,oCAAgB,AACd,0EACA,4EACA;;;;AAIN,cAAO;;AAEuC,MAA3C,AAAE,eAAP,KAAK,SAAS,WAAW,mBAAkB;AAC3C,YAAO,AAAM,MAAD;IACd;kBAQ0B,SAAgB;UAAhB;UAAgB;AACvB,kBAAkB,AAAC,eAAX,yBAAY,OAAO;AAC5C,qBAAO,AAaN;AAZC,YAAI,AAAM,KAAD;AAIN,UAHD,WAAM,4BAAY,AAChB,kBAAM,QAAI,qFACV,8CAAiC,OAAO;;AAG5C,YAAI,AAAO,MAAD;AAGP,UAFD,WAAM,4BACJ,AAAwG,kBAAlG,QAAI,kGAAoF,OAAO;;AAGzG,cAAO;;AAEwB,4BAAqC,4CAAF,eAAZ,AAAE,eAAP,KAAK;AACzB,MAA/B,AAAgB,eAAD,UAAU,MAAM;IACjC;;UAE8C;AACX,4BAAoC,4CAAF,eAAhB,AAAM,KAAD;AACxD,YAAO,8CAAsD,SAApB,AAAgB,eAAD,MAAO,KAAK;IACtE;yBAE6B,MAAiB;UAAjB;AAIG,8BAAoB;AAElC;AAChB,qBAAO,AAIN;AAHiE,QAAhE,qCAAqC;AACM,QAA3C,oCAAyC;AACzC,cAAO;;AAGT;AACoC,QAAlC,mBAAgC;AACrB,oBAAQ,UAAU;AAC7B,eAAO,KAAK;AACuB,gCAAoC,4CAAF,eAAhB,AAAM,KAAD;AACxD,yBAAO,AAQN;AAPC,gBAAI,AAAgB,AAAG,eAAJ;AAIf,cAHF,WAAmB,sCAA2B,iCAC5C,gCAAa,yFACR,AAAE,eAAP,KAAK,mBAAmB;;AAG5B,kBAAO;;AAE+B,UAA9B,AAAC,eAAX,yBAA8B,eAAlB,AAAgB,eAAD,MAAQ,KAAK;AACxC,yBAAO,AAGN;AAFyC,YAAb,AAAE,eAA7B,uCAAsC,eAAL,KAAK;AACtC,kBAAO;;AAE0B,UAAnC,QAAQ,AAAgB,eAAD;;AAEN,QAAnB,mBAAc,IAAI;AAClB,uBAAO,AAeN;AAdC,wBAA+B,AAAE,eAA7B;AAWA,YAVF,WAAmB,sCAA2B,iCAC9C,gCAAa,8CACX,4CACM,AACF,kBAAM,QAAI,+CACV,+BACuC,aAAT,AAAE,eAA7B,+CAAsC,IAAI,aAAa,sBACrB,AAAE,AAA0C,eAAvE,gFAAkD,+CAClC;;AAIlC,gBAAO;;;AAGqB,QAA9B,mBAAa,iBAAiB;AAC9B,uBAAO,AAGN;AAFiE,UAAhE,oCAA8B,kCAAkC;AAChE,gBAAO;;;IAGb;;UAW4B;AAAgB,YAAA,AAAY,YAAD;IAAQ;;AAsB1C,uCAAkB,MAAM;IAA2B;;;QAhLjC;IAIf;IACR;IAL+C,kBAAE,QAAQ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;uBAwM1C;;AAC7B,WAAqB,4CAAjB,AAAM,KAAD,cACP,AAAM,AAAyC,KAA1C,cAAc;IACvB;;AAGyC;IAAS;iBAEZ;;;AACpC,YAAO,AAAY,WAAD;AAClB,UAAc,YAAV,iBAAa,WAAW,GAC1B;AAC6B,wBAAc;AAC7C,uBAAgB,iBAAZ,WAAW,GAA4B,iBAAZ,WAAW,gBAAgB,AAAY,WAAD,gBAAgB,WAAW,IAC9F,AAAiB;AACI,MAAvB,kBAAY,WAAW;AACvB,oBAAI;AACoD,aAAtD,AAAY,WAAD;qBAAC,OAAW,4BAAe;AACa,cAAnD,AAAY,WAAD;sBAAC,OAAW,0BAAY;;IAEvC;WAG0B;;;;AACL,MAAb,aAAO,KAAK;AAC+B,WAAjD,AAAU;mBAAA,OAAW,yBAAY;IACnC;;;AAIsD,WAApD,AAAU;mBAAA,OAAW,4BAAe;AACtB,MAAR;IACR;;UAE6B;AAC3B,qBAAO,AAAY,WAAD;AAClB,YAAO,AAAY,YAAD,WAAW,AAAU,wBAAQ,WAAW;IAC5D;;UAOuC;AACxB,kBAAQ,AAAwD,eAAhC,+CAAuB,MAAM;AAC1E,UAAI,AAAM,KAAD,aACP,MAAO,MAAK;AACd,YAAO;IACT;;UAGuC;AACxB,kBAAQ,AAAwD,eAAhC,+CAAuB,MAAM;AAC1E,UAAI,AAAM,KAAD,aACP,MAAO,MAAK;AACd,YAAO;IACT;;UAGwC;AACzB,mBAAS,AAAsD,eAA9B,8CAAsB,KAAK;AACzE,UAAI,AAAO,MAAD,aACR,MAAO,OAAM;AACf,YAAO;IACT;;UAGwC;AACzB,mBAAS,AAAsD,eAA9B,8CAAsB,KAAK;AACzE,UAAI,AAAO,MAAD,aACR,MAAO,OAAM;AACf,YAAO;IACT;;UAGqC;AACnC,YAAO,gBAAS,WAAW;IAC7B;;AAI8B,MAA5B,YAAO,eAAS;AAC6B,MAA7C,AAAS,kCAAmB,WAAM;IACpC;UAG2B,SAAgB;UAAhB;UAAgB;AACZ,MAA7B,kBAAa,OAAO,EAAE,MAAM;IAC9B;;UAGsC;UAA0B;;AAC9D,YAAO,6BAAuB,MAAM,aAAY,QAAQ;IAC1D;;;QAtGmB;QACiB;;UACxB,AAAS,QAAD;IACL,kBAAE,QAAQ;AAJzB;AAKkB,IAAhB,YAAO,QAAQ;EACjB","file":"../../../../../../../packages/flutter/src/rendering/custom_layout.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["input_border.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/material/input_border.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__custom_layout: custom_layout
+    src__material__input_border: input_border
   };
 }));
 
-//# sourceMappingURL=custom_layout.dart.lib.js.map
+//# sourceMappingURL=input_border.dart.lib.js.map

@@ -1,51 +1,26 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/flutter/src/foundation/key.dart', 'packages/vector_math/vector_math_64.dart', 'packages/flutter/src/semantics/semantics.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/proxy_box.dart'], (function load__packages__flutter__src__rendering__custom_paint_dart(dart_sdk, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__flutter__src__foundation__key$46dart, packages__vector_math__vector_math_64$46dart, packages__flutter__src__semantics__semantics$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__proxy_box$46dart) {
+define(['dart_sdk', 'packages/flutter/src/gestures/events.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__services__mouse_cursor_dart(dart_sdk, packages__flutter__src__gestures__events$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__services__system_channels$46dart, packages__flutter__src__foundation__object$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const ui = dart_sdk.ui;
-  const _internal = dart_sdk._internal;
-  const _interceptors = dart_sdk._interceptors;
   const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
+  const events = packages__flutter__src__gestures__events$46dart.src__gestures__events;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
-  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
-  const key = packages__flutter__src__foundation__key$46dart.src__foundation__key;
-  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
-  const semantics = packages__flutter__src__semantics__semantics$46dart.src__semantics__semantics;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
-  var custom_paint = Object.create(dart.library);
-  var $toString = dartx.toString;
-  var $runtimeType = dartx.runtimeType;
-  var $isFinite = dartx.isFinite;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $join = dartx.join;
-  var $addAll = dartx.addAll;
-  var $length = dartx.length;
+  const system_channels = packages__flutter__src__services__system_channels$46dart.src__services__system_channels;
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  var mouse_cursor = Object.create(dart.library);
   var $_get = dartx._get;
-  var $containsKey = dartx.containsKey;
-  var $add = dartx.add;
-  var $_set = dartx._set;
-  var $insert = dartx.insert;
   var $remove = dartx.remove;
-  var $cast = dartx.cast;
+  var $_set = dartx._set;
+  var $runtimeType = dartx.runtimeType;
+  var $hashCode = dartx.hashCode;
   dart._checkModuleNullSafetyMode(false);
   var T = {
-    VoidToint: () => (T.VoidToint = dart.constFn(dart.fnType(core.int, [])))(),
-    intTodynamic: () => (T.intTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.int])))(),
+    IdentityMapOfint$MouseCursorSession: () => (T.IdentityMapOfint$MouseCursorSession = dart.constFn(_js_helper.IdentityMap$(core.int, mouse_cursor.MouseCursorSession)))(),
     VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
-    CustomPainterSemanticsL: () => (T.CustomPainterSemanticsL = dart.constFn(dart.legacy(custom_paint.CustomPainterSemantics)))(),
-    JSArrayOfSemanticsNode: () => (T.JSArrayOfSemanticsNode = dart.constFn(_interceptors.JSArray$(semantics.SemanticsNode)))(),
-    SemanticsNodeL: () => (T.SemanticsNodeL = dart.constFn(dart.legacy(semantics.SemanticsNode)))(),
-    LinkedMapOfKey$int: () => (T.LinkedMapOfKey$int = dart.constFn(_js_helper.LinkedMap$(key.Key, core.int)))(),
-    SemanticsNodeN: () => (T.SemanticsNodeN = dart.constFn(dart.nullable(semantics.SemanticsNode)))(),
-    ListOfSemanticsNodeN: () => (T.ListOfSemanticsNodeN = dart.constFn(core.List$(T.SemanticsNodeN())))(),
-    MapOfKey$SemanticsNode: () => (T.MapOfKey$SemanticsNode = dart.constFn(core.Map$(key.Key, semantics.SemanticsNode)))(),
-    VoidToMapOfKey$SemanticsNode: () => (T.VoidToMapOfKey$SemanticsNode = dart.constFn(dart.fnType(T.MapOfKey$SemanticsNode(), [])))(),
-    MapOfKey$SemanticsNodeTodynamic: () => (T.MapOfKey$SemanticsNodeTodynamic = dart.constFn(dart.fnType(dart.dynamic, [T.MapOfKey$SemanticsNode()])))(),
-    LinkedMapOfKey$SemanticsNode: () => (T.LinkedMapOfKey$SemanticsNode = dart.constFn(_js_helper.LinkedMap$(key.Key, semantics.SemanticsNode)))()
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    DiagnosticsPropertyOfString: () => (T.DiagnosticsPropertyOfString = dart.constFn(diagnostics.DiagnosticsProperty$(core.String)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -53,727 +28,652 @@ define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/flut
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: ui.Size.prototype,
-        [OffsetBase__dy]: 0,
-        [OffsetBase__dx]: 0
+        __proto__: diagnostics.DiagnosticLevel.prototype,
+        [_name]: "DiagnosticLevel.info",
+        index: 3
       });
     },
     get C1() {
-      return C[1] = dart.constList([], T.CustomPainterSemanticsL());
+      return C[1] = dart.const({
+        __proto__: mouse_cursor._DeferringMouseCursor.prototype
+      });
     },
     get C2() {
-      return C[2] = dart.constList([], T.SemanticsNodeL());
+      return C[2] = dart.const({
+        __proto__: mouse_cursor._NoopMouseCursor.prototype
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "none"
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "basic"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "click"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "forbidden"
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "wait"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "progress"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "contextMenu"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "help"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "text"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "verticalText"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "cell"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "precise"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "move"
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "grab"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "grabbing"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "noDrop"
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "alias"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "copy"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "disappearing"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "allScroll"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeLeftRight"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeUpDown"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeUpLeftDownRight"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeUpRightDownLeft"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeUp"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeDown"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeLeft"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeRight"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeUpLeft"
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeUpRight"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeDownLeft"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeDownRight"
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeColumn"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "resizeRow"
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "zoomIn"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: mouse_cursor.SystemMouseCursor.prototype,
+        [kind$]: "zoomOut"
+      });
     }
   }, false);
-  var C = Array(3).fill(void 0);
+  var C = Array(39).fill(void 0);
   var I = [
-    "file:///C:/dev/flutter/packages/flutter/lib/src/rendering/custom_paint.dart",
-    "package:flutter/src/rendering/custom_paint.dart"
+    "file:///C:/dev/flutter/packages/flutter/lib/src/services/mouse_cursor.dart",
+    "package:flutter/src/services/mouse_cursor.dart"
   ];
-  var _repaint = dart.privateName(custom_paint, "CustomPainter._repaint");
-  var _repaint$ = dart.privateName(custom_paint, "_repaint");
-  custom_paint.CustomPainter = class CustomPainter extends change_notifier.Listenable {
-    get [_repaint$]() {
-      return this[_repaint];
+  var fallbackMouseCursor$ = dart.privateName(mouse_cursor, "MouseCursorManager.fallbackMouseCursor");
+  var _lastSession = dart.privateName(mouse_cursor, "_lastSession");
+  mouse_cursor.MouseCursorManager = class MouseCursorManager extends core.Object {
+    get fallbackMouseCursor() {
+      return this[fallbackMouseCursor$];
     }
-    set [_repaint$](value) {
-      super[_repaint$] = value;
+    set fallbackMouseCursor(value) {
+      super.fallbackMouseCursor = value;
     }
-    addListener(listener) {
-      let t0;
-      if (listener == null) dart.nullFailed(I[0], 145, 33, "listener");
-      t0 = this[_repaint$];
-      return t0 == null ? null : t0.addListener(listener);
+    debugDeviceActiveCursor(device) {
+      if (device == null) dart.nullFailed(I[0], 36, 44, "device");
+      let result = null;
+      if (!dart.test(dart.fn(() => {
+        let t0;
+        result = (t0 = this[_lastSession][$_get](device), t0 == null ? null : t0.cursor);
+        return true;
+      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 38, 12, "() {\r\n      result = _lastSession[device]?.cursor;\r\n      return true;\r\n    }()");
+      return result;
     }
-    removeListener(listener) {
-      let t0;
-      if (listener == null) dart.nullFailed(I[0], 154, 36, "listener");
-      t0 = this[_repaint$];
-      return t0 == null ? null : t0.removeListener(listener);
+    handleDeviceCursorUpdate(device, triggeringEvent, cursorCandidates) {
+      let t0, t0$, t0$0;
+      if (device == null) dart.nullFailed(I[0], 56, 9, "device");
+      if (cursorCandidates == null) dart.nullFailed(I[0], 58, 27, "cursorCandidates");
+      if (events.PointerRemovedEvent.is(triggeringEvent)) {
+        this[_lastSession][$remove](device);
+        return;
+      }
+      let lastSession = this[_lastSession][$_get](device);
+      let nextCursor = (t0 = mouse_cursor._DeferringMouseCursor.firstNonDeferred(cursorCandidates), t0 == null ? this.fallbackMouseCursor : t0);
+      if (!!mouse_cursor._DeferringMouseCursor.is(nextCursor)) dart.assertFailed(null, I[0], 68, 12, "nextCursor is! _DeferringMouseCursor");
+      if (dart.equals((t0$ = lastSession, t0$ == null ? null : t0$.cursor), nextCursor)) return;
+      let nextSession = nextCursor.createSession(device);
+      this[_lastSession][$_set](device, nextSession);
+      t0$0 = lastSession;
+      t0$0 == null ? null : t0$0.dispose();
+      nextSession.activate();
     }
-    get semanticsBuilder() {
+  };
+  (mouse_cursor.MouseCursorManager.new = function(fallbackMouseCursor) {
+    if (fallbackMouseCursor == null) dart.nullFailed(I[0], 19, 27, "fallbackMouseCursor");
+    this[_lastSession] = new (T.IdentityMapOfint$MouseCursorSession()).new();
+    this[fallbackMouseCursor$] = fallbackMouseCursor;
+    if (!!dart.equals(fallbackMouseCursor, mouse_cursor.MouseCursor.defer)) dart.assertFailed(null, I[0], 20, 14, "fallbackMouseCursor != MouseCursor.defer");
+    ;
+  }).prototype = mouse_cursor.MouseCursorManager.prototype;
+  dart.addTypeTests(mouse_cursor.MouseCursorManager);
+  dart.addTypeCaches(mouse_cursor.MouseCursorManager);
+  dart.setMethodSignature(mouse_cursor.MouseCursorManager, () => ({
+    __proto__: dart.getMethods(mouse_cursor.MouseCursorManager.__proto__),
+    debugDeviceActiveCursor: dart.fnType(dart.nullable(mouse_cursor.MouseCursor), [core.int]),
+    handleDeviceCursorUpdate: dart.fnType(dart.void, [core.int, dart.nullable(events.PointerEvent), core.Iterable$(mouse_cursor.MouseCursor)])
+  }));
+  dart.setLibraryUri(mouse_cursor.MouseCursorManager, I[1]);
+  dart.setFieldSignature(mouse_cursor.MouseCursorManager, () => ({
+    __proto__: dart.getFields(mouse_cursor.MouseCursorManager.__proto__),
+    fallbackMouseCursor: dart.finalFieldType(mouse_cursor.MouseCursor),
+    [_lastSession]: dart.finalFieldType(core.Map$(core.int, mouse_cursor.MouseCursorSession))
+  }));
+  var cursor$ = dart.privateName(mouse_cursor, "MouseCursorSession.cursor");
+  var device$ = dart.privateName(mouse_cursor, "MouseCursorSession.device");
+  mouse_cursor.MouseCursorSession = class MouseCursorSession extends core.Object {
+    get cursor() {
+      return this[cursor$];
+    }
+    set cursor(value) {
+      super.cursor = value;
+    }
+    get device() {
+      return this[device$];
+    }
+    set device(value) {
+      super.device = value;
+    }
+  };
+  (mouse_cursor.MouseCursorSession.new = function(cursor, device) {
+    if (cursor == null) dart.nullFailed(I[0], 103, 27, "cursor");
+    if (device == null) dart.nullFailed(I[0], 103, 40, "device");
+    this[cursor$] = cursor;
+    this[device$] = device;
+    if (!(cursor != null)) dart.assertFailed(null, I[0], 104, 14, "cursor != null");
+    if (!(device != null)) dart.assertFailed(null, I[0], 105, 14, "device != null");
+    ;
+  }).prototype = mouse_cursor.MouseCursorSession.prototype;
+  dart.addTypeTests(mouse_cursor.MouseCursorSession);
+  dart.addTypeCaches(mouse_cursor.MouseCursorSession);
+  dart.setLibraryUri(mouse_cursor.MouseCursorSession, I[1]);
+  dart.setFieldSignature(mouse_cursor.MouseCursorSession, () => ({
+    __proto__: dart.getFields(mouse_cursor.MouseCursorSession.__proto__),
+    cursor: dart.finalFieldType(mouse_cursor.MouseCursor),
+    device: dart.finalFieldType(core.int)
+  }));
+  var _name = dart.privateName(diagnostics, "_name");
+  const Object_Diagnosticable$36 = class Object_Diagnosticable extends core.Object {};
+  (Object_Diagnosticable$36.new = function() {
+  }).prototype = Object_Diagnosticable$36.prototype;
+  dart.applyMixin(Object_Diagnosticable$36, diagnostics.Diagnosticable);
+  mouse_cursor.MouseCursor = class MouseCursor extends Object_Diagnosticable$36 {
+    toString(opts) {
+      let minLevel = opts && 'minLevel' in opts ? opts.minLevel : C[0] || CT.C0;
+      if (minLevel == null) dart.nullFailed(I[0], 228, 36, "minLevel");
+      let debugDescription = this.debugDescription;
+      if (dart.notNull(minLevel.index) >= dart.notNull(diagnostics.DiagnosticLevel.info.index) && debugDescription != null) return debugDescription;
+      return super.toString({minLevel: minLevel});
+    }
+  };
+  (mouse_cursor.MouseCursor.new = function() {
+    ;
+  }).prototype = mouse_cursor.MouseCursor.prototype;
+  dart.addTypeTests(mouse_cursor.MouseCursor);
+  dart.addTypeCaches(mouse_cursor.MouseCursor);
+  dart.setLibraryUri(mouse_cursor.MouseCursor, I[1]);
+  dart.defineExtensionMethods(mouse_cursor.MouseCursor, ['toString']);
+  dart.defineLazy(mouse_cursor.MouseCursor, {
+    /*mouse_cursor.MouseCursor.defer*/get defer() {
+      return C[1] || CT.C1;
+    },
+    /*mouse_cursor.MouseCursor.uncontrolled*/get uncontrolled() {
+      return C[2] || CT.C2;
+    }
+  }, false);
+  mouse_cursor._DeferringMouseCursor = class _DeferringMouseCursor extends mouse_cursor.MouseCursor {
+    createSession(device) {
+      if (device == null) dart.nullFailed(I[0], 265, 40, "device");
+      if (!false) dart.assertFailed("_DeferringMouseCursor can not create a session", I[0], 266, 12, "false");
+      dart.throw(new core.UnimplementedError.new());
+    }
+    get debugDescription() {
+      return "defer";
+    }
+    static firstNonDeferred(cursors) {
+      if (cursors == null) dart.nullFailed(I[0], 274, 62, "cursors");
+      for (let cursor of cursors) {
+        if (!(cursor != null)) dart.assertFailed(null, I[0], 276, 14, "cursor != null");
+        if (!dart.equals(cursor, mouse_cursor.MouseCursor.defer)) return cursor;
+      }
       return null;
     }
-    shouldRebuildSemantics(oldDelegate) {
-      custom_paint.CustomPainter.as(oldDelegate);
-      if (oldDelegate == null) dart.nullFailed(I[0], 226, 55, "oldDelegate");
-      return this.shouldRepaint(oldDelegate);
+  };
+  (mouse_cursor._DeferringMouseCursor.__ = function() {
+    mouse_cursor._DeferringMouseCursor.__proto__.new.call(this);
+    ;
+  }).prototype = mouse_cursor._DeferringMouseCursor.prototype;
+  dart.addTypeTests(mouse_cursor._DeferringMouseCursor);
+  dart.addTypeCaches(mouse_cursor._DeferringMouseCursor);
+  dart.setMethodSignature(mouse_cursor._DeferringMouseCursor, () => ({
+    __proto__: dart.getMethods(mouse_cursor._DeferringMouseCursor.__proto__),
+    createSession: dart.fnType(mouse_cursor.MouseCursorSession, [core.int])
+  }));
+  dart.setGetterSignature(mouse_cursor._DeferringMouseCursor, () => ({
+    __proto__: dart.getGetters(mouse_cursor._DeferringMouseCursor.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(mouse_cursor._DeferringMouseCursor, I[1]);
+  mouse_cursor._NoopMouseCursorSession = class _NoopMouseCursorSession extends mouse_cursor.MouseCursorSession {
+    activate() {
+      return async.async(dart.void, function* activate() {
+      });
     }
-    hitTest(position) {
-      if (position == null) dart.nullFailed(I[0], 268, 24, "position");
-      return null;
-    }
-    toString() {
-      let t0, t0$;
-      return dart.str(diagnostics.describeIdentity(this)) + "(" + dart.str((t0$ = (t0 = this[_repaint$], t0 == null ? null : dart.toString(t0)), t0$ == null ? "" : t0$)) + ")";
+    dispose() {
     }
   };
-  (custom_paint.CustomPainter.new = function(opts) {
-    let repaint = opts && 'repaint' in opts ? opts.repaint : null;
-    this[_repaint] = repaint;
-    custom_paint.CustomPainter.__proto__.new.call(this);
+  (mouse_cursor._NoopMouseCursorSession.new = function(cursor, device) {
+    if (cursor == null) dart.nullFailed(I[0], 285, 44, "cursor");
+    if (device == null) dart.nullFailed(I[0], 285, 56, "device");
+    mouse_cursor._NoopMouseCursorSession.__proto__.new.call(this, cursor, device);
     ;
-  }).prototype = custom_paint.CustomPainter.prototype;
-  dart.addTypeTests(custom_paint.CustomPainter);
-  dart.addTypeCaches(custom_paint.CustomPainter);
-  dart.setMethodSignature(custom_paint.CustomPainter, () => ({
-    __proto__: dart.getMethods(custom_paint.CustomPainter.__proto__),
-    addListener: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
-    removeListener: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
-    shouldRebuildSemantics: dart.fnType(core.bool, [dart.nullable(core.Object)]),
-    hitTest: dart.fnType(dart.nullable(core.bool), [ui.Offset])
+  }).prototype = mouse_cursor._NoopMouseCursorSession.prototype;
+  dart.addTypeTests(mouse_cursor._NoopMouseCursorSession);
+  dart.addTypeCaches(mouse_cursor._NoopMouseCursorSession);
+  dart.setMethodSignature(mouse_cursor._NoopMouseCursorSession, () => ({
+    __proto__: dart.getMethods(mouse_cursor._NoopMouseCursorSession.__proto__),
+    activate: dart.fnType(async.Future$(dart.void), []),
+    dispose: dart.fnType(dart.void, [])
   }));
-  dart.setGetterSignature(custom_paint.CustomPainter, () => ({
-    __proto__: dart.getGetters(custom_paint.CustomPainter.__proto__),
-    semanticsBuilder: dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))
-  }));
-  dart.setLibraryUri(custom_paint.CustomPainter, I[1]);
-  dart.setFieldSignature(custom_paint.CustomPainter, () => ({
-    __proto__: dart.getFields(custom_paint.CustomPainter.__proto__),
-    [_repaint$]: dart.finalFieldType(dart.nullable(change_notifier.Listenable))
-  }));
-  dart.defineExtensionMethods(custom_paint.CustomPainter, ['toString']);
-  var key$ = dart.privateName(custom_paint, "CustomPainterSemantics.key");
-  var rect$ = dart.privateName(custom_paint, "CustomPainterSemantics.rect");
-  var transform$ = dart.privateName(custom_paint, "CustomPainterSemantics.transform");
-  var properties$ = dart.privateName(custom_paint, "CustomPainterSemantics.properties");
-  var tags$ = dart.privateName(custom_paint, "CustomPainterSemantics.tags");
-  custom_paint.CustomPainterSemantics = class CustomPainterSemantics extends core.Object {
-    get key() {
-      return this[key$];
+  dart.setLibraryUri(mouse_cursor._NoopMouseCursorSession, I[1]);
+  mouse_cursor._NoopMouseCursor = class _NoopMouseCursor extends mouse_cursor.MouseCursor {
+    createSession(device) {
+      if (device == null) dart.nullFailed(I[0], 311, 45, "device");
+      return new mouse_cursor._NoopMouseCursorSession.new(this, device);
     }
-    set key(value) {
-      super.key = value;
-    }
-    get rect() {
-      return this[rect$];
-    }
-    set rect(value) {
-      super.rect = value;
-    }
-    get transform() {
-      return this[transform$];
-    }
-    set transform(value) {
-      super.transform = value;
-    }
-    get properties() {
-      return this[properties$];
-    }
-    set properties(value) {
-      super.properties = value;
-    }
-    get tags() {
-      return this[tags$];
-    }
-    set tags(value) {
-      super.tags = value;
+    get debugDescription() {
+      return "uncontrolled";
     }
   };
-  (custom_paint.CustomPainterSemantics.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let rect = opts && 'rect' in opts ? opts.rect : null;
-    if (rect == null) dart.nullFailed(I[0], 295, 19, "rect");
-    let properties = opts && 'properties' in opts ? opts.properties : null;
-    if (properties == null) dart.nullFailed(I[0], 296, 19, "properties");
-    let transform = opts && 'transform' in opts ? opts.transform : null;
-    let tags = opts && 'tags' in opts ? opts.tags : null;
-    this[key$] = key;
-    this[rect$] = rect;
-    this[properties$] = properties;
-    this[transform$] = transform;
-    this[tags$] = tags;
-    if (!(rect != null)) dart.assertFailed(null, I[0], 299, 15, "rect != null");
-    if (!(properties != null)) dart.assertFailed(null, I[0], 300, 15, "properties != null");
+  (mouse_cursor._NoopMouseCursor.__ = function() {
+    mouse_cursor._NoopMouseCursor.__proto__.new.call(this);
     ;
-  }).prototype = custom_paint.CustomPainterSemantics.prototype;
-  dart.addTypeTests(custom_paint.CustomPainterSemantics);
-  dart.addTypeCaches(custom_paint.CustomPainterSemantics);
-  dart.setLibraryUri(custom_paint.CustomPainterSemantics, I[1]);
-  dart.setFieldSignature(custom_paint.CustomPainterSemantics, () => ({
-    __proto__: dart.getFields(custom_paint.CustomPainterSemantics.__proto__),
-    key: dart.finalFieldType(dart.nullable(key.Key)),
-    rect: dart.finalFieldType(ui.Rect),
-    transform: dart.finalFieldType(dart.nullable(vector_math_64.Matrix4)),
-    properties: dart.finalFieldType(semantics.SemanticsProperties),
-    tags: dart.finalFieldType(dart.nullable(core.Set$(semantics.SemanticsTag)))
+  }).prototype = mouse_cursor._NoopMouseCursor.prototype;
+  dart.addTypeTests(mouse_cursor._NoopMouseCursor);
+  dart.addTypeCaches(mouse_cursor._NoopMouseCursor);
+  dart.setMethodSignature(mouse_cursor._NoopMouseCursor, () => ({
+    __proto__: dart.getMethods(mouse_cursor._NoopMouseCursor.__proto__),
+    createSession: dart.fnType(mouse_cursor._NoopMouseCursorSession, [core.int])
   }));
-  var isComplex$ = dart.privateName(custom_paint, "RenderCustomPaint.isComplex");
-  var willChange$ = dart.privateName(custom_paint, "RenderCustomPaint.willChange");
-  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
-  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
-  var _backgroundSemanticsBuilder = dart.privateName(custom_paint, "_backgroundSemanticsBuilder");
-  var _foregroundSemanticsBuilder = dart.privateName(custom_paint, "_foregroundSemanticsBuilder");
-  var _backgroundSemanticsNodes = dart.privateName(custom_paint, "_backgroundSemanticsNodes");
-  var _foregroundSemanticsNodes = dart.privateName(custom_paint, "_foregroundSemanticsNodes");
-  var _painter = dart.privateName(custom_paint, "_painter");
-  var _foregroundPainter = dart.privateName(custom_paint, "_foregroundPainter");
-  var _preferredSize = dart.privateName(custom_paint, "_preferredSize");
-  var _didUpdatePainter = dart.privateName(custom_paint, "_didUpdatePainter");
-  var _paintWithPainter = dart.privateName(custom_paint, "_paintWithPainter");
-  var _setRasterCacheHints = dart.privateName(custom_paint, "_setRasterCacheHints");
-  custom_paint.RenderCustomPaint = class RenderCustomPaint extends proxy_box.RenderProxyBox {
-    get isComplex() {
-      return this[isComplex$];
+  dart.setGetterSignature(mouse_cursor._NoopMouseCursor, () => ({
+    __proto__: dart.getGetters(mouse_cursor._NoopMouseCursor.__proto__),
+    debugDescription: core.String
+  }));
+  dart.setLibraryUri(mouse_cursor._NoopMouseCursor, I[1]);
+  mouse_cursor._SystemMouseCursorSession = class _SystemMouseCursorSession extends mouse_cursor.MouseCursorSession {
+    get cursor() {
+      return mouse_cursor.SystemMouseCursor.as(super.cursor);
     }
-    set isComplex(value) {
-      this[isComplex$] = value;
+    activate() {
+      return system_channels.SystemChannels.mouseCursor.invokeMethod(dart.void, "activateSystemCursor", new (T.IdentityMapOfString$dynamic()).from(["device", this.device, "kind", this.cursor.kind]));
     }
-    get willChange() {
-      return this[willChange$];
-    }
-    set willChange(value) {
-      this[willChange$] = value;
-    }
-    get painter() {
-      return this[_painter];
-    }
-    set painter(value) {
-      if (dart.equals(this[_painter], value)) return;
-      let oldPainter = this[_painter];
-      this[_painter] = value;
-      this[_didUpdatePainter](this[_painter], oldPainter);
-    }
-    get foregroundPainter() {
-      return this[_foregroundPainter];
-    }
-    set foregroundPainter(value) {
-      if (dart.equals(this[_foregroundPainter], value)) return;
-      let oldPainter = this[_foregroundPainter];
-      this[_foregroundPainter] = value;
-      this[_didUpdatePainter](this[_foregroundPainter], oldPainter);
-    }
-    [_didUpdatePainter](newPainter, oldPainter) {
-      let t0, t0$;
-      if (newPainter == null) {
-        if (!(oldPainter != null)) dart.assertFailed(null, I[0], 435, 14, "oldPainter != null");
-        this.markNeedsPaint();
-      } else if (oldPainter == null || !dart.equals(dart.runtimeType(newPainter), dart.runtimeType(oldPainter)) || dart.test(newPainter.shouldRepaint(oldPainter))) {
-        this.markNeedsPaint();
-      }
-      if (dart.test(this.attached)) {
-        t0 = oldPainter;
-        t0 == null ? null : t0.removeListener(dart.bind(this, 'markNeedsPaint'));
-        t0$ = newPainter;
-        t0$ == null ? null : t0$.addListener(dart.bind(this, 'markNeedsPaint'));
-      }
-      if (newPainter == null) {
-        if (!(oldPainter != null)) dart.assertFailed(null, I[0], 449, 14, "oldPainter != null");
-        if (dart.test(this.attached)) this.markNeedsSemanticsUpdate();
-      } else if (oldPainter == null || !dart.equals(dart.runtimeType(newPainter), dart.runtimeType(oldPainter)) || dart.test(newPainter.shouldRebuildSemantics(oldPainter))) {
-        this.markNeedsSemanticsUpdate();
-      }
-    }
-    get preferredSize() {
-      return this[_preferredSize];
-    }
-    set preferredSize(value) {
-      if (value == null) dart.nullFailed(I[0], 468, 26, "value");
-      if (!(value != null)) dart.assertFailed(null, I[0], 469, 12, "value != null");
-      if (dart.equals(this.preferredSize, value)) return;
-      this[_preferredSize] = value;
-      this.markNeedsLayout();
-    }
-    computeMinIntrinsicWidth(height) {
-      if (height == null) dart.nullFailed(I[0], 490, 42, "height");
-      if (this.child == null) return this.preferredSize.width[$isFinite] ? this.preferredSize.width : 0.0;
-      return super.computeMinIntrinsicWidth(height);
-    }
-    computeMaxIntrinsicWidth(height) {
-      if (height == null) dart.nullFailed(I[0], 497, 42, "height");
-      if (this.child == null) return this.preferredSize.width[$isFinite] ? this.preferredSize.width : 0.0;
-      return super.computeMaxIntrinsicWidth(height);
-    }
-    computeMinIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[0], 504, 43, "width");
-      if (this.child == null) return this.preferredSize.height[$isFinite] ? this.preferredSize.height : 0.0;
-      return super.computeMinIntrinsicHeight(width);
-    }
-    computeMaxIntrinsicHeight(width) {
-      if (width == null) dart.nullFailed(I[0], 511, 43, "width");
-      if (this.child == null) return this.preferredSize.height[$isFinite] ? this.preferredSize.height : 0.0;
-      return super.computeMaxIntrinsicHeight(width);
-    }
-    attach(owner) {
-      let t0, t0$;
-      object.PipelineOwner.as(owner);
-      if (owner == null) dart.nullFailed(I[0], 518, 29, "owner");
-      super.attach(owner);
-      t0 = this[_painter];
-      t0 == null ? null : t0.addListener(dart.bind(this, 'markNeedsPaint'));
-      t0$ = this[_foregroundPainter];
-      t0$ == null ? null : t0$.addListener(dart.bind(this, 'markNeedsPaint'));
-    }
-    detach() {
-      let t0, t0$;
-      t0 = this[_painter];
-      t0 == null ? null : t0.removeListener(dart.bind(this, 'markNeedsPaint'));
-      t0$ = this[_foregroundPainter];
-      t0$ == null ? null : t0$.removeListener(dart.bind(this, 'markNeedsPaint'));
-      super.detach();
-    }
-    hitTestChildren(result, opts) {
-      let t0;
-      if (result == null) dart.nullFailed(I[0], 532, 41, "result");
-      let position = opts && 'position' in opts ? opts.position : null;
-      if (position == null) dart.nullFailed(I[0], 532, 67, "position");
-      if (this[_foregroundPainter] != null && dart.test((t0 = dart.nullCheck(this[_foregroundPainter]).hitTest(position), t0 == null ? false : t0))) return true;
-      return super.hitTestChildren(result, {position: position});
-    }
-    hitTestSelf(position) {
-      let t0;
-      if (position == null) dart.nullFailed(I[0], 539, 27, "position");
-      return this[_painter] != null && dart.test((t0 = dart.nullCheck(this[_painter]).hitTest(position), t0 == null ? true : t0));
-    }
-    performLayout() {
-      super.performLayout();
-      this.markNeedsSemanticsUpdate();
-    }
-    computeSizeForNoChild(constraints) {
-      if (constraints == null) dart.nullFailed(I[0], 550, 45, "constraints");
-      return constraints.constrain(this.preferredSize);
-    }
-    [_paintWithPainter](canvas, offset, painter) {
-      if (canvas == null) dart.nullFailed(I[0], 554, 33, "canvas");
-      if (offset == null) dart.nullFailed(I[0], 554, 48, "offset");
-      if (painter == null) dart.nullFailed(I[0], 554, 70, "painter");
-      let debugPreviousCanvasSaveCount = null;
-      let debugPreviousCanvasSaveCount$35isSet = false;
-      function debugPreviousCanvasSaveCount$35get() {
-        return debugPreviousCanvasSaveCount$35isSet ? debugPreviousCanvasSaveCount : dart.throw(new _internal.LateError.localNI("debugPreviousCanvasSaveCount"));
-      }
-      dart.fn(debugPreviousCanvasSaveCount$35get, T.VoidToint());
-      function debugPreviousCanvasSaveCount$35set(t3) {
-        if (t3 == null) dart.nullFailed(I[0], 555, 14, "null");
-        debugPreviousCanvasSaveCount$35isSet = true;
-        return debugPreviousCanvasSaveCount = t3;
-      }
-      dart.fn(debugPreviousCanvasSaveCount$35set, T.intTodynamic());
-      canvas.save();
-      if (!dart.test(dart.fn(() => {
-        debugPreviousCanvasSaveCount$35set(canvas.getSaveCount());
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 557, 12, "() {\r\n      debugPreviousCanvasSaveCount = canvas.getSaveCount();\r\n      return true;\r\n    }()");
-      if (!dart.equals(offset, ui.Offset.zero)) canvas.translate(offset.dx, offset.dy);
-      painter.paint(canvas, this.size);
-      if (!dart.test(dart.fn(() => {
-        let debugNewCanvasSaveCount = canvas.getSaveCount();
-        if (dart.notNull(debugNewCanvasSaveCount) > dart.notNull(debugPreviousCanvasSaveCount$35get())) {
-          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The " + dart.str(painter) + " custom painter called canvas.save() or canvas.saveLayer() at least " + dart.str(dart.notNull(debugNewCanvasSaveCount) - dart.notNull(debugPreviousCanvasSaveCount$35get())) + " more " + "time" + (dart.notNull(debugNewCanvasSaveCount) - dart.notNull(debugPreviousCanvasSaveCount$35get()) === 1 ? "" : "s") + " " + "than it called canvas.restore()."), new assertions.ErrorDescription.new("This leaves the canvas in an inconsistent state and will probably result in a broken display."), new assertions.ErrorHint.new("You must pair each call to save()/saveLayer() with a later matching call to restore().")])));
-        }
-        if (dart.notNull(debugNewCanvasSaveCount) < dart.notNull(debugPreviousCanvasSaveCount$35get())) {
-          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("The " + dart.str(painter) + " custom painter called canvas.restore() " + dart.str(dart.notNull(debugPreviousCanvasSaveCount$35get()) - dart.notNull(debugNewCanvasSaveCount)) + " more " + "time" + (dart.notNull(debugPreviousCanvasSaveCount$35get()) - dart.notNull(debugNewCanvasSaveCount) === 1 ? "" : "s") + " " + "than it called canvas.save() or canvas.saveLayer()."), new assertions.ErrorDescription.new("This leaves the canvas in an inconsistent state and will result in a broken display."), new assertions.ErrorHint.new("You should only call restore() if you first called save() or saveLayer().")])));
-        }
-        return debugNewCanvasSaveCount == debugPreviousCanvasSaveCount$35get();
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 564, 12, "() {\r\n      // This isn't perfect. For example, we can't catch the case of\r\n      // someone first restoring, then setting a transform or whatnot,\r\n      // then saving.\r\n      // If this becomes a real problem, we could add logic to the\r\n      // Canvas class to lock the canvas at a particular save count\r\n      // such that restore() fails if it would take the lock count\r\n      // below that number.\r\n      final int debugNewCanvasSaveCount = canvas.getSaveCount();\r\n      if (debugNewCanvasSaveCount > debugPreviousCanvasSaveCount) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary(\r\n            'The $painter custom painter called canvas.save() or canvas.saveLayer() at least '\r\n            '${debugNewCanvasSaveCount - debugPreviousCanvasSaveCount} more '\r\n            'time${debugNewCanvasSaveCount - debugPreviousCanvasSaveCount == 1 ? '' : 's' } '\r\n            'than it called canvas.restore().',\r\n          ),\r\n          ErrorDescription('This leaves the canvas in an inconsistent state and will probably result in a broken display.'),\r\n          ErrorHint('You must pair each call to save()/saveLayer() with a later matching call to restore().'),\r\n        ]);\r\n      }\r\n      if (debugNewCanvasSaveCount < debugPreviousCanvasSaveCount) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary(\r\n            'The $painter custom painter called canvas.restore() '\r\n            '${debugPreviousCanvasSaveCount - debugNewCanvasSaveCount} more '\r\n            'time${debugPreviousCanvasSaveCount - debugNewCanvasSaveCount == 1 ? '' : 's' } '\r\n            'than it called canvas.save() or canvas.saveLayer().',\r\n          ),\r\n          ErrorDescription('This leaves the canvas in an inconsistent state and will result in a broken display.'),\r\n          ErrorHint('You should only call restore() if you first called save() or saveLayer().'),\r\n        ]);\r\n      }\r\n      return debugNewCanvasSaveCount == debugPreviousCanvasSaveCount;\r\n    }()");
-      canvas.restore();
-    }
-    paint(context, offset) {
-      if (context == null) dart.nullFailed(I[0], 603, 30, "context");
-      if (offset == null) dart.nullFailed(I[0], 603, 46, "offset");
-      if (this[_painter] != null) {
-        this[_paintWithPainter](context.canvas, offset, dart.nullCheck(this[_painter]));
-        this[_setRasterCacheHints](context);
-      }
-      super.paint(context, offset);
-      if (this[_foregroundPainter] != null) {
-        this[_paintWithPainter](context.canvas, offset, dart.nullCheck(this[_foregroundPainter]));
-        this[_setRasterCacheHints](context);
-      }
-    }
-    [_setRasterCacheHints](context) {
-      if (context == null) dart.nullFailed(I[0], 615, 45, "context");
-      if (dart.test(this.isComplex)) context.setIsComplexHint();
-      if (dart.test(this.willChange)) context.setWillChangeHint();
-    }
-    describeSemanticsConfiguration(config) {
-      let t5, t5$;
-      if (config == null) dart.nullFailed(I[0], 629, 62, "config");
-      super.describeSemanticsConfiguration(config);
-      this[_backgroundSemanticsBuilder] = (t5 = this.painter, t5 == null ? null : t5.semanticsBuilder);
-      this[_foregroundSemanticsBuilder] = (t5$ = this.foregroundPainter, t5$ == null ? null : t5$.semanticsBuilder);
-      config.isSemanticBoundary = this[_backgroundSemanticsBuilder] != null || this[_foregroundSemanticsBuilder] != null;
-    }
-    assembleSemanticsNode(node, config, children) {
-      if (node == null) dart.nullFailed(I[0], 644, 19, "node");
-      if (config == null) dart.nullFailed(I[0], 645, 28, "config");
-      if (children == null) dart.nullFailed(I[0], 646, 29, "children");
-      if (!dart.test(dart.fn(() => {
-        if (this.child == null && dart.test(children[$isNotEmpty])) {
-          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new(dart.str(this[$runtimeType]) + " does not have a child widget but received a non-empty list of child SemanticsNode:\n" + dart.str(children[$join]("\n")))])));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 648, 12, "() {\r\n      if (child == null && children.isNotEmpty) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary(\r\n            '$runtimeType does not have a child widget but received a non-empty list of child SemanticsNode:\\n'\r\n            '${children.join('\\n')}',\r\n          ),\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
-      let backgroundSemantics = this[_backgroundSemanticsBuilder] != null ? dart.nullCheck(this[_backgroundSemanticsBuilder])(this.size) : C[1] || CT.C1;
-      this[_backgroundSemanticsNodes] = custom_paint.RenderCustomPaint._updateSemanticsChildren(this[_backgroundSemanticsNodes], backgroundSemantics);
-      let foregroundSemantics = this[_foregroundSemanticsBuilder] != null ? dart.nullCheck(this[_foregroundSemanticsBuilder])(this.size) : C[1] || CT.C1;
-      this[_foregroundSemanticsNodes] = custom_paint.RenderCustomPaint._updateSemanticsChildren(this[_foregroundSemanticsNodes], foregroundSemantics);
-      let hasBackgroundSemantics = this[_backgroundSemanticsNodes] != null && dart.test(dart.nullCheck(this[_backgroundSemanticsNodes])[$isNotEmpty]);
-      let hasForegroundSemantics = this[_foregroundSemanticsNodes] != null && dart.test(dart.nullCheck(this[_foregroundSemanticsNodes])[$isNotEmpty]);
-      let finalChildren = (() => {
-        let t5 = T.JSArrayOfSemanticsNode().of([]);
-        if (hasBackgroundSemantics) t5[$addAll](dart.nullCheck(this[_backgroundSemanticsNodes]));
-        t5[$addAll](children);
-        if (hasForegroundSemantics) t5[$addAll](dart.nullCheck(this[_foregroundSemanticsNodes]));
-        return t5;
-      })();
-      super.assembleSemanticsNode(node, config, finalChildren);
-    }
-    clearSemantics() {
-      super.clearSemantics();
-      this[_backgroundSemanticsNodes] = null;
-      this[_foregroundSemanticsNodes] = null;
-    }
-    static _updateSemanticsChildren(oldSemantics, newChildSemantics) {
-      let t6, t6$;
-      oldSemantics = (t6 = oldSemantics, t6 == null ? C[2] || CT.C2 : t6);
-      newChildSemantics = (t6$ = newChildSemantics, t6$ == null ? C[1] || CT.C1 : t6$);
-      if (!dart.test(dart.fn(() => {
-        let keys = new (T.LinkedMapOfKey$int()).new();
-        let information = T.JSArrayOfDiagnosticsNode().of([]);
-        for (let i = 0; i < dart.notNull(dart.nullCheck(newChildSemantics)[$length]); i = i + 1) {
-          let child = newChildSemantics[$_get](i);
-          if (child.key != null) {
-            if (dart.test(keys[$containsKey](child.key))) {
-              information[$add](new assertions.ErrorDescription.new("- duplicate key " + dart.str(child.key) + " found at position " + dart.str(i)));
-            }
-            keys[$_set](dart.nullCheck(child.key), i);
-          }
-        }
-        if (dart.test(information[$isNotEmpty])) {
-          information[$insert](0, new assertions.ErrorSummary.new("Failed to update the list of CustomPainterSemantics:"));
-          dart.throw(new assertions.FlutterError.fromParts(information));
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 716, 12, "() {\r\n      final Map<Key, int> keys = HashMap<Key, int>();\r\n      final List<DiagnosticsNode> information = <DiagnosticsNode>[];\r\n      for (int i = 0; i < newChildSemantics!.length; i += 1) {\r\n        final CustomPainterSemantics child = newChildSemantics[i];\r\n        if (child.key != null) {\r\n          if (keys.containsKey(child.key)) {\r\n            information.add(ErrorDescription('- duplicate key ${child.key} found at position $i'));\r\n          }\r\n          keys[child.key!] = i;\r\n        }\r\n      }\r\n\r\n      if (information.isNotEmpty) {\r\n        information.insert(0, ErrorSummary('Failed to update the list of CustomPainterSemantics:'));\r\n        throw FlutterError.fromParts(information);\r\n      }\r\n\r\n      return true;\r\n    }()");
-      let newChildrenTop = 0;
-      let oldChildrenTop = 0;
-      let newChildrenBottom = dart.notNull(newChildSemantics[$length]) - 1;
-      let oldChildrenBottom = dart.notNull(oldSemantics[$length]) - 1;
-      let newChildren = T.ListOfSemanticsNodeN().filled(newChildSemantics[$length], null, {growable: false});
-      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
-        let oldChild = oldSemantics[$_get](oldChildrenTop);
-        let newSemantics = newChildSemantics[$_get](newChildrenTop);
-        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) break;
-        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
-        newChildren[$_set](newChildrenTop, newChild);
-        newChildrenTop = newChildrenTop + 1;
-        oldChildrenTop = oldChildrenTop + 1;
-      }
-      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
-        let oldChild = oldSemantics[$_get](oldChildrenBottom);
-        let newChild = newChildSemantics[$_get](newChildrenBottom);
-        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newChild))) break;
-        oldChildrenBottom = oldChildrenBottom - 1;
-        newChildrenBottom = newChildrenBottom - 1;
-      }
-      let haveOldChildren = oldChildrenTop <= oldChildrenBottom;
-      let oldKeyedChildren = null;
-      let oldKeyedChildren$35isSet = false;
-      function oldKeyedChildren$35get() {
-        return oldKeyedChildren$35isSet ? oldKeyedChildren : dart.throw(new _internal.LateError.localNI("oldKeyedChildren"));
-      }
-      dart.fn(oldKeyedChildren$35get, T.VoidToMapOfKey$SemanticsNode());
-      function oldKeyedChildren$35set(t9) {
-        if (t9 == null) dart.nullFailed(I[0], 768, 40, "null");
-        if (oldKeyedChildren$35isSet)
-          dart.throw(new _internal.LateError.localAI("oldKeyedChildren"));
-        else {
-          oldKeyedChildren$35isSet = true;
-          return oldKeyedChildren = t9;
-        }
-      }
-      dart.fn(oldKeyedChildren$35set, T.MapOfKey$SemanticsNodeTodynamic());
-      if (haveOldChildren) {
-        oldKeyedChildren$35set(new (T.LinkedMapOfKey$SemanticsNode()).new());
-        while (oldChildrenTop <= oldChildrenBottom) {
-          let oldChild = oldSemantics[$_get](oldChildrenTop);
-          if (oldChild.key != null) oldKeyedChildren$35get()[$_set](dart.nullCheck(oldChild.key), oldChild);
-          oldChildrenTop = oldChildrenTop + 1;
-        }
-      }
-      while (newChildrenTop <= newChildrenBottom) {
-        let oldChild = null;
-        let newSemantics = newChildSemantics[$_get](newChildrenTop);
-        if (haveOldChildren) {
-          let key = newSemantics.key;
-          if (key != null) {
-            oldChild = oldKeyedChildren$35get()[$_get](key);
-            if (oldChild != null) {
-              if (dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) {
-                oldKeyedChildren$35get()[$remove](key);
-              } else {
-                oldChild = null;
-              }
-            }
-          }
-        }
-        if (!(oldChild == null || dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics)))) dart.assertFailed(null, I[0], 799, 14, "oldChild == null || _canUpdateSemanticsChild(oldChild, newSemantics)");
-        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
-        if (!(dart.equals(oldChild, newChild) || oldChild == null)) dart.assertFailed(null, I[0], 801, 14, "oldChild == newChild || oldChild == null");
-        newChildren[$_set](newChildrenTop, newChild);
-        newChildrenTop = newChildrenTop + 1;
-      }
-      if (!(oldChildrenTop === oldChildrenBottom + 1)) dart.assertFailed(null, I[0], 807, 12, "oldChildrenTop == oldChildrenBottom + 1");
-      if (!(newChildrenTop === newChildrenBottom + 1)) dart.assertFailed(null, I[0], 808, 12, "newChildrenTop == newChildrenBottom + 1");
-      if (!(dart.notNull(newChildSemantics[$length]) - newChildrenTop === dart.notNull(oldSemantics[$length]) - oldChildrenTop)) dart.assertFailed(null, I[0], 809, 12, "newChildSemantics.length - newChildrenTop == oldSemantics.length - oldChildrenTop");
-      newChildrenBottom = dart.notNull(newChildSemantics[$length]) - 1;
-      oldChildrenBottom = dart.notNull(oldSemantics[$length]) - 1;
-      while (oldChildrenTop <= oldChildrenBottom && newChildrenTop <= newChildrenBottom) {
-        let oldChild = oldSemantics[$_get](oldChildrenTop);
-        let newSemantics = newChildSemantics[$_get](newChildrenTop);
-        if (!dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics))) dart.assertFailed(null, I[0], 817, 14, "_canUpdateSemanticsChild(oldChild, newSemantics)");
-        let newChild = custom_paint.RenderCustomPaint._updateSemanticsChild(oldChild, newSemantics);
-        if (!dart.equals(oldChild, newChild)) dart.assertFailed(null, I[0], 819, 14, "oldChild == newChild");
-        newChildren[$_set](newChildrenTop, newChild);
-        newChildrenTop = newChildrenTop + 1;
-        oldChildrenTop = oldChildrenTop + 1;
-      }
-      if (!dart.test(dart.fn(() => {
-        for (let node of newChildren) {
-          if (!(node != null)) dart.assertFailed(null, I[0], 827, 16, "node != null");
-        }
-        return true;
-      }, T.VoidTobool())())) dart.assertFailed(null, I[0], 825, 12, "() {\r\n      for (final SemanticsNode? node in newChildren) {\r\n        assert(node != null);\r\n      }\r\n      return true;\r\n    }()");
-      return newChildren[$cast](semantics.SemanticsNode);
-    }
-    static _canUpdateSemanticsChild(oldChild, newSemantics) {
-      if (oldChild == null) dart.nullFailed(I[0], 839, 54, "oldChild");
-      if (newSemantics == null) dart.nullFailed(I[0], 839, 87, "newSemantics");
-      return dart.equals(oldChild.key, newSemantics.key);
-    }
-    static _updateSemanticsChild(oldChild, newSemantics) {
-      let t11, t11$;
-      if (newSemantics == null) dart.nullFailed(I[0], 847, 94, "newSemantics");
-      if (!(oldChild == null || dart.test(custom_paint.RenderCustomPaint._canUpdateSemanticsChild(oldChild, newSemantics)))) dart.assertFailed(null, I[0], 848, 12, "oldChild == null || _canUpdateSemanticsChild(oldChild, newSemantics)");
-      let newChild = (t11 = oldChild, t11 == null ? new semantics.SemanticsNode.new({key: newSemantics.key}) : t11);
-      let properties = newSemantics.properties;
-      let config = new semantics.SemanticsConfiguration.new();
-      if (properties.sortKey != null) {
-        config.sortKey = properties.sortKey;
-      }
-      if (properties.checked != null) {
-        config.isChecked = properties.checked;
-      }
-      if (properties.selected != null) {
-        config.isSelected = dart.nullCheck(properties.selected);
-      }
-      if (properties.button != null) {
-        config.isButton = dart.nullCheck(properties.button);
-      }
-      if (properties.link != null) {
-        config.isLink = dart.nullCheck(properties.link);
-      }
-      if (properties.textField != null) {
-        config.isTextField = dart.nullCheck(properties.textField);
-      }
-      if (properties.slider != null) {
-        config.isSlider = dart.nullCheck(properties.slider);
-      }
-      if (properties.keyboardKey != null) {
-        config.isKeyboardKey = dart.nullCheck(properties.keyboardKey);
-      }
-      if (properties.readOnly != null) {
-        config.isReadOnly = dart.nullCheck(properties.readOnly);
-      }
-      if (properties.focusable != null) {
-        config.isFocusable = dart.nullCheck(properties.focusable);
-      }
-      if (properties.focused != null) {
-        config.isFocused = dart.nullCheck(properties.focused);
-      }
-      if (properties.enabled != null) {
-        config.isEnabled = properties.enabled;
-      }
-      if (properties.inMutuallyExclusiveGroup != null) {
-        config.isInMutuallyExclusiveGroup = dart.nullCheck(properties.inMutuallyExclusiveGroup);
-      }
-      if (properties.obscured != null) {
-        config.isObscured = dart.nullCheck(properties.obscured);
-      }
-      if (properties.multiline != null) {
-        config.isMultiline = dart.nullCheck(properties.multiline);
-      }
-      if (properties.hidden != null) {
-        config.isHidden = dart.nullCheck(properties.hidden);
-      }
-      if (properties.header != null) {
-        config.isHeader = dart.nullCheck(properties.header);
-      }
-      if (properties.scopesRoute != null) {
-        config.scopesRoute = dart.nullCheck(properties.scopesRoute);
-      }
-      if (properties.namesRoute != null) {
-        config.namesRoute = dart.nullCheck(properties.namesRoute);
-      }
-      if (properties.liveRegion != null) {
-        config.liveRegion = dart.nullCheck(properties.liveRegion);
-      }
-      if (properties.maxValueLength != null) {
-        config.maxValueLength = properties.maxValueLength;
-      }
-      if (properties.currentValueLength != null) {
-        config.currentValueLength = properties.currentValueLength;
-      }
-      if (properties.toggled != null) {
-        config.isToggled = properties.toggled;
-      }
-      if (properties.image != null) {
-        config.isImage = dart.nullCheck(properties.image);
-      }
-      if (properties.label != null) {
-        config.label = dart.nullCheck(properties.label);
-      }
-      if (properties.value != null) {
-        config.value = dart.nullCheck(properties.value);
-      }
-      if (properties.increasedValue != null) {
-        config.increasedValue = dart.nullCheck(properties.increasedValue);
-      }
-      if (properties.decreasedValue != null) {
-        config.decreasedValue = dart.nullCheck(properties.decreasedValue);
-      }
-      if (properties.hint != null) {
-        config.hint = dart.nullCheck(properties.hint);
-      }
-      if (properties.textDirection != null) {
-        config.textDirection = properties.textDirection;
-      }
-      if (properties.onTap != null) {
-        config.onTap = properties.onTap;
-      }
-      if (properties.onLongPress != null) {
-        config.onLongPress = properties.onLongPress;
-      }
-      if (properties.onScrollLeft != null) {
-        config.onScrollLeft = properties.onScrollLeft;
-      }
-      if (properties.onScrollRight != null) {
-        config.onScrollRight = properties.onScrollRight;
-      }
-      if (properties.onScrollUp != null) {
-        config.onScrollUp = properties.onScrollUp;
-      }
-      if (properties.onScrollDown != null) {
-        config.onScrollDown = properties.onScrollDown;
-      }
-      if (properties.onIncrease != null) {
-        config.onIncrease = properties.onIncrease;
-      }
-      if (properties.onDecrease != null) {
-        config.onDecrease = properties.onDecrease;
-      }
-      if (properties.onCopy != null) {
-        config.onCopy = properties.onCopy;
-      }
-      if (properties.onCut != null) {
-        config.onCut = properties.onCut;
-      }
-      if (properties.onPaste != null) {
-        config.onPaste = properties.onPaste;
-      }
-      if (properties.onMoveCursorForwardByCharacter != null) {
-        config.onMoveCursorForwardByCharacter = properties.onMoveCursorForwardByCharacter;
-      }
-      if (properties.onMoveCursorBackwardByCharacter != null) {
-        config.onMoveCursorBackwardByCharacter = properties.onMoveCursorBackwardByCharacter;
-      }
-      if (properties.onMoveCursorForwardByWord != null) {
-        config.onMoveCursorForwardByWord = properties.onMoveCursorForwardByWord;
-      }
-      if (properties.onMoveCursorBackwardByWord != null) {
-        config.onMoveCursorBackwardByWord = properties.onMoveCursorBackwardByWord;
-      }
-      if (properties.onSetSelection != null) {
-        config.onSetSelection = properties.onSetSelection;
-      }
-      if (properties.onSetText != null) {
-        config.onSetText = properties.onSetText;
-      }
-      if (properties.onDidGainAccessibilityFocus != null) {
-        config.onDidGainAccessibilityFocus = properties.onDidGainAccessibilityFocus;
-      }
-      if (properties.onDidLoseAccessibilityFocus != null) {
-        config.onDidLoseAccessibilityFocus = properties.onDidLoseAccessibilityFocus;
-      }
-      if (properties.onDismiss != null) {
-        config.onDismiss = properties.onDismiss;
-      }
-      newChild.updateWith({config: config, childrenInInversePaintOrder: C[2] || CT.C2});
-      t11$ = newChild;
-      (() => {
-        t11$.rect = newSemantics.rect;
-        t11$.transform = newSemantics.transform;
-        t11$.tags = newSemantics.tags;
-        return t11$;
-      })();
-      return newChild;
+    dispose() {
     }
   };
-  (custom_paint.RenderCustomPaint.new = function(opts) {
-    let painter = opts && 'painter' in opts ? opts.painter : null;
-    let foregroundPainter = opts && 'foregroundPainter' in opts ? opts.foregroundPainter : null;
-    let preferredSize = opts && 'preferredSize' in opts ? opts.preferredSize : C[0] || CT.C0;
-    if (preferredSize == null) dart.nullFailed(I[0], 372, 10, "preferredSize");
-    let isComplex = opts && 'isComplex' in opts ? opts.isComplex : false;
-    if (isComplex == null) dart.nullFailed(I[0], 373, 10, "isComplex");
-    let willChange = opts && 'willChange' in opts ? opts.willChange : false;
-    if (willChange == null) dart.nullFailed(I[0], 374, 10, "willChange");
-    let child = opts && 'child' in opts ? opts.child : null;
-    this[_backgroundSemanticsBuilder] = null;
-    this[_foregroundSemanticsBuilder] = null;
-    this[_backgroundSemanticsNodes] = null;
-    this[_foregroundSemanticsNodes] = null;
-    this[isComplex$] = isComplex;
-    this[willChange$] = willChange;
-    if (!(preferredSize != null)) dart.assertFailed(null, I[0], 376, 15, "preferredSize != null");
-    this[_painter] = painter;
-    this[_foregroundPainter] = foregroundPainter;
-    this[_preferredSize] = preferredSize;
-    custom_paint.RenderCustomPaint.__proto__.new.call(this, child);
+  (mouse_cursor._SystemMouseCursorSession.new = function(cursor, device) {
+    if (cursor == null) dart.nullFailed(I[0], 318, 47, "cursor");
+    if (device == null) dart.nullFailed(I[0], 318, 59, "device");
+    mouse_cursor._SystemMouseCursorSession.__proto__.new.call(this, cursor, device);
     ;
-  }).prototype = custom_paint.RenderCustomPaint.prototype;
-  dart.addTypeTests(custom_paint.RenderCustomPaint);
-  dart.addTypeCaches(custom_paint.RenderCustomPaint);
-  dart.setMethodSignature(custom_paint.RenderCustomPaint, () => ({
-    __proto__: dart.getMethods(custom_paint.RenderCustomPaint.__proto__),
-    [_didUpdatePainter]: dart.fnType(dart.void, [dart.nullable(custom_paint.CustomPainter), dart.nullable(custom_paint.CustomPainter)]),
-    [_paintWithPainter]: dart.fnType(dart.void, [ui.Canvas, ui.Offset, custom_paint.CustomPainter]),
-    [_setRasterCacheHints]: dart.fnType(dart.void, [object.PaintingContext])
+  }).prototype = mouse_cursor._SystemMouseCursorSession.prototype;
+  dart.addTypeTests(mouse_cursor._SystemMouseCursorSession);
+  dart.addTypeCaches(mouse_cursor._SystemMouseCursorSession);
+  dart.setMethodSignature(mouse_cursor._SystemMouseCursorSession, () => ({
+    __proto__: dart.getMethods(mouse_cursor._SystemMouseCursorSession.__proto__),
+    activate: dart.fnType(async.Future$(dart.void), []),
+    dispose: dart.fnType(dart.void, [])
   }));
-  dart.setGetterSignature(custom_paint.RenderCustomPaint, () => ({
-    __proto__: dart.getGetters(custom_paint.RenderCustomPaint.__proto__),
-    painter: dart.nullable(custom_paint.CustomPainter),
-    foregroundPainter: dart.nullable(custom_paint.CustomPainter),
-    preferredSize: ui.Size
+  dart.setGetterSignature(mouse_cursor._SystemMouseCursorSession, () => ({
+    __proto__: dart.getGetters(mouse_cursor._SystemMouseCursorSession.__proto__),
+    cursor: mouse_cursor.SystemMouseCursor
   }));
-  dart.setSetterSignature(custom_paint.RenderCustomPaint, () => ({
-    __proto__: dart.getSetters(custom_paint.RenderCustomPaint.__proto__),
-    painter: dart.nullable(custom_paint.CustomPainter),
-    foregroundPainter: dart.nullable(custom_paint.CustomPainter),
-    preferredSize: ui.Size
+  dart.setLibraryUri(mouse_cursor._SystemMouseCursorSession, I[1]);
+  var kind$ = dart.privateName(mouse_cursor, "SystemMouseCursor.kind");
+  mouse_cursor.SystemMouseCursor = class SystemMouseCursor extends mouse_cursor.MouseCursor {
+    get kind() {
+      return this[kind$];
+    }
+    set kind(value) {
+      super.kind = value;
+    }
+    get debugDescription() {
+      return dart.str(object.objectRuntimeType(this, "SystemMouseCursor")) + "(" + dart.str(this.kind) + ")";
+    }
+    createSession(device) {
+      if (device == null) dart.nullFailed(I[0], 384, 47, "device");
+      return new mouse_cursor._SystemMouseCursorSession.new(this, device);
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!dart.equals(dart.runtimeType(other), this[$runtimeType])) return false;
+      return mouse_cursor.SystemMouseCursor.is(other) && other.kind == this.kind;
+    }
+    get hashCode() {
+      return dart.hashCode(this.kind);
+    }
+    debugFillProperties(properties) {
+      if (properties == null) dart.nullFailed(I[0], 398, 56, "properties");
+      super.debugFillProperties(properties);
+      properties.add(new (T.DiagnosticsPropertyOfString()).new("kind", this.kind, {level: diagnostics.DiagnosticLevel.debug}));
+    }
+  };
+  (mouse_cursor.SystemMouseCursor.__ = function(opts) {
+    let kind = opts && 'kind' in opts ? opts.kind : null;
+    if (kind == null) dart.nullFailed(I[0], 371, 19, "kind");
+    this[kind$] = kind;
+    if (!(kind != null)) dart.assertFailed(null, I[0], 372, 15, "kind != null");
+    mouse_cursor.SystemMouseCursor.__proto__.new.call(this);
+    ;
+  }).prototype = mouse_cursor.SystemMouseCursor.prototype;
+  dart.addTypeTests(mouse_cursor.SystemMouseCursor);
+  dart.addTypeCaches(mouse_cursor.SystemMouseCursor);
+  dart.setMethodSignature(mouse_cursor.SystemMouseCursor, () => ({
+    __proto__: dart.getMethods(mouse_cursor.SystemMouseCursor.__proto__),
+    createSession: dart.fnType(mouse_cursor._SystemMouseCursorSession, [core.int])
   }));
-  dart.setLibraryUri(custom_paint.RenderCustomPaint, I[1]);
-  dart.setFieldSignature(custom_paint.RenderCustomPaint, () => ({
-    __proto__: dart.getFields(custom_paint.RenderCustomPaint.__proto__),
-    [_painter]: dart.fieldType(dart.nullable(custom_paint.CustomPainter)),
-    [_foregroundPainter]: dart.fieldType(dart.nullable(custom_paint.CustomPainter)),
-    [_preferredSize]: dart.fieldType(ui.Size),
-    isComplex: dart.fieldType(core.bool),
-    willChange: dart.fieldType(core.bool),
-    [_backgroundSemanticsBuilder]: dart.fieldType(dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))),
-    [_foregroundSemanticsBuilder]: dart.fieldType(dart.nullable(dart.fnType(core.List$(custom_paint.CustomPainterSemantics), [ui.Size]))),
-    [_backgroundSemanticsNodes]: dart.fieldType(dart.nullable(core.List$(semantics.SemanticsNode))),
-    [_foregroundSemanticsNodes]: dart.fieldType(dart.nullable(core.List$(semantics.SemanticsNode)))
+  dart.setGetterSignature(mouse_cursor.SystemMouseCursor, () => ({
+    __proto__: dart.getGetters(mouse_cursor.SystemMouseCursor.__proto__),
+    debugDescription: core.String
   }));
-  dart.trackLibraries("packages/flutter/src/rendering/custom_paint.dart", {
-    "package:flutter/src/rendering/custom_paint.dart": custom_paint
+  dart.setLibraryUri(mouse_cursor.SystemMouseCursor, I[1]);
+  dart.setFieldSignature(mouse_cursor.SystemMouseCursor, () => ({
+    __proto__: dart.getFields(mouse_cursor.SystemMouseCursor.__proto__),
+    kind: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(mouse_cursor.SystemMouseCursor, ['_equals']);
+  dart.defineExtensionAccessors(mouse_cursor.SystemMouseCursor, ['hashCode']);
+  mouse_cursor.SystemMouseCursors = class SystemMouseCursors extends core.Object {
+    static __() {
+      return dart.throw(new core.Error.new());
+    }
+  };
+  (mouse_cursor.SystemMouseCursors[dart.mixinNew] = function() {
+  }).prototype = mouse_cursor.SystemMouseCursors.prototype;
+  dart.addTypeTests(mouse_cursor.SystemMouseCursors);
+  dart.addTypeCaches(mouse_cursor.SystemMouseCursors);
+  dart.setLibraryUri(mouse_cursor.SystemMouseCursors, I[1]);
+  dart.defineLazy(mouse_cursor.SystemMouseCursors, {
+    /*mouse_cursor.SystemMouseCursors.none*/get none() {
+      return C[3] || CT.C3;
+    },
+    /*mouse_cursor.SystemMouseCursors.basic*/get basic() {
+      return C[4] || CT.C4;
+    },
+    /*mouse_cursor.SystemMouseCursors.click*/get click() {
+      return C[5] || CT.C5;
+    },
+    /*mouse_cursor.SystemMouseCursors.forbidden*/get forbidden() {
+      return C[6] || CT.C6;
+    },
+    /*mouse_cursor.SystemMouseCursors.wait*/get wait() {
+      return C[7] || CT.C7;
+    },
+    /*mouse_cursor.SystemMouseCursors.progress*/get progress() {
+      return C[8] || CT.C8;
+    },
+    /*mouse_cursor.SystemMouseCursors.contextMenu*/get contextMenu() {
+      return C[9] || CT.C9;
+    },
+    /*mouse_cursor.SystemMouseCursors.help*/get help() {
+      return C[10] || CT.C10;
+    },
+    /*mouse_cursor.SystemMouseCursors.text*/get text() {
+      return C[11] || CT.C11;
+    },
+    /*mouse_cursor.SystemMouseCursors.verticalText*/get verticalText() {
+      return C[12] || CT.C12;
+    },
+    /*mouse_cursor.SystemMouseCursors.cell*/get cell() {
+      return C[13] || CT.C13;
+    },
+    /*mouse_cursor.SystemMouseCursors.precise*/get precise() {
+      return C[14] || CT.C14;
+    },
+    /*mouse_cursor.SystemMouseCursors.move*/get move() {
+      return C[15] || CT.C15;
+    },
+    /*mouse_cursor.SystemMouseCursors.grab*/get grab() {
+      return C[16] || CT.C16;
+    },
+    /*mouse_cursor.SystemMouseCursors.grabbing*/get grabbing() {
+      return C[17] || CT.C17;
+    },
+    /*mouse_cursor.SystemMouseCursors.noDrop*/get noDrop() {
+      return C[18] || CT.C18;
+    },
+    /*mouse_cursor.SystemMouseCursors.alias*/get alias() {
+      return C[19] || CT.C19;
+    },
+    /*mouse_cursor.SystemMouseCursors.copy*/get copy() {
+      return C[20] || CT.C20;
+    },
+    /*mouse_cursor.SystemMouseCursors.disappearing*/get disappearing() {
+      return C[21] || CT.C21;
+    },
+    /*mouse_cursor.SystemMouseCursors.allScroll*/get allScroll() {
+      return C[22] || CT.C22;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeLeftRight*/get resizeLeftRight() {
+      return C[23] || CT.C23;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeUpDown*/get resizeUpDown() {
+      return C[24] || CT.C24;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeUpLeftDownRight*/get resizeUpLeftDownRight() {
+      return C[25] || CT.C25;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeUpRightDownLeft*/get resizeUpRightDownLeft() {
+      return C[26] || CT.C26;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeUp*/get resizeUp() {
+      return C[27] || CT.C27;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeDown*/get resizeDown() {
+      return C[28] || CT.C28;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeLeft*/get resizeLeft() {
+      return C[29] || CT.C29;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeRight*/get resizeRight() {
+      return C[30] || CT.C30;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeUpLeft*/get resizeUpLeft() {
+      return C[31] || CT.C31;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeUpRight*/get resizeUpRight() {
+      return C[32] || CT.C32;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeDownLeft*/get resizeDownLeft() {
+      return C[33] || CT.C33;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeDownRight*/get resizeDownRight() {
+      return C[34] || CT.C34;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeColumn*/get resizeColumn() {
+      return C[35] || CT.C35;
+    },
+    /*mouse_cursor.SystemMouseCursors.resizeRow*/get resizeRow() {
+      return C[36] || CT.C36;
+    },
+    /*mouse_cursor.SystemMouseCursors.zoomIn*/get zoomIn() {
+      return C[37] || CT.C37;
+    },
+    /*mouse_cursor.SystemMouseCursors.zoomOut*/get zoomOut() {
+      return C[38] || CT.C38;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/services/mouse_cursor.dart", {
+    "package:flutter/src/services/mouse_cursor.dart": mouse_cursor
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["custom_paint.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwIoB;;;;;;gBAQY;;;AAAa;iCAAU,eAAY,QAAQ;IAAC;mBASzC;;;AAAa;iCAAU,kBAAe,QAAQ;IAAC;;AAkD9B;IAAI;;oCAsBF;;AAAgB,gCAAc,WAAW;IAAC;;UA0CzE;AAAa;IAAI;;;AAGjB,YAA4D,UAAzD,6BAAiB,SAAM,gBAAyB,0CAArB,OAAU,oBAAV,cAAwB,aAAI;IAAE;;;QAxI/C;IAAsB,iBAAE,OAAO;AAA3D;;EAA2D;;;;;;;;;;;;;;;;;;;;;;;;;;IAiLtD;;;;;;IAMA;;;;;;IAMI;;;;;;IASW;;;;;;IAMD;;;;;;;;QA7ClB;QACS;;QACA;;QACT;QACA;IAJA;IACS;IACA;IACT;IACA;UACK,AAAK,IAAD;UACJ,AAAW,UAAD;;EAAS;;;;;;;;;;;;;;;;;;;;;;;;;;;IAuL1B;;;;;;IAIA;;;;;;;AAtGyB;IAAQ;gBAcX;AACzB,UAAa,YAAT,gBAAY,KAAK,GACnB;AACmB,uBAAa;AAClB,MAAhB,iBAAW,KAAK;AACuB,MAAvC,wBAAkB,gBAAU,UAAU;IACxC;;AAKwC;IAAkB;0BAcrB;AACnC,UAAuB,YAAnB,0BAAsB,KAAK,GAC7B;AACmB,uBAAa;AACR,MAA1B,2BAAqB,KAAK;AACuB,MAAjD,wBAAkB,0BAAoB,UAAU;IAClD;wBAEsC,YAA2B;;AAE/D,UAAI,AAAW,UAAD;AACZ,cAAO,AAAW,UAAD;AACD,QAAhB;YACK,KAAI,AAAW,UAAD,yBACN,iBAAX,UAAU,GAA2B,iBAAX,UAAU,gBACpC,AAAW,UAAD,eAAe,UAAU;AACrB,QAAhB;;AAEF,oBAAI;AACwC,aAA1C,UAAU;qBAAV,OAAY,4BAAe;AACY,cAAvC,UAAU;sBAAV,OAAY,0BAAY;;AAI1B,UAAI,AAAW,UAAD;AACZ,cAAO,AAAW,UAAD;AACjB,sBAAI,gBACF,AAA0B;YACvB,KAAI,AAAW,UAAD,yBACN,iBAAX,UAAU,GAA2B,iBAAX,UAAU,gBACpC,AAAW,UAAD,wBAAwB,UAAU;AACpB,QAA1B;;IAEJ;;AAS0B;IAAc;;UAEjB;AACrB,YAAO,AAAM,KAAD;AACZ,UAAkB,YAAd,oBAAiB,KAAK,GACxB;AACoB,MAAtB,uBAAiB,KAAK;AACL,MAAjB;IACF;;UAgBuC;AACrC,UAAI,AAAM,oBACR,MAAO,AAAc,AAAM,uCAAW,AAAc,2BAAQ;AAC9D,YAAa,gCAAyB,MAAM;IAC9C;;UAGuC;AACrC,UAAI,AAAM,oBACR,MAAO,AAAc,AAAM,uCAAW,AAAc,2BAAQ;AAC9D,YAAa,gCAAyB,MAAM;IAC9C;;UAGwC;AACtC,UAAI,AAAM,oBACR,MAAO,AAAc,AAAO,wCAAW,AAAc,4BAAS;AAChE,YAAa,iCAA0B,KAAK;IAC9C;;UAGwC;AACtC,UAAI,AAAM,oBACR,MAAO,AAAc,AAAO,wCAAW,AAAc,4BAAS;AAChE,YAAa,iCAA0B,KAAK;IAC9C;WAG0B;;;;AACL,MAAb,aAAO,KAAK;AACmB,WAArC;0BAAU,yBAAY;AACyB,YAA/C;2BAAoB,0BAAY;IAClC;;;AAI0C,WAAxC;0BAAU,4BAAe;AACyB,YAAlD;2BAAoB,6BAAe;AACrB,MAAR;IACR;oBAGsC;;;UAA0B;;AAC9D,UAAI,+CAAqE,KAApB,AAAE,eAApB,kCAA4B,QAAQ,GAAhB,aAAqB,cAC1E,MAAO;AACT,YAAa,uBAAgB,MAAM,aAAY,QAAQ;IACzD;gBAGwB;;;AACtB,YAAO,AAAiB,sCAAgC,KAApB,AAAE,eAAV,wBAAkB,QAAQ,GAAhB,aAAqB;IAC7D;;AAIuB,MAAf;AACoB,MAA1B;IACF;;UAG0C;AACxC,YAAO,AAAY,YAAD,WAAW;IAC/B;wBAE8B,QAAe,QAAsB;UAArC;UAAe;UAAsB;AACxD;;;;;;;;;;;;AACI,MAAb,AAAO,MAAD;AACN,qBAAO,AAGN;AAFqD,QAApD,mCAA+B,AAAO,MAAD;AACrC,cAAO;;AAET,uBAAI,MAAM,EAAW,iBACnB,AAAO,AAA+B,MAAhC,WAAW,AAAO,MAAD,KAAK,AAAO,MAAD;AACT,MAA3B,AAAQ,OAAD,OAAO,MAAM,EAAE;AACtB,qBAAO,AAkCN;AA1BW,sCAA0B,AAAO,MAAD;AAC1C,YAA4B,aAAxB,uBAAuB,iBAAG;AAU1B,UATF,WAAmB,sCAA2B,iCAC5C,gCAAY,AACV,kBAAM,OAAO,sFACc,aAAxB,uBAAuB,iBAAG,yCAA6B,WAC1D,UAA+B,AAA+B,aAAvD,uBAAuB,iBAAG,0CAAgC,IAAI,KAAK,OAAK,MAC/E,qCAEF,oCAAiB,kGACjB,6BAAU;;AAGd,YAA4B,aAAxB,uBAAuB,iBAAG;AAU1B,UATF,WAAmB,sCAA2B,iCAC5C,gCAAY,AACV,kBAAM,OAAO,0DACmB,aAA7B,qDAA+B,uBAAuB,KAAC,WAC1D,UAAoC,AAA0B,aAAvD,qDAA+B,uBAAuB,MAAI,IAAI,KAAK,OAAK,MAC/E,wDAEF,oCAAiB,yFACjB,6BAAU;;AAGd,cAAO,AAAwB,wBAAD,IAAI;;AAEpB,MAAhB,AAAO,MAAD;IACR;UAG2B,SAAgB;UAAhB;UAAgB;AACzC,UAAI;AACkD,QAApD,wBAAkB,AAAQ,OAAD,SAAS,MAAM,EAAU,eAAR;AACb,QAA7B,2BAAqB,OAAO;;AAEF,MAAtB,YAAM,OAAO,EAAE,MAAM;AAC3B,UAAI;AAC4D,QAA9D,wBAAkB,AAAQ,OAAD,SAAS,MAAM,EAAoB,eAAlB;AACb,QAA7B,2BAAqB,OAAO;;IAEhC;;UAE0C;AACxC,oBAAI,iBACF,AAAQ,AAAkB,OAAnB;AACT,oBAAI,kBACF,AAAQ,AAAmB,OAApB;IACX;mCAS2D;;;AACb,MAAtC,qCAA+B,MAAM;AACY,MAAvD,qEAA8B,OAAS;AAC0B,MAAjE,iFAA8B,OAAmB;AACqD,MAAtG,AAAO,MAAD,sBAAsB,AAAoC,6CAAG;IACrE;0BAUgB,MACS,QACC;UAFV;UACS;UACC;AAExB,qBAAO,AAUN;AATC,YAAI,AAAM,gCAAW,AAAS,QAAD;AAMzB,UALF,WAAmB,sCAA2B,iCAC5C,gCAAY,SACR,sBAAW,mGACV,AAAS,QAAD,QAAM;;AAIvB,cAAO;;AAG0B,gCAAsB,AAA4B,4CACtD,AAAC,eAA5B,mCAA6B;AAEmE,MAApG,kCAA4B,wDAAyB,iCAA2B,mBAAmB;AAEhE,gCAAsB,AAA4B,4CACtD,AAAC,eAA5B,mCAA6B;AAEmE,MAApG,kCAA4B,wDAAyB,iCAA2B,mBAAmB;AAExF,mCAAyB,AAAkC,qDAA4B,AAAE,eAA3B;AAC9D,mCAAyB,AAAkC,qDAA4B,AAAE,eAA3B;AAC/C,0BAA+B;;AACvD,YAAI,sBAAsB,EAA8B,2BAAzB;AAC5B,4BAAQ;AACX,YAAI,sBAAsB,EAA8B,2BAAzB;;;AAEuB,MAAlD,4BAAsB,IAAI,EAAE,MAAM,EAAE,aAAa;IACzD;;AAIwB,MAAhB;AAC0B,MAAhC,kCAA4B;AACI,MAAhC,kCAA4B;IAC9B;oCAyBuB,cACS;;AAEwB,MAAtD,gBAA4B,KAAb,YAAY,EAAZ;AAC0D,MAAzE,qBAAsC,MAAlB,iBAAiB,EAAjB;AAEpB,qBAAO,AAmBN;AAlBqB,mBAAO;AACC,0BAA+B;AAC3D,iBAAS,IAAI,GAAG,AAAE,CAAD,gBAAoB,AAAE,eAAnB,iBAAiB,aAAU,IAAA,AAAE,CAAD,GAAI;AACrB,sBAAQ,AAAiB,iBAAA,QAAC,CAAC;AACxD,cAAI,AAAM,KAAD;AACP,0BAAI,AAAK,IAAD,eAAa,AAAM,KAAD;AAC8D,cAAtF,AAAY,WAAD,OAAK,oCAAiB,AAAmD,8BAAhC,AAAM,KAAD,QAAK,iCAAoB,CAAC;;AAEjE,YAApB,AAAI,IAAA,QAAU,eAAT,AAAM,KAAD,OAAS,CAAC;;;AAIxB,sBAAI,AAAY,WAAD;AAC8E,UAA3F,AAAY,WAAD,UAAQ,GAAG,gCAAa;AACM,UAAzC,WAAmB,sCAAU,WAAW;;AAG1C,cAAO;;AAGL,2BAAiB;AACjB,2BAAiB;AACjB,8BAA6C,aAAzB,AAAkB,iBAAD,aAAU;AAC/C,8BAAwC,aAApB,AAAa,YAAD,aAAU;AAEnB,wBAAc,gCAA4B,AAAkB,iBAAD,WAAS,iBAAgB;AAG/G,aAAQ,AAAe,cAAD,IAAI,iBAAiB,IAAM,AAAe,cAAD,IAAI,iBAAiB;AAC9D,uBAAW,AAAY,YAAA,QAAC,cAAc;AAC7B,2BAAe,AAAiB,iBAAA,QAAC,cAAc;AAC5E,uBAAK,wDAAyB,QAAQ,EAAE,YAAY,IAClD;AACkB,uBAAW,qDAAsB,QAAQ,EAAE,YAAY;AACrC,QAAtC,AAAW,WAAA,QAAC,cAAc,EAAI,QAAQ;AACnB,QAAnB,iBAAA,AAAe,cAAD,GAAI;AACC,QAAnB,iBAAA,AAAe,cAAD,GAAI;;AAIpB,aAAQ,AAAe,cAAD,IAAI,iBAAiB,IAAM,AAAe,cAAD,IAAI,iBAAiB;AAC9D,uBAAW,AAAY,YAAA,QAAC,iBAAiB;AAChC,uBAAW,AAAiB,iBAAA,QAAC,iBAAiB;AAC3E,uBAAK,wDAAyB,QAAQ,EAAE,QAAQ,IAC9C;AACoB,QAAtB,oBAAA,AAAkB,iBAAD,GAAI;AACC,QAAtB,oBAAA,AAAkB,iBAAD,GAAI;;AAIZ,4BAAkB,AAAe,cAAD,IAAI,iBAAiB;AAC7B;;;;;;;;;;;;;;;;AACnC,UAAI,eAAe;AACwB,QAAzC,uBAAuC;AACvC,eAAO,AAAe,cAAD,IAAI,iBAAiB;AACpB,yBAAW,AAAY,YAAA,QAAC,cAAc;AAC1D,cAAI,AAAS,QAAD,cACV,AAAgB,AAA0B,gCAAb,eAAZ,AAAS,QAAD,OAAS,QAAQ;AACzB,UAAnB,iBAAA,AAAe,cAAD,GAAI;;;AAKtB,aAAO,AAAe,cAAD,IAAI,iBAAiB;AACzB;AACc,2BAAe,AAAiB,iBAAA,QAAC,cAAc;AAC5E,YAAI,eAAe;AACN,oBAAM,AAAa,YAAD;AAC7B,cAAI,GAAG;AAC2B,YAAhC,WAAW,AAAgB,gCAAC,GAAG;AAC/B,gBAAI,QAAQ;AACV,4BAAI,wDAAyB,QAAQ,EAAE,YAAY;AAGrB,gBAA5B,AAAiB,kCAAO,GAAG;;AAGZ,gBAAf,WAAW;;;;;AAKnB,cAAO,AAAS,AAAQ,QAAT,sBAAY,wDAAyB,QAAQ,EAAE,YAAY;AACtD,uBAAW,qDAAsB,QAAQ,EAAE,YAAY;AAC3E,cAAgB,AAAY,YAArB,QAAQ,EAAI,QAAQ,KAAI,AAAS,QAAD;AACD,QAAtC,AAAW,WAAA,QAAC,cAAc,EAAI,QAAQ;AACnB,QAAnB,iBAAA,AAAe,cAAD,GAAI;;AAIpB,YAAO,AAAe,cAAD,KAAI,AAAkB,iBAAD,GAAG;AAC7C,YAAO,AAAe,cAAD,KAAI,AAAkB,iBAAD,GAAG;AAC7C,YAAgC,AAAiB,aAA1C,AAAkB,iBAAD,aAAU,cAAc,KAAwB,aAApB,AAAa,YAAD,aAAU,cAAc;AACxC,MAAhD,oBAA6C,aAAzB,AAAkB,iBAAD,aAAU;AACJ,MAA3C,oBAAwC,aAApB,AAAa,YAAD,aAAU;AAG1C,aAAQ,AAAe,cAAD,IAAI,iBAAiB,IAAM,AAAe,cAAD,IAAI,iBAAiB;AAC9D,uBAAW,AAAY,YAAA,QAAC,cAAc;AAC7B,2BAAe,AAAiB,iBAAA,QAAC,cAAc;AAC5E,uBAAO,wDAAyB,QAAQ,EAAE,YAAY;AAClC,uBAAW,qDAAsB,QAAQ,EAAE,YAAY;AAC3E,aAAgB,YAAT,QAAQ,EAAI,QAAQ;AACW,QAAtC,AAAW,WAAA,QAAC,cAAc,EAAI,QAAQ;AACnB,QAAnB,iBAAA,AAAe,cAAD,GAAI;AACC,QAAnB,iBAAA,AAAe,cAAD,GAAI;;AAGpB,qBAAO,AAKN;AAJC,iBAA0B,OAAQ,YAAW;AAC3C,gBAAO,AAAK,IAAD;;AAEb,cAAO;;AAGT,YAAO,AAAY,YAAD;IACpB;oCAMmD,UAAiC;UAAjC;UAAiC;AAClF,YAAoB,aAAb,AAAS,QAAD,MAAQ,AAAa,YAAD;IACrC;iCAM0D,UAAiC;;;AACzF,YAAO,AAAS,AAAQ,QAAT,sBAAY,wDAAyB,QAAQ,EAAE,YAAY;AAEtD,sBAAoB,MAAT,QAAQ,EAAR,cAAY,sCACpC,AAAa,YAAD;AAGO,uBAAa,AAAa,YAAD;AACtB,mBAAS;AACtC,UAAI,AAAW,UAAD;AACuB,QAAnC,AAAO,MAAD,WAAW,AAAW,UAAD;;AAE7B,UAAI,AAAW,UAAD;AACyB,QAArC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAE/B,UAAI,AAAW,UAAD;AAC4B,QAAxC,AAAO,MAAD,cAAiC,eAAnB,AAAW,UAAD;;AAEhC,UAAI,AAAW,UAAD;AACwB,QAApC,AAAO,MAAD,YAA6B,eAAjB,AAAW,UAAD;;AAE9B,UAAI,AAAW,UAAD;AACoB,QAAhC,AAAO,MAAD,UAAyB,eAAf,AAAW,UAAD;;AAE5B,UAAI,AAAW,UAAD;AAC8B,QAA1C,AAAO,MAAD,eAAmC,eAApB,AAAW,UAAD;;AAEjC,UAAI,AAAW,UAAD;AACwB,QAApC,AAAO,MAAD,YAA6B,eAAjB,AAAW,UAAD;;AAE9B,UAAI,AAAW,UAAD;AACkC,QAA9C,AAAO,MAAD,iBAAuC,eAAtB,AAAW,UAAD;;AAEnC,UAAI,AAAW,UAAD;AAC4B,QAAxC,AAAO,MAAD,cAAiC,eAAnB,AAAW,UAAD;;AAEhC,UAAI,AAAW,UAAD;AAC8B,QAA1C,AAAO,MAAD,eAAmC,eAApB,AAAW,UAAD;;AAEjC,UAAI,AAAW,UAAD;AAC0B,QAAtC,AAAO,MAAD,aAA+B,eAAlB,AAAW,UAAD;;AAE/B,UAAI,AAAW,UAAD;AACyB,QAArC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAE/B,UAAI,AAAW,UAAD;AAC4D,QAAxE,AAAO,MAAD,8BAAiE,eAAnC,AAAW,UAAD;;AAEhD,UAAI,AAAW,UAAD;AAC4B,QAAxC,AAAO,MAAD,cAAiC,eAAnB,AAAW,UAAD;;AAEhC,UAAI,AAAW,UAAD;AAC8B,QAA1C,AAAO,MAAD,eAAmC,eAApB,AAAW,UAAD;;AAEjC,UAAI,AAAW,UAAD;AACwB,QAApC,AAAO,MAAD,YAA6B,eAAjB,AAAW,UAAD;;AAE9B,UAAI,AAAW,UAAD;AACwB,QAApC,AAAO,MAAD,YAA6B,eAAjB,AAAW,UAAD;;AAE9B,UAAI,AAAW,UAAD;AACgC,QAA5C,AAAO,MAAD,eAAqC,eAAtB,AAAW,UAAD;;AAEjC,UAAI,AAAW,UAAD;AAC8B,QAA1C,AAAO,MAAD,cAAmC,eAArB,AAAW,UAAD;;AAEhC,UAAI,AAAW,UAAD;AAC8B,QAA1C,AAAO,MAAD,cAAmC,eAArB,AAAW,UAAD;;AAEhC,UAAI,AAAW,UAAD;AACqC,QAAjD,AAAO,MAAD,kBAAkB,AAAW,UAAD;;AAEpC,UAAI,AAAW,UAAD;AAC6C,QAAzD,AAAO,MAAD,sBAAsB,AAAW,UAAD;;AAExC,UAAI,AAAW,UAAD;AACyB,QAArC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAE/B,UAAI,AAAW,UAAD;AACsB,QAAlC,AAAO,MAAD,WAA2B,eAAhB,AAAW,UAAD;;AAE7B,UAAI,AAAW,UAAD;AACoB,QAAhC,AAAO,MAAD,SAAyB,eAAhB,AAAW,UAAD;;AAE3B,UAAI,AAAW,UAAD;AACoB,QAAhC,AAAO,MAAD,SAAyB,eAAhB,AAAW,UAAD;;AAE3B,UAAI,AAAW,UAAD;AACsC,QAAlD,AAAO,MAAD,kBAA2C,eAAzB,AAAW,UAAD;;AAEpC,UAAI,AAAW,UAAD;AACsC,QAAlD,AAAO,MAAD,kBAA2C,eAAzB,AAAW,UAAD;;AAEpC,UAAI,AAAW,UAAD;AACkB,QAA9B,AAAO,MAAD,QAAuB,eAAf,AAAW,UAAD;;AAE1B,UAAI,AAAW,UAAD;AACmC,QAA/C,AAAO,MAAD,iBAAiB,AAAW,UAAD;;AAEnC,UAAI,AAAW,UAAD;AACmB,QAA/B,AAAO,MAAD,SAAS,AAAW,UAAD;;AAE3B,UAAI,AAAW,UAAD;AAC+B,QAA3C,AAAO,MAAD,eAAe,AAAW,UAAD;;AAEjC,UAAI,AAAW,UAAD;AACiC,QAA7C,AAAO,MAAD,gBAAgB,AAAW,UAAD;;AAElC,UAAI,AAAW,UAAD;AACmC,QAA/C,AAAO,MAAD,iBAAiB,AAAW,UAAD;;AAEnC,UAAI,AAAW,UAAD;AAC6B,QAAzC,AAAO,MAAD,cAAc,AAAW,UAAD;;AAEhC,UAAI,AAAW,UAAD;AACiC,QAA7C,AAAO,MAAD,gBAAgB,AAAW,UAAD;;AAElC,UAAI,AAAW,UAAD;AAC6B,QAAzC,AAAO,MAAD,cAAc,AAAW,UAAD;;AAEhC,UAAI,AAAW,UAAD;AAC6B,QAAzC,AAAO,MAAD,cAAc,AAAW,UAAD;;AAEhC,UAAI,AAAW,UAAD;AACqB,QAAjC,AAAO,MAAD,UAAU,AAAW,UAAD;;AAE5B,UAAI,AAAW,UAAD;AACmB,QAA/B,AAAO,MAAD,SAAS,AAAW,UAAD;;AAE3B,UAAI,AAAW,UAAD;AACuB,QAAnC,AAAO,MAAD,WAAW,AAAW,UAAD;;AAE7B,UAAI,AAAW,UAAD;AACqE,QAAjF,AAAO,MAAD,kCAAkC,AAAW,UAAD;;AAEpD,UAAI,AAAW,UAAD;AACuE,QAAnF,AAAO,MAAD,mCAAmC,AAAW,UAAD;;AAErD,UAAI,AAAW,UAAD;AAC2D,QAAvE,AAAO,MAAD,6BAA6B,AAAW,UAAD;;AAE/C,UAAI,AAAW,UAAD;AAC6D,QAAzE,AAAO,MAAD,8BAA8B,AAAW,UAAD;;AAEhD,UAAI,AAAW,UAAD;AACqC,QAAjD,AAAO,MAAD,kBAAkB,AAAW,UAAD;;AAEpC,UAAI,AAAW,UAAD;AAC2B,QAAvC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAE/B,UAAI,AAAW,UAAD;AAC+D,QAA3E,AAAO,MAAD,+BAA+B,AAAW,UAAD;;AAEjD,UAAI,AAAW,UAAD;AAC+D,QAA3E,AAAO,MAAD,+BAA+B,AAAW,UAAD;;AAEjD,UAAI,AAAW,UAAD;AAC2B,QAAvC,AAAO,MAAD,aAAa,AAAW,UAAD;;AAO9B,MAJD,AAAS,QAAD,qBACE,MAAM;AAQY,aAH5B,QAAQ;MAAR;AACI,oBAAO,AAAa,YAAD;AACnB,yBAAY,AAAa,YAAD;AACxB,oBAAO,AAAa,YAAD;;;AAEvB,YAAO,SAAQ;IACjB;;;QAzoBiB;QACA;QACV;;QACA;;QACA;;QACM;IAwPa;IAGA;IAWL;IAGA;IA3Qd;IACA;UAEK,AAAc,aAAD;IACX,iBAAE,OAAO;IACC,2BAAE,iBAAiB;IACvB,uBAAE,aAAa;AAC9B,4DAAM,KAAK;;EAAC","file":"../../../../../../../packages/flutter/src/rendering/custom_paint.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["mouse_cursor.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA0BoB;;;;;;;UASuB;AAC1B;AACb,qBAAO,AAGN;;AAFsC,QAArC,eAAS,AAAY,0BAAC,MAAM,gBAAP,OAAU;AAC/B,cAAO;;AAET,YAAO,OAAM;IACf;6BAaM,QACU,iBACQ;;UAFlB;UAEkB;AAEtB,UAAoB,8BAAhB,eAAe;AACU,QAA3B,AAAa,4BAAO,MAAM;AAC1B;;AAGwB,wBAAc,AAAY,0BAAC,MAAM;AACzC,wBAChB,KADmD,oDAAiB,gBAAgB,GAAjC,aAChD;AACL,WAAoB,CAAF,sCAAX,UAAU;AACjB,UAAwB,mBAApB,WAAW,gBAAX,OAAa,aAAU,UAAU,GACnC;AAEuB,wBAAc,AAAW,UAAD,eAAe,MAAM;AACpC,MAAlC,AAAY,0BAAC,MAAM,EAAI,WAAW;AAEZ,aAAtB,WAAW;qBAAX,OAAa;AACS,MAAtB,AAAY,WAAD;IACb;;;QA1DwB;IA0BW,qBAAwC;IA1BnD;SACO,aAApB,mBAAmB,EAAgB;;EAAM;;;;;;;;;;;;;;;;;IAwFlC;;;;;;IAGR;;;;;;;kDARc,QAAa;QAAb;QAAa;IAAb;IAAa;UAC1B,AAAO,MAAD;UACN,AAAO,MAAD;;EAAS;;;;;;;;;;;;;;;;UA2HO;;AAClB,6BAAwB;AACrC,UAAmB,aAAf,AAAS,QAAD,wBAA0B,AAAK,2CAAS,gBAAgB,UAClE,MAAO,iBAAgB;AACzB,YAAa,2BAAmB,QAAQ;IAC1C;;;;EA7BmB;;;;;;MAsCM,8BAAK;;;MAgBL,qCAAY;;;;;;UAOA;AACnC,WAAO,yBAAO;AACY,MAA1B,WAAM;IACR;;AAG+B;IAAO;;UAGqB;AACzD,eAAuB,SAAU,QAAO;AACtC,cAAO,AAAO,MAAD;AACb,yBAAI,MAAM,EAAgB,iCACxB,MAAO,OAAM;;AAEjB,YAAO;IACT;;;AAnBM;;EAAyB;;;;;;;;;;;;;;AA2BV;MAAyB;;;IAGf;;uDAPU,QAAY;QAAZ;QAAY;AACjD,kEAAM,MAAM,EAAE,MAAM;;EAAC;;;;;;;;;;;UAyBiB;AAAW,0DAAwB,MAAM,MAAM;IAAC;;AAG3D;IAAc;;;AAPvC;;EAAoB;;;;;;;;;;;;;;AAeM,YAAa,mCAAP;IAA2B;;AAI/D,YAAsB,AAAY,oEAChC,wBACiB,4CACf,UAAU,aACV,QAAQ,AAAO;IAGrB;;IAG+B;;yDAlBa,QAAY;QAAZ;QAAY;AACpD,oEAAM,MAAM,EAAE,MAAM;;EAAC;;;;;;;;;;;;;;;IA0DZ;;;;;;;AAGkB,YAAwD,UAArD,yBAAkB,MAAM,wBAAqB,eAAE,aAAI;IAAE;;UAI3C;AAAW,4DAA0B,MAAM,MAAM;IAAC;;UAGtE;AACtB,uBAAU,iBAAN,KAAK,GAAgB,qBACvB,MAAO;AACT,YAAa,AACT,mCADG,KAAK,KACL,AAAM,AAAK,KAAN,SAAS;IACvB;;AAGoB,YAAK,eAAL;IAAa;;UAGoB;AACd,MAA/B,0BAAoB,UAAU;AACmD,MAAvF,AAAW,UAAD,KAAK,0CAA4B,QAAQ,mBAA6B;IAClF;;;QA9BgB;;;UACJ,AAAK,IAAD;AAFV;;EAEmB;;;;;;;;;;;;;;;;;;;;AAgDS,wBAAM;IAAO;;;;;;;;MAgBhB,oCAAI;;;MAgBJ,qCAAK;;;MAaL,qCAAK;;;MAmBL,yCAAS;;;MAsBT,oCAAI;;;MAkBJ,wCAAQ;;;MAYR,2CAAW;;;MAYX,oCAAI;;;MAgBJ,oCAAI;;;MAaJ,4CAAY;;;MAWZ,oCAAI;;;MAcJ,uCAAO;;;MAeP,oCAAI;;;MAYJ,oCAAI;;;MAYJ,wCAAQ;;;MAkBR,sCAAM;;;MAaN,qCAAK;;;MAYL,oCAAI;;;MAUJ,4CAAY;;;MAmBZ,yCAAS;;;MAcT,+CAAe;;;MAcf,4CAAY;;;MAaZ,qDAAqB;;;MAarB,qDAAqB;;;MAarB,wCAAQ;;;MAaR,0CAAU;;;MAaV,0CAAU;;;MAaV,2CAAW;;;MAYX,4CAAY;;;MAYZ,6CAAa;;;MAYb,8CAAc;;;MAYd,+CAAe;;;MAcf,4CAAY;;;MAcZ,yCAAS;;;MAcT,sCAAM;;;MAWN,uCAAO","file":"../../../../../../../packages/flutter/src/services/mouse_cursor.dart.lib.js"}');
   // Exports:
   return {
-    src__rendering__custom_paint: custom_paint
+    src__services__mouse_cursor: mouse_cursor
   };
 }));
 
-//# sourceMappingURL=custom_paint.dart.lib.js.map
+//# sourceMappingURL=mouse_cursor.dart.lib.js.map

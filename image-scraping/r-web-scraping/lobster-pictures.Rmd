@@ -5,6 +5,8 @@ output: rmarkdown::github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+use_python(Sys.which("python"))
 ```
 
 ## Training a TensorFlow model with R
@@ -226,6 +228,40 @@ which.max(prediction)
 class_pred <- model %>% predict_classes(img)
 class_pred
 ```
+
+
+## Integrating Python (using Conda) in our R project:
+
+```{r}
+conda_install(packages = "wheel")
+```
+
+```{r}
+conda_install(package = "Pandas")
+```
+
+```{r}
+conda_install(packages = "tflite_model_maker")
+```
+
+```{python}
+import pandas
+```
+
+```{r}
+conda_install(packages = "tflite_model_maker")
+```
+
+
+```{python}
+from tflite_model_maker import image_classifier
+```
+
+
+
+
+
+
 
 
 

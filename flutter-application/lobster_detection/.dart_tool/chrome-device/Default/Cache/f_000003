@@ -19,16 +19,16 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "o5G3Dj+3eBaVEx57BROhvg==";
+    window.$dartAppId = "UMyTXXZBksr6gi8ypLfwVA==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "11.0.2";
-window.$dwdsDevHandlerPath = "http://localhost:49809/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:54820/$dwdsSseHandler";
 window.$dwdsEnableDevtoolsLaunch = true;
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:49811/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:54822/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -464,7 +464,6 @@ let modulePaths = {
  "packages/flutter_spinkit/src/cube_grid.dart": "packages/flutter_spinkit/src/cube_grid.dart.lib",
  "packages/flutter_spinkit/src/circle.dart": "packages/flutter_spinkit/src/circle.dart.lib",
  "packages/flutter_spinkit/src/chasing_dots.dart": "packages/flutter_spinkit/src/chasing_dots.dart.lib",
- "packages/lobster_detection/home_page.dart": "packages/lobster_detection/home_page.dart.lib",
  "packages/lobster_detection/firstScreen.dart": "packages/lobster_detection/firstScreen.dart.lib"
 };
 let moduleNames = {
@@ -851,7 +850,6 @@ let moduleNames = {
  "packages/flutter_spinkit/src/cube_grid.dart.lib": "packages/flutter_spinkit/src/cube_grid.dart",
  "packages/flutter_spinkit/src/circle.dart.lib": "packages/flutter_spinkit/src/circle.dart",
  "packages/flutter_spinkit/src/chasing_dots.dart.lib": "packages/flutter_spinkit/src/chasing_dots.dart",
- "packages/lobster_detection/home_page.dart.lib": "packages/lobster_detection/home_page.dart",
  "packages/lobster_detection/firstScreen.dart.lib": "packages/lobster_detection/firstScreen.dart"
 };
 if(!window.$requireLoader) {

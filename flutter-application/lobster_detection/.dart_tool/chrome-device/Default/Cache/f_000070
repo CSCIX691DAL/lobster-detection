@@ -1,565 +1,297 @@
-define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/sliver_fill.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/rendering/sliver_padding.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__widgets__sliver_fill_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__sliver_fill$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__rendering__sliver_padding$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__foundation__debug$46dart) {
+define(['dart_sdk', 'packages/typed_data/src/typed_buffer.dart'], (function load__packages__flutter__src__foundation__serialization_dart(dart_sdk, packages__typed_data__src__typed_buffer$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const _native_typed_data = dart_sdk._native_typed_data;
   const _internal = dart_sdk._internal;
-  const _interceptors = dart_sdk._interceptors;
+  const typed_data = dart_sdk.typed_data;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const sliver = packages__flutter__src__widgets__widget_span$46dart.src__widgets__sliver;
-  const sliver_fill = packages__flutter__src__rendering__sliver_fill$46dart.src__rendering__sliver_fill;
-  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
-  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  const sliver_padding = packages__flutter__src__rendering__sliver_padding$46dart.src__rendering__sliver_padding;
-  const sliver$ = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  var sliver_fill$ = Object.create(dart.library);
-  var $clamp = dartx.clamp;
-  var $add = dartx.add;
-  var $isEmpty = dartx.isEmpty;
+  const typed_buffer = packages__typed_data__src__typed_buffer$46dart.src__typed_buffer;
+  var serialization = Object.create(dart.library);
+  var $buffer = dartx.buffer;
+  var $asUint8List = dartx.asUint8List;
+  var $setUint16 = dartx.setUint16;
+  var $setUint32 = dartx.setUint32;
+  var $setInt32 = dartx.setInt32;
+  var $setInt64 = dartx.setInt64;
+  var $setFloat64 = dartx.setFloat64;
+  var $offsetInBytes = dartx.offsetInBytes;
+  var $length = dartx.length;
+  var $modulo = dartx['%'];
+  var $asByteData = dartx.asByteData;
+  var $lengthInBytes = dartx.lengthInBytes;
+  var $getUint8 = dartx.getUint8;
+  var $getUint16 = dartx.getUint16;
+  var $getUint32 = dartx.getUint32;
+  var $getInt32 = dartx.getInt32;
+  var $getInt64 = dartx.getInt64;
+  var $getFloat64 = dartx.getFloat64;
+  var $asInt32List = dartx.asInt32List;
+  var $asInt64List = dartx.asInt64List;
+  var $asFloat64List = dartx.asFloat64List;
   dart._checkModuleNullSafetyMode(false);
-  var T = {
-    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
-    DiagnosticsPropertyOfWidget: () => (T.DiagnosticsPropertyOfWidget = dart.constFn(diagnostics.DiagnosticsProperty$(framework.Widget)))(),
-    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
-    IterablePropertyOfString: () => (T.IterablePropertyOfString = dart.constFn(diagnostics.IterableProperty$(core.String)))()
-  };
   const CT = Object.create({
     _: () => (C, CT)
   });
-  dart.defineLazy(CT, {
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "viewportFraction",
-        [_Location_column]: 9,
-        [_Location_line]: 66,
-        [_Location_file]: null
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "delegate",
-        [_Location_column]: 9,
-        [_Location_line]: 67,
-        [_Location_file]: null
-      });
-    },
-    get C1() {
-      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
-    },
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[1] || CT.C1,
-        [_Location_name]: null,
-        [_Location_column]: 15,
-        [_Location_line]: 65,
-        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "viewportFraction",
-        [_Location_column]: 7,
-        [_Location_line]: 64,
-        [_Location_file]: null
-      });
-    },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "sliver",
-        [_Location_column]: 7,
-        [_Location_line]: 65,
-        [_Location_file]: null
-      });
-    },
-    get C5() {
-      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7], T._LocationL());
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[5] || CT.C5,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 63,
-        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
-      });
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.horizontal",
-        index: 0
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.vertical",
-        index: 1
-      });
-    },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 49,
-        [_Location_line]: 435,
-        [_Location_file]: null
-      });
-    },
-    get C11() {
-      return C[11] = dart.constList([C[12] || CT.C12], T._LocationL());
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[11] || CT.C11,
-        [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 435,
-        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 52,
-        [_Location_line]: 437,
-        [_Location_file]: null
-      });
-    },
-    get C14() {
-      return C[14] = dart.constList([C[15] || CT.C15], T._LocationL());
-    },
-    get C13() {
-      return C[13] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[14] || CT.C14,
-        [_Location_name]: null,
-        [_Location_column]: 14,
-        [_Location_line]: 437,
-        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 46,
-        [_Location_line]: 438,
-        [_Location_file]: null
-      });
-    },
-    get C17() {
-      return C[17] = dart.constList([C[18] || CT.C18], T._LocationL());
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[17] || CT.C17,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 438,
-        [_Location_file]: "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart"
-      });
-    }
-  }, false);
-  var C = Array(19).fill(void 0);
   var I = [
-    "file:///C:/dev/flutter/packages/flutter/lib/src/widgets/sliver_fill.dart",
-    "package:flutter/src/widgets/sliver_fill.dart"
+    "file:///C:/dev/flutter/packages/flutter/lib/src/foundation/serialization.dart",
+    "package:flutter/src/foundation/serialization.dart"
   ];
-  var viewportFraction$ = dart.privateName(sliver_fill$, "SliverFillViewport.viewportFraction");
-  var padEnds$ = dart.privateName(sliver_fill$, "SliverFillViewport.padEnds");
-  var delegate$ = dart.privateName(sliver_fill$, "SliverFillViewport.delegate");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  sliver_fill$.SliverFillViewport = class SliverFillViewport extends framework.StatelessWidget {
-    get viewportFraction() {
-      return this[viewportFraction$];
+  var __WriteBuffer__eightBytesAsList = dart.privateName(serialization, "_#WriteBuffer#_eightBytesAsList");
+  var __WriteBuffer__eightBytesAsList_isSet = dart.privateName(serialization, "_#WriteBuffer#_eightBytesAsList#isSet");
+  var _buffer = dart.privateName(serialization, "_buffer");
+  var _eightBytes = dart.privateName(serialization, "_eightBytes");
+  var _eightBytesAsList = dart.privateName(serialization, "_eightBytesAsList");
+  var _alignTo = dart.privateName(serialization, "_alignTo");
+  serialization.WriteBuffer = class WriteBuffer extends core.Object {
+    get [_eightBytesAsList]() {
+      let t0;
+      return dart.test(this[__WriteBuffer__eightBytesAsList_isSet]) ? (t0 = this[__WriteBuffer__eightBytesAsList], t0) : dart.throw(new _internal.LateError.fieldNI("_eightBytesAsList"));
     }
-    set viewportFraction(value) {
-      super.viewportFraction = value;
+    set [_eightBytesAsList](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 25, 18, "null");
+      this[__WriteBuffer__eightBytesAsList_isSet] = true;
+      this[__WriteBuffer__eightBytesAsList] = t0;
     }
-    get padEnds() {
-      return this[padEnds$];
+    putUint8(byte) {
+      if (byte == null) dart.nullFailed(I[0], 28, 21, "byte");
+      dart.nullCheck(this[_buffer]).add(byte);
     }
-    set padEnds(value) {
-      super.padEnds = value;
+    putUint16(value, opts) {
+      let t1;
+      if (value == null) dart.nullFailed(I[0], 33, 22, "value");
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      this[_eightBytes][$setUint16](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 2);
     }
-    get delegate() {
-      return this[delegate$];
+    putUint32(value, opts) {
+      let t1;
+      if (value == null) dart.nullFailed(I[0], 39, 22, "value");
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      this[_eightBytes][$setUint32](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 4);
     }
-    set delegate(value) {
-      super.delegate = value;
+    putInt32(value, opts) {
+      let t1;
+      if (value == null) dart.nullFailed(I[0], 45, 21, "value");
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      this[_eightBytes][$setInt32](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 4);
     }
-    build(context) {
-      if (context == null) dart.nullFailed(I[0], 62, 29, "context");
-      return new sliver_fill$._SliverFractionalPadding.new({viewportFraction: dart.test(this.padEnds) ? (1 - dart.notNull(this.viewportFraction))[$clamp](0, 1) / 2 : 0.0, sliver: new sliver_fill$._SliverFillViewportRenderObjectWidget.new({viewportFraction: this.viewportFraction, delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4});
+    putInt64(value, opts) {
+      let t1;
+      if (value == null) dart.nullFailed(I[0], 51, 21, "value");
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      this[_eightBytes][$setInt64](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList], 0, 8);
     }
-  };
-  (sliver_fill$.SliverFillViewport.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
-    if (delegate == null) dart.nullFailed(I[0], 30, 19, "delegate");
-    let viewportFraction = opts && 'viewportFraction' in opts ? opts.viewportFraction : 1;
-    if (viewportFraction == null) dart.nullFailed(I[0], 31, 10, "viewportFraction");
-    let padEnds = opts && 'padEnds' in opts ? opts.padEnds : true;
-    if (padEnds == null) dart.nullFailed(I[0], 32, 10, "padEnds");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[delegate$] = delegate;
-    this[viewportFraction$] = viewportFraction;
-    this[padEnds$] = padEnds;
-    if (!(viewportFraction != null)) dart.assertFailed(null, I[0], 33, 15, "viewportFraction != null");
-    if (!(dart.notNull(viewportFraction) > 0.0)) dart.assertFailed(null, I[0], 34, 15, "viewportFraction > 0.0");
-    if (!(padEnds != null)) dart.assertFailed(null, I[0], 35, 15, "padEnds != null");
-    sliver_fill$.SliverFillViewport.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = sliver_fill$.SliverFillViewport.prototype;
-  dart.addTypeTests(sliver_fill$.SliverFillViewport);
-  dart.addTypeCaches(sliver_fill$.SliverFillViewport);
-  dart.setMethodSignature(sliver_fill$.SliverFillViewport, () => ({
-    __proto__: dart.getMethods(sliver_fill$.SliverFillViewport.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(sliver_fill$.SliverFillViewport, I[1]);
-  dart.setFieldSignature(sliver_fill$.SliverFillViewport, () => ({
-    __proto__: dart.getFields(sliver_fill$.SliverFillViewport.__proto__),
-    viewportFraction: dart.finalFieldType(core.double),
-    padEnds: dart.finalFieldType(core.bool),
-    delegate: dart.finalFieldType(sliver.SliverChildDelegate)
-  }));
-  var viewportFraction$0 = dart.privateName(sliver_fill$, "_SliverFillViewportRenderObjectWidget.viewportFraction");
-  sliver_fill$._SliverFillViewportRenderObjectWidget = class _SliverFillViewportRenderObjectWidget extends sliver.SliverMultiBoxAdaptorWidget {
-    get viewportFraction() {
-      return this[viewportFraction$0];
+    putFloat64(value, opts) {
+      let t1;
+      if (value == null) dart.nullFailed(I[0], 57, 26, "value");
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      this[_alignTo](8);
+      this[_eightBytes][$setFloat64](0, value, (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      dart.nullCheck(this[_buffer]).addAll(this[_eightBytesAsList]);
     }
-    set viewportFraction(value) {
-      super.viewportFraction = value;
+    putUint8List(list) {
+      if (list == null) dart.nullFailed(I[0], 64, 31, "list");
+      dart.nullCheck(this[_buffer]).addAll(list);
     }
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 85, 60, "context");
-      let element = sliver.SliverMultiBoxAdaptorElement.as(context);
-      return new sliver_fill.RenderSliverFillViewport.new({childManager: element, viewportFraction: this.viewportFraction});
+    putInt32List(list) {
+      if (list == null) dart.nullFailed(I[0], 69, 31, "list");
+      this[_alignTo](4);
+      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 4 * dart.notNull(list[$length])));
     }
-    updateRenderObject(context, renderObject) {
-      if (context == null) dart.nullFailed(I[0], 91, 40, "context");
-      sliver_fill.RenderSliverFillViewport.as(renderObject);
-      if (renderObject == null) dart.nullFailed(I[0], 91, 74, "renderObject");
-      renderObject.viewportFraction = this.viewportFraction;
+    putInt64List(list) {
+      if (list == null) dart.nullFailed(I[0], 75, 31, "list");
+      this[_alignTo](8);
+      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 8 * dart.notNull(list[$length])));
     }
-  };
-  (sliver_fill$._SliverFillViewportRenderObjectWidget.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
-    if (delegate == null) dart.nullFailed(I[0], 76, 34, "delegate");
-    let viewportFraction = opts && 'viewportFraction' in opts ? opts.viewportFraction : 1;
-    if (viewportFraction == null) dart.nullFailed(I[0], 77, 10, "viewportFraction");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[viewportFraction$0] = viewportFraction;
-    if (!(viewportFraction != null)) dart.assertFailed(null, I[0], 78, 15, "viewportFraction != null");
-    if (!(dart.notNull(viewportFraction) > 0.0)) dart.assertFailed(null, I[0], 79, 14, "viewportFraction > 0.0");
-    sliver_fill$._SliverFillViewportRenderObjectWidget.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = sliver_fill$._SliverFillViewportRenderObjectWidget.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFillViewportRenderObjectWidget);
-  dart.addTypeCaches(sliver_fill$._SliverFillViewportRenderObjectWidget);
-  dart.setMethodSignature(sliver_fill$._SliverFillViewportRenderObjectWidget, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFillViewportRenderObjectWidget.__proto__),
-    createRenderObject: dart.fnType(sliver_fill.RenderSliverFillViewport, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(sliver_fill$._SliverFillViewportRenderObjectWidget, I[1]);
-  dart.setFieldSignature(sliver_fill$._SliverFillViewportRenderObjectWidget, () => ({
-    __proto__: dart.getFields(sliver_fill$._SliverFillViewportRenderObjectWidget.__proto__),
-    viewportFraction: dart.finalFieldType(core.double)
-  }));
-  var viewportFraction$1 = dart.privateName(sliver_fill$, "_SliverFractionalPadding.viewportFraction");
-  sliver_fill$._SliverFractionalPadding = class _SliverFractionalPadding extends framework.SingleChildRenderObjectWidget {
-    get viewportFraction() {
-      return this[viewportFraction$1];
+    putFloat64List(list) {
+      if (list == null) dart.nullFailed(I[0], 81, 35, "list");
+      this[_alignTo](8);
+      dart.nullCheck(this[_buffer]).addAll(list[$buffer][$asUint8List](list[$offsetInBytes], 8 * dart.notNull(list[$length])));
     }
-    set viewportFraction(value) {
-      super.viewportFraction = value;
-    }
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 108, 48, "context");
-      return new sliver_fill$._RenderSliverFractionalPadding.new({viewportFraction: this.viewportFraction});
-    }
-    updateRenderObject(context, renderObject) {
-      if (context == null) dart.nullFailed(I[0], 111, 40, "context");
-      sliver_fill$._RenderSliverFractionalPadding.as(renderObject);
-      if (renderObject == null) dart.nullFailed(I[0], 111, 80, "renderObject");
-      renderObject.viewportFraction = this.viewportFraction;
-    }
-  };
-  (sliver_fill$._SliverFractionalPadding.new = function(opts) {
-    let viewportFraction = opts && 'viewportFraction' in opts ? opts.viewportFraction : 0;
-    if (viewportFraction == null) dart.nullFailed(I[0], 98, 10, "viewportFraction");
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[viewportFraction$1] = viewportFraction;
-    if (!(viewportFraction != null)) dart.assertFailed(null, I[0], 100, 15, "viewportFraction != null");
-    if (!(dart.notNull(viewportFraction) >= 0)) dart.assertFailed(null, I[0], 101, 14, "viewportFraction >= 0");
-    if (!(dart.notNull(viewportFraction) <= 0.5)) dart.assertFailed(null, I[0], 102, 14, "viewportFraction <= 0.5");
-    sliver_fill$._SliverFractionalPadding.__proto__.new.call(this, {child: sliver, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = sliver_fill$._SliverFractionalPadding.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFractionalPadding);
-  dart.addTypeCaches(sliver_fill$._SliverFractionalPadding);
-  dart.setMethodSignature(sliver_fill$._SliverFractionalPadding, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFractionalPadding.__proto__),
-    createRenderObject: dart.fnType(object.RenderObject, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(sliver_fill$._SliverFractionalPadding, I[1]);
-  dart.setFieldSignature(sliver_fill$._SliverFractionalPadding, () => ({
-    __proto__: dart.getFields(sliver_fill$._SliverFractionalPadding.__proto__),
-    viewportFraction: dart.finalFieldType(core.double)
-  }));
-  var _lastResolvedConstraints = dart.privateName(sliver_fill$, "_lastResolvedConstraints");
-  var _resolvedPadding = dart.privateName(sliver_fill$, "_resolvedPadding");
-  var _viewportFraction = dart.privateName(sliver_fill$, "_viewportFraction");
-  var _markNeedsResolution = dart.privateName(sliver_fill$, "_markNeedsResolution");
-  var _name = dart.privateName(basic_types, "_name");
-  var _resolve = dart.privateName(sliver_fill$, "_resolve");
-  sliver_fill$._RenderSliverFractionalPadding = class _RenderSliverFractionalPadding extends sliver_padding.RenderSliverEdgeInsetsPadding {
-    get viewportFraction() {
-      return this[_viewportFraction];
-    }
-    set viewportFraction(newValue) {
-      if (newValue == null) dart.nullFailed(I[0], 128, 31, "newValue");
-      if (!(newValue != null)) dart.assertFailed(null, I[0], 129, 12, "newValue != null");
-      if (this[_viewportFraction] == newValue) return;
-      this[_viewportFraction] = newValue;
-      this[_markNeedsResolution]();
-    }
-    get resolvedPadding() {
-      return this[_resolvedPadding];
-    }
-    [_markNeedsResolution]() {
-      this[_resolvedPadding] = null;
-      this.markNeedsLayout();
-    }
-    [_resolve]() {
-      if (this[_resolvedPadding] != null && dart.equals(this[_lastResolvedConstraints], this.constraints)) return;
-      if (!(this.constraints.axis != null)) dart.assertFailed(null, I[0], 149, 12, "constraints.axis != null");
-      let paddingValue = dart.notNull(this.constraints.viewportMainAxisExtent) * dart.notNull(this.viewportFraction);
-      this[_lastResolvedConstraints] = this.constraints;
-      switch (this.constraints.axis) {
-        case C[8] || CT.C8:
-        {
-          this[_resolvedPadding] = new edge_insets.EdgeInsets.symmetric({horizontal: paddingValue});
-          break;
-        }
-        case C[9] || CT.C9:
-        {
-          this[_resolvedPadding] = new edge_insets.EdgeInsets.symmetric({vertical: paddingValue});
-          break;
-        }
-        default:
-        {
-          dart.throw(new _internal.ReachabilityError.new("`null` encountered as case in a switch expression with a non-nullable enum type."));
-        }
+    [_alignTo](alignment) {
+      if (alignment == null) dart.nullFailed(I[0], 86, 21, "alignment");
+      let mod = dart.nullCheck(this[_buffer]).length[$modulo](alignment);
+      if (mod !== 0) {
+        for (let i = 0; i < dart.notNull(alignment) - mod; i = i + 1)
+          dart.nullCheck(this[_buffer]).add(0);
       }
-      return;
     }
-    performLayout() {
-      this[_resolve]();
-      super.performLayout();
-    }
-  };
-  (sliver_fill$._RenderSliverFractionalPadding.new = function(opts) {
-    let viewportFraction = opts && 'viewportFraction' in opts ? opts.viewportFraction : 0;
-    if (viewportFraction == null) dart.nullFailed(I[0], 118, 12, "viewportFraction");
-    this[_lastResolvedConstraints] = null;
-    this[_resolvedPadding] = null;
-    if (!(viewportFraction != null)) dart.assertFailed(null, I[0], 119, 15, "viewportFraction != null");
-    if (!(dart.notNull(viewportFraction) <= 0.5)) dart.assertFailed(null, I[0], 120, 14, "viewportFraction <= 0.5");
-    if (!(dart.notNull(viewportFraction) >= 0)) dart.assertFailed(null, I[0], 121, 14, "viewportFraction >= 0");
-    this[_viewportFraction] = viewportFraction;
-    sliver_fill$._RenderSliverFractionalPadding.__proto__.new.call(this);
-    ;
-  }).prototype = sliver_fill$._RenderSliverFractionalPadding.prototype;
-  dart.addTypeTests(sliver_fill$._RenderSliverFractionalPadding);
-  dart.addTypeCaches(sliver_fill$._RenderSliverFractionalPadding);
-  dart.setMethodSignature(sliver_fill$._RenderSliverFractionalPadding, () => ({
-    __proto__: dart.getMethods(sliver_fill$._RenderSliverFractionalPadding.__proto__),
-    [_markNeedsResolution]: dart.fnType(dart.void, []),
-    [_resolve]: dart.fnType(dart.void, [])
-  }));
-  dart.setGetterSignature(sliver_fill$._RenderSliverFractionalPadding, () => ({
-    __proto__: dart.getGetters(sliver_fill$._RenderSliverFractionalPadding.__proto__),
-    viewportFraction: core.double,
-    resolvedPadding: dart.nullable(edge_insets.EdgeInsets)
-  }));
-  dart.setSetterSignature(sliver_fill$._RenderSliverFractionalPadding, () => ({
-    __proto__: dart.getSetters(sliver_fill$._RenderSliverFractionalPadding.__proto__),
-    viewportFraction: core.double
-  }));
-  dart.setLibraryUri(sliver_fill$._RenderSliverFractionalPadding, I[1]);
-  dart.setFieldSignature(sliver_fill$._RenderSliverFractionalPadding, () => ({
-    __proto__: dart.getFields(sliver_fill$._RenderSliverFractionalPadding.__proto__),
-    [_lastResolvedConstraints]: dart.fieldType(dart.nullable(sliver$.SliverConstraints)),
-    [_viewportFraction]: dart.fieldType(core.double),
-    [_resolvedPadding]: dart.fieldType(dart.nullable(edge_insets.EdgeInsets))
-  }));
-  var child$ = dart.privateName(sliver_fill$, "SliverFillRemaining.child");
-  var hasScrollBody$ = dart.privateName(sliver_fill$, "SliverFillRemaining.hasScrollBody");
-  var fillOverscroll$ = dart.privateName(sliver_fill$, "SliverFillRemaining.fillOverscroll");
-  sliver_fill$.SliverFillRemaining = class SliverFillRemaining extends framework.StatelessWidget {
-    get child() {
-      return this[child$];
-    }
-    set child(value) {
-      super.child = value;
-    }
-    get hasScrollBody() {
-      return this[hasScrollBody$];
-    }
-    set hasScrollBody(value) {
-      super.hasScrollBody = value;
-    }
-    get fillOverscroll() {
-      return this[fillOverscroll$];
-    }
-    set fillOverscroll(value) {
-      super.fillOverscroll = value;
-    }
-    build(context) {
-      if (context == null) dart.nullFailed(I[0], 433, 29, "context");
-      if (dart.test(this.hasScrollBody)) return new sliver_fill$._SliverFillRemainingWithScrollable.new({child: this.child, $creationLocationd_0dea112b090073317d4: C[10] || CT.C10});
-      if (!dart.test(this.fillOverscroll)) return new sliver_fill$._SliverFillRemainingWithoutScrollable.new({child: this.child, $creationLocationd_0dea112b090073317d4: C[13] || CT.C13});
-      return new sliver_fill$._SliverFillRemainingAndOverscroll.new({child: this.child, $creationLocationd_0dea112b090073317d4: C[16] || CT.C16});
-    }
-    debugFillProperties(properties) {
-      if (properties == null) dart.nullFailed(I[0], 442, 56, "properties");
-      super.debugFillProperties(properties);
-      properties.add(new (T.DiagnosticsPropertyOfWidget()).new("child", this.child));
-      let flags = (() => {
-        let t0 = T.JSArrayOfString().of([]);
-        if (dart.test(this.hasScrollBody)) t0[$add]("scrollable");
-        if (dart.test(this.fillOverscroll)) t0[$add]("fillOverscroll");
-        return t0;
-      })();
-      if (dart.test(flags[$isEmpty])) flags[$add]("nonscrollable");
-      properties.add(new (T.IterablePropertyOfString()).new("mode", flags));
+    done() {
+      let result = dart.nullCheck(this[_buffer]).buffer[$asByteData](0, dart.nullCheck(this[_buffer]).lengthInBytes);
+      this[_buffer] = null;
+      return result;
     }
   };
-  (sliver_fill$.SliverFillRemaining.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    let hasScrollBody = opts && 'hasScrollBody' in opts ? opts.hasScrollBody : true;
-    if (hasScrollBody == null) dart.nullFailed(I[0], 399, 10, "hasScrollBody");
-    let fillOverscroll = opts && 'fillOverscroll' in opts ? opts.fillOverscroll : false;
-    if (fillOverscroll == null) dart.nullFailed(I[0], 400, 10, "fillOverscroll");
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[child$] = child;
-    this[hasScrollBody$] = hasScrollBody;
-    this[fillOverscroll$] = fillOverscroll;
-    if (!(hasScrollBody != null)) dart.assertFailed(null, I[0], 401, 15, "hasScrollBody != null");
-    if (!(fillOverscroll != null)) dart.assertFailed(null, I[0], 402, 15, "fillOverscroll != null");
-    sliver_fill$.SliverFillRemaining.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = sliver_fill$.SliverFillRemaining.prototype;
-  dart.addTypeTests(sliver_fill$.SliverFillRemaining);
-  dart.addTypeCaches(sliver_fill$.SliverFillRemaining);
-  dart.setMethodSignature(sliver_fill$.SliverFillRemaining, () => ({
-    __proto__: dart.getMethods(sliver_fill$.SliverFillRemaining.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  (serialization.WriteBuffer.new = function() {
+    this[__WriteBuffer__eightBytesAsList] = null;
+    this[__WriteBuffer__eightBytesAsList_isSet] = false;
+    this[_buffer] = new typed_buffer.Uint8Buffer.new();
+    this[_eightBytes] = _native_typed_data.NativeByteData.new(8);
+    this[_eightBytesAsList] = this[_eightBytes][$buffer][$asUint8List]();
+  }).prototype = serialization.WriteBuffer.prototype;
+  dart.addTypeTests(serialization.WriteBuffer);
+  dart.addTypeCaches(serialization.WriteBuffer);
+  dart.setMethodSignature(serialization.WriteBuffer, () => ({
+    __proto__: dart.getMethods(serialization.WriteBuffer.__proto__),
+    putUint8: dart.fnType(dart.void, [core.int]),
+    putUint16: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
+    putUint32: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
+    putInt32: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
+    putInt64: dart.fnType(dart.void, [core.int], {endian: dart.nullable(typed_data.Endian)}, {}),
+    putFloat64: dart.fnType(dart.void, [core.double], {endian: dart.nullable(typed_data.Endian)}, {}),
+    putUint8List: dart.fnType(dart.void, [typed_data.Uint8List]),
+    putInt32List: dart.fnType(dart.void, [typed_data.Int32List]),
+    putInt64List: dart.fnType(dart.void, [typed_data.Int64List]),
+    putFloat64List: dart.fnType(dart.void, [typed_data.Float64List]),
+    [_alignTo]: dart.fnType(dart.void, [core.int]),
+    done: dart.fnType(typed_data.ByteData, [])
   }));
-  dart.setLibraryUri(sliver_fill$.SliverFillRemaining, I[1]);
-  dart.setFieldSignature(sliver_fill$.SliverFillRemaining, () => ({
-    __proto__: dart.getFields(sliver_fill$.SliverFillRemaining.__proto__),
-    child: dart.finalFieldType(dart.nullable(framework.Widget)),
-    hasScrollBody: dart.finalFieldType(core.bool),
-    fillOverscroll: dart.finalFieldType(core.bool)
+  dart.setGetterSignature(serialization.WriteBuffer, () => ({
+    __proto__: dart.getGetters(serialization.WriteBuffer.__proto__),
+    [_eightBytesAsList]: typed_data.Uint8List
   }));
-  sliver_fill$._SliverFillRemainingWithScrollable = class _SliverFillRemainingWithScrollable extends framework.SingleChildRenderObjectWidget {
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 467, 75, "context");
-      return new sliver_fill.RenderSliverFillRemainingWithScrollable.new();
+  dart.setSetterSignature(serialization.WriteBuffer, () => ({
+    __proto__: dart.getSetters(serialization.WriteBuffer.__proto__),
+    [_eightBytesAsList]: typed_data.Uint8List
+  }));
+  dart.setLibraryUri(serialization.WriteBuffer, I[1]);
+  dart.setFieldSignature(serialization.WriteBuffer, () => ({
+    __proto__: dart.getFields(serialization.WriteBuffer.__proto__),
+    [_buffer]: dart.fieldType(dart.nullable(typed_buffer.Uint8Buffer)),
+    [_eightBytes]: dart.finalFieldType(typed_data.ByteData),
+    [__WriteBuffer__eightBytesAsList]: dart.fieldType(dart.nullable(typed_data.Uint8List)),
+    [__WriteBuffer__eightBytesAsList_isSet]: dart.fieldType(core.bool)
+  }));
+  var data$ = dart.privateName(serialization, "ReadBuffer.data");
+  var _position = dart.privateName(serialization, "_position");
+  serialization.ReadBuffer = class ReadBuffer extends core.Object {
+    get data() {
+      return this[data$];
+    }
+    set data(value) {
+      super.data = value;
+    }
+    get hasRemaining() {
+      return dart.notNull(this[_position]) < dart.notNull(this.data[$lengthInBytes]);
+    }
+    getUint8() {
+      let t1;
+      return this.data[$getUint8]((t1 = this[_position], this[_position] = dart.notNull(t1) + 1, t1));
+    }
+    getUint16(opts) {
+      let t1;
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      let value = this.data[$getUint16](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      this[_position] = dart.notNull(this[_position]) + 2;
+      return value;
+    }
+    getUint32(opts) {
+      let t1;
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      let value = this.data[$getUint32](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      this[_position] = dart.notNull(this[_position]) + 4;
+      return value;
+    }
+    getInt32(opts) {
+      let t1;
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      let value = this.data[$getInt32](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      this[_position] = dart.notNull(this[_position]) + 4;
+      return value;
+    }
+    getInt64(opts) {
+      let t1;
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      let value = this.data[$getInt64](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      this[_position] = dart.notNull(this[_position]) + 8;
+      return value;
+    }
+    getFloat64(opts) {
+      let t1;
+      let endian = opts && 'endian' in opts ? opts.endian : null;
+      this[_alignTo](8);
+      let value = this.data[$getFloat64](this[_position], (t1 = endian, t1 == null ? typed_data.Endian.host : t1));
+      this[_position] = dart.notNull(this[_position]) + 8;
+      return value;
+    }
+    getUint8List(length) {
+      if (length == null) dart.nullFailed(I[0], 161, 30, "length");
+      let list = this.data[$buffer][$asUint8List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
+      this[_position] = dart.notNull(this[_position]) + dart.notNull(length);
+      return list;
+    }
+    getInt32List(length) {
+      if (length == null) dart.nullFailed(I[0], 168, 30, "length");
+      this[_alignTo](4);
+      let list = this.data[$buffer][$asInt32List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
+      this[_position] = dart.notNull(this[_position]) + 4 * dart.notNull(length);
+      return list;
+    }
+    getInt64List(length) {
+      if (length == null) dart.nullFailed(I[0], 176, 30, "length");
+      this[_alignTo](8);
+      let list = this.data[$buffer][$asInt64List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
+      this[_position] = dart.notNull(this[_position]) + 8 * dart.notNull(length);
+      return list;
+    }
+    getFloat64List(length) {
+      if (length == null) dart.nullFailed(I[0], 184, 34, "length");
+      this[_alignTo](8);
+      let list = this.data[$buffer][$asFloat64List](dart.notNull(this.data[$offsetInBytes]) + dart.notNull(this[_position]), length);
+      this[_position] = dart.notNull(this[_position]) + 8 * dart.notNull(length);
+      return list;
+    }
+    [_alignTo](alignment) {
+      if (alignment == null) dart.nullFailed(I[0], 191, 21, "alignment");
+      let mod = this[_position][$modulo](alignment);
+      if (mod !== 0) this[_position] = dart.notNull(this[_position]) + (dart.notNull(alignment) - mod);
     }
   };
-  (sliver_fill$._SliverFillRemainingWithScrollable.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    sliver_fill$._SliverFillRemainingWithScrollable.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  (serialization.ReadBuffer.new = function(data) {
+    if (data == null) dart.nullFailed(I[0], 107, 19, "data");
+    this[_position] = 0;
+    this[data$] = data;
+    if (!(data != null)) dart.assertFailed(null, I[0], 108, 14, "data != null");
     ;
-  }).prototype = sliver_fill$._SliverFillRemainingWithScrollable.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFillRemainingWithScrollable);
-  dart.addTypeCaches(sliver_fill$._SliverFillRemainingWithScrollable);
-  dart.setMethodSignature(sliver_fill$._SliverFillRemainingWithScrollable, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFillRemainingWithScrollable.__proto__),
-    createRenderObject: dart.fnType(sliver_fill.RenderSliverFillRemainingWithScrollable, [framework.BuildContext])
+  }).prototype = serialization.ReadBuffer.prototype;
+  dart.addTypeTests(serialization.ReadBuffer);
+  dart.addTypeCaches(serialization.ReadBuffer);
+  dart.setMethodSignature(serialization.ReadBuffer, () => ({
+    __proto__: dart.getMethods(serialization.ReadBuffer.__proto__),
+    getUint8: dart.fnType(core.int, []),
+    getUint16: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
+    getUint32: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
+    getInt32: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
+    getInt64: dart.fnType(core.int, [], {endian: dart.nullable(typed_data.Endian)}, {}),
+    getFloat64: dart.fnType(core.double, [], {endian: dart.nullable(typed_data.Endian)}, {}),
+    getUint8List: dart.fnType(typed_data.Uint8List, [core.int]),
+    getInt32List: dart.fnType(typed_data.Int32List, [core.int]),
+    getInt64List: dart.fnType(typed_data.Int64List, [core.int]),
+    getFloat64List: dart.fnType(typed_data.Float64List, [core.int]),
+    [_alignTo]: dart.fnType(dart.void, [core.int])
   }));
-  dart.setLibraryUri(sliver_fill$._SliverFillRemainingWithScrollable, I[1]);
-  sliver_fill$._SliverFillRemainingWithoutScrollable = class _SliverFillRemainingWithoutScrollable extends framework.SingleChildRenderObjectWidget {
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 477, 61, "context");
-      return new sliver_fill.RenderSliverFillRemaining.new();
-    }
-  };
-  (sliver_fill$._SliverFillRemainingWithoutScrollable.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    sliver_fill$._SliverFillRemainingWithoutScrollable.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = sliver_fill$._SliverFillRemainingWithoutScrollable.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFillRemainingWithoutScrollable);
-  dart.addTypeCaches(sliver_fill$._SliverFillRemainingWithoutScrollable);
-  dart.setMethodSignature(sliver_fill$._SliverFillRemainingWithoutScrollable, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFillRemainingWithoutScrollable.__proto__),
-    createRenderObject: dart.fnType(sliver_fill.RenderSliverFillRemaining, [framework.BuildContext])
+  dart.setGetterSignature(serialization.ReadBuffer, () => ({
+    __proto__: dart.getGetters(serialization.ReadBuffer.__proto__),
+    hasRemaining: core.bool
   }));
-  dart.setLibraryUri(sliver_fill$._SliverFillRemainingWithoutScrollable, I[1]);
-  sliver_fill$._SliverFillRemainingAndOverscroll = class _SliverFillRemainingAndOverscroll extends framework.SingleChildRenderObjectWidget {
-    createRenderObject(context) {
-      if (context == null) dart.nullFailed(I[0], 487, 74, "context");
-      return new sliver_fill.RenderSliverFillRemainingAndOverscroll.new();
-    }
-  };
-  (sliver_fill$._SliverFillRemainingAndOverscroll.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let child = opts && 'child' in opts ? opts.child : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    sliver_fill$._SliverFillRemainingAndOverscroll.__proto__.new.call(this, {key: key, child: child, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
-    ;
-  }).prototype = sliver_fill$._SliverFillRemainingAndOverscroll.prototype;
-  dart.addTypeTests(sliver_fill$._SliverFillRemainingAndOverscroll);
-  dart.addTypeCaches(sliver_fill$._SliverFillRemainingAndOverscroll);
-  dart.setMethodSignature(sliver_fill$._SliverFillRemainingAndOverscroll, () => ({
-    __proto__: dart.getMethods(sliver_fill$._SliverFillRemainingAndOverscroll.__proto__),
-    createRenderObject: dart.fnType(sliver_fill.RenderSliverFillRemainingAndOverscroll, [framework.BuildContext])
+  dart.setLibraryUri(serialization.ReadBuffer, I[1]);
+  dart.setFieldSignature(serialization.ReadBuffer, () => ({
+    __proto__: dart.getFields(serialization.ReadBuffer.__proto__),
+    data: dart.finalFieldType(typed_data.ByteData),
+    [_position]: dart.fieldType(core.int)
   }));
-  dart.setLibraryUri(sliver_fill$._SliverFillRemainingAndOverscroll, I[1]);
-  dart.trackLibraries("packages/flutter/src/widgets/sliver_fill.dart", {
-    "package:flutter/src/widgets/sliver_fill.dart": sliver_fill$
+  dart.trackLibraries("packages/flutter/src/foundation/serialization.dart", {
+    "package:flutter/src/foundation/serialization.dart": serialization
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["sliver_fill.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/widgets/sliver_fill.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["serialization.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/foundation/serialization.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__sliver_fill: sliver_fill$
+    src__foundation__serialization: serialization
   };
 }));
 
-//# sourceMappingURL=sliver_fill.dart.lib.js.map
+//# sourceMappingURL=serialization.dart.lib.js.map
