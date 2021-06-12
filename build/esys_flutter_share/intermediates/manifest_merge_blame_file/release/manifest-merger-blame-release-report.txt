@@ -1,0 +1,29 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="de.esys.esysfluttershare" >
+4
+5    <uses-sdk android:minSdkVersion="16" />
+5-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml
+6
+7    <application>
+7-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:4:5-14:19
+8        <provider
+8-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:5:9-13:20
+9            android:name="de.esys.esysfluttershare.EsysFlutterShareFileProvider"
+9-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:6:13-81
+10            android:authorities="${applicationId}.fileprovider.github.com/orgs/esysberlin/esys-flutter-share"
+10-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:7:13-110
+11            android:exported="false"
+11-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:8:13-37
+12            android:grantUriPermissions="true" >
+12-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:9:13-47
+13            <meta-data
+13-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:10:13-12:72
+14                android:name="android.support.FILE_PROVIDER_PATHS"
+14-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:11:17-67
+15                android:resource="@xml/esys_flutter_share_filepaths" />
+15-->/Users/kanakprajapati/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android/src/main/AndroidManifest.xml:12:17-69
+16        </provider>
+17    </application>
+18
+19</manifest>

@@ -1,0 +1,6 @@
+de/esys/esysfluttershare/BuildConfig.java
+ de.esys.esysfluttershare.BuildConfig
+de/esys/esysfluttershare/EsysFlutterShareFileProvider.java
+ de.esys.esysfluttershare.EsysFlutterShareFileProvider
+de/esys/esysfluttershare/EsysFlutterSharePlugin.java
+ de.esys.esysfluttershare.EsysFlutterSharePlugin

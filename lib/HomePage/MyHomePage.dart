@@ -1,4 +1,4 @@
-import 'package:camera/camera.dart';
+import 'package:camera/Camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lobster_detection/HomePage/Camera/CameraScreen.dart';
@@ -21,7 +21,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFF090000),
+        backgroundColor: Colors.deepOrange,
         iconTheme: IconThemeData(color: Colors.white),
         automaticallyImplyLeading: true,
         actions: [
@@ -51,27 +51,29 @@ class _HomePageWidgetState extends State<MyHomePage> {
         centerTitle: true,
         elevation: 4,
       ),  //Appbar
+
+      // For temporary purpose, I am using floating action button for now,
+      // but later it can be removed and changed to camera button
+
+      body: const Center(child: Text('Press the button below to access Camera')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CameraScreen(cameras),
+            ),
+          );
+        },
+        child: const Icon(Icons.photo_camera),
+        backgroundColor: Colors.red,
+      ),
+
     );  // Scaffold
+
+
   } // Widget
+
 } // Class
 
 
-Future<Null> main () async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // Try and Catch block to open camera
-  try{
-    cameras = await availableCameras();
-  } catch (e) {
-    print('Error Message: $e.message \n Error Code: $e.code');
-  }
-  runApp(new openCamera());
-}
-
-class openCamera extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        home: CameraScreen(cameras),
-    );
-  }
-}

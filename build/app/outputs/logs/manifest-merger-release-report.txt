@@ -1,0 +1,251 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+MERGED from [:tflite] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/tflite/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:2:1-22:12
+MERGED from [:flutter_plugin_android_lifecycle] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:2:1-19:12
+MERGED from [:path_provider] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/path_provider/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:2:1-10:12
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/e45ff166f498ad0c38e11430dd0ce9c5/jetified-tensorflow-lite-2.5.0/AndroidManifest.xml:2:1-12:12
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/30efd1200b44c1edcc585697c40b9bfb/jetified-tensorflow-lite-gpu-2.5.0/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/699f67f2d72ad9902250b3e1c41f0647/exifinterface-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/368c1d07373d6dd19aed1a352887505f/legacy-support-v4-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2fd9120a6da4df3dbabdd40f6a2d8995/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/0445befb76224b40abc4198212b0c45a/media-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/db93aefca45ea8441eb49f50cec34c78/legacy-support-core-ui-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/a5fca57311e0d07b04d4be568853d446/legacy-support-core-utils-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/eb26273f8f7192460456ce62b9bdf9ef/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/d9536c14ffde0b7289f12ba6def6bfa4/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/68dbf8ea01a1dbd974fc87b5753550f0/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/487e1fbd8dc53678f28c5dbb24504f4a/coordinatorlayout-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ce4bb5b981f994025c9290524a9d5b2a/drawerlayout-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/a7359242550f79a278d5c0158a6cd76b/slidingpanelayout-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ae480d5c094396696e112d9fa5dd64bf/swiperefreshlayout-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/66564023f493ed274877d8ec0133a0c3/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/bc28a09d8d2212ffd5788fe6c1853326/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ca6b214160bd0909b103aa12202ef51c/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2271d874344878e62b9a8e309af0c39d/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/fb333fb43575d8a3b51161295454427f/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/cad25976877a6ae855ef6821534f58a1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/5f606c30f064eed94124828de37fadc0/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/96aee308bccd03bc62c306516c23a410/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/3edd094946bf30d4a839e74319f617e7/documentfile-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/04eec03f5ae60c590c7d9af7abed4c09/localbroadcastmanager-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/51e0b45a118c3e0d5ff9c12d03b2b5f2/print-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/e775577dc30a30cd61305359d525491b/interpolator-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/54b7e8ad286c836c6570d15b4cb66c06/cursoradapter-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/15792e6083b2b5b5a7ffa285d47daa24/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+	package
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:2:5-44
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:1-41:12
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:3:4-40:19
+MERGED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:10:5-20:19
+MERGED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:10:5-20:19
+MERGED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:7:5-17:19
+MERGED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:7:5-17:19
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/e45ff166f498ad0c38e11430dd0ce9c5/jetified-tensorflow-lite-2.5.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/e45ff166f498ad0c38e11430dd0ce9c5/jetified-tensorflow-lite-2.5.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/30efd1200b44c1edcc585697c40b9bfb/jetified-tensorflow-lite-gpu-2.5.0/AndroidManifest.xml:10:5-20
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/30efd1200b44c1edcc585697c40b9bfb/jetified-tensorflow-lite-gpu-2.5.0/AndroidManifest.xml:10:5-20
+MERGED from [androidx.core:core:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/96aee308bccd03bc62c306516c23a410/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/96aee308bccd03bc62c306516c23a410/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:4:9-42
+	android:icon
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:5:9-43
+activity#com.example.lobster_detection.MainActivity
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:6:9-34:20
+	android:launchMode
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:8:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:11:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:12:13-55
+	android:configChanges
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:10:13-163
+	android:theme
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:9:13-47
+	android:name
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:7:13-41
+meta-data#io.flutter.embedding.android.NormalTheme
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:17:13-20:17
+	android:resource
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:19:15-52
+	android:name
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:18:15-70
+meta-data#io.flutter.embedding.android.SplashScreenDrawable
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:26:13-29:17
+	android:resource
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:28:15-61
+	android:name
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:27:15-79
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:30:13-33:29
+action#android.intent.action.MAIN
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:31:17-68
+	android:name
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:31:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:32:17-76
+	android:name
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:32:27-74
+meta-data#flutterEmbedding
+ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:37:9-39:33
+	android:value
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:39:13-30
+	android:name
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:38:13-44
+uses-sdk
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+MERGED from [:tflite] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/tflite/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:tflite] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/tflite/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/path_provider/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/path_provider/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/e45ff166f498ad0c38e11430dd0ce9c5/jetified-tensorflow-lite-2.5.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/e45ff166f498ad0c38e11430dd0ce9c5/jetified-tensorflow-lite-2.5.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/30efd1200b44c1edcc585697c40b9bfb/jetified-tensorflow-lite-gpu-2.5.0/AndroidManifest.xml:7:5-8:41
+MERGED from [org.tensorflow:tensorflow-lite-gpu:2.5.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/30efd1200b44c1edcc585697c40b9bfb/jetified-tensorflow-lite-gpu-2.5.0/AndroidManifest.xml:7:5-8:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/699f67f2d72ad9902250b3e1c41f0647/exifinterface-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/699f67f2d72ad9902250b3e1c41f0647/exifinterface-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/368c1d07373d6dd19aed1a352887505f/legacy-support-v4-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/368c1d07373d6dd19aed1a352887505f/legacy-support-v4-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2fd9120a6da4df3dbabdd40f6a2d8995/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2fd9120a6da4df3dbabdd40f6a2d8995/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/0445befb76224b40abc4198212b0c45a/media-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/0445befb76224b40abc4198212b0c45a/media-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/db93aefca45ea8441eb49f50cec34c78/legacy-support-core-ui-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/db93aefca45ea8441eb49f50cec34c78/legacy-support-core-ui-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/a5fca57311e0d07b04d4be568853d446/legacy-support-core-utils-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/a5fca57311e0d07b04d4be568853d446/legacy-support-core-utils-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/eb26273f8f7192460456ce62b9bdf9ef/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/eb26273f8f7192460456ce62b9bdf9ef/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/d9536c14ffde0b7289f12ba6def6bfa4/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/d9536c14ffde0b7289f12ba6def6bfa4/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/68dbf8ea01a1dbd974fc87b5753550f0/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/68dbf8ea01a1dbd974fc87b5753550f0/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/487e1fbd8dc53678f28c5dbb24504f4a/coordinatorlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/487e1fbd8dc53678f28c5dbb24504f4a/coordinatorlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ce4bb5b981f994025c9290524a9d5b2a/drawerlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ce4bb5b981f994025c9290524a9d5b2a/drawerlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/a7359242550f79a278d5c0158a6cd76b/slidingpanelayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/a7359242550f79a278d5c0158a6cd76b/slidingpanelayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ae480d5c094396696e112d9fa5dd64bf/swiperefreshlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ae480d5c094396696e112d9fa5dd64bf/swiperefreshlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/66564023f493ed274877d8ec0133a0c3/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/66564023f493ed274877d8ec0133a0c3/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/bc28a09d8d2212ffd5788fe6c1853326/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/bc28a09d8d2212ffd5788fe6c1853326/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ca6b214160bd0909b103aa12202ef51c/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/ca6b214160bd0909b103aa12202ef51c/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2271d874344878e62b9a8e309af0c39d/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2271d874344878e62b9a8e309af0c39d/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/fb333fb43575d8a3b51161295454427f/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/fb333fb43575d8a3b51161295454427f/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/cad25976877a6ae855ef6821534f58a1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/cad25976877a6ae855ef6821534f58a1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/5f606c30f064eed94124828de37fadc0/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/5f606c30f064eed94124828de37fadc0/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/96aee308bccd03bc62c306516c23a410/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/96aee308bccd03bc62c306516c23a410/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/3edd094946bf30d4a839e74319f617e7/documentfile-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/3edd094946bf30d4a839e74319f617e7/documentfile-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/04eec03f5ae60c590c7d9af7abed4c09/localbroadcastmanager-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/04eec03f5ae60c590c7d9af7abed4c09/localbroadcastmanager-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/51e0b45a118c3e0d5ff9c12d03b2b5f2/print-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/51e0b45a118c3e0d5ff9c12d03b2b5f2/print-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/e775577dc30a30cd61305359d525491b/interpolator-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/e775577dc30a30cd61305359d525491b/interpolator-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/54b7e8ad286c836c6570d15b4cb66c06/cursoradapter-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/54b7e8ad286c836c6570d15b4cb66c06/cursoradapter-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/15792e6083b2b5b5a7ffa285d47daa24/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/15792e6083b2b5b5a7ffa285d47daa24/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		MERGED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		MERGED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:8:22-78
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:11:9-19:20
+	android:grantUriPermissions
+		ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:15:13-47
+	android:authorities
+		ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:13:13-74
+	android:exported
+		ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:14:13-37
+	android:name
+		ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:12:13-82
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:16:13-18:75
+	android:resource
+		ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:18:17-72
+	android:name
+		ADDED from [:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:17:17-67
+provider#de.esys.esysfluttershare.EsysFlutterShareFileProvider
+ADDED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:8:9-16:20
+	android:grantUriPermissions
+		ADDED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:12:13-47
+	android:authorities
+		ADDED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:10:13-110
+	android:exported
+		ADDED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:9:13-81
+uses-permission#android.permission.CAMERA
+ADDED from [:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from [:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:7:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from [:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:8:5-71
+	android:name
+		ADDED from [:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:8:22-68

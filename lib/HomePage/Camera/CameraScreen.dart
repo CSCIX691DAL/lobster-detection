@@ -1,12 +1,20 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:lobster_detection/HomePage/Camera/BoundingBox.dart';
+import 'package:lobster_detection/HomePage/Camera/Camera.dart';
 import 'package:tflite/tflite.dart';
+import 'dart:math' as math;
+import 'package:image_picker/image_picker.dart';
 
 const String ssd = "ssd MobileNet"; // Name of the Model in the quotes
+// typedef void Callback(List<dynamic> list, int h, int w); // Callback
 
 class CameraScreen extends StatefulWidget {
   // Camera Module
   final List<CameraDescription> cameras;
+  // final Callback setRecognitions;
+  // final String model;
+
   CameraScreen(this.cameras);
 
   @override
@@ -33,22 +41,49 @@ class _CameraScreenState extends State<CameraScreen> {
     } // switch
     print(modelResult);
   } // loadModel Function
+
+  onSelectModel(model) {
+    setState(() {
+      _model = model;
+    });
+    loadModel();
+  }
+
+  setRecognitions(recognitions, imageHeight, imageWidth) {
+    setState(() {
+      _recognitions = recognitions;
+      _imageHeight = imageHeight;
+      _imageWidth = imageWidth;
+    });
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
+    Size screen = MediaQuery.of(context).size;
     return Scaffold(
-      // If the model is empty, it will load the container.
-      // If the model is not enpty, it will load the stack.
-      body: _model == "" ? Container() : Stack(
-        children: [],
-      ),  // Stack
-      // For temporary purpose, I am using floating action button for now,
-      // but later it can be removed and changed to camera button
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        // Rounded Camera Icon. More details of the icon can be found in package: flutter/src/material/icons.dart package.
-        child: Icon(Icons.photo_camera_rounded),
+      body: _model == ""
+          ? Container()
+          : Stack(
+        children: [
+          Camera(widget.cameras, _model, setRecognitions),
+          BoundingBox(
+              _recognitions == null ? [] : _recognitions,
+              math.max(_imageHeight, _imageWidth),
+              math.min(_imageHeight, _imageWidth),
+              screen.width, screen.height, _model
+          )
+        ],
       ),
-    );  // Scaffold
-  } // Widget
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          onSelectModel(ssd);
+        },
+        child: Icon(Icons.photo_library),
+        backgroundColor: Colors.red,
+      ),
+    );
+  }
 } // Class
+

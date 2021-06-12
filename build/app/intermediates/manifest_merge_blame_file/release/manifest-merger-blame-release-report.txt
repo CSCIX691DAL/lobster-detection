@@ -1,0 +1,133 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.lobster_detection"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:7:5-80
+11-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:7:22-77
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:8:5-81
+12-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:8:22-78
+13    <uses-permission android:name="android.permission.CAMERA" />
+13-->[:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:7:5-65
+13-->[:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:7:22-62
+14    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+14-->[:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:8:5-71
+14-->[:camera] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:8:22-68
+15
+16    <application
+16-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:3:4-40:19
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.1.0] /Users/kanakprajapati/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:24:18-86
+18        android:icon="@mipmap/ic_launcher"
+18-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:5:9-43
+19        android:label="lobster_detection" >
+19-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:4:9-42
+20        <activity
+20-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:6:9-34:20
+21            android:name="com.example.lobster_detection.MainActivity"
+21-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:7:13-41
+22            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+22-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:10:13-163
+23            android:hardwareAccelerated="true"
+23-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:11:13-47
+24            android:launchMode="singleTop"
+24-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:8:13-43
+25            android:theme="@style/LaunchTheme"
+25-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:9:13-47
+26            android:windowSoftInputMode="adjustResize" >
+26-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:12:13-55
+27
+28            <!--
+29                 Specifies an Android theme to apply to this Activity as soon as
+30                 the Android process has started. This theme is visible to the user
+31                 while the Flutter UI initializes. After that, this theme continues
+32                 to determine the Window background behind the Flutter UI.
+33            -->
+34            <meta-data
+34-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:17:13-20:17
+35                android:name="io.flutter.embedding.android.NormalTheme"
+35-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:18:15-70
+36                android:resource="@style/NormalTheme" />
+36-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:19:15-52
+37            <!--
+38                 Displays an Android View that continues showing the launch screen
+39                 Drawable until Flutter paints its first frame, then this splash
+40                 screen fades out. A splash screen is useful to avoid any visual
+41                 gap between the end of Android's launch screen and the painting of
+42                 Flutter's first frame.
+43            -->
+44            <meta-data
+44-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:26:13-29:17
+45                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+45-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:27:15-79
+46                android:resource="@drawable/launch_background" />
+46-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:28:15-61
+47
+48            <intent-filter>
+48-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:30:13-33:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:31:17-68
+49-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:31:25-66
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:32:17-76
+51-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:32:27-74
+52            </intent-filter>
+53        </activity>
+54        <!--
+55             Don't delete the meta-data below.
+56             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+57        -->
+58        <meta-data
+58-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:37:9-39:33
+59            android:name="flutterEmbedding"
+59-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:38:13-44
+60            android:value="2" />
+60-->/Users/kanakprajapati/Desktop/X691/lobster-detection/android/app/src/main/AndroidManifest.xml:39:13-30
+61
+62        <provider
+62-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:11:9-19:20
+63            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+63-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:12:13-82
+64            android:authorities="com.example.lobster_detection.flutter.image_provider"
+64-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:13:13-74
+65            android:exported="false"
+65-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:14:13-37
+66            android:grantUriPermissions="true" >
+66-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:15:13-47
+67            <meta-data
+67-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:16:13-18:75
+68                android:name="android.support.FILE_PROVIDER_PATHS"
+68-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:17:17-67
+69                android:resource="@xml/flutter_image_picker_file_paths" />
+69-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:18:17-72
+70        </provider>
+71        <provider
+71-->[:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:8:9-16:20
+72            android:name="de.esys.esysfluttershare.EsysFlutterShareFileProvider"
+72-->[:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:9:13-81
+73            android:authorities="com.example.lobster_detection.fileprovider.github.com/orgs/esysberlin/esys-flutter-share"
+73-->[:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:10:13-110
+74            android:exported="false"
+74-->[:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:11:13-37
+75            android:grantUriPermissions="true" >
+75-->[:esys_flutter_share] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/esys_flutter_share/intermediates/library_manifest/release/AndroidManifest.xml:12:13-47
+76            <meta-data
+76-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:16:13-18:75
+77                android:name="android.support.FILE_PROVIDER_PATHS"
+77-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:17:17-67
+78                android:resource="@xml/esys_flutter_share_filepaths" />
+78-->[:image_picker] /Users/kanakprajapati/Desktop/X691/lobster-detection/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:18:17-72
+79        </provider>
+80    </application>
+81
+82</manifest>

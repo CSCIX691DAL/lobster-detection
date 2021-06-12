@@ -7,6 +7,7 @@ class splashPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Intro Page'),
+          backgroundColor: Colors.deepOrange,
         ),
         body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -40,6 +41,7 @@ class splashPage extends StatelessWidget {
                   );
                 },
                 child: Text('Close'),
+
               )
 
             ]
