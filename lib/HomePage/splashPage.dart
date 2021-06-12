@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lobster_detection/HomePage/MyHomePage.dart';
 
-class FirstScreen extends StatelessWidget {
+class splashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

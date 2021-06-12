@@ -1,6 +1,7 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
-import 'package:lobster_detection/HomePage/firstScreen.dart';
+import 'package:lobster_detection/HomePage/splashPage.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -28,18 +29,18 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyApp1(),
+      home: splashRouting(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 
-class MyApp1 extends StatefulWidget {
+class splashRouting extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp1> {
+class _MyAppState extends State<splashRouting> {
   @override
   void initState() {
     super.initState();
@@ -49,7 +50,7 @@ class _MyAppState extends State<MyApp1> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FirstScreen(),
+            builder: (context) => splashPage(),
           ),
         );
       },
