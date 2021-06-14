@@ -22,7 +22,7 @@ jobs:
         with: 
           channel: "stable"
       - run: |
-          cd ${{ lobster-detection/flutter-application/lobster_detection/ }}
+          cd ${{ lobster-detection/ }}
       - run: flutter packages get
       - run: flutter analyze
       - run: flutter test
