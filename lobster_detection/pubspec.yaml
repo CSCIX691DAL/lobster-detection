@@ -49,6 +49,7 @@ flutter:
   assets:
     - assets/intro_pg_lobster.png
     - assets/lobster.png
+    - help_page_notification.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

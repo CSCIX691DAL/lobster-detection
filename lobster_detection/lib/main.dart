@@ -25,7 +25,8 @@ class _MyAppState extends State<MyApp> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => FirstScreen(),
+            // change HelpPage back to FirstScreen
+            builder: (context) => HelpPage(),
           ),
         );
       },
@@ -35,6 +36,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
