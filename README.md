@@ -425,7 +425,30 @@ python3 flickr_scraper.py --search 'underwater lobster' --n 10 --download
 The utility will download the specified number of images and place them
 in a subdirectory of the flickr-scraper folder.
 
-### Annotating the images with Roboflow
+### Annotating the images with Roboflow:
+
+Annotation process:
+![](assets/lobster-pictures_files/roboflow-setup/setup1.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup2.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup3.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup4.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup5.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup6.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup7.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup8.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup9.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup10.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup11.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup12.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup13.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup14.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup15.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup16.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup17.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup18.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup19.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup20.png)
+![](assets/lobster-pictures_files/roboflow-setup/setup21.png)
 
 ### Working with the images in R:
 
