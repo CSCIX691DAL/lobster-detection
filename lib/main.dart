@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lobster_detection/HomePage/splashPage.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
+import 'package:lobster_detection/firstScreen.dart';
 import 'HomePage/MyHomePage.dart';
 
 void main() {
