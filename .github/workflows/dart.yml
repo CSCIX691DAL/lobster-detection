@@ -21,7 +21,8 @@ jobs:
       - uses: subosito/flutter-action@v1.5.3    # Subosito Repo from Marketplace for flutter actions
         with: 
           channel: "stable"
-          
+      - run: |
+          cd ${{ lobster-detection/flutter-application/lobster_detection/ }}
       - run: flutter packages get
       - run: flutter analyze
       - run: flutter test
@@ -39,9 +40,6 @@ jobs:
     - uses: subosito/flutter-action@v1.5.3    # Subosito Repo from Marketplace for flutter actions
       with: 
           channel: "stable"
-    - run: |
-          ls ${{ 
-          lobster-detection/flutter-application/lobster_detection/ }}
           
     - run: flutter clean
     - run: flutter pub get
