@@ -24,7 +24,7 @@ jobs:
       - run: |
           cd ${{ lobster-detection/flutter-application/lobster_detection/ }}
       - run: flutter packages get
-      - run: flutter analyze
+    #  - run: flutter analyze
       - run: flutter test
       
 # Building the ios app
