@@ -3,10 +3,10 @@ name: Flutter CI
 on:
   push:
     branches:
-      - main
+      - kanak-dev
   pull_request:
     branches: 
-      - main
+      - kanak-dev
 
 jobs:
   flutter_test:
