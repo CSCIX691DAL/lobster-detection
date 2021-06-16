@@ -1,0 +1,49 @@
+on:
+  push:
+    branches:
+      - dev-parth
+
+jobs:
+  build:
+    name: Build APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Install Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "2.x"
+          channel: "stable"
+
+      - name: Get Dependencies
+        run: flutter pub get
+
+      - name: Analyze Dart Code for Errors.
+        run: flutter analyze
+
+      - name: Test Project
+        run: flutter test
+
+      - name: Build Project
+        run: flutter build apk --debug --split-per-abi
+
+  #     - name: Upload build files
+  #      uses: actions/upload-artifact@v2
+  #     with:
+  #      path: build/app/outputs/apk/release/app-release/apk
+# Release APK
+#uses:
+
+#ios
+#jobs:
+# build:
+#  name: Build IPA
+#   runs-on:
