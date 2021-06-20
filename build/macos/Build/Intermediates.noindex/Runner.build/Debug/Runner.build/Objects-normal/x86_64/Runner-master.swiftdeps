@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)"
+options: "b251d679ac79d4b37d31b83b0ec95779"
+build_time: [1624229655, 828650000]
+inputs:
+  "/Users/kanakprajapati/Desktop/X691/lobster-detection/macos/Runner/MainFlutterWindow.swift": [1622578674, 338923815]
+  "/Users/kanakprajapati/Desktop/X691/lobster-detection/macos/Runner/AppDelegate.swift": [1622578674, 333397659]
+  "/Users/kanakprajapati/Desktop/X691/lobster-detection/macos/Flutter/GeneratedPluginRegistrant.swift": [1624229628, 855205039]

@@ -72,7 +72,7 @@ class _MyAppState extends State<splashRouting> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset('assets/lobster.png', height: 200.0),
+              Image.asset('lib/assets/losbter.png', height: 200.0),
 
               SizedBox(height: 50.0),
 
