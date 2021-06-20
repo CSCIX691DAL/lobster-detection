@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lobster_detection/firstScreen.dart';
+import 'firstScreen.dart';
 import 'home_page.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -26,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           context,
           MaterialPageRoute(
             // change HelpPage back to FirstScreen
-            builder: (context) => HelpPage(),
+            builder: (context) => Expansionpanel(),
           ),
         );
       },

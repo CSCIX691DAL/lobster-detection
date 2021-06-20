@@ -1,220 +1,237 @@
 import 'package:flutter/material.dart';
 import 'package:lobster_detection/help_page.dart';
 
-// testing out help page
-class HelpPage extends StatefulWidget {
-  @override
-  _HelpPageState createState() => _HelpPageState();
+// TESTING HELP PAGE ON FIRST SCREEN
+
+class Expansionpanel extends StatefulWidget {
+  Expansionpaneltate createState() =>  Expansionpaneltate();
 }
-
-class _HelpPageState extends State<HelpPage> {
-
-  List<Item> _data = generateItems(3);
-
-  Widget _buildListPanel() {
-    return ExpansionPanelList(
-      expansionCallback: (int index, bool isExpanded) {
-        setState(() {
-          _data[index].isExpanded = !isExpanded;
-        });
-      },
-      children : _data.map<ExpansionPanel>((Item item) {
-        return ExpansionPanel(
-          headerBuilder: (BuildContext context, bool isExpanded) {
-            return ListTile(
-              title: //Text(item.headerValue),
-              Text('Help'),
-            );
-          },
-          body: ListTile(
-            children: ListTile(
-              title: Text('hi')
-            )
-            //title: Text('hello'),
-            // trailing: Icon(Icons.minimize),
-            // onTap: () {
-            //   setState(() {
-            //     // _data.removeWhere((currentItem) => item == currentItem);
-            //   });
-            // },
-          ),
-          isExpanded: item.isExpanded
-        );
-      }).toList(),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold (
-      appBar: AppBar(
-        title: Text('Help',
-        // WHY IS THIS NOT MOVING TO THE LEFT
-        textAlign: TextAlign.left,),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: _buildListPanel(),
-        )
-      ),
-    );
-  }
-}
-
-class Item {
-
-  String expandedValue;
-  String headerValue;
+class NewItem {
   bool isExpanded;
-
-  Item({this.expandedValue, this.headerValue, this.isExpanded = false});
+  final String header;
+  final Widget body;
+  final Icon iconpic;
+  NewItem(this.isExpanded, this.header, this.body, this.iconpic);
 }
+class Expansionpaneltate extends State<Expansionpanel> {
+  // things needed for contact us fill-out form
+  String _name;
+  String _email;
+  String _message;
 
-List<Item> generateItems(int numberOfItems) {
-  return List.generate(numberOfItems, (int index) {
-    return Item(
-      headerValue: 'Camera Usage and Access',
-      expandedValue: 'Press Ok to grant us access to your camera for detection'
-      // use if else here (if index == 0, header value: "Camera Usage and Access
-        /*
-          return headerValue: 'Camera Usage and Access',
-          return expandedValue: 'Press Ok to grant us access to your camera for detection'}
-        else if(index==1) {
-          return headerValue: 'FAQ',
-          return expandedValue: 'Q. Is my data saved?/nA. No. Lobsters that you will detect using our app will not be saved.'
-      }
-        else {
-          return headerValue: 'Contact Us'
-          return expandedValue: 'If you have any questions about our app or would like to give a feedback, fill out the form below and we will get back to you as soon as possible!'
-      }
+  List<NewItem> items = <NewItem>[
+    NewItem(
+        false, // isExpanded ?
+        'Camera Usage and Access', // header
+        Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      // ADD PADDING AROUND EACH ROW OF TXT
 
-         */
-    );
-  });
-}
-
-
-
-
-/*
-class FirstScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-  //testing out help page
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Help Page'),
-      ),
-      body: Column(
-        children: [
-          Divider(
-            height: 1,
-            color: Colors.redAccent,
-          ),
-          ExpansionTile(
-            backgroundColor: Colors.red[50],
-            title: Text(
-              'Camera Access and Usage',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Press Ok to grant us access to your camera for detection.',
-                  style: TextStyle(fontSize: 15),
-                  maxLines: 3,
-                  softWrap: true,
-                  textAlign: TextAlign.start,
-                ),
-              ),
-
-            ],
-          ),
-        ],
-      ),
-    );
-
-
-    /*
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Intro Page'),
-        ),
-        body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+                      // add photo grant access
+                      Text('PHOTO HERE'),
+                      Text('Press Ok to grant us access to your camera for detection',
+                      style: TextStyle(
+                        fontSize: 17.0,
+                      ))
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text('Point your camera and aim your focus at the target lobster.',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                            fontSize: 17.0,
+                          )),
+                      // add photo grant access
+                      Image.asset('assets/intro_pg_lobster.png'),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        // flash on photo
+                        Text('PHOTO HERE'),
+                        Text('Flash on',
+                        style: TextStyle(
+                          fontSize: 17.0,
+                        )),
+                        // flash off photo
+                        Text('PHOTO HERE'),
+                        Text('Flash Off',
+                        style: TextStyle(
+                          fontSize: 17.0,
+                        ))
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text('PHOTO HERE'),
+                      Text('Press to flip your camera',
+                      style: TextStyle(
+                        fontSize: 17.0,
+                      ))
+                    ]
+                  )
+                ]
+            )
+        ), // body
+        Icon(Icons.camera_alt) // iconPic
+    ),
+    NewItem(
+        false,
+        'FAQ',
+        Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
             children: <Widget>[
-              Text('Welcome to \nLobster Detection',
-                  textAlign: TextAlign.center,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Text('Q. Is my data saved?',
                   style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 35.0
+                    fontSize: 17.0,
                   )),
-              Image.asset('assets/intro_pg_lobster.png',height:300.0),
-
-              Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida facilisis facilisis. '
-                  'Sed feugiat erat ut est rutrum mattis.'
-                  'In ultriciesligula sed nisi tempus, nec dignissim diam blandit. ',
-                  textAlign: TextAlign.center,
+                  Text('A. No. Lobsters you detected using our app will not be saved.',
                   style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 20.0
-              )),
-              ElevatedButton(
-                style: ButtonStyle(
-                  foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                ),
-                onPressed: () { },
-                child: Text('Close'),
+                    fontSize: 17.0,
+                  ))
+                ]
               )
             ]
           )
-        );
-     */
+        ),
+        Icon(Icons.question_answer)
+    ),
+    NewItem(
+        false,
+        'Contact Us',
+        Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Text('If you have any questions about our app or would like to'
+                      ' give a feedback, fill out the form below and we will get back to you as soon as possible!'),
 
+                  // HOW TO CREATE PADDING IN BETWEEN THE TEXT FORMS
 
+                  TextFormField(
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.person),
+                      hintText: "Enter your full name",
+                      labelText: 'Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                    ),
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.email),
+                      hintText: "Enter your email",
+                      labelText: "Email",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      // icon: ?
+                    ),
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.multiline,
+                    maxLines: 5,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.messenger),
+                      hintText: "Please enter your message here",
+                      labelText: "Message", // HOW TO MAKE THIS TOP LEFT (RN IT'S AT MIDDLE LEFT)
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      // icon: ?
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+
+                        // NOT WORKING
+
+                        print('Submitted!');
+                      },
+                      child: Text('Submit'),
+                    )
+                  )
+                ],
+              )
+            ]
+          )
+        ),
+        Icon(Icons.contact_phone)
+    )
+  ];
+  ListView List_Criteria;
+  Widget build(BuildContext context) {
+    List_Criteria = ListView(
+      children: [
+        Padding(
+          padding: EdgeInsets.all(10.0),
+          child: ExpansionPanelList(
+            expansionCallback: (int index, bool isExpanded) {
+              setState(() {
+                items[index].isExpanded = !items[index].isExpanded;
+              });
+            },
+            children: items.map((NewItem item) {
+              return ExpansionPanel(
+                headerBuilder: (BuildContext context, bool isExpanded) {
+                  return  ListTile(
+                      leading: item.iconpic,
+                      title:  Text(
+                        item.header,
+                        textAlign: TextAlign.left,
+                        style:  TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      )
+                  );
+                },
+                isExpanded: item.isExpanded,
+                body: item.body,
+              );
+            }).toList(),
+          ),
+        ),
+      ],
+    );
+    Scaffold scaffold =  Scaffold(
+      appBar:  AppBar(
+        title:  Text("Help"),
+        // how to move this to the left
+      ),
+      body: List_Criteria,
+    );
+    return scaffold;
   }
 }
 
-class MyStatelessWidget extends StatelessWidget {
-  const MyStatelessWidget({Key key}) : super(key:key);
-
-  @override
-
-  Widget build(BuildContext context) {
-    ElevatedButton(
-      onPressed: () {
-        // wouldn't direct to help page; needs to be fixed
-        /*
-        MaterialPageRoute(
-          builder: (context) => HelpPage(),
-        );
-
-         */
-      },
-      child: Text('Got it'),
-    );
-  }
-  /*
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {
-        // take me to a new page
-      },
-      child: const Text('Got It'),
-    );
-  }
-   */
-
-}
 
 
 
- */
+
+
+
+
 
 
 
