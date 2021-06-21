@@ -101,9 +101,8 @@ Real-time object detection in Flutter using [camera](https://pub.dartlang.org/pa
   - Roboflow
 
 - Object Detection
-  - SSD MobileNet
   - Yolov4 Darknet
-
+  -TFlite
 
 ## Usage:
 
