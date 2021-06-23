@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:lobster_detection/HomePage/SplashScreen.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
