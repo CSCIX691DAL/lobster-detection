@@ -1,7 +1,9 @@
 import 'package:camera/Camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lobster_detection/HomePage/Camera/CameraScreen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 List<CameraDescription> cameras; // camera.dart file
 
@@ -54,8 +56,13 @@ class _HomePageWidgetState extends State<MyHomePage> {
       // For temporary purpose, I am using floating action button for now,
       // but later it can be removed and changed to camera button
 
-      body:
-          const Center(child: Text('Press the button below to access Camera')),
+      body: Center(
+          child: Text(
+        'Press the button below to access Camera',
+        style: GoogleFonts.robotoMono(
+          textStyle: TextStyle(fontSize: 14),
+        ),
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
