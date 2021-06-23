@@ -15,7 +15,7 @@ class splashPage extends StatelessWidget {
               Text('Welcome to \nLobster Detection',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontFamily: 'Montserrat', fontSize: 35.0)),
-              Image.asset('../../assets/icons/lobster2.png', height: 300.0),
+              Image.asset('assets/icons/lobster2.png', height: 300.0),
               Text(
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida facilisis facilisis. '
                   'Sed feugiat erat ut est rutrum mattis.'
