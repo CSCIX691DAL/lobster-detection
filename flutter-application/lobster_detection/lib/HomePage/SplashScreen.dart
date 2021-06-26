@@ -16,6 +16,7 @@ class splashPage extends StatelessWidget {
             style: TextStyle(color: Colors.white70),
           ),
           backgroundColor: Colors.deepOrange,
+          automaticallyImplyLeading: false,
         ),
         body:
             Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <
