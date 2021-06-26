@@ -1,103 +1,74 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:tflite/tflite.dart';
+import 'package:lobster_detection/HomePage/SplashScreen.dart';
+import 'dart:async';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData.dark(),
-    home:
-        HomePage(), // Every instance of HomePage will have to configured to other pages
-  ));
+  runApp(MyApp());
 }
 
-class HomePage extends StatefulWidget {
+class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
-  _HomePageState createState() => _HomePageState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Lobster Detection',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        // primarySwatch: Colors.deepOrange,
+
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.deepOrange,
+        ).copyWith(
+          secondary: Colors.red,
+        ),
+        textTheme: const TextTheme(bodyText2: TextStyle(color: Colors.black)),
+      ),
+      home: splashRouting(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
 }
 
-class _HomePageState extends State<HomePage> {
-  bool _isLoading = true;
-  late List _output;
-  final _picker = ImagePicker();
-  var _image = File('');
+class splashRouting extends StatefulWidget {
+  _MyAppState createState() => _MyAppState();
+}
 
+class _MyAppState extends State<splashRouting> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _isLoading = true;
-    // ignore: unnecessary_statements
-    loadModel().then((value) {
-      setState(() {
-        _isLoading = false;
-      });
-    });
+    Future.delayed(
+      Duration(seconds: 5),
+      () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => splashPage(),
+          ),
+        );
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: _isLoading
-          ? Container(
-              alignment: Alignment.center,
-              child: CircularProgressIndicator(),
-            )
-          : Container(
-              child: Column(
-                children: <Widget>[
-                  _image == null ? Container() : Image.file(_image),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  _output == null
-                      ? Text("Ready to Detect...")
-                      : Text(_output[0]),
-                ],
-              ),
-            ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          chooseImage();
-        },
-        child: Icon(Icons.image),
-      ),
-    );
-  }
-
-  chooseImage() async {
-    var image = await _picker.getImage(source: ImageSource.gallery);
-    if (image == null)
-      return null;
-    else
-      _image = File(image.path);
-    setState(() {
-      _isLoading = true;
-      _image = image as File;
-    });
-    runModelOnImage(image);
-  }
-
-  runModelOnImage(image) {
-    var image;
-    Tflite.runModelOnImage(
-        path: image.path,
-        numResults: 1,
-        imageMean: 127.5,
-        imageStd: 127.5,
-        threshold: 0.5);
-    setState(() {
-      _isLoading = false;
-      _image = image;
-    });
-  }
-
-  loadModel() async {
-    await Tflite.loadModel(
-        model: "assets/lobster_detection.tflite", labels: "assets/labels.txt");
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+          Image.asset('assets/icons/lobster.png', height: 200.0),
+          SizedBox(height: 50.0),
+          SpinKitThreeBounce(color: Colors.red),
+        ]));
   }
 }
