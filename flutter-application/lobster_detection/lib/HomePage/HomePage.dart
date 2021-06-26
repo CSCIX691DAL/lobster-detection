@@ -24,7 +24,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.deepOrange,
         iconTheme: IconThemeData(color: Colors.white),
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
