@@ -26,7 +26,7 @@ class splashPage extends StatelessWidget {
               style:
                   GoogleFonts.robotoMono(textStyle: TextStyle(fontSize: 27))),
 
-          Image.asset('assets/icons/lobster2.png', height: deviceHeight * 0.37),
+          Image.asset('assets/icons/256.png', height: deviceHeight * 0.37),
 
           Container(
               margin: EdgeInsets.only(bottom: 10),
@@ -60,7 +60,7 @@ class splashPage extends StatelessWidget {
                 );
               },
               child: Text(
-                'Close',
+                'Proceed',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.robotoMono(
                     textStyle: TextStyle(fontSize: 17, color: Colors.white70)),
