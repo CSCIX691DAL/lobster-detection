@@ -18,55 +18,57 @@ class splashPage extends StatelessWidget {
           backgroundColor: Colors.deepOrange,
           automaticallyImplyLeading: false,
         ),
-        body:
-            Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: <
-                Widget>[
-          Text('Welcome to \nLobster Detection',
-              textAlign: TextAlign.center,
-              style:
-                  GoogleFonts.robotoMono(textStyle: TextStyle(fontSize: 27))),
-
-          Image.asset('assets/icons/256.png', height: deviceHeight * 0.37),
-
-          Container(
-              margin: EdgeInsets.only(bottom: 10),
-              child: Text(
-                  'This app makes use of Machine Learning to recognize Lobsters.',
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Text('Welcome to \nLobster Detection',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.robotoMono(
-                      textStyle: TextStyle(fontSize: 15)))),
+                      textStyle: TextStyle(fontSize: 27))),
 
-          // Button
-          Container(
-            width: (deviceWidth * 0.37),
-            height: (deviceHeight * 0.057),
-            margin: EdgeInsets.only(
-              bottom: 9,
-            ),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                elevation: 10,
-                shadowColor: Colors.black,
-                side: BorderSide(width: 0.03),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(3)),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyHomePage(),
+              Image.asset('assets/icons/256.png', height: deviceHeight * 0.37),
+
+              Container(
+                  margin: EdgeInsets.only(bottom: 10),
+                  child: Text(
+                      'This app makes use of Machine Learning to recognize Lobsters.',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.robotoMono(
+                          textStyle: TextStyle(fontSize: 15)))),
+
+              // Button
+              Container(
+                width: (deviceWidth * 0.37),
+                height: (deviceHeight * 0.057),
+                margin: EdgeInsets.only(
+                  bottom: 9,
+                ),
+                child: ElevatedButton(
+                  key: Key('proceedButton'),
+                  style: ElevatedButton.styleFrom(
+                    elevation: 10,
+                    shadowColor: Colors.black,
+                    side: BorderSide(width: 0.03),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(3)),
                   ),
-                );
-              },
-              child: Text(
-                'Proceed',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.robotoMono(
-                    textStyle: TextStyle(fontSize: 17, color: Colors.white70)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyHomePage(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'Proceed',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.robotoMono(
+                        textStyle:
+                            TextStyle(fontSize: 17, color: Colors.white70)),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ]));
+            ]));
   }
 }

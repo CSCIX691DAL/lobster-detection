@@ -2,15 +2,12 @@ import 'dart:io';
 import 'package:camera/Camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lobster_detection/HomePage/Camera/CameraScreen.dart';
 import 'package:image_picker/image_picker.dart';
 
 File _imageFile;
 
 List<CameraDescription> cameras; // camera.dart file
-
-
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
@@ -21,10 +18,11 @@ class MyHomePage extends StatefulWidget {
 
 class _HomePageWidgetState extends State<MyHomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  
+
   Future selectImage() async {
     final picker = ImagePicker();
-    var image = await picker.getImage(source: ImageSource.gallery, maxHeight: 300);
+    var image =
+        await picker.getImage(source: ImageSource.gallery, maxHeight: 300);
     setState(() {
       if (image != null) {
         _imageFile = File(image.path);
@@ -71,7 +69,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
       ), //Appbar
 
       body: Center(
-          child: Column(
+        child: Column(
           children: [
             Container(
               margin: EdgeInsets.all(15),
@@ -91,16 +89,18 @@ class _HomePageWidgetState extends State<MyHomePage> {
                   ),
                 ],
               ),
-              child: (_imageFile != null)?
-              Image.file(_imageFile) :
-              Image.asset('assets/icons/sample_picture.jpg'),
+              child: (_imageFile != null)
+                  ? Image.file(_imageFile)
+                  : Image.asset('assets/icons/sample_picture.jpg'),
             ),
-            RaisedButton(
-                onPressed: (){
-                  selectImage();
-                },
-                child: Icon(Icons.file_upload_outlined,),
+            ElevatedButton(
+              onPressed: () {
+                selectImage();
+              },
+              child: Icon(
+                Icons.file_upload_outlined,
               ),
+            ),
           ],
         ),
       ),
