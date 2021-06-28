@@ -50,6 +50,9 @@ flutter:
     - assets/intro_pg_lobster.png
     - assets/lobster.png
     - help_page_notification.png
+    - flash_on.png
+    - flash_off.png
+    - flip_camera.png
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

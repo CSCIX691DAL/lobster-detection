@@ -19,12 +19,12 @@ class Expansionpaneltate extends State<Expansionpanel> {
   String _email;
   String _message;
 
-  List<NewItem> items = <NewItem>[
+    List<NewItem> items = <NewItem>[
     NewItem(
         false, // isExpanded ?
         'Camera Usage and Access', // header
         Padding(
-            padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(20.0),
             child: Column(
                 children: <Widget>[
                   Row(
@@ -33,36 +33,49 @@ class Expansionpaneltate extends State<Expansionpanel> {
                       // ADD PADDING AROUND EACH ROW OF TXT
 
                       // add photo grant access
-                      Text('PHOTO HERE'),
-                      Text('Press Ok to grant us access to your camera for detection',
-                      style: TextStyle(
-                        fontSize: 17.0,
-                      ))
+                      Image.asset('help_page_notification.png', height: 100.0, width: 130.0),
+                      Flexible(
+                        child: new Text('Press Ok to grant us access to your camera for detection',
+                            style: TextStyle(
+                              fontSize: 17.0,
+                            ))
+                      )
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
+                      Image.asset('assets/intro_pg_lobster.png', height: 100.0),
+                      Flexible(
+                        child: new Text('Point your camera and aim your focus at the target lobster.',
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              fontSize: 17.0,
+                            )),
+                      ),
+                      /*
                       Text('Point your camera and aim your focus at the target lobster.',
                           textAlign: TextAlign.right,
                           style: TextStyle(
-                            fontSize: 17.0,
+                            fontSize: 13.0,
                           )),
+
+                       */
                       // add photo grant access
-                      Image.asset('assets/intro_pg_lobster.png'),
+
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         // flash on photo
-                        Text('PHOTO HERE'),
+                        Image.asset('flash_on.png', height: 80.0),
                         Text('Flash on',
                         style: TextStyle(
                           fontSize: 17.0,
                         )),
                         // flash off photo
-                        Text('PHOTO HERE'),
+                        Image.asset('flash_off.png', height: 80.0),
                         Text('Flash Off',
                         style: TextStyle(
                           fontSize: 17.0,
@@ -72,7 +85,7 @@ class Expansionpaneltate extends State<Expansionpanel> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      Text('PHOTO HERE'),
+                      Image.asset('flip_camera.png', height: 70.0),
                       Text('Press to flip your camera',
                       style: TextStyle(
                         fontSize: 17.0,
@@ -84,6 +97,7 @@ class Expansionpaneltate extends State<Expansionpanel> {
         ), // body
         Icon(Icons.camera_alt) // iconPic
     ),
+
     NewItem(
         false,
         'FAQ',
@@ -163,10 +177,7 @@ class Expansionpaneltate extends State<Expansionpanel> {
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                     child: ElevatedButton(
                       onPressed: () {
-
-                        // NOT WORKING
-
-                        print('Submitted!');
+                        // pop up "Submitted"
                       },
                       child: Text('Submit'),
                     )
