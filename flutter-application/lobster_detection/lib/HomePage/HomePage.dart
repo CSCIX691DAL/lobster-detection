@@ -1,7 +1,7 @@
 import 'package:camera/Camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lobster_detection/HomePage/Camera/CameraScreen.dart';
+import 'package:camera/camera.dart';
 
 List<CameraDescription> cameras; // camera.dart file
 
@@ -55,19 +55,28 @@ class _HomePageWidgetState extends State<MyHomePage> {
       // but later it can be removed and changed to camera button
 
       body:
-          const Center(child: Text('Press the button below to access Camera')),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => CameraScreen(cameras),
-            ),
-          );
-        },
-        child: const Icon(Icons.photo_camera),
-        backgroundColor: Colors.red,
-      ),
+        Stack(
+          children: <Widget>[
+            // Camera
+
+          ],
+        )
+          // const Center(child: Text('Press the button below to access Camera')),
+
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.push(
+      //       context,
+      //       MaterialPageRoute(
+      //         builder: (context) => CameraScreen(cameras),
+      //       ),
+      //     );
+      //   },
+      //   child: const Icon(Icons.photo_camera),
+      //   backgroundColor: Colors.red,
+      // ),
+
+
     ); // Scaffold
   } // Widget
 

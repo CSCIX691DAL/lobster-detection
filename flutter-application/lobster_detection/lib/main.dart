@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lobster_detection/HomePage/SplashScreen.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-void main() {
+void main() async {
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);  // Forces User to use the Portrait Up mode
   runApp(MyApp());
 }
 
