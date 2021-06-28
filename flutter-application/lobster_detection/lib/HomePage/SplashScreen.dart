@@ -26,7 +26,11 @@ class splashPage extends StatelessWidget {
                   style: GoogleFonts.robotoMono(
                       textStyle: TextStyle(fontSize: 27))),
 
-              Image.asset('assets/icons/256.png', height: deviceHeight * 0.37),
+              Image.asset(
+                'assets/icons/256.png',
+                height: deviceHeight * 0.37,
+                key: Key('image'),
+              ),
 
               Container(
                   margin: EdgeInsets.only(bottom: 10),
