@@ -34,8 +34,8 @@ class _CameraScreenState extends State<CameraScreen> {
     switch (_model) {
       case ssd:
         modelResult = await Tflite.loadModel(
-            labels: "assets/", // Add the location of .txt model in the quotes
-            model: "assets/" // Add the location of .tflite model in the quotes
+            labels: "assets/labels.txt", // Add the location of .txt model in the quotes
+            model: "assets/lobster_detection" // Add the location of .tflite model in the quotes
             );
     } // switch
     print(modelResult);
