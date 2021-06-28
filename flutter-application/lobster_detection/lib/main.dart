@@ -55,7 +55,10 @@ class _MyAppState extends State<splashRouting> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-          Image.asset('assets/icons/lobster.png', height: 200.0),
+          Image.asset(
+            'assets/icons/lobster.png',
+            height: 200.0,
+          ),
           SizedBox(height: 50.0),
           SpinKitThreeBounce(color: Colors.red),
         ]));

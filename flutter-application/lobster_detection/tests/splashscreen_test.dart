@@ -9,7 +9,7 @@ void main() {
 
     await tester.pumpWidget(MaterialApp(home: splashPage()));
 
-    // await tester.pump();
+    // check outputs.
     expect(find.text('Welcome to \nLobster Detection'), findsOneWidget);
     expect(imageWidget, findsOneWidget);
     expect(

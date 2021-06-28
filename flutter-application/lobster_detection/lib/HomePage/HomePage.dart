@@ -42,6 +42,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
+            key: Key('flashIcon'),
             onPressed: () {
               print('IconButton pressed ...');
             },
@@ -53,6 +54,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
             iconSize: 30,
           ),
           IconButton(
+            key: Key('helpIcon'),
             onPressed: () {
               print('IconButton pressed ...');
             },
@@ -72,6 +74,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
         child: Column(
           children: [
             Container(
+              key: Key('imageContainer'),
               margin: EdgeInsets.all(15),
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
@@ -94,6 +97,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
                   : Image.asset('assets/icons/sample_picture.jpg'),
             ),
             ElevatedButton(
+              key: Key('uploadButton'),
               onPressed: () {
                 selectImage();
               },
@@ -105,6 +109,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        key: Key('camereButton'),
         onPressed: () {
           Navigator.push(
             context,
