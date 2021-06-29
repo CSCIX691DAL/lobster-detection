@@ -3,11 +3,25 @@ import 'package:flutter/services.dart';
 import 'package:lobster_detection/HomePage/SplashScreen.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:camera/camera.dart';
 
-void main() async {
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);  // Forces User to use the Portrait Up mode
+// Camera
+List<CameraDescription> cameras;
+
+
+Future<void> main() async {
+
+  // WidgetFlutterBinding is like a glue that binds the framework to the Flutter engine.
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);  // Forces User to use the Portrait up mode
+  cameras = await availableCameras();   // Will wait until camera is available
   runApp(MyApp());
 }
+
+// void main() async {
+//   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);  // Forces User to use the Portrait Up mode
+//   runApp(MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
