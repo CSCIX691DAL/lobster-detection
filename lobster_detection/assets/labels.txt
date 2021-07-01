@@ -1,2 +1,4 @@
 0 Atlantic Lobster
 1 Spiny Lobster
+2 Slipper Lobster
+3 Underwater Lobster
