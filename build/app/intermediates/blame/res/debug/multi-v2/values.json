@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Magenta\\Documents\\Coursework\\CSCI2691 Introductory Project\\group2\\tflitetest\\object_detection\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Magenta\\Documents\\Coursework\\CSCI2691 Introductory Project\\group2\\group-development\\lobster-detection\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Magenta\\Documents\\Coursework\\CSCI2691 Introductory Project\\group2\\tflitetest\\object_detection\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\Magenta\\Documents\\Coursework\\CSCI2691 Introductory Project\\group2\\group-development\\lobster-detection\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
