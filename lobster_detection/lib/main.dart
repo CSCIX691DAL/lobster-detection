@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Detect Room Color',
+      title: 'Lobster Detection Application',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DetectScreen(title: 'Detect Room Color'),
+      home: DetectScreen(title: 'Lobster Detection Application'),
     );
   }
 }
