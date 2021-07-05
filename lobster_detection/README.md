@@ -113,8 +113,11 @@ create the CameraController and finally start the ImageStream. Outside of the fu
 ```
 Create a method called _initializeCamera(), and initialize the camera _controller inside it:
 
-```static void initializeCamera() async {
+```
+
+  static void initializeCamera() async {
     AppHelper.log("_initializeCamera", "Initializing camera..");
+
 
     camera = CameraController(
         await _getCamera(_direction),
