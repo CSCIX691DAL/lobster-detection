@@ -29,6 +29,7 @@ class TFLiteHelper {
             }).toList(),
             numResults: 5)
         .then((value) {
+
       if (value.isNotEmpty) {
         AppHelper.log("classifyImage", "Results loaded. ${value.length}");
 
@@ -38,6 +39,10 @@ class TFLiteHelper {
         value.forEach((element) {
           _outputs.add(Result(
               element['confidence'], element['index'], element['label']));
+
+              if(element['confidence'] > .3){
+                //AppHelper.log("High Confidence", "${element['label']}");
+              }
 
           AppHelper.log("classifyImage",
               "${element['confidence']} , ${element['index']}, ${element['label']}");
@@ -57,3 +62,7 @@ class TFLiteHelper {
     tfLiteResultsController.close();
   }
 }
+
+
+
+

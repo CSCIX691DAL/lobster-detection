@@ -53,6 +53,7 @@ class _DetectScreenPageState extends State<DetectScreen>
       setState(() {
         //Set bit to false to allow detection again
         CameraHelper.isDetecting = false;
+        //showAlertDialog(context);  
       });
     }, onDone: () {
 
@@ -60,6 +61,7 @@ class _DetectScreenPageState extends State<DetectScreen>
       AppHelper.log("listen", error);
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +98,19 @@ class _DetectScreenPageState extends State<DetectScreen>
     super.dispose();
   }
 
+
+
   Widget _buildResultsWidget(double width, List<Result> outputs) {
+
+    if(outputs != null){
+      for(int i = 0; i < outputs.length; i++) {
+        if(outputs[i].confidence > .2){
+          AppHelper.log("High Confidence", outputs[i].label);
+          showAlertDialog(context);
+        }
+      }
+    }
+    
     return Positioned.fill(
       child: Align(
         alignment: Alignment.bottomCenter,
@@ -126,7 +140,8 @@ class _DetectScreenPageState extends State<DetectScreen>
                                   lineHeight: 14.0,
                                   percent: outputs[index].confidence,
                                   progressColor: _colorTween.value,
-                                )),
+                                )
+                                ),
                         Text(
                           "${(outputs[index].confidence * 100.0).toStringAsFixed(2)} %",
                           style: TextStyle(
@@ -155,3 +170,45 @@ class _DetectScreenPageState extends State<DetectScreen>
         .animate(_colorAnimController);
   }
 }
+
+class MyAlert extends StatelessWidget {  
+  @override  
+  Widget build(BuildContext context) {  
+    return Padding(  
+      padding: const EdgeInsets.all(20.0),  
+      child: ElevatedButton(  
+        child: Text('Show alert'),  
+        onPressed: () {  
+          showAlertDialog(context);  
+        },  
+      ),  
+    );  
+  }  
+}  
+  
+showAlertDialog(BuildContext context) {  
+  // Create button  
+  Widget okButton = TextButton(  
+    child: Text("OK"),  
+    onPressed: () {  
+      Navigator.of(context).pop();  
+    },  
+  );  
+  
+  // Create AlertDialog  
+  AlertDialog alert = AlertDialog(  
+    title: Text("Simple Alert"),  
+    content: Text("This is an alert message."),  
+    actions: [  
+      okButton,  
+    ],  
+  );  
+  
+  // show the dialog  
+  showDialog(  
+    context: context,  
+    builder: (BuildContext context) {  
+      return alert;  
+    },  
+  );  
+}  
