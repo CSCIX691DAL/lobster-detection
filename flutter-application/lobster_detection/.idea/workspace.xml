@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="509ac742-733b-4b8d-8faa-5a80e005dd12" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/HomePage/HomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/HomePage/HomePage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="kanak-new" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/CSCIX691DAL/lobster-detection" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1udMgOjBIdfwGjf7FOrNqUgGHAN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="509ac742-733b-4b8d-8faa-5a80e005dd12" name="Default Changelist" comment="" />
+      <created>1624991123268</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624991123268</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="376" y="127" width="732" height="575" key="AVDManager" timestamp="1624992629363">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state x="376" y="127" width="732" height="575" key="AVDManager/0.25.1280.775@0.25.1280.775" timestamp="1624992629363" />
+    <state width="1238" height="195" key="GridCell.Tab.0.bottom" timestamp="1625618316365">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="1238" height="195" key="GridCell.Tab.0.bottom/0.25.1280.775@0.25.1280.775" timestamp="1625618316365" />
+    <state width="1238" height="195" key="GridCell.Tab.0.center" timestamp="1625618316364">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="1238" height="195" key="GridCell.Tab.0.center/0.25.1280.775@0.25.1280.775" timestamp="1625618316364" />
+    <state width="1238" height="195" key="GridCell.Tab.0.left" timestamp="1625618316341">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="1238" height="195" key="GridCell.Tab.0.left/0.25.1280.775@0.25.1280.775" timestamp="1625618316341" />
+    <state width="1238" height="195" key="GridCell.Tab.0.right" timestamp="1625618316365">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state width="1238" height="195" key="GridCell.Tab.0.right/0.25.1280.775@0.25.1280.775" timestamp="1625618316365" />
+    <state x="341" y="167" width="597" height="490" key="find.popup" timestamp="1625018677308">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state x="341" y="167" width="597" height="490" key="find.popup/0.25.1280.775@0.25.1280.775" timestamp="1625018677308" />
+    <state x="387" y="129" key="git4idea.branch.GitSmartOperationDialog" timestamp="1625017319470">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state x="387" y="129" key="git4idea.branch.GitSmartOperationDialog/0.25.1280.775@0.25.1280.775" timestamp="1625017319470" />
+    <state x="407" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1624992267693">
+      <screen x="0" y="25" width="1280" height="775" />
+    </state>
+    <state x="407" y="124" width="670" height="676" key="search.everywhere.popup/0.25.1280.775@0.25.1280.775" timestamp="1624992267693" />
+  </component>
+</project>
