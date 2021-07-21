@@ -31,9 +31,11 @@
 4. [Technical Features](#technicalFeatures)
 5. [User Stories](#userStories)
 6. [Issues](#issues)
-7. [Lessons Learned](#lessonsLearned)
-8. [Further Development Recommendation](#furtherDevelopmentRecommendation)
-9. References
+7. [Risks](#risks)
+8. [Lessons Learned](#lessonsLearned)
+9.  [Further Development Recommendation](#furtherDevelopmentRecommendation) 
+10. [Project Signoff](#projectSignOff) 
+11. [References](#references) 
 
 
 ## Project Overview <a name="projectOveriew"></a>
@@ -66,36 +68,40 @@
 
 
 
-## Setup
+## Setup <a name="setup"> </a>
 
-## Features
 
-## Issues
+## User Features <a name="userFeatures"> </a>
 
-## Risks
 
-## User Stories
+## Technical Features <a name="technicalFeatures"> </a>
 
-## Lessons Learned
 
-## Further Development Recommendation
+## User Stories <a name="userStories"> </a>
 
-## Project Sign off
 
-## References
+## Issues <a name="issues"> </a>
 
-# Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University 
 
-![Team Logo](assets/icons/main.svg)
+## Risks <a name="risks"> </a>
 
-## Background
 
-### Team Members:
-- Kanak Prajapati
-- Kayleen Sung
-- Liam Cormack
-- Liam Osler
-- Shawn Shahin Azar
+## Lessons Learned <a name="lessonsLearned"> </a>
+
+
+## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
+
+
+## Project Sign off <a name="projectSignOff"> </a>
+
+
+## References <a name="references"> </a>
+
+
+
+
+
+-----------------------------------------------------------------------------------------
 
 
 ### Project Requirements:
