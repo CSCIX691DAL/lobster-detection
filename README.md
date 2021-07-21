@@ -2,6 +2,92 @@
 
 ![Team Logo](assets/icons/main.svg)
 
+## Abstract
+
+## Background
+
+### Team Members:
+- Kanak Prajapati
+- Kayleen Sung
+- Liam Cormack
+- Liam Osler
+- Shawn Shahin Azar
+
+
+# Table of Contents
+
+1. [Project Overview](#projectOveriew)
+    1. [Description](#description)
+    2. [Goal of Project](#goal)
+    3. [Purpose](#purpose) 
+    4. [Technology Stack](#technologyStack)
+    5. [Purpose](#purpose)
+    6. [Intended Users](#intendedUsers)
+    7. [Project Value](#projectValue)
+    8. [Measurable Organizational Value](#measurableOrganizationalValue)
+
+2. [Setup](#setup)
+3. [User Features](#userFeatures)
+4. [Technical Features](#technicalFeatures)
+5. [User Stories](#userStories)
+6. [Issues](#issues)
+7. [Lessons Learned](#lessonsLearned)
+8. [Further Development Recommendation](#furtherDevelopmentRecommendation)
+9. References
+
+
+## Project Overview <a name="projectOveriew"></a>
+
+
+### Description <a name="description"></a>
+
+
+### Goal of Project <a name="goal"></a>
+
+
+### Purpose <a name="purpose"></a>
+
+
+### Technology Stack <a name="technologyStack"></a>
+
+
+### Purpose <a name="purpose"></a>
+
+
+### Intended Users <a name="intendedUsers"></a>
+
+
+
+### Project Value <a name="projectValue"> </a>
+
+
+
+### Measurable Organizational Value <a name="measurableOrganizationalValue"> </a>
+
+
+
+## Setup
+
+## Features
+
+## Issues
+
+## Risks
+
+## User Stories
+
+## Lessons Learned
+
+## Further Development Recommendation
+
+## Project Sign off
+
+## References
+
+# Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University 
+
+![Team Logo](assets/icons/main.svg)
+
 ## Background
 
 ### Team Members:
