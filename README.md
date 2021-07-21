@@ -78,8 +78,10 @@ Flutter
 Clone the repository from git: 
 
 ```bash
-git clone 
+git clone https://github.com/CSCIX691DAL/lobster-detection.git
 ```
+
+You will find that the project has a directory and file structure like this:
 
 ```bash
 .
