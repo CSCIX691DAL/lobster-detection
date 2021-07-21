@@ -282,7 +282,7 @@ This Kaggle imagery set was used in training one version of the object recogniti
 
 
 
-## Training a TensorFlow tflite model with Google's Teachable Machine (Implemented Approach)
+## Training a TensorFlow tflite model with Google's Teachable Machine (Implemented Approach):
 
 Click the "Get started" button in the upper right:
 ![](assets/teachable-machine-setup/tm-1.png)
@@ -330,16 +330,131 @@ This will be the contents of the unzipped file, the tflite model and a text file
 ![](assets/teachable-machine-setup/tm-15.png)
 
 
-## Alternative Approach: Training a TensorFlow model with Keras and R
+## Training a TensorFlow model with Keras and R (Alternative approach, incomplete):
+
+### Annotating the images with Roboflow:
+
+#### Basic Annotation process:
+
+Login to Roboflow and select "Create a Project":
+![](assets/roboflow-setup/setup1.png)
+![](assets/roboflow-setup/setup2.png)
+
+Choose "Object Detection (Bounding Box) for the project type:
+![](assets/roboflow-setup/setup3.png)
+
+Add the annotation groups (list of objects to be identified):
+![](assets/roboflow-setup/setup4.png)
+
+Use the Upload pane to upload the scraped image files:
+![](assets/roboflow-setup/setup5.png)
+
+Using the Trash Can Icon, you can remove images from the uploaded set:
+![](assets/roboflow-setup/setup6.png)
+
+We can now specify what ratio we would like to use to split the training/testing/validation sets:
+![](assets/roboflow-setup/setup11.png)
+
+We can see in the panel indicator that the images have been split in to seperate sets:
+![](assets/roboflow-setup/setup12.png)
+
+Clicking on any of the images will open the annotation tools, draw a bounding box around a lobster, and click save to add the annotation to the dataset:
+![](assets/roboflow-setup/setup13.png)
+
+Once images are annotated, their bounding area boxes are shown in preview:
+![](assets/roboflow-setup/setup15.png)
+
+Click on "Dataset" on the left side bar to open the version generation tools:
+![](assets/roboflow-setup/setup16.png)
+
+Verify the specifications regarding testing/training/validation split:
+![](assets/roboflow-setup/setup17.png)
+
+Perform optional pre-processing steps:
+![](assets/roboflow-setup/setup18.png)
+
+(Example) Resize pre-processing:
+![](assets/roboflow-setup/setup19.png)
+
+Perform optional augmentation steps:
+![](assets/roboflow-setup/setup20.png)
+![](assets/roboflow-setup/setup21.png)
+
+### Working with the images in R:
+
+``` r
+#install.packages("BiocManager") 
+#BiocManager::install("EBImage")
+library(EBImage)
+```
+
+``` r
+list.files("model")
+```
+
+    ## [1] "README.roboflow.txt" "test"                "train"              
+    ## [4] "valid"
+
+Print a partial list of the files in the training folder:
+
+``` r
+head(list.files("model/train"))
+```
+
+    ## [1] "_annotations.csv"                                                    
+    ## [2] "10005133744_d1060128ab_o_jpg.rf.d4d6ee263552c0ba135babf9436ce461.jpg"
+    ## [3] "10068516014_6a4f5a5dc2_o_jpg.rf.ea96ee3048ea215cc59c124486e742f5.jpg"
+    ## [4] "10116239786_b61e41db21_b_jpg.rf.cef0d87c0b126696b5d0160e1d6ecc8f.jpg"
+    ## [5] "10508592885_c5d0dd4d2f_o_jpg.rf.c89cbecbea9359516cd6e0b29bbfd8c9.jpg"
+    ## [6] "10631742534_05d86a3212_b_jpg.rf.57a444d1755d1842ae96d4c5f583c6cf.jpg"
+
+Load a single image sample:
+
+``` r
+sampleLobster <- readImage("model/train/10631742534_05d86a3212_b_jpg.rf.57a444d1755d1842ae96d4c5f583c6cf.jpg")
+```
+
+Display the sample image:
+
+``` r
+display(sampleLobster, method = "raster")
+```
+
+![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
+
+Create a vector that will store the file paths:
+
+``` r
+trainingImagesPath <- dir("model/train")
+```
+
+Remove the .csv file from the list:
+
+``` r
+trainingImagesPath <- paste("model/train/", trainingImagesPath[2:length(trainingImagesPath)], sep ="")
+```
+
+Read the images to a vector with a loop:
+
+``` r
+trainingImages <- readImage(trainingImagesPath)
+```
+
+Display all the images in the training set on a single raster:
+
+``` r
+display(trainingImages, method = "raster", all = TRUE, nx = 10)
+```
+
+![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
 
 The first half of this document is based on the guide from [TensorFlow for R from R
 Studio](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_classification/) and shows the basic setup of a “hello world” object recognition application using R:
 
-<https://github.com/rstudio/tensorflow>
-
 > This guide uses the Fashion MNIST dataset which contains 70,000
 > grayscale images in 10 categories. The images show individual articles
 > of clothing at low resolution (28 by 28 pixels)
+> <https://github.com/rstudio/tensorflow>
 
 ### Installation and setup:
 
@@ -383,8 +498,7 @@ You will need to have also installed anacoda for TensorFlow to work in R, as wel
 > -   Output: xxx: I
 >     tensorflow/stream\_executor/platform/default/dso\_loader.cc:49\]
 >     Successfully opened dynamic library cudart64\_110.dll
-
-<https://github.com/tensorflow/tensorflow/issues/45055>
+> <https://github.com/tensorflow/tensorflow/issues/45055>
 
 ### Basic Example: Importing the Fashion MNIST dataset
 
@@ -400,9 +514,7 @@ You will need to have also installed anacoda for TensorFlow to work in R, as wel
 > network and 10,000 images to evaluate how accurately the network
 > learned to classify images. You can access the Fashion MNIST directly
 > from Keras.
-
--   [TensorFlow for R from R
-    Studio](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_classification/)
+> [TensorFlow for R from R Studio](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_classification/)
 
 ``` r
 fashion_mnist <- dataset_fashion_mnist()
@@ -595,120 +707,3 @@ class_pred
 ```
 
     ## [1] 9
-
-
-### Annotating the images with Roboflow:
-
-#### Basic Annotation process:
-
-Login to Roboflow and select "Create a Project":
-![](assets/roboflow-setup/setup1.png)
-![](assets/roboflow-setup/setup2.png)
-
-Choose "Object Detection (Bounding Box) for the project type:
-![](assets/roboflow-setup/setup3.png)
-
-Add the annotation groups (list of objects to be identified):
-![](assets/roboflow-setup/setup4.png)
-
-Use the Upload pane to upload the scraped image files:
-![](assets/roboflow-setup/setup5.png)
-
-Using the Trash Can Icon, you can remove images from the uploaded set:
-![](assets/roboflow-setup/setup6.png)
-
-We can now specify what ratio we would like to use to split the training/testing/validation sets:
-![](assets/roboflow-setup/setup11.png)
-
-We can see in the panel indicator that the images have been split in to seperate sets:
-![](assets/roboflow-setup/setup12.png)
-
-Clicking on any of the images will open the annotation tools, draw a bounding box around a lobster, and click save to add the annotation to the dataset:
-![](assets/roboflow-setup/setup13.png)
-
-Once images are annotated, their bounding area boxes are shown in preview:
-![](assets/roboflow-setup/setup15.png)
-
-Click on "Dataset" on the left side bar to open the version generation tools:
-![](assets/roboflow-setup/setup16.png)
-
-Verify the specifications regarding testing/training/validation split:
-![](assets/roboflow-setup/setup17.png)
-
-Perform optional pre-processing steps:
-![](assets/roboflow-setup/setup18.png)
-
-(Example) Resize pre-processing:
-![](assets/roboflow-setup/setup19.png)
-
-Perform optional augmentation steps:
-![](assets/roboflow-setup/setup20.png)
-![](assets/roboflow-setup/setup21.png)
-
-### Working with the images in R:
-
-``` r
-#install.packages("BiocManager") 
-#BiocManager::install("EBImage")
-library(EBImage)
-```
-
-``` r
-list.files("model")
-```
-
-    ## [1] "README.roboflow.txt" "test"                "train"              
-    ## [4] "valid"
-
-Print a partial list of the files in the training folder:
-
-``` r
-head(list.files("model/train"))
-```
-
-    ## [1] "_annotations.csv"                                                    
-    ## [2] "10005133744_d1060128ab_o_jpg.rf.d4d6ee263552c0ba135babf9436ce461.jpg"
-    ## [3] "10068516014_6a4f5a5dc2_o_jpg.rf.ea96ee3048ea215cc59c124486e742f5.jpg"
-    ## [4] "10116239786_b61e41db21_b_jpg.rf.cef0d87c0b126696b5d0160e1d6ecc8f.jpg"
-    ## [5] "10508592885_c5d0dd4d2f_o_jpg.rf.c89cbecbea9359516cd6e0b29bbfd8c9.jpg"
-    ## [6] "10631742534_05d86a3212_b_jpg.rf.57a444d1755d1842ae96d4c5f583c6cf.jpg"
-
-Load a single image sample:
-
-``` r
-sampleLobster <- readImage("model/train/10631742534_05d86a3212_b_jpg.rf.57a444d1755d1842ae96d4c5f583c6cf.jpg")
-```
-
-Display the sample image:
-
-``` r
-display(sampleLobster, method = "raster")
-```
-
-![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
-
-Create a vector that will store the file paths:
-
-``` r
-trainingImagesPath <- dir("model/train")
-```
-
-Remove the .csv file from the list:
-
-``` r
-trainingImagesPath <- paste("model/train/", trainingImagesPath[2:length(trainingImagesPath)], sep ="")
-```
-
-Read the images to a vector with a loop:
-
-``` r
-trainingImages <- readImage(trainingImagesPath)
-```
-
-Display all the images in the training set on a single raster:
-
-``` r
-display(trainingImages, method = "raster", all = TRUE, nx = 10)
-```
-
-![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
