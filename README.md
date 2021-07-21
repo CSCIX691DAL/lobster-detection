@@ -1,31 +1,23 @@
 # Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University 
 
 ![Team Logo](assets/icons/main.svg)
-
-## Background
-
 ### Team Members:
 - Kanak Prajapati
 - Kayleen Sung
 - Liam Cormack
 - Liam Osler
+- Parth Patel
 - Shawn Shahin Azar
 
-<br />
-<br />
-
---------------------
-
-# Table of Contents
+## Table of Contents
 
 1. [Project Overview](#projectOveriew)
     1. [Description](#description)
     2. [Goal of Project](#goal)
     3. [Purpose](#purpose) 
     4. [Technology Stack](#technologyStack)
-    5. [Purpose](#purpose)
-    6. [Intended Users](#intendedUsers)
-    7. [Project Value](#projectValue)
+    5. [Intended Users](#intendedUsers)
+    6. [Project Value](#projectValue)
 
 2. [Setup](#setup)
 3. [User Features](#userFeatures)
@@ -41,97 +33,11 @@
 
 ## Project Overview <a name="projectOveriew"></a>
 
-
 ### Description <a name="description"></a>
-
+Flutter application implementing TFlite for machine vision recognition of lobsters.
 
 ### Goal of Project <a name="goal"></a>
-
-
-### Purpose <a name="purpose"></a>
-
-
-### Technology Stack <a name="technologyStack"></a>
-
-
-### Purpose <a name="purpose"></a>
-
-
-### Intended Users <a name="intendedUsers"></a>
-
-
-
-### Project Value <a name="projectValue"> </a>
-
-
-
-
-
-
-## Setup <a name="setup"> </a>
-
-
-
-
-
-## User Features <a name="userFeatures"> </a>
-
-
-
-
-
-## Technical Features <a name="technicalFeatures"> </a>
-
-
-
-
-
-## User Stories <a name="userStories"> </a>
-
-| ID      | Description                                                                                                 |Status   |
-| :---    |    :----:                                                                                                   |     ---:|
-| 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
-
-
-
-## Issues <a name="issues"> </a>
-
-
-
-
-## Risks <a name="risks"> </a>
-
-
-
-
-
-## Lessons Learned <a name="lessonsLearned"> </a>
-
-
-
-
-
-## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
-
-
-
-
-
-## Project Sign-off <a name="projectSignOff"> </a>
-
-
-
-
-## References <a name="references"> </a>
-
-
-
-
-
------------------------------------------------------------------------------------------
-
-### Project Requirements:
-Detection of whether there is a lobster in the camera view with a generally accessible and aesthetically pleasing app.
+Perform real time object recognition/detection of whether there is a lobster in the camera view, in a generally accessible and aesthetically pleasing app. Develop the app with the multi-platform application development environment Flutter, allowing it to be run on Android and iOS devices. 
 
 ### Proposed Solution:
 - Collect a proper dataset of lobster photos.
@@ -144,59 +50,176 @@ Detection of whether there is a lobster in the camera view with a generally acce
 - Convert Darknet Model to TensorFlow Lite.
 - Deploy on Device.
 
+### Purpose <a name="purpose"></a>
 
-## Helpful Links and Resources:
-
-### Dart documentation:
-https://dart.dev/guides
-
-https://dart.dev/get-dart
+Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch. Real time object recognition could be used by governments and compliance agencies to recognize violations of aquaculture harvesting laws and regulations, through imagery obtained by enforced video surveillance on fishing vessels.
 
 
-### Flutter documentation:
-https://flutterflow.io/
+### Technology Stack <a name="technologyStack"></a>
 
-https://flutter.dev/docs/get-started/install
-
-
-### TensorFlow Lite (TFlite):
-https://www.tensorflow.org/lite/guide
-
-https://pub.dev/packages/tflite
-
-
-### Material UI:
-https://material.io/components
+Flutter
+- 'package:flutter/foundation.dart';
+- 'package:flutter/cupertino.dart';
+- 'package:camera/camera.dart'
+- 'package:flutter/material.dart'
+- 'package:percent_indicator/linear_percent_indicator.dart'
+- 'package:flutter_spinkit/flutter_spinkit.dart'
+- 'package:google_fonts/google_fonts.dart';
 
 
-### YOLOv4:
-https://github.com/pjreddie/darknet
+### Intended Users <a name="intendedUsers"></a>
+
+### Project Value <a name="projectValue"> </a>
+
+## Setup <a name="setup"> </a>
+
+### Project File Structure:
+
+Clone the repository from git: 
+
+```bash
+git clone 
+```
+
+```bash
+.
+├── README.md <-- 'The main README.md file' 
+├── android <-- 'The compiled android application folder, can be excluded if only developing for iOS and/or Web'
+│   ├── app
+│   │   ├── build.gradle
+│   │   └── src
+│   │       ├── debug
+│   │       │   └── AndroidManifest.xml
+│   │       ├── main
+│   │       │   ├── AndroidManifest.xml
+│   │       │   ├── java
+│   │       │   │   └── io
+│   │       │   │       └── flutter
+│   │       │   │           └── plugins
+│   │       │   │               └── GeneratedPluginRegistrant.java
+│   │       │   ├── kotlin
+│   │       │   │   └── com
+│   │       │   │       └── umairadil
+│   │       │   │           └── tensorflow_lite_flutter
+│   │       │   │               └── MainActivity.kt
+│   │       │   └── res
+│   │       │       ├── drawable
+│   │       │       │   └── launch_background.xml
+│   │       │       ├── mipmap-hdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       ├── mipmap-mdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       ├── mipmap-xhdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       ├── mipmap-xxhdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       ├── mipmap-xxxhdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       └── values
+│   │       │           └── styles.xml
+│   │       └── profile
+│   │           └── AndroidManifest.xml
+│   ├── build.gradle  <-- 'The build specification file'
+│   ├── gradle
+│   │   └── wrapper
+│   │       └── gradle-wrapper.properties
+│   ├── gradle.properties
+│   ├── local.properties
+│   └── settings.gradle
+├── assets  <-- 'The folder where assets such as images, icons and TensorFlow models are stored'
+│   ├── icons
+│   │   ├── 128.png
+│   │   ├── 256.png
+│   │   ├── 64.png
+│   │   └── lobster_transparent.svg <-- 'The source file for the project icon'
+│   ├── labels.txt <-- 'The labels for the tflite model'
+│   └── model_unquant.tflite <-- 'The tflite model generated by Teachable machine'
+├── ios <-- 'The compiled iOS application folder, can be excluded if only developing for Android and/or Web'
+│   ├── Flutter
+│   │   ├── AppFrameworkInfo.plist
+│   │   ├── Debug.xcconfig
+│   │   ├── Generated.xcconfig
+│   │   ├── Release.xcconfig
+│   │   └── flutter_export_environment.sh
+│   ├── Podfile
+│   ├── Runner
+│   │   ├── AppDelegate.swift
+│   │   ├── Assets.xcassets
+│   │   │   ├── AppIcon.appiconset
+│   │   │   │   ├── Contents.json
+│   │   │   │   ├── Icon-App-1024x1024@1x.png
+│   │   │   │   ├── Icon-App-20x20@1x.png
+│   │   │   │   ├── Icon-App-20x20@2x.png
+│   │   │   │   ├── Icon-App-20x20@3x.png
+│   │   │   │   ├── Icon-App-29x29@1x.png
+│   │   │   │   ├── Icon-App-29x29@2x.png
+│   │   │   │   ├── Icon-App-29x29@3x.png
+│   │   │   │   ├── Icon-App-40x40@1x.png
+│   │   │   │   ├── Icon-App-40x40@2x.png
+│   │   │   │   ├── Icon-App-40x40@3x.png
+│   │   │   │   ├── Icon-App-60x60@2x.png
+│   │   │   │   ├── Icon-App-60x60@3x.png
+│   │   │   │   ├── Icon-App-76x76@1x.png
+│   │   │   │   ├── Icon-App-76x76@2x.png
+│   │   │   │   └── Icon-App-83.5x83.5@2x.png
+│   │   │   └── LaunchImage.imageset
+│   │   │       ├── Contents.json
+│   │   │       ├── LaunchImage.png
+│   │   │       ├── LaunchImage@2x.png
+│   │   │       ├── LaunchImage@3x.png
+│   │   │       └── README.md
+│   │   ├── Base.lproj
+│   │   │   ├── LaunchScreen.storyboard
+│   │   │   └── Main.storyboard
+│   │   ├── GeneratedPluginRegistrant.h
+│   │   ├── GeneratedPluginRegistrant.m
+│   │   ├── Info.plist
+│   │   └── Runner-Bridging-Header.h
+│   ├── Runner.xcodeproj
+│   │   ├── project.pbxproj
+│   │   ├── project.xcworkspace
+│   │   │   ├── contents.xcworkspacedata
+│   │   │   └── xcshareddata
+│   │   │       ├── IDEWorkspaceChecks.plist
+│   │   │       └── WorkspaceSettings.xcsettings
+│   │   └── xcshareddata
+│   │       └── xcschemes
+│   │           └── Runner.xcscheme
+│   └── Runner.xcworkspace
+│       ├── contents.xcworkspacedata
+│       └── xcshareddata
+│           ├── IDEWorkspaceChecks.plist
+│           └── WorkspaceSettings.xcsettings
+├── lib <-- 'Where most of the code resides, this is the project library'
+│   ├── HomePage.dart <-- 'The primary place of interaction with the user, where they can choose to either upload an image or activate their camera'
+│   ├── SplashScreen.dart <-- 'A splash screen that shows the group local'
+│   ├── helpers
+│   │   ├── app_helper.dart
+│   │   ├── camera_helper.dart <-- 'A helper file for workign with the camera input'
+│   │   └── tflite_helper.dart <-- 'A helper file for workign with tflite' 
+│   ├── main.dart <-- 'The main.dart file, which is responsible for the '
+│   ├── models
+│   │   └── result.dart <-- 'A Screen for showing the results of the object detection'
+│   └── screens
+│       └── detect_screen.dart <-- 'The screen that shows the Tflite prediction strength in real time'
+├── pubspec.lock
+└── pubspec.yaml <-- 'The pubspec.yaml file, when implementing and importing new libaries, it can be necessary to include them in this file, it is also where assets and assets files are described to the application'
+```
 
 
 
-### Video lessons and tutorials:
-[YouTube - Installing Flutter on Mac - Nick Manning (seenickcode)](https://www.youtube.com/watch?v=THsihXK1-14)
+## User Features <a name="userFeatures"> </a>
 
-[YouTube - Flutter Course - Full Tutorial for Beginners (Build iOS and Android Apps) - freeCodeCamp.org](https://www.youtube.com/watch?v=pTJJsmejUOQ)
+## Technical Features <a name="technicalFeatures"> </a>
 
-[YouTube - Flutter: Build a Beautiful Pokemon App | Animation | Widgets | JSON API - mtechviral](https://www.youtube.com/watch?v=yeXJqZCiwTQ&t=480s)
+### Object Recognition:
 
-[YouTube - Flutter iOS & Android Object Detection with TensorFlow Lite Deep Learning & Machine Learning Course - Coding Cafe](https://youtube.com/playlist?list=PLxefhmF0pcPmynNry6IksRAx0vNRns7Q1)
-
-[YouTube - How to Train YOLOv4 on a Custom Dataset (PyTorch) - Roboflow](https://www.youtube.com/watch?v=9hVgyeI4g4o)
-
-
-### Other documentation and resources:
-[Curiousily- Object detection on a custom dataset](https://curiousily.com/posts/object-detection-on-custom-dataset-with-yolo-v5-using-pytorch-and-python/)
-
-# Object Recognition:
-
-## Sourcing Lobster imagery:
+#### Sourcing Lobster imagery:
 <https://github.com/ultralytics/flickr_scraper>
 
 We considered several sources for finding lobster imagery to train the machine learning model. Manual retrieval of images (i.e. manually saving images from a Google image search and social media websites) was undertaken to a limited degree, but is an undesirable methodology due to the tedious nature of saving each image through the computer's file manager dialogs. Instead it would be better to scrape; using a script, a large set of imagery that already had some kind of classification performed on it. There existsmany websites dedicated to sharing images, both for social media purposesand for data science research purposes. Two websites that were investigated in great detail were Flickr and Kaggle.
 
-### Flickr Scraper
+##### Flickr Scraper
 
 ![Flickr Logo](https://cdn.kustomerhostedcontent.com/media/5aecd7338a0607779d1ec9cc/966e09a41a33f89fe18f2ab227336f09.png)
 
@@ -267,22 +290,21 @@ There are other sources of imagery that could be considered as well, for instanc
 ![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-35-1.png)
 
 
-### Kaggle ("pre-prepared" datasets):
+##### Kaggle ("pre-prepared" datasets):
 ![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png)
 
 Other sources of imagery, like Kaggle, were searched for good source imagery, but did not yield too many results beyond one collection of images of Spiny Lobsters by author Son Vo:
+
 <https://www.kaggle.com/sonvoutas/large-lobster-image-dataset>
 
-![](assets/other-screenshots/kaggle-set.png)
+![https://www.kaggle.com/sonvoutas/large-lobster-image-dataset](assets/other-screenshots/kaggle-set.png)
 
 This Kaggle imagery set was used in training one version of the object recognition model, but is unyieldly to work with due to it's large size (24Gb) and efforts should be made to decrease the resolution of the sample imagery after downloading it if one wishes to be able to upload it to remote machine learning platforms in a timely manner, or to work locally with machines with lower-end hardware where training models for object recognition with high resolution imagery is impossible or impractical. Websites like Roboflow, which we will discuss later, have features that allow you to do that sort of processing, and more. Software like CVAT can also perform the task, or we can use command line (CLI) utilities like ImageMagick to perform this kind of processing:
 
 <https://legacy.imagemagick.org/Usage/resize/>
 
 
-
-
-## Training a TensorFlow tflite model with Google's Teachable Machine (Implemented Approach):
+### Training a TensorFlow tflite model with Google's Teachable Machine (Implemented Approach):
 
 Click the "Get started" button in the upper right:
 ![](assets/teachable-machine-setup/tm-1.png)
@@ -330,11 +352,9 @@ This will be the contents of the unzipped file, the tflite model and a text file
 ![](assets/teachable-machine-setup/tm-15.png)
 
 
-## Training a TensorFlow model with Keras and R (Alternative approach, incomplete):
+### Training a TensorFlow model with Keras and R (Alternative approach, incomplete):
 
-### Annotating the images with Roboflow:
-
-#### Basic Annotation process:
+#### Annotating the images with Roboflow:
 
 Login to Roboflow and select "Create a Project":
 ![](assets/roboflow-setup/setup1.png)
@@ -379,6 +399,73 @@ Perform optional pre-processing steps:
 Perform optional augmentation steps:
 ![](assets/roboflow-setup/setup20.png)
 ![](assets/roboflow-setup/setup21.png)
+
+## User Stories <a name="userStories"> </a>
+
+| ID      | Description                                                                                                 |Status   |
+| :---    |    :----:                                                                                                   |     ---:|
+| 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
+
+
+
+## Issues <a name="issues"> </a>
+
+## Risks <a name="risks"> </a>
+
+## Lessons Learned <a name="lessonsLearned"> </a>
+
+## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
+
+## Project Sign-off <a name="projectSignOff"> </a>
+
+## References <a name="references"> </a>
+
+### Dart documentation:
+https://dart.dev/guides
+
+https://dart.dev/get-dart
+
+
+### Flutter documentation:
+https://flutterflow.io/
+
+https://flutter.dev/docs/get-started/install
+
+
+### TensorFlow Lite (TFlite):
+https://www.tensorflow.org/lite/guide
+
+https://pub.dev/packages/tflite
+
+
+### Material UI:
+https://material.io/components
+
+
+### YOLOv4:
+https://github.com/pjreddie/darknet
+
+
+
+### Video lessons and tutorials:
+[YouTube - Installing Flutter on Mac - Nick Manning (seenickcode)](https://www.youtube.com/watch?v=THsihXK1-14)
+
+[YouTube - Flutter Course - Full Tutorial for Beginners (Build iOS and Android Apps) - freeCodeCamp.org](https://www.youtube.com/watch?v=pTJJsmejUOQ)
+
+[YouTube - Flutter: Build a Beautiful Pokemon App | Animation | Widgets | JSON API - mtechviral](https://www.youtube.com/watch?v=yeXJqZCiwTQ&t=480s)
+
+[YouTube - Flutter iOS & Android Object Detection with TensorFlow Lite Deep Learning & Machine Learning Course - Coding Cafe](https://youtube.com/playlist?list=PLxefhmF0pcPmynNry6IksRAx0vNRns7Q1)
+
+[YouTube - How to Train YOLOv4 on a Custom Dataset (PyTorch) - Roboflow](https://www.youtube.com/watch?v=9hVgyeI4g4o)
+
+
+### Other documentation and resources:
+[Curiousily- Object detection on a custom dataset](https://curiousily.com/posts/object-detection-on-custom-dataset-with-yolo-v5-using-pytorch-and-python/)
+
+
+
+
+
 
 ### Working with the images in R:
 
