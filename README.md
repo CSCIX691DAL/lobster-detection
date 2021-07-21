@@ -302,7 +302,14 @@ We can begin by creating a new class label:
 Click the upload button and select your imagery:
 ![](assets/teachable-machine-setup/tm-6.png)
 ![](assets/teachable-machine-setup/tm-7.png)
-
+![](assets/teachable-machine-setup/tm-8.png)
+![](assets/teachable-machine-setup/tm-9.png)
+![](assets/teachable-machine-setup/tm-10.png)
+![](assets/teachable-machine-setup/tm-11.png)
+![](assets/teachable-machine-setup/tm-12.png)
+![](assets/teachable-machine-setup/tm-13.png)
+![](assets/teachable-machine-setup/tm-14.png)
+![](assets/teachable-machine-setup/tm-15.png)
 
 
 ## Alternative Approach: Training a TensorFlow model with Keras and R
