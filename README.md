@@ -576,7 +576,7 @@ Using the Trash Can Icon, you can remove images from the uploaded set:
 ![](assets/roboflow-setup/setup6.png)
 
 We can now specify what ratio we would like to use to split the training/testing/validation sets:
-![](assets/roboflow-setup/setup8.png)
+![](assets/roboflow-setup/setup9.png)
 
 We can see in the panel indicator that the images have been split in to seperate sets:
 ![](assets/roboflow-setup/setup11.png)
