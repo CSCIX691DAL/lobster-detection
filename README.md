@@ -28,7 +28,7 @@
     5. [Purpose](#purpose)
     6. [Intended Users](#intendedUsers)
     7. [Project Value](#projectValue)
-    8. [Measurable Organizational Value](#measurableOrganizationalValue)
+
 
 2. [Setup](#setup)
 3. [User Features](#userFeatures)
@@ -68,17 +68,25 @@
 
 
 
-### Measurable Organizational Value <a name="measurableOrganizationalValue"> </a>
 
 
 
 ## Setup <a name="setup"> </a>
 
 
+
+
+
 ## User Features <a name="userFeatures"> </a>
 
 
+
+
+
 ## Technical Features <a name="technicalFeatures"> </a>
+
+
+
 
 
 ## User Stories <a name="userStories"> </a>
@@ -92,16 +100,29 @@
 ## Issues <a name="issues"> </a>
 
 
+
+
 ## Risks <a name="risks"> </a>
+
+
+
 
 
 ## Lessons Learned <a name="lessonsLearned"> </a>
 
 
+
+
+
 ## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
 
 
+
+
+
 ## Project Sign-off <a name="projectSignOff"> </a>
+
+
 
 
 ## References <a name="references"> </a>
