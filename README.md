@@ -27,7 +27,6 @@
     6. [Intended Users](#intendedUsers)
     7. [Project Value](#projectValue)
 
-
 2. [Setup](#setup)
 3. [User Features](#userFeatures)
 4. [Technical Features](#technicalFeatures)
@@ -192,7 +191,19 @@ https://github.com/pjreddie/darknet
 
 # Object Recognition:
 
-## Training a TensorFlow model with Keras and R
+## Implemented Approach: Training a TensorFlow tflite model with Google's Teachable Machine
+
+![](assets/teachable-machine-setup/tm-1)
+![](assets/teachable-machine-setup/tm-1)
+![](assets/teachable-machine-setup/tm-1)
+![](assets/teachable-machine-setup/tm-1)
+![](assets/teachable-machine-setup/tm-1)
+![](assets/teachable-machine-setup/tm-1)
+![](assets/teachable-machine-setup/tm-1)
+
+
+
+## Alternative Approach: Training a TensorFlow model with Keras and R
 
 The first half of this document is based on the guide from [TensorFlow
 for R from R
@@ -465,7 +476,7 @@ class_pred
 
     ## [1] 9
 
-# Lobster imagery:
+# Sourcing Lobster imagery:
 
 In order to retrieve some of the lobster imagery, sources like Flickr
 were considered. In the particular case of Flickr, the Flickr API and
@@ -547,7 +558,7 @@ in a subdirectory of the flickr-scraper folder.
 ### Annotating the images with Roboflow:
 
 Annotation process:
-![](assets/roboflow-setup/setup1.png)
+![Roboflow Setup 1](assets/roboflow-setup/setup1.png)
 ![](assets/roboflow-setup/setup2.png)
 ![](assets/roboflow-setup/setup3.png)
 ![](assets/roboflow-setup/setup4.png)
