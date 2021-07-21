@@ -275,20 +275,31 @@ Other sources of imagery, like Kaggle, were searched for good source imagery, bu
 
 ![](assets/other-screenshots/kaggle-set.png)
 
-This Kaggle imagery set was used in training one version of the object recognition model, but is unyieldly to work with due to it's large size (24Gb) and efforts should be made to decrease the resolution of the sample imagery after downloading it if one wishes to be able to upload it to remote machine learning platforms in a timely manner, or to work locally with machines with lower-end hardware where training models for object recognition with high resolution imagery is impossible or impractical. Websites like Roboflow, which we will discuss later, has features that allow you to do that sort of processing, and more. Software like CVAT can also perform the task, or we can use command line (CLI) utilities like ImageMagick to perform this kind of processing:
+This Kaggle imagery set was used in training one version of the object recognition model, but is unyieldly to work with due to it's large size (24Gb) and efforts should be made to decrease the resolution of the sample imagery after downloading it if one wishes to be able to upload it to remote machine learning platforms in a timely manner, or to work locally with machines with lower-end hardware where training models for object recognition with high resolution imagery is impossible or impractical. Websites like Roboflow, which we will discuss later, have features that allow you to do that sort of processing, and more. Software like CVAT can also perform the task, or we can use command line (CLI) utilities like ImageMagick to perform this kind of processing:
 
 <https://legacy.imagemagick.org/Usage/resize/>
 
 
 
 
-## Implemented Approach: Training a TensorFlow tflite model with Google's Teachable Machine
+## Training a TensorFlow tflite model with Google's Teachable Machine (Implemented Approach)
 
+Click the "Get started" button in the upper right:
 ![](assets/teachable-machine-setup/tm-1.png)
+
+Click on the "Image Project" card to select a new image project:
 ![](assets/teachable-machine-setup/tm-2.png)
+
+Select "Standard image model":
 ![](assets/teachable-machine-setup/tm-3.png)
+
+You will be shown a blank screen representing the contents of the project, here you can see there are boxes for classes (the different types of objects we want to classify), a section for tweaking the training parameters, and a section for exporting the trained model:
 ![](assets/teachable-machine-setup/tm-4.png)
+
+We can begin by creating a new class label:
 ![](assets/teachable-machine-setup/tm-5.png)
+
+Click the upload button and select your imagery:
 ![](assets/teachable-machine-setup/tm-6.png)
 ![](assets/teachable-machine-setup/tm-7.png)
 
