@@ -193,9 +193,13 @@ https://github.com/pjreddie/darknet
 
 ## Sourcing Lobster imagery:
 <https://github.com/ultralytics/flickr_scraper>
+
 We considered several sources for finding lobster imagery to train the machine learning model. Manual retrieval of images (i.e. manually saving images from a Google image search and social media websites) was undertaken to a limited degree, but is an undesirable methodology due to the tedious nature of saving each image through the computer's file manager dialogs. Instead it would be better to scrape; using a script, a large set of imagery that already had some kind of classification performed on it. There existsmany websites dedicated to sharing images, both for social media purposesand for data science research purposes. Two websites that were investigated in great detail were Flickr and Kaggle.
 
 ### Flickr Scraper
+
+![Flickr Logo](https://cdn.kustomerhostedcontent.com/media/5aecd7338a0607779d1ec9cc/966e09a41a33f89fe18f2ab227336f09.png)
+
 In order to retrieve some of the lobster imagery, sources like Flickr were considered. In the particular case of Flickr, the Flickr API and publicly available tools like Flickr-Scraper by Ultralytics LLC, a Python program can be used to download the first Nth results of a Flickr search. The search term “Lobster” is too vague for use on this platform,resulting in numerous images of prepared lobster as foods like sandwiches and soups (rolls and bisques).
 
 Here are the basics of using the utility with Python to find search results on Flickr for the term “Underwater Lobster”.
@@ -259,7 +263,23 @@ The utility will download the specified number of images and place them
 in a subdirectory of the flickr-scraper folder.
 
 There are other sources of imagery that could be considered as well, for instance, the review website Yelp provides a large open dataset of images that can be scraped for classified imagery. In the case of this project we will be scraping 1000 images. The contents of the scraped image folder are what would appear to a person if they were go to Flickr and do a search for "underwater lobster" in their main search bar, but we now have the files saved locally to our machine:
+
 ![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-35-1.png)
+
+
+### Kaggle ("pre-prepared" datasets):
+![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png)
+
+Other sources of imagery, like Kaggle, were searched for good source imagery, but did not yield too many results beyond one collection of images of Spiny Lobsters by author Son Vo:
+<https://www.kaggle.com/sonvoutas/large-lobster-image-dataset>
+
+![](assets/other-screenshots/kaggle-set.png)
+
+This Kaggle imagery set was used in training one version of the object recognition model, but is unyieldly to work with due to it's large size (24Gb) and efforts should be made to decrease the resolution of the sample imagery after downloading it if one wishes to be able to upload it to remote machine learning platforms in a timely manner, or to work locally with machines with lower-end hardware where training models for object recognition with high resolution imagery is impossible or impractical. Websites like Roboflow, which we will discuss later, has features that allow you to do that sort of processing, and more. Software like CVAT can also perform the task, or we can use command line (CLI) utilities like ImageMagick to perform this kind of processing:
+
+<https://legacy.imagemagick.org/Usage/resize/>
+
+
 
 
 ## Implemented Approach: Training a TensorFlow tflite model with Google's Teachable Machine
