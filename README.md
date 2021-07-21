@@ -193,13 +193,13 @@ https://github.com/pjreddie/darknet
 
 ## Implemented Approach: Training a TensorFlow tflite model with Google's Teachable Machine
 
-![](assets/teachable-machine-setup/tm-1)
-![](assets/teachable-machine-setup/tm-1)
-![](assets/teachable-machine-setup/tm-1)
-![](assets/teachable-machine-setup/tm-1)
-![](assets/teachable-machine-setup/tm-1)
-![](assets/teachable-machine-setup/tm-1)
-![](assets/teachable-machine-setup/tm-1)
+![](assets/teachable-machine-setup/tm-1.png)
+![](assets/teachable-machine-setup/tm-2.png)
+![](assets/teachable-machine-setup/tm-3.png)
+![](assets/teachable-machine-setup/tm-4.png)
+![](assets/teachable-machine-setup/tm-5.png)
+![](assets/teachable-machine-setup/tm-6.png)
+![](assets/teachable-machine-setup/tm-7.png)
 
 
 
@@ -576,31 +576,30 @@ Using the Trash Can Icon, you can remove images from the uploaded set:
 ![](assets/roboflow-setup/setup6.png)
 
 We can now specify what ratio we would like to use to split the training/testing/validation sets:
-![](assets/roboflow-setup/setup9.png)
-
-We can see in the panel indicator that the images have been split in to seperate sets:
 ![](assets/roboflow-setup/setup11.png)
 
-Clicking on any of the images will open the annotation tools, draw a bounding box around a lobster, and click save to add the annotation to the dataset:
+We can see in the panel indicator that the images have been split in to seperate sets:
 ![](assets/roboflow-setup/setup12.png)
 
-Once images are annotated, their bounding area boxes are shown in preview:
+Clicking on any of the images will open the annotation tools, draw a bounding box around a lobster, and click save to add the annotation to the dataset:
 ![](assets/roboflow-setup/setup13.png)
 
-Click on "Dataset" on the left side bar to open the version generation tools:
+Once images are annotated, their bounding area boxes are shown in preview:
 ![](assets/roboflow-setup/setup15.png)
 
-Verify the specifications regarding testing/training/validation split:
+Click on "Dataset" on the left side bar to open the version generation tools:
 ![](assets/roboflow-setup/setup16.png)
 
-Perform optional pre-processing steps:
+Verify the specifications regarding testing/training/validation split:
 ![](assets/roboflow-setup/setup17.png)
 
-(Example) Resize pre-processing:
+Perform optional pre-processing steps:
 ![](assets/roboflow-setup/setup18.png)
 
-Perform optional augmentation steps:
+(Example) Resize pre-processing:
 ![](assets/roboflow-setup/setup19.png)
+
+Perform optional augmentation steps:
 ![](assets/roboflow-setup/setup20.png)
 ![](assets/roboflow-setup/setup21.png)
 
