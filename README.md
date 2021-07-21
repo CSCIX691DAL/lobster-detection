@@ -301,14 +301,32 @@ We can begin by creating a new class label:
 
 Click the upload button and select your imagery:
 ![](assets/teachable-machine-setup/tm-6.png)
+
+Once the images are uploaded, the you can click "Train Model" to begin the training process, or you can adjust the advanced parameters prior to the process beginning:
 ![](assets/teachable-machine-setup/tm-7.png)
+
+The training process may take some time, depending on the resolution and quantity of the source imagery and the advanced parameter settings:
 ![](assets/teachable-machine-setup/tm-8.png)
+
+When the model is trained, the export preview window will open:
 ![](assets/teachable-machine-setup/tm-9.png)
+
+We can also try adjusting some of the advanced parameters, like the number of epochs, the batch size and the learning rate:
 ![](assets/teachable-machine-setup/tm-10.png)
+
+We can view some statistical graphs, as well as calculate the accuracy per class and generate a confusion matrix. We can also see the accuracy per epoch and the test loss per epoch:
 ![](assets/teachable-machine-setup/tm-11.png)
+
+Click "export model" to export the model:
 ![](assets/teachable-machine-setup/tm-12.png)
+
+Once we have a model we are interested in exporting, we can do so by clicking the "Export Model" button and choose the "TensorFlow Lite" tab, make sure that the conversion type is set to Floating point, and click "convert model". This process may take some time. When completed the page will create file save alert dialog.
 ![](assets/teachable-machine-setup/tm-13.png)
+
+Choose a location to download the file to:
 ![](assets/teachable-machine-setup/tm-14.png)
+
+This will be the contents of the unzipped file, the tflite model and a text file with the classified labels:
 ![](assets/teachable-machine-setup/tm-15.png)
 
 
