@@ -66,6 +66,14 @@ Flutter
 - 'package:flutter_spinkit/flutter_spinkit.dart'
 - 'package:google_fonts/google_fonts.dart';
 
+Android Studio
+- Android Virtual Device (Android Virtualization)
+
+VSCode (Optional)
+- Flutter Plugin
+- Dart Plugin
+
+Git
 
 ### Intended Users <a name="intendedUsers"></a>
 
@@ -73,52 +81,121 @@ Flutter
 
 ## Setup <a name="setup"> </a>
 
+### Setup Instructions (Windows)
+
+#### Installing Android Studio and setting up an Android Virtual Device (AVD)
+
+Visit the Android Studio webpage and click "Download Android Studio"
 ![](assets/IDE-setup/IDE1.png)
+
+Agree to the license terms
 ![](assets/IDE-setup/IDE2.png)
+
+Save the installer .exe
 ![](assets/IDE-setup/IDE3.png)
+
+Run the installer once it's downloaded:
 ![](assets/IDE-setup/IDE4.png)
+
+Proceed through the setup screens:
 ![](assets/IDE-setup/IDE5.png)
+
+Ensure that Android Virtual Device is included with the installation:
 ![](assets/IDE-setup/IDE6.png)
+
+Choose the install destination:
 ![](assets/IDE-setup/IDE7.png)
 ![](assets/IDE-setup/IDE8.png)
 ![](assets/IDE-setup/IDE9.png)
 ![](assets/IDE-setup/IDE10.png)
+
+Allow the wizard to complete the installation process:
 ![](assets/IDE-setup/IDE11.png)
+
+Choose whether to import a settings config file (we will choose not to import if this is a new install):
 ![](assets/IDE-setup/IDE12.png)
+
+Accept or decline the data sharing policy:
 ![](assets/IDE-setup/IDE13.png)
 ![](assets/IDE-setup/IDE14.png)
+
+Choose the "Standard" installation type:
 ![](assets/IDE-setup/IDE15.png)
 ![](assets/IDE-setup/IDE16.png)
 ![](assets/IDE-setup/IDE17.png)
+
+When the install is finished, click the configure button in the bottom right and select the "AVD Manager":
 ![](assets/IDE-setup/IDE18.png)
+
+Click on "Create Virtual Device"
 ![](assets/IDE-setup/IDE19.png)
+
+Select a piece of hardware to emulate (recommend to choose a device like the Pixel 4 or similar):
 ![](assets/IDE-setup/IDE20.png)
-![](assets/IDE-setup/IDE21.png)
+
+Choose a build of Android to be installed:
 ![](assets/IDE-setup/IDE22.png)
+
+Verify the AVD's configuration:
 ![](assets/IDE-setup/IDE23.png)
+
+You will now see the device added to your list of available devices, click on the green arrow icon if you want to launch the AVD now:
 ![](assets/IDE-setup/IDE24.png)
+
+#### Installing Flutter:
+
+Download Flutter from the official webpage (click on Windows):
 ![](assets/IDE-setup/IDE25.png)
+
+Click on the button with the link to the latest SDK:
 ![](assets/IDE-setup/IDE26.png)
+
+Save the ZIP file to your machine:
 ![](assets/IDE-setup/IDE27.png)
+
+Exctract the flutter folder to a location on your machine (recommended: a folder in the root of your C: drive):
 ![](assets/IDE-setup/IDE28.png)
 ![](assets/IDE-setup/IDE29.png)
+
+With the files copied, we now need to add Flutter to the system's PATH, first look up "environment" in the Start menu, and open "Edit the system environment variables" control panel:
 ![](assets/IDE-setup/IDE30.png)
+
+Click on "Environment Variables...":
 ![](assets/IDE-setup/IDE31.png)
+
+Select "Path" in the top panel and click on "Edit":
 ![](assets/IDE-setup/IDE32.png)
+
+Click on "New":
 ![](assets/IDE-setup/IDE33.png)
+
+Add the path to the flutter\bin directory and click "OK"
 ![](assets/IDE-setup/IDE34.png)
 ![](assets/IDE-setup/IDE35.png)
+
+
+#### Installing VSCode:
+
+Download VSCode from the Official Webpage:
 ![](assets/IDE-setup/IDE36.png)
 ![](assets/IDE-setup/IDE37.png)
+
+Open the installer and click through the dialog boxes:
 ![](assets/IDE-setup/IDE38.png)
 ![](assets/IDE-setup/IDE39.png)
+
+Ensure that you check "Add to PATH":
 ![](assets/IDE-setup/IDE40.png)
 ![](assets/IDE-setup/IDE41.png)
 ![](assets/IDE-setup/IDE42.png)
 ![](assets/IDE-setup/IDE43.png)
 ![](assets/IDE-setup/IDE44.png)
 ![](assets/IDE-setup/IDE45.png)
+
+With the setup complete, navigate to the "Add-Ons" pane by clicking the icon on the right:
 ![](assets/IDE-setup/IDE46.png)
+
+Search for and install the Flutter plugin:
 ![](assets/IDE-setup/IDE47.png)
 ![](assets/IDE-setup/IDE48.png)
 
