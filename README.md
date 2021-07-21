@@ -192,6 +192,7 @@ https://github.com/pjreddie/darknet
 # Object Recognition:
 
 ## Sourcing Lobster imagery:
+<https://github.com/ultralytics/flickr_scraper>
 We considered several sources for finding lobster imagery to train the machine learning model. Manual retrieval of images (i.e. manually saving images from a Google image search and social media websites) was undertaken to a limited degree, but is an undesirable methodology due to the tedious nature of saving each image through the computer's file manager dialogs. Instead it would be better to scrape; using a script, a large set of imagery that already had some kind of classification performed on it. There existsmany websites dedicated to sharing images, both for social media purposesand for data science research purposes. Two websites that were investigated in great detail were Flickr and Kaggle.
 
 ### Flickr Scraper
@@ -234,10 +235,7 @@ ls
     ## requirements.txt
     ## utils
 
-Since each bash chunk in an R Notebook exists seperately from the others, we will need to repeat the prior change directory command (cd) at the start when opening a new chunk, then we can follow the instructions provided from
-<https://github.com/ultralytics/flickr_scraper>
-
-After installing flickr\_scraper, we can scrape images from the top search results on flickr with this command:
+Since each bash chunk in an R Notebook exists seperately from the others, we will need to repeat the prior change directory command (cd) at the start when opening a new chunk, after installing flickr\_scraper, we can scrape images from the top search results on flickr with this command:
 
 ``` bash
 cd flickr_scraper-master
@@ -260,7 +258,8 @@ python3 flickr_scraper.py --search 'underwater lobster' --n 10 --download
 The utility will download the specified number of images and place them
 in a subdirectory of the flickr-scraper folder.
 
-There are other sources of imagery that could be considered as well, for instance, the review website Yelp provides a large open dataset of images that can be scraped for classified imagery. In the p
+There are other sources of imagery that could be considered as well, for instance, the review website Yelp provides a large open dataset of images that can be scraped for classified imagery. In the case of this project we will be scraping 1000 images. The contents of the scraped image folder are what would appear to a person if they were go to Flickr and do a search for "underwater lobster" in their main search bar, but we now have the files saved locally to our machine:
+![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-35-1.png)
 
 
 ## Implemented Approach: Training a TensorFlow tflite model with Google's Teachable Machine
