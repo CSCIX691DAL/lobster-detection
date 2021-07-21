@@ -11,8 +11,12 @@
 - Kayleen Sung
 - Liam Cormack
 - Liam Osler
-- Shawn Shahin Azar
+- Shawn Shahin Azar  
 
+<br />
+<br />
+
+--------------------
 
 # Table of Contents
 
