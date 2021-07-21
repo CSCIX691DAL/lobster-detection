@@ -191,6 +191,78 @@ https://github.com/pjreddie/darknet
 
 # Object Recognition:
 
+## Sourcing Lobster imagery:
+We considered several sources for finding lobster imagery to train the machine learning model. Manual retrieval of images (i.e. manually saving images from a Google image search and social media websites) was undertaken to a limited degree, but is an undesirable methodology due to the tedious nature of saving each image through the computer's file manager dialogs. Instead it would be better to scrape; using a script, a large set of imagery that already had some kind of classification performed on it. There existsmany websites dedicated to sharing images, both for social media purposesand for data science research purposes. Two websites that were investigated in great detail were Flickr and Kaggle.
+
+### Flickr Scraper
+In order to retrieve some of the lobster imagery, sources like Flickr were considered. In the particular case of Flickr, the Flickr API and publicly available tools like Flickr-Scraper by Ultralytics LLC, a Python program can be used to download the first Nth results of a Flickr search. The search term “Lobster” is too vague for use on this platform,resulting in numerous images of prepared lobster as foods like sandwiches and soups (rolls and bisques).
+
+Here are the basics of using the utility with Python to find search results on Flickr for the term “Underwater Lobster”.
+
+You can execute bash scripts in an R notebook using the instruction included here:
+<https://bookdown.org/yihui/rmarkdown-cookbook/eng-bash.html>
+
+Clone the flickr\_scraper-master repository:
+
+    git clone https://github.com/ultralytics/flickr_scraper.git
+
+List the contents of the working directory:
+
+``` bash
+ls
+```
+
+    ## README.md
+    ## flickr_scraper-master
+    ## lobster-detection.Rproj
+    ## lobster-pictures.Rmd
+    ## lobster-pictures.md
+    ## lobster-pictures_files
+    ## model
+
+Change directories to the flickr\_scraper folder:
+
+``` bash
+cd flickr_scraper-master
+ls
+```
+
+    ## LICENSE
+    ## README.md
+    ## flickr_scraper.py
+    ## images
+    ## requirements.txt
+    ## utils
+
+Since each bash chunk in an R Notebook exists seperately from the others, we will need to repeat the prior change directory command (cd) at the start when opening a new chunk, then we can follow the instructions provided from
+<https://github.com/ultralytics/flickr_scraper>
+
+After installing flickr\_scraper, we can scrape images from the top search results on flickr with this command:
+
+``` bash
+cd flickr_scraper-master
+python3 flickr_scraper.py --search 'underwater lobster' --n 10 --download
+```
+
+    ## 0/10 https://live.staticflickr.com/7327/27359314162_ebd5fa7e3c_o.jpg
+    ## 1/10 https://live.staticflickr.com/4422/36900022252_4b7095c6ee_o.jpg
+    ## 2/10 https://live.staticflickr.com/4370/36558985060_7a4c6b5bf3_o.jpg
+    ## 3/10 https://farm9.staticflickr.com/8311/28506321636_43e0a87358_b.jpg
+    ## 4/10 https://live.staticflickr.com/136/378049057_357ce9081f_o.jpg
+    ## 5/10 https://farm5.staticflickr.com/4430/35752736414_8ae831132b_b.jpg
+    ## 6/10 https://live.staticflickr.com/4422/36912415055_6f851ef094_o.jpg
+    ## 7/10 https://live.staticflickr.com/5515/31110036502_3c66dc4453_o.jpg
+    ## 8/10 https://live.staticflickr.com/7301/9225050520_332c40cff8_o.jpg
+    ## 9/10 https://live.staticflickr.com/3292/2802678185_70b6c16c70_o.jpg
+    ## Done. (30.0s)
+    ## All images saved to /mnt/c/TensorFlow-model/flickr_scraper-master/images/underwater_lobster/
+
+The utility will download the specified number of images and place them
+in a subdirectory of the flickr-scraper folder.
+
+There are other sources of imagery that could be considered as well, for instance, the review website Yelp provides a large open dataset of images that can be scraped for classified imagery. In the p
+
+
 ## Implemented Approach: Training a TensorFlow tflite model with Google's Teachable Machine
 
 ![](assets/teachable-machine-setup/tm-1.png)
@@ -205,11 +277,8 @@ https://github.com/pjreddie/darknet
 
 ## Alternative Approach: Training a TensorFlow model with Keras and R
 
-The first half of this document is based on the guide from [TensorFlow
-for R from R
-Studio](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_classification/)
-and shows the basic setup of a “hello world” object recognition
-application using R:
+The first half of this document is based on the guide from [TensorFlow for R from R
+Studio](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_classification/) and shows the basic setup of a “hello world” object recognition application using R:
 
 <https://github.com/rstudio/tensorflow>
 
@@ -240,12 +309,8 @@ If required, install Tensorflow with this
 #install_tensorflow()
 ```
 
-You will need to have also installed anacoda for TensorFlow to work in
-R, as well as CUDA. These instructions from a github user
-[CostanzoPablo](https://github.com/CostanzoPablo) were helpful in
-getting cuda
-tensorflow/stream\_executor/platform/default/dso\_loader/cudart64\_110.dll
-to work on my machine:
+You will need to have also installed anacoda for TensorFlow to work in R, as well as CUDA. These instructions from a github user
+[CostanzoPablo](https://github.com/CostanzoPablo) were helpful in getting cuda tensorflow/stream\_executor/platform/default/dso\_loader/cudart64\_110.dll to work on my machine:
 
 > -   Uninstall all drivers that says “nvidia” from Uninstall programs
 >     (ALL, Cuda and gpu driver)
@@ -476,84 +541,6 @@ class_pred
 
     ## [1] 9
 
-# Sourcing Lobster imagery:
-
-In order to retrieve some of the lobster imagery, sources like Flickr
-were considered. In the particular case of Flickr, the Flickr API and
-publicly available tools like Flickr-Scraper by Ultralytics LLC, a
-Python program can be used to download the first Nth results of a Flickr
-search. The search term “Lobster” is too vague for use on this platform,
-resulting in numerous images of prepared lobster as foods like
-sandwiches and soups (rolls and bisques).
-
-Here are the basics of using the utility with Python to find search
-results on Flickr for the term “Underwater Lobster”.
-
-You can execute bash scripts in an R notebook using the instruction
-included here:
-<https://bookdown.org/yihui/rmarkdown-cookbook/eng-bash.html>
-
-Clone the flickr\_scraper-master repository:
-
-    git clone https://github.com/ultralytics/flickr_scraper.git
-
-List the contents of the working directory:
-
-``` bash
-ls
-```
-
-    ## README.md
-    ## flickr_scraper-master
-    ## lobster-detection.Rproj
-    ## lobster-pictures.Rmd
-    ## lobster-pictures.md
-    ## lobster-pictures_files
-    ## model
-
-Change directories to the flickr\_scraper folder:
-
-``` bash
-cd flickr_scraper-master
-ls
-```
-
-    ## LICENSE
-    ## README.md
-    ## flickr_scraper.py
-    ## images
-    ## requirements.txt
-    ## utils
-
-Since each bash chunk in an R Notebook exists seperately from the
-others, we will need to repeat the prior change directory command (cd)
-at the start when opening a new chunk, then we can follow the
-instructions provided from
-<https://github.com/ultralytics/flickr_scraper>
-
-After installing flickr\_scraper, we can scrape images from the top
-search results on flickr with this command:
-
-``` bash
-cd flickr_scraper-master
-python3 flickr_scraper.py --search 'underwater lobster' --n 10 --download
-```
-
-    ## 0/10 https://live.staticflickr.com/7327/27359314162_ebd5fa7e3c_o.jpg
-    ## 1/10 https://live.staticflickr.com/4422/36900022252_4b7095c6ee_o.jpg
-    ## 2/10 https://live.staticflickr.com/4370/36558985060_7a4c6b5bf3_o.jpg
-    ## 3/10 https://farm9.staticflickr.com/8311/28506321636_43e0a87358_b.jpg
-    ## 4/10 https://live.staticflickr.com/136/378049057_357ce9081f_o.jpg
-    ## 5/10 https://farm5.staticflickr.com/4430/35752736414_8ae831132b_b.jpg
-    ## 6/10 https://live.staticflickr.com/4422/36912415055_6f851ef094_o.jpg
-    ## 7/10 https://live.staticflickr.com/5515/31110036502_3c66dc4453_o.jpg
-    ## 8/10 https://live.staticflickr.com/7301/9225050520_332c40cff8_o.jpg
-    ## 9/10 https://live.staticflickr.com/3292/2802678185_70b6c16c70_o.jpg
-    ## Done. (30.0s)
-    ## All images saved to /mnt/c/TensorFlow-model/flickr_scraper-master/images/underwater_lobster/
-
-The utility will download the specified number of images and place them
-in a subdirectory of the flickr-scraper folder.
 
 ### Annotating the images with Roboflow:
 
