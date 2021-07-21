@@ -557,25 +557,49 @@ in a subdirectory of the flickr-scraper folder.
 
 ### Annotating the images with Roboflow:
 
-Annotation process:
-![Roboflow Setup 1](assets/roboflow-setup/setup1.png)
+#### Basic Annotation process:
+
+Login to Roboflow and select "Create a Project":
+![](assets/roboflow-setup/setup1.png)
 ![](assets/roboflow-setup/setup2.png)
+
+Choose "Object Detection (Bounding Box) for the project type:
 ![](assets/roboflow-setup/setup3.png)
+
+Add the annotation groups (list of objects to be identified):
 ![](assets/roboflow-setup/setup4.png)
+
+Use the Upload pane to upload the scraped image files:
 ![](assets/roboflow-setup/setup5.png)
+
+Using the Trash Can Icon, you can remove images from the uploaded set:
 ![](assets/roboflow-setup/setup6.png)
-![](assets/roboflow-setup/setup7.png)
+
+We can now specify what ratio we would like to use to split the training/testing/validation sets:
 ![](assets/roboflow-setup/setup8.png)
-![](assets/roboflow-setup/setup9.png)
-![](assets/roboflow-setup/setup10.png)
+
+We can see in the panel indicator that the images have been split in to seperate sets:
 ![](assets/roboflow-setup/setup11.png)
+
+Clicking on any of the images will open the annotation tools, draw a bounding box around a lobster, and click save to add the annotation to the dataset:
 ![](assets/roboflow-setup/setup12.png)
+
+Once images are annotated, their bounding area boxes are shown in preview:
 ![](assets/roboflow-setup/setup13.png)
-![](assets/roboflow-setup/setup14.png)
+
+Click on "Dataset" on the left side bar to open the version generation tools:
 ![](assets/roboflow-setup/setup15.png)
+
+Verify the specifications regarding testing/training/validation split:
 ![](assets/roboflow-setup/setup16.png)
+
+Perform optional pre-processing steps:
 ![](assets/roboflow-setup/setup17.png)
+
+(Example) Resize pre-processing:
 ![](assets/roboflow-setup/setup18.png)
+
+Perform optional augmentation steps:
 ![](assets/roboflow-setup/setup19.png)
 ![](assets/roboflow-setup/setup20.png)
 ![](assets/roboflow-setup/setup21.png)
