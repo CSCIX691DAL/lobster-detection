@@ -34,7 +34,7 @@
 7. [Risks](#risks)
 8. [Lessons Learned](#lessonsLearned)
 9.  [Further Development Recommendation](#furtherDevelopmentRecommendation) 
-10. [Project Signoff](#projectSignOff) 
+10. [Project Sign-off](#projectSignOff) 
 11. [References](#references) 
 
 
@@ -79,6 +79,11 @@
 
 ## User Stories <a name="userStories"> </a>
 
+| ID      | Description                                                                                                 |Status   |
+| :---    |    :----:                                                                                                   |     ---:|
+| 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
+
+
 
 ## Issues <a name="issues"> </a>
 
@@ -92,7 +97,7 @@
 ## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
 
 
-## Project Sign off <a name="projectSignOff"> </a>
+## Project Sign-off <a name="projectSignOff"> </a>
 
 
 ## References <a name="references"> </a>
