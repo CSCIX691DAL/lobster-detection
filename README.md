@@ -42,17 +42,17 @@ Perform real time object recognition/detection of whether there is a lobster in 
 ### Proposed Solution:
 - Collect a proper dataset of lobster photos.
 - Label Images in CVAT or Roboflow Annotate.
-- Export annotated data set to Darknet YOLOv4.
-- Run dataset through roboflow training module.
-- Export our trained images and bounding boxes in the YOLO Darknet format, using Roboflow.
-- Convert YOLOv4 to TFlite’s weighted system.
+- ~~Export annotated data set to Darknet YOLOv4.~~ Not implemented, teachablemachine.withgoogle.com tensorflow training process was used instead.
+- ~~Run dataset through Roboflow training module.~~ Roboflow's training features require payment, where as teachable machine is free.
+- ~~Export our trained images and bounding boxes in the YOLO Darknet format, using Roboflow.~~ Export format ended up being different that YOLO.
+- ~~Convert YOLOv4 to TFlite’s weighted system.~~
 - Write code to sort data from the API.
-- Convert Darknet Model to TensorFlow Lite.
+- ~~Convert Darknet Model to TensorFlow Lite.~~ Dartket was not implemented.
 - Deploy on Device.
 
 ### Purpose <a name="purpose"></a>
 
-Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch. Real time object recognition could be used by governments and compliance agencies to recognize violations of aquaculture harvesting laws and regulations, through imagery obtained by enforced video surveillance on fishing vessels.
+Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch.
 
 
 ### Technology Stack <a name="technologyStack"></a>
@@ -144,7 +144,7 @@ You will now see the device added to your list of available devices, click on th
 
 #### Installing Flutter:
 
-Download Flutter from the official webpage (click on Windows):
+Download Flutter from the official webpage:
 ![](assets/IDE-setup/IDE25.png)
 
 Click on the button with the link to the latest SDK:
@@ -351,7 +351,7 @@ We considered several sources for finding lobster imagery to train the machine l
 
 ##### Flickr Scraper
 
-![Flickr Logo](https://cdn.kustomerhostedcontent.com/media/5aecd7338a0607779d1ec9cc/966e09a41a33f89fe18f2ab227336f09.png)
+![Flickr Logo](https://cdn.kustomerhostedcontent.com/media/5aecd7338a0607779d1ec9cc/966e09a41a33f89fe18f2ab227336f09.png | width=100)
 
 In order to retrieve some of the lobster imagery, sources like Flickr were considered. In the particular case of Flickr, the Flickr API and publicly available tools like Flickr-Scraper by Ultralytics LLC, a Python program can be used to download the first Nth results of a Flickr search. The search term “Lobster” is too vague for use on this platform,resulting in numerous images of prepared lobster as foods like sandwiches and soups (rolls and bisques).
 
@@ -421,7 +421,7 @@ There are other sources of imagery that could be considered as well, for instanc
 
 
 ##### Kaggle ("pre-prepared" datasets):
-![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png)
+![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png | width=100)
 
 Other sources of imagery, like Kaggle, were searched for good source imagery, but did not yield too many results beyond one collection of images of Spiny Lobsters by author Son Vo:
 
