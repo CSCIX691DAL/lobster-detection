@@ -75,6 +75,143 @@ VSCode (Optional)
 
 Git
 
+### Project File Structure:
+
+Clone the repository from git: 
+
+```bash
+git clone https://github.com/CSCIX691DAL/lobster-detection.git
+```
+
+You will find that the project has a directory and file structure like this:
+
+```bash
+application_folder
+├── README.md <-- 'The main README.md file' 
+├── android <-- 'The compiled android application folder'
+│   ├── app
+│   │   ├── build.gradle
+│   │   └── src
+│   │       ├── debug
+│   │       │   └── AndroidManifest.xml
+│   │       ├── main
+│   │       │   ├── AndroidManifest.xml
+│   │       │   ├── java
+│   │       │   │   └── io
+│   │       │   │       └── flutter
+│   │       │   │           └── plugins
+│   │       │   │               └── GeneratedPluginRegistrant.java
+│   │       │   ├── kotlin
+│   │       │   │   └── com
+│   │       │   │       └── umairadil
+│   │       │   │           └── tensorflow_lite_flutter
+│   │       │   │               └── MainActivity.kt
+│   │       │   └── res
+│   │       │       ├── drawable
+│   │       │       │   └── launch_background.xml
+│   │       │       ├── mipmap-hdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       ├── mipmap-mdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       ├── mipmap-xhdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       ├── mipmap-xxhdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       ├── mipmap-xxxhdpi
+│   │       │       │   └── ic_launcher.png
+│   │       │       └── values
+│   │       │           └── styles.xml
+│   │       └── profile
+│   │           └── AndroidManifest.xml
+│   ├── build.gradle
+│   ├── gradle
+│   │   └── wrapper
+│   │       └── gradle-wrapper.properties
+│   ├── gradle.properties
+│   ├── local.properties
+│   └── settings.gradle
+├── assets  <-- 'The folder where assets are stored'
+│   ├── icons
+│   │   ├── 128.png
+│   │   ├── 256.png
+│   │   ├── 64.png
+│   │   └── lobster_transparent.svg <-- 'The source file for the icon'
+│   ├── labels.txt <-- 'The annotation labels for the tflite model file'
+│   └── model_unquant.tflite <-- 'tflite model file'
+├── ios <-- 'The compiled iOS application folder'
+│   ├── Flutter
+│   │   ├── AppFrameworkInfo.plist
+│   │   ├── Debug.xcconfig
+│   │   ├── Generated.xcconfig
+│   │   ├── Release.xcconfig
+│   │   └── flutter_export_environment.sh
+│   ├── Podfile
+│   ├── Runner
+│   │   ├── AppDelegate.swift
+│   │   ├── Assets.xcassets
+│   │   │   ├── AppIcon.appiconset
+│   │   │   │   ├── Contents.json
+│   │   │   │   ├── Icon-App-1024x1024@1x.png
+│   │   │   │   ├── Icon-App-20x20@1x.png
+│   │   │   │   ├── Icon-App-20x20@2x.png
+│   │   │   │   ├── Icon-App-20x20@3x.png
+│   │   │   │   ├── Icon-App-29x29@1x.png
+│   │   │   │   ├── Icon-App-29x29@2x.png
+│   │   │   │   ├── Icon-App-29x29@3x.png
+│   │   │   │   ├── Icon-App-40x40@1x.png
+│   │   │   │   ├── Icon-App-40x40@2x.png
+│   │   │   │   ├── Icon-App-40x40@3x.png
+│   │   │   │   ├── Icon-App-60x60@2x.png
+│   │   │   │   ├── Icon-App-60x60@3x.png
+│   │   │   │   ├── Icon-App-76x76@1x.png
+│   │   │   │   ├── Icon-App-76x76@2x.png
+│   │   │   │   └── Icon-App-83.5x83.5@2x.png
+│   │   │   └── LaunchImage.imageset
+│   │   │       ├── Contents.json
+│   │   │       ├── LaunchImage.png
+│   │   │       ├── LaunchImage@2x.png
+│   │   │       ├── LaunchImage@3x.png
+│   │   │       └── README.md
+│   │   ├── Base.lproj
+│   │   │   ├── LaunchScreen.storyboard
+│   │   │   └── Main.storyboard
+│   │   ├── GeneratedPluginRegistrant.h
+│   │   ├── GeneratedPluginRegistrant.m
+│   │   ├── Info.plist
+│   │   └── Runner-Bridging-Header.h
+│   ├── Runner.xcodeproj
+│   │   ├── project.pbxproj
+│   │   ├── project.xcworkspace
+│   │   │   ├── contents.xcworkspacedata
+│   │   │   └── xcshareddata
+│   │   │       ├── IDEWorkspaceChecks.plist
+│   │   │       └── WorkspaceSettings.xcsettings
+│   │   └── xcshareddata
+│   │       └── xcschemes
+│   │           └── Runner.xcscheme
+│   └── Runner.xcworkspace
+│       ├── contents.xcworkspacedata
+│       └── xcshareddata
+│           ├── IDEWorkspaceChecks.plist
+│           └── WorkspaceSettings.xcsettings
+├── lib <-- 'Where most of the code resides, this is the project library'
+│   ├── HomePage.dart <-- 'The primary place of interaction with the user'
+│   ├── SplashScreen.dart <-- 'A splash screen that shows the group local'
+│   ├── helpers
+│   │   ├── app_helper.dart
+│   │   ├── camera_helper.dart <-- 'A helper file for working with the camera input'
+│   │   └── tflite_helper.dart <-- 'A helper file for workinn with tflite' 
+│   ├── main.dart <-- 'The main.dart file, which is responsible for the '
+│   ├── models
+│   │   └── result.dart <-- 'A Screen for showing the results of the object detection'
+│   └── screens
+│       └── detect_screen.dart <-- 'The screen that shows the Tflite prediction strength'
+├── pubspec.lock
+└── pubspec.yaml <-- 'Can require modification when new assets/libraries imported'
+```
+
+
+
 ### Intended Users <a name="intendedUsers"></a>
 
 ### Project Value <a name="projectValue"> </a>
@@ -200,141 +337,6 @@ Search for and install the Flutter plugin:
 ![](assets/IDE-setup/IDE48.png)
 
 
-
-### Project File Structure:
-
-Clone the repository from git: 
-
-```bash
-git clone https://github.com/CSCIX691DAL/lobster-detection.git
-```
-
-You will find that the project has a directory and file structure like this:
-
-```bash
-.
-├── README.md <-- 'The main README.md file' 
-├── android <-- 'The compiled android application folder, can be excluded if only developing for iOS and/or Web'
-│   ├── app
-│   │   ├── build.gradle
-│   │   └── src
-│   │       ├── debug
-│   │       │   └── AndroidManifest.xml
-│   │       ├── main
-│   │       │   ├── AndroidManifest.xml
-│   │       │   ├── java
-│   │       │   │   └── io
-│   │       │   │       └── flutter
-│   │       │   │           └── plugins
-│   │       │   │               └── GeneratedPluginRegistrant.java
-│   │       │   ├── kotlin
-│   │       │   │   └── com
-│   │       │   │       └── umairadil
-│   │       │   │           └── tensorflow_lite_flutter
-│   │       │   │               └── MainActivity.kt
-│   │       │   └── res
-│   │       │       ├── drawable
-│   │       │       │   └── launch_background.xml
-│   │       │       ├── mipmap-hdpi
-│   │       │       │   └── ic_launcher.png
-│   │       │       ├── mipmap-mdpi
-│   │       │       │   └── ic_launcher.png
-│   │       │       ├── mipmap-xhdpi
-│   │       │       │   └── ic_launcher.png
-│   │       │       ├── mipmap-xxhdpi
-│   │       │       │   └── ic_launcher.png
-│   │       │       ├── mipmap-xxxhdpi
-│   │       │       │   └── ic_launcher.png
-│   │       │       └── values
-│   │       │           └── styles.xml
-│   │       └── profile
-│   │           └── AndroidManifest.xml
-│   ├── build.gradle  <-- 'The build specification file'
-│   ├── gradle
-│   │   └── wrapper
-│   │       └── gradle-wrapper.properties
-│   ├── gradle.properties
-│   ├── local.properties
-│   └── settings.gradle
-├── assets  <-- 'The folder where assets such as images, icons and TensorFlow models are stored'
-│   ├── icons
-│   │   ├── 128.png
-│   │   ├── 256.png
-│   │   ├── 64.png
-│   │   └── lobster_transparent.svg <-- 'The source file for the project icon'
-│   ├── labels.txt <-- 'The labels for the tflite model'
-│   └── model_unquant.tflite <-- 'The tflite model generated by Teachable machine'
-├── ios <-- 'The compiled iOS application folder, can be excluded if only developing for Android and/or Web'
-│   ├── Flutter
-│   │   ├── AppFrameworkInfo.plist
-│   │   ├── Debug.xcconfig
-│   │   ├── Generated.xcconfig
-│   │   ├── Release.xcconfig
-│   │   └── flutter_export_environment.sh
-│   ├── Podfile
-│   ├── Runner
-│   │   ├── AppDelegate.swift
-│   │   ├── Assets.xcassets
-│   │   │   ├── AppIcon.appiconset
-│   │   │   │   ├── Contents.json
-│   │   │   │   ├── Icon-App-1024x1024@1x.png
-│   │   │   │   ├── Icon-App-20x20@1x.png
-│   │   │   │   ├── Icon-App-20x20@2x.png
-│   │   │   │   ├── Icon-App-20x20@3x.png
-│   │   │   │   ├── Icon-App-29x29@1x.png
-│   │   │   │   ├── Icon-App-29x29@2x.png
-│   │   │   │   ├── Icon-App-29x29@3x.png
-│   │   │   │   ├── Icon-App-40x40@1x.png
-│   │   │   │   ├── Icon-App-40x40@2x.png
-│   │   │   │   ├── Icon-App-40x40@3x.png
-│   │   │   │   ├── Icon-App-60x60@2x.png
-│   │   │   │   ├── Icon-App-60x60@3x.png
-│   │   │   │   ├── Icon-App-76x76@1x.png
-│   │   │   │   ├── Icon-App-76x76@2x.png
-│   │   │   │   └── Icon-App-83.5x83.5@2x.png
-│   │   │   └── LaunchImage.imageset
-│   │   │       ├── Contents.json
-│   │   │       ├── LaunchImage.png
-│   │   │       ├── LaunchImage@2x.png
-│   │   │       ├── LaunchImage@3x.png
-│   │   │       └── README.md
-│   │   ├── Base.lproj
-│   │   │   ├── LaunchScreen.storyboard
-│   │   │   └── Main.storyboard
-│   │   ├── GeneratedPluginRegistrant.h
-│   │   ├── GeneratedPluginRegistrant.m
-│   │   ├── Info.plist
-│   │   └── Runner-Bridging-Header.h
-│   ├── Runner.xcodeproj
-│   │   ├── project.pbxproj
-│   │   ├── project.xcworkspace
-│   │   │   ├── contents.xcworkspacedata
-│   │   │   └── xcshareddata
-│   │   │       ├── IDEWorkspaceChecks.plist
-│   │   │       └── WorkspaceSettings.xcsettings
-│   │   └── xcshareddata
-│   │       └── xcschemes
-│   │           └── Runner.xcscheme
-│   └── Runner.xcworkspace
-│       ├── contents.xcworkspacedata
-│       └── xcshareddata
-│           ├── IDEWorkspaceChecks.plist
-│           └── WorkspaceSettings.xcsettings
-├── lib <-- 'Where most of the code resides, this is the project library'
-│   ├── HomePage.dart <-- 'The primary place of interaction with the user, where they can choose to either upload an image or activate their camera'
-│   ├── SplashScreen.dart <-- 'A splash screen that shows the group local'
-│   ├── helpers
-│   │   ├── app_helper.dart
-│   │   ├── camera_helper.dart <-- 'A helper file for workign with the camera input'
-│   │   └── tflite_helper.dart <-- 'A helper file for workign with tflite' 
-│   ├── main.dart <-- 'The main.dart file, which is responsible for the '
-│   ├── models
-│   │   └── result.dart <-- 'A Screen for showing the results of the object detection'
-│   └── screens
-│       └── detect_screen.dart <-- 'The screen that shows the Tflite prediction strength in real time'
-├── pubspec.lock
-└── pubspec.yaml <-- 'The pubspec.yaml file, when implementing and importing new libaries, it can be necessary to include them in this file, it is also where assets and assets files are described to the application'
-```
 
 
 
