@@ -58,29 +58,28 @@ Perform real time object recognition/detection of whether there is a lobster in 
 
 Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch.
 
-
 ### Intended Users <a name="intendedUsers"></a>
-The intended userbase of the Lobster Detection app are the general users who are looking to identify lobsters with their phone. The app has real time object detection which can be used by scientists and researchers to perform real time analysis. The general users can point their camera on the object to check if the object is lobster or not. The users can also detect varities of lobsters.
 
+The intended userbase of the Lobster Detection app are the general users who are looking to identify lobsters with their phone. The app has real time object detection which can be used by scientists and researchers to perform real time analysis. The general users can point their camera on the object to check if the object is lobster or not. The users can also detect varities of lobsters.
 
 ## User Stories <a name="userStories"> </a>
 
-| ID      | Description                                                                                                 |Status   |
-| :---    |    :----:                                                                                                   |     ---:|
-| 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
-| 2       | As a User, I would like the app to successfully capture the lobster and define its type                     |Approved |
-| 3       | As a User, it would be easier for the app to capture the lobster through my phone with the flash on         |Approved |
-| 4       | As a User, I would like to have a page in the app for a personal feedback about my app usage                |Approved |
-| 5       | As a User, I would like the app to have a contact information where I could send inquiries about the app    |Approved |
-| 6       | As a User, I want a page where I could find descriptions about app usage                                    |Approved |
+| ID  |                                               Description                                                |   Status |
+| :-- | :------------------------------------------------------------------------------------------------------: | -------: |
+| 1   |       As a User, I want to create add feedback for the app so that the app can have more accuracy        | Approved |
+| 2   |         As a User, I would like the app to successfully capture the lobster and define its type          | Approved |
+| 3   |   As a User, it would be easier for the app to capture the lobster through my phone with the flash on    | Approved |
+| 4   |       As a User, I would like to have a page in the app for a personal feedback about my app usage       | Approved |
+| 5   | As a User, I would like the app to have a contact information where I could send inquiries about the app | Approved |
+| 6   |                 As a User, I want a page where I could find descriptions about app usage                 | Approved |
 
 ### Project Value <a name="projectValue"> </a>
+
 Working on this project have provided significant value to the team as a developer and as a student. Through out the project the development team have used several tools which required consistent learning of new concepts in order to implement. Once the basic development was completed, the iterative development helped the team to promote constant learning and improvement. Moreover, the team have used Azure Board and Git to be organized throughout the project. The team have learned about collaborative work environment and team dynamics as they maybe used in industry.
 
-
 ### Measureable Organizational Value <a name ="measurableOrganizationalValue"> </a>
-Within 3 months, the team have successfully developed a working app that is able to detect lobsters with significant accuracy. If more time is provided for the project the team can definitely increase the accuracy for the lobster detection model. The feedback from the users can also provide insight into the user experience for using the app, which can be used to measure the success of the app.
 
+Within 3 months, the team have successfully developed a working app that is able to detect lobsters with significant accuracy. If more time is provided for the project the team can definitely increase the accuracy for the lobster detection model. The feedback from the users can also provide insight into the user experience for using the app, which can be used to measure the success of the app.
 
 ## User Features <a name="userFeatures"> </a>
 
@@ -100,7 +99,6 @@ Here, users have a choice between two options for detection:
 Detection Screen
 
 Here, the appliation runs an object detection model and displays the type of lobster detected along with the percentage of accuracy.
-
 
 ## Setup <a name="setup"> </a>
 
@@ -126,6 +124,8 @@ VSCode (Optional)
 - Dart Plugin
 
 Git
+
+InVision
 
 ### Project Files:
 
@@ -584,6 +584,11 @@ https://github.com/pjreddie/darknet
 
 ## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
 
+Detection on a Static Image
+
+- Implement code to allow object detection on a static image that is loaded from a given source.
+- Functionality to load an image already exists.
+
 ### Working with the images in R:
 
 ```r
@@ -960,8 +965,8 @@ Perform optional augmentation steps:
 ![](assets/roboflow-setup/setup20.png)
 ![](assets/roboflow-setup/setup21.png)
 
-
 ### This project is based on:
+
 https://github.com/umair13adil/tensorflow_lite_flutter
 
 By Muhammad Umair Adil (https://github.com/umair13adil)
