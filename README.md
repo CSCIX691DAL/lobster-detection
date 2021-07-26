@@ -287,10 +287,25 @@ application_folder
 
 ##### With the setup complete, navigate to the "Add-Ons" pane by clicking the icon in left sidebarl, search for and install the Flutter plugin:
 ![](assets/IDE-setup/IDE48.png)
+ 
+#### Opening and running the application:
 
+##### Navigate to the project folder and right click on it, choose, "open with Code":
+![](assets/IDE-setup/IDE50.png)
 
+##### Open the main.dart file by navigating to it using the files sidebar on the left:
+![](assets/IDE-setup/IDE51.png)
 
+##### Click in the bottom right menu where it says "No Device", a list of the installed Android Virtual Devices, as well as the Flutter emulator option, will be displayed in the command pallet. Select the Android Virtual Device that you have created for this project, or one that already exists on your system:
+![](assets/IDE-setup/IDE52.png)
 
+##### The Android Virtual Device will be launched:
+![](assets/IDE-setup/IDE53.png)
+![](assets/IDE-setup/IDE54.png)
+
+##### To compile and run the Flutter application, click on the "Run" button in the top right of the VSCode window and select "Start Debugging", the application will launch:
+![](assets/IDE-setup/IDE55.png)
+![](assets/IDE-setup/IDE57.png)
 
 ## User Features <a name="userFeatures"> </a>
 
