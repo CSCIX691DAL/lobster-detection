@@ -226,6 +226,7 @@ application_folder
 
 
 ### Intended Users <a name="intendedUsers"></a>
+Lobster Detection app can be used by anyone who is looking for an app to identify the lobster and wants to know more about them. The intended users of the app are people who wants to know wants to identify various forms of lobsters through the app.
 
 ### Project Value <a name="projectValue"> </a>
 
