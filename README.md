@@ -230,6 +230,8 @@ Lobster Detection app can be used by anyone who is looking for an app to identif
 
 ### Project Value <a name="projectValue"> </a>
 
+
+
 ## Setup <a name="setup"> </a>
 
 ### Setup Instructions (Windows)
@@ -323,7 +325,9 @@ Lobster Detection app can be used by anyone who is looking for an app to identif
 
 ## User Features <a name="userFeatures"> </a>
 
+
 ## Technical Features <a name="technicalFeatures"> </a>
+
 
 ### Object Recognition:
 
