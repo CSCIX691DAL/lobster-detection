@@ -1,6 +1,8 @@
 # Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University 
 
 ![Team Logo](assets/icons/main.svg)
+
+
 ### Team Members:
 - Kanak Prajapati
 - Kayleen Sung
@@ -32,6 +34,7 @@
 
 
 ## Project Overview <a name="projectOveriew"></a>
+![](assets/demo/demovid.gif)
 
 ### Description <a name="description"></a>
 Flutter application implementing TFlite for machine vision recognition of lobsters.
@@ -74,6 +77,16 @@ VSCode (Optional)
 - Dart Plugin
 
 Git
+
+### This project is based on:
+https://github.com/umair13adil/tensorflow_lite_flutter
+
+By Muhammad Umair Adil (https://github.com/umair13adil)
+
+![](assets/external-sources/image1.gif)
+![](assets/external-sources/image2.gif)
+
+> The "TensorFlow" model is trained using Teachable Machines. The model is trained with different texture colors of walls. App will recognize the color and classify the color according to best match. This app will load a pre-trained model and start classification on frames received from Camera Controller. App will show results in real-time along with confidence percentages.
 
 ### Project File Structure:
 
@@ -320,7 +333,7 @@ We considered several sources for finding lobster imagery to train the machine l
 
 ##### Flickr Scraper
 
-![Flickr Logo](https://cdn.kustomerhostedcontent.com/media/5aecd7338a0607779d1ec9cc/966e09a41a33f89fe18f2ab227336f09.png | width=100)
+![Flickr Logo](https://cdn.kustomerhostedcontent.com/media/5aecd7338a0607779d1ec9cc/966e09a41a33f89fe18f2ab227336f09.png)
 
 In order to retrieve some of the lobster imagery, sources like Flickr were considered. In the particular case of Flickr, the Flickr API and publicly available tools like Flickr-Scraper by Ultralytics LLC, a Python program can be used to download the first Nth results of a Flickr search. The search term “Lobster” is too vague for use on this platform,resulting in numerous images of prepared lobster as foods like sandwiches and soups (rolls and bisques).
 
@@ -389,8 +402,8 @@ There are other sources of imagery that could be considered as well, for instanc
 ![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-35-1.png)
 
 
-##### Kaggle ("pre-prepared" datasets):
-![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png | width=100)
+##### Kaggle (datasets - images):
+![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png)
 
 Other sources of imagery, like Kaggle, were searched for good source imagery, but did not yield too many results beyond one collection of images of Spiny Lobsters by author Son Vo:
 
@@ -405,99 +418,51 @@ This Kaggle imagery set was used in training one version of the object recogniti
 
 ### Training a TensorFlow tflite model with Google's Teachable Machine (Implemented Approach):
 
-Click the "Get started" button in the upper right:
+##### Click the "Get started" button in the upper right:
 ![](assets/teachable-machine-setup/tm-1.png)
 
-Click on the "Image Project" card to select a new image project:
+##### Click on the "Image Project" card to select a new image project:
 ![](assets/teachable-machine-setup/tm-2.png)
 
-Select "Standard image model":
+##### Select "Standard image model":
 ![](assets/teachable-machine-setup/tm-3.png)
 
-You will be shown a blank screen representing the contents of the project, here you can see there are boxes for classes (the different types of objects we want to classify), a section for tweaking the training parameters, and a section for exporting the trained model:
+##### You will be shown a blank screen representing the contents of the project, here you can see there are boxes for classes (the different types of objects we want to classify), a section for tweaking the training parameters, and a section for exporting the trained model:
 ![](assets/teachable-machine-setup/tm-4.png)
 
-We can begin by creating a new class label:
+##### We can begin by creating a new class label:
 ![](assets/teachable-machine-setup/tm-5.png)
 
-Click the upload button and select your imagery:
+##### Click the upload button and select your imagery:
 ![](assets/teachable-machine-setup/tm-6.png)
 
-Once the images are uploaded, the you can click "Train Model" to begin the training process, or you can adjust the advanced parameters prior to the process beginning:
+##### Once the images are uploaded, the you can click "Train Model" to begin the training process, or you can adjust the advanced parameters prior to the process beginning:
 ![](assets/teachable-machine-setup/tm-7.png)
 
-The training process may take some time, depending on the resolution and quantity of the source imagery and the advanced parameter settings:
+##### The training process may take some time, depending on the resolution and quantity of the source imagery and the advanced parameter settings:
 ![](assets/teachable-machine-setup/tm-8.png)
 
-When the model is trained, the export preview window will open:
+##### When the model is trained, the export preview window will open:
 ![](assets/teachable-machine-setup/tm-9.png)
 
-We can also try adjusting some of the advanced parameters, like the number of epochs, the batch size and the learning rate:
+##### We can also try adjusting some of the advanced parameters, like the number of epochs, the batch size and the learning rate:
 ![](assets/teachable-machine-setup/tm-10.png)
 
-We can view some statistical graphs, as well as calculate the accuracy per class and generate a confusion matrix. We can also see the accuracy per epoch and the test loss per epoch:
+##### We can view some statistical graphs, as well as calculate the accuracy per class and generate a confusion matrix. We can also see the accuracy per epoch and the test loss per epoch:
 ![](assets/teachable-machine-setup/tm-11.png)
 
-Click "export model" to export the model:
+##### Click "export model" to export the model:
 ![](assets/teachable-machine-setup/tm-12.png)
 
-Once we have a model we are interested in exporting, we can do so by clicking the "Export Model" button and choose the "TensorFlow Lite" tab, make sure that the conversion type is set to Floating point, and click "convert model". This process may take some time. When completed the page will create file save alert dialog.
+##### Once we have a model we are interested in exporting, we can do so by clicking the "Export Model" button and choose the "TensorFlow Lite" tab, make sure that the conversion type is set to Floating point, and click "convert model". This process may take some time. When completed the page will create file save alert dialog.
 ![](assets/teachable-machine-setup/tm-13.png)
 
-Choose a location to download the file to:
+##### Choose a location to download the file to:
 ![](assets/teachable-machine-setup/tm-14.png)
 
-This will be the contents of the unzipped file, the tflite model and a text file with the classified labels:
+##### This will be the contents of the unzipped file, the tflite model and a text file with the classified labels:
 ![](assets/teachable-machine-setup/tm-15.png)
 
-
-### Training a TensorFlow model with Keras and R (Alternative approach, incomplete):
-
-#### Annotating the images with Roboflow:
-
-Login to Roboflow and select "Create a Project":
-![](assets/roboflow-setup/setup1.png)
-![](assets/roboflow-setup/setup2.png)
-
-Choose "Object Detection (Bounding Box) for the project type:
-![](assets/roboflow-setup/setup3.png)
-
-Add the annotation groups (list of objects to be identified):
-![](assets/roboflow-setup/setup4.png)
-
-Use the Upload pane to upload the scraped image files:
-![](assets/roboflow-setup/setup5.png)
-
-Using the Trash Can Icon, you can remove images from the uploaded set:
-![](assets/roboflow-setup/setup6.png)
-
-We can now specify what ratio we would like to use to split the training/testing/validation sets:
-![](assets/roboflow-setup/setup11.png)
-
-We can see in the panel indicator that the images have been split in to seperate sets:
-![](assets/roboflow-setup/setup12.png)
-
-Clicking on any of the images will open the annotation tools, draw a bounding box around a lobster, and click save to add the annotation to the dataset:
-![](assets/roboflow-setup/setup13.png)
-
-Once images are annotated, their bounding area boxes are shown in preview:
-![](assets/roboflow-setup/setup15.png)
-
-Click on "Dataset" on the left side bar to open the version generation tools:
-![](assets/roboflow-setup/setup16.png)
-
-Verify the specifications regarding testing/training/validation split:
-![](assets/roboflow-setup/setup17.png)
-
-Perform optional pre-processing steps:
-![](assets/roboflow-setup/setup18.png)
-
-(Example) Resize pre-processing:
-![](assets/roboflow-setup/setup19.png)
-
-Perform optional augmentation steps:
-![](assets/roboflow-setup/setup20.png)
-![](assets/roboflow-setup/setup21.png)
 
 ## User Stories <a name="userStories"> </a>
 
@@ -565,6 +530,7 @@ https://github.com/pjreddie/darknet
 
 
 
+# Addendum
 
 ### Working with the images in R:
 
@@ -893,3 +859,51 @@ class_pred
 ```
 
     ## [1] 9
+
+### Training a TensorFlow model with Keras and R (Alternative approach, incomplete):
+
+#### Annotating the images with Roboflow:
+
+Login to Roboflow and select "Create a Project":
+![](assets/roboflow-setup/setup1.png)
+![](assets/roboflow-setup/setup2.png)
+
+Choose "Object Detection (Bounding Box) for the project type:
+![](assets/roboflow-setup/setup3.png)
+
+Add the annotation groups (list of objects to be identified):
+![](assets/roboflow-setup/setup4.png)
+
+Use the Upload pane to upload the scraped image files:
+![](assets/roboflow-setup/setup5.png)
+
+Using the Trash Can Icon, you can remove images from the uploaded set:
+![](assets/roboflow-setup/setup6.png)
+
+We can now specify what ratio we would like to use to split the training/testing/validation sets:
+![](assets/roboflow-setup/setup11.png)
+
+We can see in the panel indicator that the images have been split in to seperate sets:
+![](assets/roboflow-setup/setup12.png)
+
+Clicking on any of the images will open the annotation tools, draw a bounding box around a lobster, and click save to add the annotation to the dataset:
+![](assets/roboflow-setup/setup13.png)
+
+Once images are annotated, their bounding area boxes are shown in preview:
+![](assets/roboflow-setup/setup15.png)
+
+Click on "Dataset" on the left side bar to open the version generation tools:
+![](assets/roboflow-setup/setup16.png)
+
+Verify the specifications regarding testing/training/validation split:
+![](assets/roboflow-setup/setup17.png)
+
+Perform optional pre-processing steps:
+![](assets/roboflow-setup/setup18.png)
+
+(Example) Resize pre-processing:
+![](assets/roboflow-setup/setup19.png)
+
+Perform optional augmentation steps:
+![](assets/roboflow-setup/setup20.png)
+![](assets/roboflow-setup/setup21.png)
