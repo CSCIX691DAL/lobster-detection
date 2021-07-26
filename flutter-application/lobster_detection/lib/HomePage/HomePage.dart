@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lobster_detection/HomePage/Camera/CameraScreen.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:lobster_detection/HomePage/HelpPage.dart';
 
 File _imageFile;
 
@@ -56,7 +57,12 @@ class _HomePageWidgetState extends State<MyHomePage> {
           ),
           IconButton(
             onPressed: () {
-              print('IconButton pressed ...');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HelpPage(),
+                ),
+              );
             },
             icon: Icon(
               Icons.help_sharp,
@@ -99,7 +105,7 @@ class _HomePageWidgetState extends State<MyHomePage> {
                 onPressed: (){
                   selectImage();
                 },
-                child: Icon(Icons.file_upload_outlined,),
+                child: Icon(Icons.file_upload,),
               ),
           ],
         ),
