@@ -234,7 +234,7 @@ Working on this project have provided significant value to the team as a develop
 
 
 ### Measureable Organizational Value <a name ="measurableOrganizationalValue"> </a>
-
+Within 3 months, the team have successfully developed a working app that is able to detect lobsters with significant accuracy. If more time is provided for the project the team can definitely increase the accuracy for the lobster detection model. The feedback from the users can also provide insight into the user experience for using the app, which can be used to measure the success of the app.
 
 ## Setup <a name="setup"> </a>
 
