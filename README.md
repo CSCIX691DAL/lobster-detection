@@ -21,6 +21,7 @@
    4. [Technology Stack](#technologyStack)
    5. [Intended Users](#intendedUsers)
    6. [Project Value](#projectValue)
+   7. [Measurable Organizational Value](#measurableOrganizationalValue)
 
 2. [Setup](#setup)
 3. [User Features](#userFeatures)
@@ -231,8 +232,14 @@ application_folder
 ```
 
 ### Intended Users <a name="intendedUsers"></a>
+The intended userbase of the Lobster Detection app are the general users who are looking to identify lobsters with their phone. The app has real time object detection which can be used by scientists and researchers to perform real time analysis. The general users can point their camera on the object to check if the object is lobster or not. The users can also detect varities of lobsters.
 
 ### Project Value <a name="projectValue"> </a>
+Working on this project have provided significant value to the team as a developer and as a student. Through out the project the development team have used several tools which required consistent learning of new concepts in order to implement. Once the basic development was completed, the iterative development helped the team to promote constant learning and improvement. Moreover, the team have used Azure Board and Git to be organized throughout the project. The team have learned about collaborative work environment and team dynamics as they maybe used in industry.
+
+
+### Measureable Organizational Value <a name ="measurableOrganizationalValue"> </a>
+Within 3 months, the team have successfully developed a working app that is able to detect lobsters with significant accuracy. If more time is provided for the project the team can definitely increase the accuracy for the lobster detection model. The feedback from the users can also provide insight into the user experience for using the app, which can be used to measure the success of the app.
 
 ## Setup <a name="setup"> </a>
 
