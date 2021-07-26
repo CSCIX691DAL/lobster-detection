@@ -1,9 +1,9 @@
-# Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University 
+# Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University
 
 ![Team Logo](assets/icons/main.svg)
 
-
 ### Team Members:
+
 - Kanak Prajapati
 - Kayleen Sung
 - Liam Cormack
@@ -14,12 +14,13 @@
 ## Table of Contents
 
 1. [Project Overview](#projectOveriew)
-    1. [Description](#description)
-    2. [Goal of Project](#goal)
-    3. [Purpose](#purpose) 
-    4. [Technology Stack](#technologyStack)
-    5. [Intended Users](#intendedUsers)
-    6. [Project Value](#projectValue)
+
+   1. [Description](#description)
+   2. [Goal of Project](#goal)
+   3. [Purpose](#purpose)
+   4. [Technology Stack](#technologyStack)
+   5. [Intended Users](#intendedUsers)
+   6. [Project Value](#projectValue)
 
 2. [Setup](#setup)
 3. [User Features](#userFeatures)
@@ -28,21 +29,24 @@
 6. [Issues](#issues)
 7. [Risks](#risks)
 8. [Lessons Learned](#lessonsLearned)
-9.  [Further Development Recommendation](#furtherDevelopmentRecommendation) 
-10. [Project Sign-off](#projectSignOff) 
-11. [References](#references) 
-
+9. [Further Development Recommendation](#furtherDevelopmentRecommendation)
+10. [Project Sign-off](#projectSignOff)
+11. [References](#references)
 
 ## Project Overview <a name="projectOveriew"></a>
+
 ![](assets/demo/demovid.gif)
 
 ### Description <a name="description"></a>
+
 Flutter application implementing TFlite for machine vision recognition of lobsters.
 
 ### Goal of Project <a name="goal"></a>
-Perform real time object recognition/detection of whether there is a lobster in the camera view, in a generally accessible and aesthetically pleasing app. Develop the app with the multi-platform application development environment Flutter, allowing it to be run on Android and iOS devices. 
+
+Perform real time object recognition/detection of whether there is a lobster in the camera view, in a generally accessible and aesthetically pleasing app. Develop the app with the multi-platform application development environment Flutter, allowing it to be run on Android and iOS devices.
 
 ### Proposed Solution:
+
 - Collect a proper dataset of lobster photos.
 - Label Images in CVAT or Roboflow Annotate.
 - ~~Export annotated data set to Darknet YOLOv4.~~ Not implemented, teachablemachine.withgoogle.com tensorflow training process was used instead.
@@ -57,10 +61,10 @@ Perform real time object recognition/detection of whether there is a lobster in 
 
 Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch.
 
-
 ### Technology Stack <a name="technologyStack"></a>
 
 Flutter
+
 - 'package:flutter/foundation.dart';
 - 'package:flutter/cupertino.dart';
 - 'package:camera/camera.dart'
@@ -70,15 +74,18 @@ Flutter
 - 'package:google_fonts/google_fonts.dart';
 
 Android Studio
+
 - Android Virtual Device (Android Virtualization)
 
 VSCode (Optional)
+
 - Flutter Plugin
 - Dart Plugin
 
 Git
 
 ### This project is based on:
+
 https://github.com/umair13adil/tensorflow_lite_flutter
 
 By Muhammad Umair Adil (https://github.com/umair13adil)
@@ -90,7 +97,7 @@ By Muhammad Umair Adil (https://github.com/umair13adil)
 
 ### Project File Structure:
 
-Clone the repository from git: 
+Clone the repository from git:
 
 ```bash
 git clone https://github.com/CSCIX691DAL/lobster-detection.git
@@ -100,7 +107,7 @@ You will find that the project has a directory and file structure like this:
 
 ```bash
 application_folder
-├── README.md <-- 'The main README.md file' 
+├── README.md <-- 'The main README.md file'
 ├── android <-- 'The compiled android application folder'
 │   ├── app
 │   │   ├── build.gradle
@@ -213,7 +220,7 @@ application_folder
 │   ├── helpers
 │   │   ├── app_helper.dart
 │   │   ├── camera_helper.dart <-- 'A helper file for working with the camera input'
-│   │   └── tflite_helper.dart <-- 'A helper file for working with tflite' 
+│   │   └── tflite_helper.dart <-- 'A helper file for working with tflite'
 │   ├── main.dart <-- 'The main.dart file, which is responsible for the '
 │   ├── models
 │   │   └── result.dart <-- 'A Screen for showing the results of the object detection'
@@ -222,8 +229,6 @@ application_folder
 ├── pubspec.lock
 └── pubspec.yaml <-- 'Can require modification when new assets/libraries imported'
 ```
-
-
 
 ### Intended Users <a name="intendedUsers"></a>
 
@@ -236,97 +241,139 @@ application_folder
 #### Installing Android Studio and setting up an Android Virtual Device (AVD)
 
 ##### Visit the Android Studio webpage and click "Download Android Studio"
+
 ![](assets/IDE-setup/IDE1.png)
 
 ##### Ensure that Android Virtual Device is included with the installation:
+
 ![](assets/IDE-setup/IDE6.png)
 
 ##### Set up a new Android Virtual Device:
+
 ![](assets/IDE-setup/IDE14.png)
 
 ##### When the install is finished, click the configure button in the bottom right and select the "AVD Manager":
+
 ![](assets/IDE-setup/IDE18.png)
 
 ##### Click on "Create Virtual Device"
+
 ![](assets/IDE-setup/IDE19.png)
 
 ##### Select a piece of hardware to emulate (recommend to choose a device like the Pixel 4 or similar):
+
 ![](assets/IDE-setup/IDE20.png)
 
 ##### Choose a build of Android to be installed:
+
 ![](assets/IDE-setup/IDE22.png)
 
 ##### Verify the AVD's configuration:
+
 ![](assets/IDE-setup/IDE23.png)
 
 ##### You will now see the device added to your list of available devices, click on the green arrow icon if you want to launch the AVD now:
+
 ![](assets/IDE-setup/IDE24.png)
 
 #### Installing Flutter:
 
 ##### Download Flutter from the official webpage:
+
 ![](assets/IDE-setup/IDE25.png)
 
 ##### Click on the button with the link to the latest SDK:
+
 ![](assets/IDE-setup/IDE26.png)
 
 ##### Extract the flutter folder to a location on your machine (recommended: a folder in the root of your C: drive):
+
 ![](assets/IDE-setup/IDE29.png)
 
 ##### With the files copied, we now need to add Flutter to the system's PATH, first look up "environment" in the Start menu, and open "Edit the system environment variables" control panel:
+
 ![](assets/IDE-setup/IDE30.png)
 
 ##### Click on "Environment Variables...":
+
 ![](assets/IDE-setup/IDE31.png)
 
 ##### Select "Path" in the top panel and click on "Edit":
+
 ![](assets/IDE-setup/IDE32.png)
 
 ##### Click on "New":
+
 ![](assets/IDE-setup/IDE33.png)
 
 ##### Add the path to the flutter\bin directory and click "OK" and restart your computer:
+
 ![](assets/IDE-setup/IDE35.png)
 
 #### Installing VSCode:
+
 ##### Download VSCode from the Official Webpage:
+
 ![](assets/IDE-setup/IDE36.png)
 
 ##### Open the installer and click through the dialog boxes, ensure that you check "Add to PATH":
+
 ![](assets/IDE-setup/IDE40.png)
 
 ##### VSCode Home Screen:
+
 ![](assets/IDE-setup/IDE45.png)
 
 ##### With the setup complete, navigate to the "Add-Ons" pane by clicking the icon in left sidebarl, search for and install the Flutter plugin:
+
 ![](assets/IDE-setup/IDE48.png)
- 
+
 #### Opening and running the application:
 
 ##### Navigate to the project folder and right click on it, choose, "open with Code":
+
 ![](assets/IDE-setup/IDE50.png)
 
 ##### Open the main.dart file by navigating to it using the files sidebar on the left:
+
 ![](assets/IDE-setup/IDE51.png)
 
 ##### Click in the bottom right menu where it says "No Device", a list of the installed Android Virtual Devices, as well as the Flutter emulator option, will be displayed in the command pallet. Select the Android Virtual Device that you have created for this project, or one that already exists on your system:
+
 ![](assets/IDE-setup/IDE52.png)
 
 ##### The Android Virtual Device will be launched:
+
 ![](assets/IDE-setup/IDE53.png)
 ![](assets/IDE-setup/IDE55.png)
 
 ##### To compile and run the Flutter application, click on the "Run" button in the top right of the VSCode window and select "Start Debugging", the application will launch:
+
 ![](assets/IDE-setup/IDE56.png)
 ![](assets/IDE-setup/IDE58.png)
 
 ## User Features <a name="userFeatures"> </a>
+
+User Features
+
+Welcome Screen
+Here, users see a message conveying the purpose of the application and a Button that allows transition to the next Screen.
+
+HomePage Screen
+Here, users have a choice between two options for detection:
+
+- Using the camera to for detection.
+- Performing detection on a static image. This feature is not currently complete.
+
+Detection Screen
+Here, the appliation runs an object detection model and displays the type of lobster detected along with the percentage of accuracy.
 
 ## Technical Features <a name="technicalFeatures"> </a>
 
 ### Object Recognition:
 
 #### Sourcing Lobster imagery:
+
 <https://github.com/ultralytics/flickr_scraper>
 
 We considered several sources for finding lobster imagery to train the machine learning model. Manual retrieval of images (i.e. manually saving images from a Google image search and social media websites) was undertaken to a limited degree, but is an undesirable methodology due to the tedious nature of saving each image through the computer's file manager dialogs. Instead it would be better to scrape; using a script, a large set of imagery that already had some kind of classification performed on it. There existsmany websites dedicated to sharing images, both for social media purposesand for data science research purposes. Two websites that were investigated in great detail were Flickr and Kaggle.
@@ -342,13 +389,13 @@ Here are the basics of using the utility with Python to find search results on F
 You can execute bash scripts in an R notebook using the instruction included here:
 <https://bookdown.org/yihui/rmarkdown-cookbook/eng-bash.html>
 
-Clone the flickr\_scraper-master repository:
+Clone the flickr_scraper-master repository:
 
     git clone https://github.com/ultralytics/flickr_scraper.git
 
 List the contents of the working directory:
 
-``` bash
+```bash
 ls
 ```
 
@@ -360,9 +407,9 @@ ls
     ## lobster-pictures_files
     ## model
 
-Change directories to the flickr\_scraper folder:
+Change directories to the flickr_scraper folder:
 
-``` bash
+```bash
 cd flickr_scraper-master
 ls
 ```
@@ -374,9 +421,9 @@ ls
     ## requirements.txt
     ## utils
 
-Since each bash chunk in an R Notebook exists seperately from the others, we will need to repeat the prior change directory command (cd) at the start when opening a new chunk, after installing flickr\_scraper, we can scrape images from the top search results on flickr with this command:
+Since each bash chunk in an R Notebook exists seperately from the others, we will need to repeat the prior change directory command (cd) at the start when opening a new chunk, after installing flickr_scraper, we can scrape images from the top search results on flickr with this command:
 
-``` bash
+```bash
 cd flickr_scraper-master
 python3 flickr_scraper.py --search 'underwater lobster' --n 10 --download
 ```
@@ -401,8 +448,8 @@ There are other sources of imagery that could be considered as well, for instanc
 
 ![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-35-1.png)
 
-
 ##### Kaggle (datasets - images):
+
 ![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png)
 
 Other sources of imagery, like Kaggle, were searched for good source imagery, but did not yield too many results beyond one collection of images of Spiny Lobsters by author Son Vo:
@@ -415,62 +462,73 @@ This Kaggle imagery set was used in training one version of the object recogniti
 
 <https://legacy.imagemagick.org/Usage/resize/>
 
-
 ### Training a TensorFlow tflite model with Google's Teachable Machine (Implemented Approach):
 
 ##### Click the "Get started" button in the upper right:
+
 ![](assets/teachable-machine-setup/tm-1.png)
 
 ##### Click on the "Image Project" card to select a new image project:
+
 ![](assets/teachable-machine-setup/tm-2.png)
 
 ##### Select "Standard image model":
+
 ![](assets/teachable-machine-setup/tm-3.png)
 
 ##### You will be shown a blank screen representing the contents of the project, here you can see there are boxes for classes (the different types of objects we want to classify), a section for tweaking the training parameters, and a section for exporting the trained model:
+
 ![](assets/teachable-machine-setup/tm-4.png)
 
 ##### We can begin by creating a new class label:
+
 ![](assets/teachable-machine-setup/tm-5.png)
 
 ##### Click the upload button and select your imagery:
+
 ![](assets/teachable-machine-setup/tm-6.png)
 
 ##### Once the images are uploaded, the you can click "Train Model" to begin the training process, or you can adjust the advanced parameters prior to the process beginning:
+
 ![](assets/teachable-machine-setup/tm-7.png)
 
 ##### The training process may take some time, depending on the resolution and quantity of the source imagery and the advanced parameter settings:
+
 ![](assets/teachable-machine-setup/tm-8.png)
 
 ##### When the model is trained, the export preview window will open:
+
 ![](assets/teachable-machine-setup/tm-9.png)
 
 ##### We can also try adjusting some of the advanced parameters, like the number of epochs, the batch size and the learning rate:
+
 ![](assets/teachable-machine-setup/tm-10.png)
 
 ##### We can view some statistical graphs, as well as calculate the accuracy per class and generate a confusion matrix. We can also see the accuracy per epoch and the test loss per epoch:
+
 ![](assets/teachable-machine-setup/tm-11.png)
 
 ##### Click "export model" to export the model:
+
 ![](assets/teachable-machine-setup/tm-12.png)
 
 ##### Once we have a model we are interested in exporting, we can do so by clicking the "Export Model" button and choose the "TensorFlow Lite" tab, make sure that the conversion type is set to Floating point, and click "convert model". This process may take some time. When completed the page will create file save alert dialog.
+
 ![](assets/teachable-machine-setup/tm-13.png)
 
 ##### Choose a location to download the file to:
+
 ![](assets/teachable-machine-setup/tm-14.png)
 
 ##### This will be the contents of the unzipped file, the tflite model and a text file with the classified labels:
-![](assets/teachable-machine-setup/tm-15.png)
 
+![](assets/teachable-machine-setup/tm-15.png)
 
 ## User Stories <a name="userStories"> </a>
 
-| ID      | Description                                                                                                 |Status   |
-| :---    |    :----:                                                                                                   |     ---:|
-| 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
-
-
+| ID  |                                         Description                                         |   Status |
+| :-- | :-----------------------------------------------------------------------------------------: | -------: |
+| 1   | As a User, I want to create add feedback for the app so that the app can have more accuracy | Approved |
 
 ## Issues <a name="issues"> </a>
 
@@ -485,33 +543,33 @@ This Kaggle imagery set was used in training one version of the object recogniti
 ## References <a name="references"> </a>
 
 ### Dart documentation:
+
 https://dart.dev/guides
 
 https://dart.dev/get-dart
 
-
 ### Flutter documentation:
+
 https://flutterflow.io/
 
 https://flutter.dev/docs/get-started/install
 
-
 ### TensorFlow Lite (TFlite):
+
 https://www.tensorflow.org/lite/guide
 
 https://pub.dev/packages/tflite
 
-
 ### Material UI:
+
 https://material.io/components
 
-
 ### YOLOv4:
+
 https://github.com/pjreddie/darknet
 
-
-
 ### Video lessons and tutorials:
+
 [YouTube - Installing Flutter on Mac - Nick Manning (seenickcode)](https://www.youtube.com/watch?v=THsihXK1-14)
 
 [YouTube - Flutter Course - Full Tutorial for Beginners (Build iOS and Android Apps) - freeCodeCamp.org](https://www.youtube.com/watch?v=pTJJsmejUOQ)
@@ -522,38 +580,34 @@ https://github.com/pjreddie/darknet
 
 [YouTube - How to Train YOLOv4 on a Custom Dataset (PyTorch) - Roboflow](https://www.youtube.com/watch?v=9hVgyeI4g4o)
 
-
 ### Other documentation and resources:
+
 [Curiousily- Object detection on a custom dataset](https://curiousily.com/posts/object-detection-on-custom-dataset-with-yolo-v5-using-pytorch-and-python/)
-
-
-
-
 
 # Addendum
 
 ### Working with the images in R:
 
-``` r
-#install.packages("BiocManager") 
+```r
+#install.packages("BiocManager")
 #BiocManager::install("EBImage")
 library(EBImage)
 ```
 
-``` r
+```r
 list.files("model")
 ```
 
-    ## [1] "README.roboflow.txt" "test"                "train"              
+    ## [1] "README.roboflow.txt" "test"                "train"
     ## [4] "valid"
 
 Print a partial list of the files in the training folder:
 
-``` r
+```r
 head(list.files("model/train"))
 ```
 
-    ## [1] "_annotations.csv"                                                    
+    ## [1] "_annotations.csv"
     ## [2] "10005133744_d1060128ab_o_jpg.rf.d4d6ee263552c0ba135babf9436ce461.jpg"
     ## [3] "10068516014_6a4f5a5dc2_o_jpg.rf.ea96ee3048ea215cc59c124486e742f5.jpg"
     ## [4] "10116239786_b61e41db21_b_jpg.rf.cef0d87c0b126696b5d0160e1d6ecc8f.jpg"
@@ -562,13 +616,13 @@ head(list.files("model/train"))
 
 Load a single image sample:
 
-``` r
+```r
 sampleLobster <- readImage("model/train/10631742534_05d86a3212_b_jpg.rf.57a444d1755d1842ae96d4c5f583c6cf.jpg")
 ```
 
 Display the sample image:
 
-``` r
+```r
 display(sampleLobster, method = "raster")
 ```
 
@@ -576,25 +630,25 @@ display(sampleLobster, method = "raster")
 
 Create a vector that will store the file paths:
 
-``` r
+```r
 trainingImagesPath <- dir("model/train")
 ```
 
 Remove the .csv file from the list:
 
-``` r
+```r
 trainingImagesPath <- paste("model/train/", trainingImagesPath[2:length(trainingImagesPath)], sep ="")
 ```
 
 Read the images to a vector with a loop:
 
-``` r
+```r
 trainingImages <- readImage(trainingImagesPath)
 ```
 
 Display all the images in the training set on a single raster:
 
-``` r
+```r
 display(trainingImages, method = "raster", all = TRUE, nx = 10)
 ```
 
@@ -612,7 +666,7 @@ Studio](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_bas
 
 Install/Load the required packages:
 
-``` r
+```r
 #Uncomment the following line to include the installation of the keras package:
 #install.packages("keras")
 #install.packages("tensorflow")
@@ -620,37 +674,37 @@ Install/Load the required packages:
 
 Load the keras library in to the R session:
 
-``` r
+```r
 library(keras)
 library(tensorflow)
 ```
 
 If required, install Tensorflow with this
 
-``` r
+```r
 #install_tensorflow()
 ```
 
 You will need to have also installed anacoda for TensorFlow to work in R, as well as CUDA. These instructions from a github user
-[CostanzoPablo](https://github.com/CostanzoPablo) were helpful in getting cuda tensorflow/stream\_executor/platform/default/dso\_loader/cudart64\_110.dll to work on my machine:
+[CostanzoPablo](https://github.com/CostanzoPablo) were helpful in getting cuda tensorflow/stream_executor/platform/default/dso_loader/cudart64_110.dll to work on my machine:
 
-> -   Uninstall all drivers that says “nvidia” from Uninstall programs
->     (ALL, Cuda and gpu driver)
-> -   Install last nvidia drivers for your GPU
->     <https://uk.download.nvidia.com/GFE/GFEClient/3.21.0.36/GeForce_Experience_v3.21.0.36.exe>
-> -   Install cuda 11.2
->     <https://developer.download.nvidia.com/compute/cuda/11.2.1/local_installers/cuda_11.2.1_461.09_win10.exe>
-> -   Install Anaconda
->     <https://repo.anaconda.com/archive/Anaconda3-2020.11-Windows-x86_64.exe>
-> -   conda create -n cudaenv python=3.6
-> -   conda activate cudaenv
-> -   pip install tensorflow python-dotenv
-> -   Create a.py with this: import tensorflow as tf
-> -   run it: python a.py
-> -   Output: xxx: I
->     tensorflow/stream\_executor/platform/default/dso\_loader.cc:49\]
->     Successfully opened dynamic library cudart64\_110.dll
-> <https://github.com/tensorflow/tensorflow/issues/45055>
+> - Uninstall all drivers that says “nvidia” from Uninstall programs
+>   (ALL, Cuda and gpu driver)
+> - Install last nvidia drivers for your GPU
+>   <https://uk.download.nvidia.com/GFE/GFEClient/3.21.0.36/GeForce_Experience_v3.21.0.36.exe>
+> - Install cuda 11.2
+>   <https://developer.download.nvidia.com/compute/cuda/11.2.1/local_installers/cuda_11.2.1_461.09_win10.exe>
+> - Install Anaconda
+>   <https://repo.anaconda.com/archive/Anaconda3-2020.11-Windows-x86_64.exe>
+> - conda create -n cudaenv python=3.6
+> - conda activate cudaenv
+> - pip install tensorflow python-dotenv
+> - Create a.py with this: import tensorflow as tf
+> - run it: python a.py
+> - Output: xxx: I
+>   tensorflow/stream_executor/platform/default/dso_loader.cc:49\]
+>   Successfully opened dynamic library cudart64_110.dll
+>   <https://github.com/tensorflow/tensorflow/issues/45055>
 
 ### Basic Example: Importing the Fashion MNIST dataset
 
@@ -668,25 +722,25 @@ You will need to have also installed anacoda for TensorFlow to work in R, as wel
 > from Keras.
 > [TensorFlow for R from R Studio](https://tensorflow.rstudio.com/tutorials/beginners/basic-ml/tutorial_basic_classification/)
 
-``` r
+```r
 fashion_mnist <- dataset_fashion_mnist()
 ```
 
 Specify the training and testing data:
 
-``` r
+```r
 c(train_images, train_labels) %<-% fashion_mnist$train
 c(test_images, test_labels) %<-% fashion_mnist$test
 ```
 
 Specifiying the class names:
 
-``` r
+```r
 class_names = c('T-shirt/top',
                 'Trouser',
                 'Pullover',
                 'Dress',
-                'Coat', 
+                'Coat',
                 'Sandal',
                 'Shirt',
                 'Sneaker',
@@ -696,14 +750,14 @@ class_names = c('T-shirt/top',
 
 Improting tidyr and ggplot:
 
-``` r
+```r
 library(tidyr)
 library(ggplot2)
 ```
 
 ### Plotting an image from the MNSIT Dataset
 
-``` r
+```r
 image_1 <- as.data.frame(train_images[1, , ])
 colnames(image_1) <- seq_len(ncol(image_1))
 image_1$y <- seq_len(nrow(image_1))
@@ -723,19 +777,19 @@ ggplot(image_1, aes(x = x, y = y, fill = value)) +
 
 ![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
-``` r
+```r
 train_images <- train_images / 255
 test_images <- test_images / 255
 ```
 
 Plotting sample of the imported imagery on a “proofing sheet”:
 
-``` r
+```r
 par(mfcol=c(5,5))
 par(mar=c(0, 0, 1.5, 0), xaxs='i', yaxs='i')
-for (i in 1:25) { 
+for (i in 1:25) {
   img <- train_images[i, , ]
-  img <- t(apply(img, 2, rev)) 
+  img <- t(apply(img, 2, rev))
   image(1:28, 1:28, img, col = gray((0:255)/255), xaxt = 'n', yaxt = 'n',
         main = paste(class_names[train_labels[i] + 1]))
 }
@@ -745,7 +799,7 @@ for (i in 1:25) {
 
 ### Build the model
 
-``` r
+```r
 model <- keras_model_sequential()
 model %>%
   layer_flatten(input_shape = c(28, 28)) %>%
@@ -755,9 +809,9 @@ model %>%
 
 ### Compile the model:
 
-``` r
+```r
 model %>% compile(
-  optimizer = 'adam', 
+  optimizer = 'adam',
   loss = 'sparse_categorical_crossentropy',
   metrics = c('accuracy')
 )
@@ -765,13 +819,13 @@ model %>% compile(
 
 ### Train the model:
 
-``` r
+```r
 model %>% fit(train_images, train_labels, epochs = 5, verbose = 2)
 ```
 
 Test the quality of the model:
 
-``` r
+```r
 score <- model %>% evaluate(test_images, test_labels, verbose = 0)
 
 cat('Test loss:', score[c("loss")], "\n")
@@ -779,7 +833,7 @@ cat('Test loss:', score[c("loss")], "\n")
 
     ## Test loss: 0.3512006
 
-``` r
+```r
 cat('Test accuracy:', score[c("acc")], "\n")
 ```
 
@@ -787,11 +841,11 @@ cat('Test accuracy:', score[c("acc")], "\n")
 
 Make a prediction for each of the items based on the trained model:
 
-``` r
+```r
 predictions <- model %>% predict(test_images)
 ```
 
-``` r
+```r
 predictions[1, ]
 ```
 
@@ -801,17 +855,17 @@ predictions[1, ]
 Show the same proofing sheet as before but with a label for whether the
 prediction was correct or incorrect (red or green):
 
-``` r
+```r
 par(mfcol=c(5,5))
 par(mar=c(0, 0, 1.5, 0), xaxs='i', yaxs='i')
-for (i in 1:25) { 
+for (i in 1:25) {
   img <- test_images[i, , ]
-  img <- t(apply(img, 2, rev)) 
+  img <- t(apply(img, 2, rev))
   # subtract 1 as labels go from 0 to 9
   predicted_label <- which.max(predictions[i, ]) - 1
   true_label <- test_labels[i]
   if (predicted_label == true_label) {
-    color <- '#008800' 
+    color <- '#008800'
   } else {
     color <- '#bb0000'
   }
@@ -826,7 +880,7 @@ for (i in 1:25) {
 
 Make a prediction on a singular image:
 
-``` r
+```r
 # Grab an image from the test dataset
 # take care to keep the batch dimension, as this is expected by the model
 img <- test_images[1, , , drop = FALSE]
@@ -835,7 +889,7 @@ dim(img)
 
     ## [1]  1 28 28
 
-``` r
+```r
 predictions <- model %>% predict(img)
 predictions
 ```
@@ -845,7 +899,7 @@ predictions
     ##            [,6]         [,7]      [,8]        [,9]     [,10]
     ## [1,] 0.03222495 6.994441e-05 0.1519411 0.001144954 0.8144045
 
-``` r
+```r
 # subtract 1 as labels are 0-based
 prediction <- predictions[1, ] - 1
 which.max(prediction)
@@ -853,7 +907,7 @@ which.max(prediction)
 
     ## [1] 10
 
-``` r
+```r
 class_pred <- model %>% predict_classes(img)
 class_pred
 ```
