@@ -125,7 +125,11 @@ VSCode (Optional)
 
 Git
 
-InVision
+InVision (wireframing tool used)
+
+```bash
+- https://projects.invisionapp.com/freehand/document/4uBwWNv0b
+```
 
 ### Project Files:
 
@@ -588,6 +592,12 @@ Detection on a Static Image
 
 - Implement code to allow object detection on a static image that is loaded from a given source.
 - Functionality to load an image already exists.
+
+User Feedback on Model Accuracy on detection
+
+- Display to the user the description of the detected lobster along with its accuracy prediction along with a yes and no button to get user input on accuracy of model.
+- The development of a state change which is triggered based on the actual confidence rating ( 70% and up) of the detection. This would change the page to get the user feedback and display the results for the live capture that was detected.
+- A txt file or database to store every input from the users from different sessions.
 
 ### Working with the images in R:
 
