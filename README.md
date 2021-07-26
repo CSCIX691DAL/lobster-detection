@@ -200,7 +200,7 @@ application_folder
 │   ├── helpers
 │   │   ├── app_helper.dart
 │   │   ├── camera_helper.dart <-- 'A helper file for working with the camera input'
-│   │   └── tflite_helper.dart <-- 'A helper file for workinn with tflite' 
+│   │   └── tflite_helper.dart <-- 'A helper file for working with tflite' 
 │   ├── main.dart <-- 'The main.dart file, which is responsible for the '
 │   ├── models
 │   │   └── result.dart <-- 'A Screen for showing the results of the object detection'
