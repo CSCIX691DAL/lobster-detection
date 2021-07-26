@@ -364,8 +364,8 @@ HomePage Screen
 
 Here, users have a choice between two options for detection:
 
-- Using the camera to for detection.
-- Performing detection on a static image. This feature is not currently complete.
+- Using the camera for detection.
+- Performing detection on a static image. This feature is not currently complete, as the application selects an image from the library and but performs no detection on it.
 
 Detection Screen
 
