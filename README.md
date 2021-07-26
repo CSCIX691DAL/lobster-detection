@@ -25,14 +25,10 @@
 
 2. [Setup](#setup)
 3. [User Features](#userFeatures)
-4. [Technical Features](#technicalFeatures)
-5. [User Stories](#userStories)
-6. [Issues](#issues)
-7. [Risks](#risks)
-8. [Lessons Learned](#lessonsLearned)
-9. [Further Development Recommendation](#furtherDevelopmentRecommendation)
-10. [Project Sign-off](#projectSignOff)
-11. [References](#references)
+4. [User Stories](#userStories)
+5. [Technical Features](#technicalFeatures)
+6. [Further Development Recommendation](#furtherDevelopmentRecommendation)
+7. [References](#references)
 
 ## Project Overview <a name="projectOveriew"></a>
 
@@ -62,6 +58,52 @@ Perform real time object recognition/detection of whether there is a lobster in 
 
 Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch.
 
+
+### Intended Users <a name="intendedUsers"></a>
+The intended userbase of the Lobster Detection app are the general users who are looking to identify lobsters with their phone. The app has real time object detection which can be used by scientists and researchers to perform real time analysis. The general users can point their camera on the object to check if the object is lobster or not. The users can also detect varities of lobsters.
+
+
+## User Stories <a name="userStories"> </a>
+
+| ID      | Description                                                                                                 |Status   |
+| :---    |    :----:                                                                                                   |     ---:|
+| 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
+| 2       | As a User, I would like the app to successfully capture the lobster and define its type                     |Approved |
+| 3       | As a User, it would be easier for the app to capture the lobster through my phone with the flash on         |Approved |
+| 4       | As a User, I would like to have a page in the app for a personal feedback about my app usage                |Approved |
+| 5       | As a User, I would like the app to have a contact information where I could send inquiries about the app    |Approved |
+| 6       | As a User, I want a page where I could find descriptions about app usage                                    |Approved |
+
+### Project Value <a name="projectValue"> </a>
+Working on this project have provided significant value to the team as a developer and as a student. Through out the project the development team have used several tools which required consistent learning of new concepts in order to implement. Once the basic development was completed, the iterative development helped the team to promote constant learning and improvement. Moreover, the team have used Azure Board and Git to be organized throughout the project. The team have learned about collaborative work environment and team dynamics as they maybe used in industry.
+
+
+### Measureable Organizational Value <a name ="measurableOrganizationalValue"> </a>
+Within 3 months, the team have successfully developed a working app that is able to detect lobsters with significant accuracy. If more time is provided for the project the team can definitely increase the accuracy for the lobster detection model. The feedback from the users can also provide insight into the user experience for using the app, which can be used to measure the success of the app.
+
+
+## User Features <a name="userFeatures"> </a>
+
+User Features
+
+Welcome Screen
+
+Here, users see a message conveying the purpose of the application and a Button that allows transition to the next Screen.
+
+HomePage Screen
+
+Here, users have a choice between two options for detection:
+
+- Using the camera for detection.
+- Performing detection on a static image. This feature is not currently complete, as the application selects an image from the library and but performs no detection on it.
+
+Detection Screen
+
+Here, the appliation runs an object detection model and displays the type of lobster detected along with the percentage of accuracy.
+
+
+## Setup <a name="setup"> </a>
+
 ### Technology Stack <a name="technologyStack"></a>
 
 Flutter
@@ -85,8 +127,7 @@ VSCode (Optional)
 
 Git
 
-
-### Project File Structure:
+### Project Files:
 
 Clone the repository from git:
 
@@ -221,18 +262,6 @@ application_folder
 └── pubspec.yaml <-- 'Can require modification when new assets/libraries imported'
 ```
 
-### Intended Users <a name="intendedUsers"></a>
-The intended userbase of the Lobster Detection app are the general users who are looking to identify lobsters with their phone. The app has real time object detection which can be used by scientists and researchers to perform real time analysis. The general users can point their camera on the object to check if the object is lobster or not. The users can also detect varities of lobsters.
-
-### Project Value <a name="projectValue"> </a>
-Working on this project have provided significant value to the team as a developer and as a student. Through out the project the development team have used several tools which required consistent learning of new concepts in order to implement. Once the basic development was completed, the iterative development helped the team to promote constant learning and improvement. Moreover, the team have used Azure Board and Git to be organized throughout the project. The team have learned about collaborative work environment and team dynamics as they maybe used in industry.
-
-
-### Measureable Organizational Value <a name ="measurableOrganizationalValue"> </a>
-Within 3 months, the team have successfully developed a working app that is able to detect lobsters with significant accuracy. If more time is provided for the project the team can definitely increase the accuracy for the lobster detection model. The feedback from the users can also provide insight into the user experience for using the app, which can be used to measure the success of the app.
-
-## Setup <a name="setup"> </a>
-
 ### Setup Instructions (Windows)
 
 #### Installing Android Studio and setting up an Android Virtual Device (AVD)
@@ -349,25 +378,6 @@ Within 3 months, the team have successfully developed a working app that is able
 ![](assets/IDE-setup/IDE56.png)
 ![](assets/IDE-setup/IDE58.png)
 
-## User Features <a name="userFeatures"> </a>
-
-User Features
-
-Welcome Screen
-
-Here, users see a message conveying the purpose of the application and a Button that allows transition to the next Screen.
-
-HomePage Screen
-
-Here, users have a choice between two options for detection:
-
-- Using the camera for detection.
-- Performing detection on a static image. This feature is not currently complete, as the application selects an image from the library and but performs no detection on it.
-
-Detection Screen
-
-Here, the appliation runs an object detection model and displays the type of lobster detected along with the percentage of accuracy.
-
 ## Technical Features <a name="technicalFeatures"> </a>
 
 ### Object Recognition:
@@ -379,8 +389,6 @@ Here, the appliation runs an object detection model and displays the type of lob
 We considered several sources for finding lobster imagery to train the machine learning model. Manual retrieval of images (i.e. manually saving images from a Google image search and social media websites) was undertaken to a limited degree, but is an undesirable methodology due to the tedious nature of saving each image through the computer's file manager dialogs. Instead it would be better to scrape; using a script, a large set of imagery that already had some kind of classification performed on it. There existsmany websites dedicated to sharing images, both for social media purposesand for data science research purposes. Two websites that were investigated in great detail were Flickr and Kaggle.
 
 ##### Flickr Scraper
-
-![Flickr Logo](https://cdn.kustomerhostedcontent.com/media/5aecd7338a0607779d1ec9cc/966e09a41a33f89fe18f2ab227336f09.png)
 
 In order to retrieve some of the lobster imagery, sources like Flickr were considered. In the particular case of Flickr, the Flickr API and publicly available tools like Flickr-Scraper by Ultralytics LLC, a Python program can be used to download the first Nth results of a Flickr search. The search term “Lobster” is too vague for use on this platform,resulting in numerous images of prepared lobster as foods like sandwiches and soups (rolls and bisques).
 
@@ -449,8 +457,6 @@ There are other sources of imagery that could be considered as well, for instanc
 ![](assets/lobster-pictures_files/figure-gfm/unnamed-chunk-35-1.png)
 
 ##### Kaggle (datasets - images):
-
-![](https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png)
 
 Other sources of imagery, like Kaggle, were searched for good source imagery, but did not yield too many results beyond one collection of images of Spiny Lobsters by author Son Vo:
 
@@ -524,24 +530,11 @@ This Kaggle imagery set was used in training one version of the object recogniti
 
 ![](assets/teachable-machine-setup/tm-15.png)
 
-## User Stories <a name="userStories"> </a>
-
-| ID      | Description                                                                                                 |Status   |
-| :---    |    :----:                                                                                                   |     ---:|
-| 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
-| 2       | As a User, I would like the app to successfully capture the lobster and define its type                     |Approved |
-| 3       | As a User, it would be easier for the app to capture the lobster through my phone with the flash on         |Approved |
-| 4       | As a User, I would like to have a page in the app for a personal feedback about my app usage                |Approved |
-| 5       | As a User, I would like the app to have a contact information where I could send inquiries about the app    |Approved |
-| 6       | As a User, I want a page where I could find descriptions about app usage                                    |Approved |
-
 ## Issues <a name="issues"> </a>
 
 ## Risks <a name="risks"> </a>
 
 ## Lessons Learned <a name="lessonsLearned"> </a>
-
-## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
 
 ## Project Sign-off <a name="projectSignOff"> </a>
 
@@ -589,7 +582,7 @@ https://github.com/pjreddie/darknet
 
 [Curiousily- Object detection on a custom dataset](https://curiousily.com/posts/object-detection-on-custom-dataset-with-yolo-v5-using-pytorch-and-python/)
 
-# Addendum
+## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
 
 ### Working with the images in R:
 
