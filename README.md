@@ -285,10 +285,7 @@ application_folder
 ##### VSCode Home Screen:
 ![](assets/IDE-setup/IDE45.png)
 
-##### With the setup complete, navigate to the "Add-Ons" pane by clicking the icon in left sidebar:
-![](assets/IDE-setup/IDE46.png)
-
-##### Search for and install the Flutter plugin:
+##### With the setup complete, navigate to the "Add-Ons" pane by clicking the icon in left sidebarl, search for and install the Flutter plugin:
 ![](assets/IDE-setup/IDE48.png)
 
 
