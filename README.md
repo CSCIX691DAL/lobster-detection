@@ -465,7 +465,11 @@ This Kaggle imagery set was used in training one version of the object recogniti
 | ID      | Description                                                                                                 |Status   |
 | :---    |    :----:                                                                                                   |     ---:|
 | 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
-
+| 2       | As a User, I would like the app to successfully capture the lobster and define its type                     |Approved |
+| 3       | As a User, it would be easier for the app to capture the lobster through my phone with the flash on         |Approved |
+| 4       | As a User, I would like to have a page in the app for a personal feedback about my app usage                |Approved |
+| 5       | As a User, I would like the app to have a contact information where I could send inquiries about the app    |Approved |
+| 6       | As a User, I want a page where I could find descriptions about app usage                                    |Approved |
 
 
 ## Issues <a name="issues"> </a>
