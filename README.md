@@ -301,11 +301,11 @@ application_folder
 
 ##### The Android Virtual Device will be launched:
 ![](assets/IDE-setup/IDE53.png)
-![](assets/IDE-setup/IDE54.png)
+![](assets/IDE-setup/IDE55.png)
 
 ##### To compile and run the Flutter application, click on the "Run" button in the top right of the VSCode window and select "Start Debugging", the application will launch:
-![](assets/IDE-setup/IDE55.png)
-![](assets/IDE-setup/IDE57.png)
+![](assets/IDE-setup/IDE56.png)
+![](assets/IDE-setup/IDE58.png)
 
 ## User Features <a name="userFeatures"> </a>
 
