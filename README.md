@@ -84,19 +84,6 @@ VSCode (Optional)
 
 Git
 
-<<<<<<< HEAD
-### This project is based on:
-
-https://github.com/umair13adil/tensorflow_lite_flutter
-
-By Muhammad Umair Adil (https://github.com/umair13adil)
-
-![](assets/external-sources/image1.gif)
-![](assets/external-sources/image2.gif)
-
-> The "TensorFlow" model is trained using Teachable Machines. The model is trained with different texture colors of walls. App will recognize the color and classify the color according to best match. This app will load a pre-trained model and start classification on frames received from Camera Controller. App will show results in real-time along with confidence percentages.
-=======
->>>>>>> b9dc4ae476321dec5c29a8bf03ee6d83a531a8aa
 
 ### Project File Structure:
 
@@ -352,11 +339,8 @@ application_folder
 ![](assets/IDE-setup/IDE52.png)
 
 ##### The Android Virtual Device will be launched:
-<<<<<<< HEAD
 
 ![](assets/IDE-setup/IDE53.png)
-=======
->>>>>>> b9dc4ae476321dec5c29a8bf03ee6d83a531a8aa
 ![](assets/IDE-setup/IDE55.png)
 
 ##### To compile and run the Flutter application, click on the "Run" button in the top right of the VSCode window and select "Start Debugging", the application will launch:
@@ -538,9 +522,14 @@ This Kaggle imagery set was used in training one version of the object recogniti
 
 ## User Stories <a name="userStories"> </a>
 
-| ID  |                                         Description                                         |   Status |
-| :-- | :-----------------------------------------------------------------------------------------: | -------: |
-| 1   | As a User, I want to create add feedback for the app so that the app can have more accuracy | Approved |
+| ID      | Description                                                                                                 |Status   |
+| :---    |    :----:                                                                                                   |     ---:|
+| 1       | As a User, I want to create add feedback for the app so that the app can have more accuracy                 |Approved |
+| 2       | As a User, I would like the app to successfully capture the lobster and define its type                     |Approved |
+| 3       | As a User, it would be easier for the app to capture the lobster through my phone with the flash on         |Approved |
+| 4       | As a User, I would like to have a page in the app for a personal feedback about my app usage                |Approved |
+| 5       | As a User, I would like the app to have a contact information where I could send inquiries about the app    |Approved |
+| 6       | As a User, I want a page where I could find descriptions about app usage                                    |Approved |
 
 ## Issues <a name="issues"> </a>
 
@@ -973,8 +962,7 @@ Perform optional pre-processing steps:
 Perform optional augmentation steps:
 ![](assets/roboflow-setup/setup20.png)
 ![](assets/roboflow-setup/setup21.png)
-<<<<<<< HEAD
-=======
+
 
 ### This project is based on:
 https://github.com/umair13adil/tensorflow_lite_flutter
@@ -984,4 +972,3 @@ By Muhammad Umair Adil (https://github.com/umair13adil)
 ![](assets/external-sources/image1.gif)
 
 > The "TensorFlow" model is trained using Teachable Machines. The model is trained with different texture colors of walls. App will recognize the color and classify the color according to best match. This app will load a pre-trained model and start classification on frames received from Camera Controller. App will show results in real-time along with confidence percentages.
->>>>>>> b9dc4ae476321dec5c29a8bf03ee6d83a531a8aa
