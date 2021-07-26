@@ -21,6 +21,7 @@
    4. [Technology Stack](#technologyStack)
    5. [Intended Users](#intendedUsers)
    6. [Project Value](#projectValue)
+   7. [Measurable Organizational Value](#measurableOrganizationalValue)
 
 2. [Setup](#setup)
 3. [User Features](#userFeatures)
@@ -59,7 +60,7 @@ Perform real time object recognition/detection of whether there is a lobster in 
 
 ### Purpose <a name="purpose"></a>
 
-Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably extended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used in processing facilities for picking and sorting lobsters from bycatch.
+Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch.
 
 ### Technology Stack <a name="technologyStack"></a>
 
@@ -91,12 +92,6 @@ Clone the repository from git:
 
 ```bash
 git clone https://github.com/CSCIX691DAL/lobster-detection.git
-```
-
-To clone just the latest commit of the main branch (saves significant time):
-
-```bash
-git clone -b main --single-branch --depth 1 https://github.com/CSCIX691DAL/lobster-detection.git
 ```
 
 You will find that the project has a directory and file structure like this:
@@ -227,8 +222,14 @@ application_folder
 ```
 
 ### Intended Users <a name="intendedUsers"></a>
+The intended userbase of the Lobster Detection app are the general users who are looking to identify lobsters with their phone. The app has real time object detection which can be used by scientists and researchers to perform real time analysis. The general users can point their camera on the object to check if the object is lobster or not. The users can also detect varities of lobsters.
 
 ### Project Value <a name="projectValue"> </a>
+Working on this project have provided significant value to the team as a developer and as a student. Through out the project the development team have used several tools which required consistent learning of new concepts in order to implement. Once the basic development was completed, the iterative development helped the team to promote constant learning and improvement. Moreover, the team have used Azure Board and Git to be organized throughout the project. The team have learned about collaborative work environment and team dynamics as they maybe used in industry.
+
+
+### Measureable Organizational Value <a name ="measurableOrganizationalValue"> </a>
+Within 3 months, the team have successfully developed a working app that is able to detect lobsters with significant accuracy. If more time is provided for the project the team can definitely increase the accuracy for the lobster detection model. The feedback from the users can also provide insight into the user experience for using the app, which can be used to measure the success of the app.
 
 ## Setup <a name="setup"> </a>
 
@@ -353,15 +354,18 @@ application_folder
 User Features
 
 Welcome Screen
+
 Here, users see a message conveying the purpose of the application and a Button that allows transition to the next Screen.
 
 HomePage Screen
+
 Here, users have a choice between two options for detection:
 
-- Using the camera to for detection.
-- Performing detection on a static image. This feature is not currently complete.
+- Using the camera for detection.
+- Performing detection on a static image. This feature is not currently complete, as the application selects an image from the library and but performs no detection on it.
 
 Detection Screen
+
 Here, the appliation runs an object detection model and displays the type of lobster detected along with the percentage of accuracy.
 
 ## Technical Features <a name="technicalFeatures"> </a>
