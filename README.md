@@ -59,7 +59,7 @@ Perform real time object recognition/detection of whether there is a lobster in 
 
 ### Purpose <a name="purpose"></a>
 
-Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch.
+Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably extended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used in processing facilities for picking and sorting lobsters from bycatch.
 
 ### Technology Stack <a name="technologyStack"></a>
 
@@ -84,6 +84,7 @@ VSCode (Optional)
 
 Git
 
+<<<<<<< HEAD
 ### This project is based on:
 
 https://github.com/umair13adil/tensorflow_lite_flutter
@@ -94,6 +95,8 @@ By Muhammad Umair Adil (https://github.com/umair13adil)
 ![](assets/external-sources/image2.gif)
 
 > The "TensorFlow" model is trained using Teachable Machines. The model is trained with different texture colors of walls. App will recognize the color and classify the color according to best match. This app will load a pre-trained model and start classification on frames received from Camera Controller. App will show results in real-time along with confidence percentages.
+=======
+>>>>>>> b9dc4ae476321dec5c29a8bf03ee6d83a531a8aa
 
 ### Project File Structure:
 
@@ -101,6 +104,12 @@ Clone the repository from git:
 
 ```bash
 git clone https://github.com/CSCIX691DAL/lobster-detection.git
+```
+
+To clone just the latest commit of the main branch (saves significant time):
+
+```bash
+git clone -b main --single-branch --depth 1 https://github.com/CSCIX691DAL/lobster-detection.git
 ```
 
 You will find that the project has a directory and file structure like this:
@@ -343,8 +352,11 @@ application_folder
 ![](assets/IDE-setup/IDE52.png)
 
 ##### The Android Virtual Device will be launched:
+<<<<<<< HEAD
 
 ![](assets/IDE-setup/IDE53.png)
+=======
+>>>>>>> b9dc4ae476321dec5c29a8bf03ee6d83a531a8aa
 ![](assets/IDE-setup/IDE55.png)
 
 ##### To compile and run the Flutter application, click on the "Run" button in the top right of the VSCode window and select "Start Debugging", the application will launch:
@@ -961,3 +973,15 @@ Perform optional pre-processing steps:
 Perform optional augmentation steps:
 ![](assets/roboflow-setup/setup20.png)
 ![](assets/roboflow-setup/setup21.png)
+<<<<<<< HEAD
+=======
+
+### This project is based on:
+https://github.com/umair13adil/tensorflow_lite_flutter
+
+By Muhammad Umair Adil (https://github.com/umair13adil)
+
+![](assets/external-sources/image1.gif)
+
+> The "TensorFlow" model is trained using Teachable Machines. The model is trained with different texture colors of walls. App will recognize the color and classify the color according to best match. This app will load a pre-trained model and start classification on frames received from Camera Controller. App will show results in real-time along with confidence percentages.
+>>>>>>> b9dc4ae476321dec5c29a8bf03ee6d83a531a8aa
