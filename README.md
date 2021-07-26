@@ -20,6 +20,7 @@
     4. [Technology Stack](#technologyStack)
     5. [Intended Users](#intendedUsers)
     6. [Project Value](#projectValue)
+    7. [Measurable Organizational Value](#measurableOrganizationalValue)
 
 2. [Setup](#setup)
 3. [User Features](#userFeatures)
@@ -55,7 +56,7 @@ Perform real time object recognition/detection of whether there is a lobster in 
 
 ### Purpose <a name="purpose"></a>
 
-Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably exntended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch.
+Real time object recognition has a wide variety of applications in both science and industry. An application such as the one developed by the group could conceivably extended and used by scientists or researchers to perform real-time analysis of the behaviour, location, and population of lobsters in either a wild or contained setting. The aquaculture industry has uses for machine vision in machinery used processing facilities for picking and sorting lobsters from bycatch.
 
 
 ### Technology Stack <a name="technologyStack"></a>
@@ -226,10 +227,13 @@ application_folder
 
 
 ### Intended Users <a name="intendedUsers"></a>
-Lobster Detection app can be used by anyone who is looking for an app to identify the lobster and wants to know more about them. The intended users of the app are people who wants to know wants to identify various forms of lobsters through the app.
+The intended userbase of the Lobster Detection app are the general users who are looking to identify lobsters with their phone. The app has real time object detection which can be used by scientists and researchers to perform real time analysis. The general users can point their camera on the object to check if the object is lobster or not. The users can also detect varities of lobsters.
 
 ### Project Value <a name="projectValue"> </a>
+Working on this project have provided significant value to the team as a developer and as a student. Through out the project the development team have used several tools which required consistent learning of new concepts in order to implement. Once the basic development was completed, the iterative development helped the team to promote constant learning and improvement. Moreover, the team have used Azure Board and Git to be organized throughout the project. The team have learned about collaborative work environment and team dynamics as they maybe used in industry.
 
+
+### Measureable Organizational Value <a name ="measurableOrganizationalValue"> </a>
 
 
 ## Setup <a name="setup"> </a>
