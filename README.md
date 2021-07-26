@@ -584,7 +584,9 @@ https://github.com/pjreddie/darknet
 
 ## Further Development Recommendation <a name="furtherDevelopmentRecommendation"> </a>
 
-### Working with the images in R:
+Alternative methods for training a tflite model could be considered. Tensorflow models can be trained in Python and R based development environments and there are libraries available for both languages.
+
+### Working with the images for training a Tensorflow model with R/RStudio:
 
 ```r
 #install.packages("BiocManager")
