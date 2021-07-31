@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tensorflow_lite_flutter/HomePage.dart';
-import 'package:tensorflow_lite_flutter/screens/detect_screen.dart';
 
 class splashPage extends StatelessWidget {
   @override

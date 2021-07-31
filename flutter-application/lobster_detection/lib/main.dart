@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter/services.dart';
 import 'package:tensorflow_lite_flutter/SplashScreen.dart';
-
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 void main() {
   runApp(MyApp());
