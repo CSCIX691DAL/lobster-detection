@@ -23,6 +23,8 @@ RUN flutter upgrade
 RUN flutter doctor
 
 RUN git clone https://github.com/CSCIX691DAL/lobster-detection.git
+RUN cd lobster-detection/flutter-application/lobster_detection
+#RUN flutter pub get
 # RUN flutter build web
 # EXPOSE 4040
 # RUN ["chmod", "+x", "/usr/local/bin/app/server/server.sh"]
