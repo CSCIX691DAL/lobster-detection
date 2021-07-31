@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lobster_detection/HomePage/SplashScreen.dart';
-import 'dart:async';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+// ignore: unused_import
+import 'package:flutter/services.dart';
+import 'package:tensorflow_lite_flutter/SplashScreen.dart';
 
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 void main() {
   runApp(MyApp());
 }
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class splashRouting extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
@@ -55,7 +57,10 @@ class _MyAppState extends State<splashRouting> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-          Image.asset('assets/icons/lobster.png', height: 200.0),
+          Image.asset(
+            'assets/icons/lobster.png',
+            height: 200.0,
+          ),
           SizedBox(height: 50.0),
           SpinKitThreeBounce(color: Colors.red),
         ]));
