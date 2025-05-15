@@ -1,5 +1,5 @@
 # Lobster Detection Mobile Application - CSCIX691 Summer 2021 - Dalhousie University
-
+d
 ![Team Logo](assets/icons/main.svg)
 
 ### Team Members:
